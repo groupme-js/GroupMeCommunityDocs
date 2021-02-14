@@ -38,12 +38,15 @@ Please consider using of omit=memberships parameter. Not including member lists 
 **Parameters**
 
 * *page*
+
 	integer — Fetch a particular page of results. Defaults to 1.
 	
 * *per_page*
+
 	integer — Define page size. Defaults to 10.
 	
 * *omit*
+
 	string — Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
