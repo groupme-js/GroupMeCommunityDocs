@@ -507,6 +507,8 @@ This action is only available to the group creator
 Status: 200 OK
 ```
 
+***
+
 ## Join
 Join a shared group
 
