@@ -37,13 +37,13 @@ Please consider using of omit=memberships parameter. Not including member lists 
 
 **Parameters**
 
-*page*
+* *page*
 	integer — Fetch a particular page of results. Defaults to 1.
 	
-*per_page*
+* *per_page*
 	integer — Define page size. Defaults to 10.
 	
-*omit*
+* *omit*
 	string — Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
@@ -206,6 +206,7 @@ Load a specific group.
 **Parameters**
 
 *id* (required)
+
 	string - the ID of the group to show details of
 
 **Responses**
