@@ -192,7 +192,7 @@ POST /groups/:group_id/messages
 	
 * *attachments*
 
-	*array* - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.
+	* *array* - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.
 	
 		* *type* (required)
 		
