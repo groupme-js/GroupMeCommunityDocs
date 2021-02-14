@@ -18,6 +18,6 @@ GroupMe has a thriving developer community which has created a variety of applic
 
 [Account Information](self.md) - How to access/update information about an account, indexing and destroying tokens, and turning on/off SMS mode
 
-[Images](images.md) - How to upload images to be sent as attachments
+[Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments
 
 [Push](push.md) - How to connect to the Push service to get real-time interaction with your program
