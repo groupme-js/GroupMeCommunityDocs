@@ -10,6 +10,8 @@ GroupMe has a thriving developer community which has created a variety of applic
 
 [Member management](members.md) - How to add, remove, and update members.
 
+[Group Messages](messages.md) - How to list and send messages in groups
+
 [Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users
 
 [Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups

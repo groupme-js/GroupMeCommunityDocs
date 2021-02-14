@@ -58,29 +58,27 @@ POST /groups/:group_id/members/add
 **Parameters**
 * *members*
 
-	array — nickname is required. You must use one of the following identifiers: user_id, phone_number, or email.
-	
-		*object*
+	array - nickname is required. You must use one of the following identifiers: user_id, phone_number, or email. The array should contain objects with the following properties:
 		
-			* *nickname* (required)
+		* *nickname* (required)
+		
+			string - The name the user will use
 			
-				string - The name the user will use
+		* *user_id*
 			
-			* *user_id*
+			string - The user ID of the user to add
 			
-				string - The user ID of the user to add
+		* *phone_number*
 			
-			* *phone_number*
+			string - The phone number of the user to add
 			
-				string - The phone number of the user to add
+		* *email*
 			
-			* *email*
+			string - The phone number of the user to add
 			
-				string - The phone number of the user to add
+		* *guid*
 			
-			* *guid*
-			
-				string - If used, the GUID of the associated "results" object will match the value given
+			string - If used, the GUID of the associated "results" object will match the value given
 				
 **Responses**
 ```
@@ -89,6 +87,8 @@ Status: 202 Accepted
   "results_id": "GUID"
 }
 ```
+
+***
 
 ## Results
 Get the membership results from an add call.
@@ -105,7 +105,7 @@ Keep in mind that results are temporary -- they will only be available for 1 hou
 
 * *results_id* (required)
 
-	string — This is the guid that's returned from an add request.
+	string - This is the guid that's returned from an add request.
 	
 **Responses**
 
@@ -161,7 +161,7 @@ Note: The creator of the group cannot be removed or exit.
 
 * *membership_id* (required)
 
-	string — Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
+	string - Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
 	
 **Responses**
 

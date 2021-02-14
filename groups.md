@@ -40,15 +40,15 @@ Please consider using of omit=memberships parameter. Not including member lists 
 
 * *page*
 
-	integer — Fetch a particular page of results. Defaults to 1.
+	integer - Fetch a particular page of results. Defaults to 1.
 	
 * *per_page*
 
-	integer — Define page size. Defaults to 10.
+	integer - Define page size. Defaults to 10.
 	
 * *omit*
 
-	string — Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
+	string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
 ```
@@ -306,19 +306,19 @@ POST /groups
 
 * *name* (required)
 
-	string — Primary name of the group. Maximum 140 characters
+	string - Primary name of the group. Maximum 140 characters
 	
 * *description*
 
-	string — A subheading for the group. Maximum 255 characters
+	string - A subheading for the group. Maximum 255 characters
 	
 * *image_url*
 
-	string — GroupMe Image Service URL
+	string - GroupMe Image Service URL
 	
 * *share*
 
-	boolean — If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
+	boolean - If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 
 **Responses**
 
@@ -427,7 +427,7 @@ POST /groups/:id/update
 	
 * *share*
 
-	boolean — If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
+	boolean - If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 	
 **Responses**
 ```
@@ -703,7 +703,7 @@ Response is array of result objects which contain status field - the result of c
 
 * *requests* (required)
 
-	array — One request is object where user_id is the new owner who must be active member of a group specified by group_id.
+	array - One request is object where user_id is the new owner who must be active member of a group specified by group_id.
 	
 * *object*
 
