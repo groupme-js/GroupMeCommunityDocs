@@ -7,10 +7,17 @@ GroupMe has a thriving developer community which has created a variety of applic
 ### Contents:
 
 [Group management](groups.md) - How to create, join, list, update, etc. groups.
+
 [Member management](members.md) - How to add, remove, and update members.
+
 [Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users
+
 [Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups
+
 [Bots](bots.md) - How to create, index, and use bots.
+
 [Account Information](self.md) - How to access/update information about an account, indexing and destroying tokens, and turning on/off SMS mode
+
 [Images](images.md) - How to upload images to be sent as attachments
+
 [Push](push.md) - How to connect to the Push service to get real-time interaction with your program
