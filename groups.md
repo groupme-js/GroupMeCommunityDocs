@@ -22,7 +22,9 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
 
-### Index
+***
+
+## Index
 List the authenticated user's active groups.
 
 The response is paginated, with a default of 10 groups per page.
@@ -112,7 +114,9 @@ Please consider using of omit=memberships parameter. Not including member lists 
   }
 ]```
 
-### Former
+***
+
+## Former
 
 List the groups you have left but can rejoin.
 
@@ -189,7 +193,9 @@ List the groups you have left but can rejoin.
   }
 ]```
 
-### Show
+***
+
+## Show
 
 Load a specific group.
 
@@ -268,7 +274,9 @@ Load a specific group.
   }
 }```
 
-### Create
+***
+
+## Create
 
 Create a new group
 
@@ -359,7 +367,9 @@ Responses
   }
 }```
 
-### Update
+***
+
+## Update
 
 Update a group after creation
 
@@ -449,7 +459,9 @@ Update a group after creation
   }
 }```
 
-### Destroy
+***
+
+## Destroy
 Disband a group
 
 This action is only available to the group creator
@@ -460,7 +472,7 @@ This action is only available to the group creator
 **Responses**
 ```Status: 200 OK```
 
-### Join
+## Join
 Join a shared group
 
 **Request**
@@ -534,7 +546,9 @@ Join a shared group
   }
 }```
 
-### Rejoin
+***
+
+## Rejoin
 Rejoin a group. Only works if you previously removed yourself.
 
 **Request**
@@ -611,7 +625,9 @@ POST /groups/join
   }
 }```
 
-### Change owner(s)
+***
+
+## Change owner(s)
 Change owner of requested groups.
 
 This action is only available to the group creator.
