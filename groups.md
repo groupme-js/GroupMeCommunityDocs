@@ -37,20 +37,21 @@ Please consider using of omit=memberships parameter. Not including member lists 
 
 **Parameters**
 
-* page
+* *page*
 
 	integer — Fetch a particular page of results. Defaults to 1.
 	
-* per_page
+* *per_page*
 
 	integer — Define page size. Defaults to 10.
 	
-* omit
+* *omit*
 
 	string — Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 [
   {
     "id": "1234567890",
@@ -129,7 +130,8 @@ List the groups you have left but can rejoin.
 
 **Responses**
 
-```Status: 200 OK
+```
+Status: 200 OK
 [
   {
     "id": "1234567890",
@@ -194,7 +196,8 @@ List the groups you have left but can rejoin.
       }
     }
   }
-]```
+]
+```
 
 ***
 
@@ -208,12 +211,13 @@ Load a specific group.
 
 **Parameters**
 
-*id* (required)
+* *id* (required)
 
 	string - the ID of the group to show details of
 
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 {
   "id": "1234567890",
   "name": "Family",
@@ -276,7 +280,8 @@ Load a specific group.
       ]
     }
   }
-}```
+}
+```
 
 ***
 
@@ -285,28 +290,35 @@ Load a specific group.
 Create a new group
 
 **Request**
-```POST /groups
+```
+POST /groups
 {
   "name": "Family",
   "share": true,
   "image_url": "https://i.groupme.com/123456789"
-}```
+}
+```
 
 **Parameters**
-*name* (required)
+* *name* (required)
+
 	string — Primary name of the group. Maximum 140 characters
 	
-*description*
+* *description*
+
 	string — A subheading for the group. Maximum 255 characters
 	
-*image_url*
+* *image_url*
+
 	string — GroupMe Image Service URL
 	
-*share*
+* *share*
+
 	boolean — If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 
-Responses
-```Status: 201 Created
+**Responses**
+```
+Status: 201 Created
 {
   "id": "1234567890",
   "name": "Family",
@@ -369,7 +381,8 @@ Responses
       ]
     }
   }
-}```
+}
+```
 
 ***
 
@@ -378,27 +391,41 @@ Responses
 Update a group after creation
 
 **Request**
-```POST /groups/:id/update
+```
+POST /groups/:id/update
 {
   "name": "Family",
   "share": true,
   "image_url": "https://i.groupme.com/123456789",
   "office_mode": true
-}```
+}
+```
 
 **Parameters**
-*name*
+
+* *name*
+
 	string - The name of the group
-*description*
+	
+* *description*
+
 	string - A description of the group
-*image_url*
+	
+* *image_url*
+
 	string - A URL to use as the avatar for the group
-*office_mode*
+	
+* *office_mode*
+
 	boolean - If Office Mode is enabled, notifications won't buzz your phone.
-*share*
+	
+* *share*
+
 	boolean — If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
+	
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 {
   "id": "1234567890",
   "name": "Family",
@@ -461,7 +488,8 @@ Update a group after creation
       ]
     }
   }
-}```
+}
+```
 
 ***
 
@@ -474,7 +502,9 @@ This action is only available to the group creator
 `POST /groups/:id/destroy`
 
 **Responses**
-```Status: 200 OK```
+```
+Status: 200 OK
+```
 
 ## Join
 Join a shared group
@@ -483,7 +513,8 @@ Join a shared group
 `POST /groups/:id/join/:share_token`
 
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 {
   "group": {
     "id": "1234567890",
@@ -548,7 +579,8 @@ Join a shared group
       }
     }
   }
-}```
+}
+```
 
 ***
 
@@ -560,11 +592,14 @@ Rejoin a group. Only works if you previously removed yourself.
 POST /groups/join
 
 **Parameters**
-*group_id* (required)
+
+* *group_id* (required)
+
 	string - the ID of the group to join
 
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 {
   "id": "1234567890",
   "name": "Family",
@@ -627,7 +662,8 @@ POST /groups/join
       ]
     }
   }
-}```
+}
+```
 
 ***
 
@@ -648,16 +684,23 @@ Response is array of result objects which contain status field - the result of c
 `POST /groups/change_owners`
 
 **Parameters**
-*requests* (required)
+* *requests* (required)
+
 	array — One request is object where user_id is the new owner who must be active member of a group specified by group_id.
-*object*
-	*group_id* (required)
+	
+* *object*
+
+	* *group_id* (required)
+	
 		string - The ID of the affected group
-	*owner_id* (required)
+		
+	* *owner_id* (required)
+	
 		string - The ID of the person to be made owner
 		
 **Responses**
-```Status: 200 OK
+```
+Status: 200 OK
 {
   "results": [
     {
@@ -671,6 +714,9 @@ Response is array of result objects which contain status field - the result of c
       "status": "400"
     }
   ]
-}```
-```Status: 400 Bad Request
-'requests' field missing in request body```
+}
+```
+```
+Status: 400 Bad Request
+'requests' field missing in request body
+```
