@@ -25,6 +25,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ***
 
 ## Index
+
 List the authenticated user's active groups.
 
 The response is paginated, with a default of 10 groups per page.
@@ -291,6 +292,7 @@ Status: 200 OK
 Create a new group
 
 **Request**
+
 ```
 POST /groups
 {
@@ -301,6 +303,7 @@ POST /groups
 ```
 
 **Parameters**
+
 * *name* (required)
 
 	string — Primary name of the group. Maximum 140 characters
@@ -318,6 +321,7 @@ POST /groups
 	boolean — If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 
 **Responses**
+
 ```
 Status: 201 Created
 {
@@ -392,6 +396,7 @@ Status: 201 Created
 Update a group after creation
 
 **Request**
+
 ```
 POST /groups/:id/update
 {
@@ -500,9 +505,11 @@ Disband a group
 This action is only available to the group creator
 
 **Request**
+
 `POST /groups/:id/destroy`
 
 **Responses**
+
 ```
 Status: 200 OK
 ```
@@ -513,9 +520,11 @@ Status: 200 OK
 Join a shared group
 
 **Request**
+
 `POST /groups/:id/join/:share_token`
 
 **Responses**
+
 ```
 Status: 200 OK
 {
@@ -588,11 +597,12 @@ Status: 200 OK
 ***
 
 ## Rejoin
+
 Rejoin a group. Only works if you previously removed yourself.
 
 **Request**
 
-POST /groups/join
+`POST /groups/join`
 
 **Parameters**
 
@@ -601,6 +611,7 @@ POST /groups/join
 	string - the ID of the group to join
 
 **Responses**
+
 ```
 Status: 200 OK
 {
@@ -671,6 +682,7 @@ Status: 200 OK
 ***
 
 ## Change owner(s)
+
 Change owner of requested groups.
 
 This action is only available to the group creator.
@@ -684,9 +696,11 @@ Response is array of result objects which contain status field - the result of c
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
 **Request**
+
 `POST /groups/change_owners`
 
 **Parameters**
+
 * *requests* (required)
 
 	array — One request is object where user_id is the new owner who must be active member of a group specified by group_id.
@@ -702,6 +716,7 @@ Response is array of result objects which contain status field - the result of c
 		string - The ID of the person to be made owner
 		
 **Responses**
+
 ```
 Status: 200 OK
 {
