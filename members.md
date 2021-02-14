@@ -58,7 +58,7 @@ POST /groups/:group_id/members/add
 **Parameters**
 * *members*
 
-	array - nickname is required. You must use one of the following identifiers: user_id, phone_number, or email. The array should contain objects with the following properties:
+	*array* - nickname is required. You must use one of the following identifiers: user_id, phone_number, or email. The array should contain objects with the following properties:
 		
 		* *nickname* (required)
 		
