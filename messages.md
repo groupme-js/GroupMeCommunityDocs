@@ -194,7 +194,7 @@ POST /groups/:group_id/messages
 	
 * *attachments*
 
-	array - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.
+	array - A polymorphic list of attachments (locations, images, replies, etc). You may have more than one of any type of attachment, provided clients can display it.
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 	
@@ -231,6 +231,7 @@ POST /groups/:group_id/messages
 			array - Of the form \[\{pack_id\},\{offset\}\]. Honestly, I have no idea how this works and the official documentation is unclear.
 
 **Responses**
+
 ```
 Status: 201 Created
 {
