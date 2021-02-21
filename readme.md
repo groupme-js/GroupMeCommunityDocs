@@ -18,7 +18,7 @@ GroupMe has a thriving developer community which has created a variety of applic
 
 [Bots](bots.md) - How to create, index, and use bots.
 
-[Account Information](self.md) - How to access/update information about an account, indexing and destroying tokens, and turning on/off SMS mode
+[Account Management](self.md) - How to access/update information about an account, indexing and destroying tokens, and turning on/off SMS mode
 
 [Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments
 
