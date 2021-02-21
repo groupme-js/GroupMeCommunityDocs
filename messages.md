@@ -122,6 +122,8 @@ Status: 200 OK
 }
 ```
 
+***
+
 ## Create
 
 Send a message to a group
@@ -192,7 +194,9 @@ POST /groups/:group_id/messages
 	
 * *attachments*
 
-	* *array* - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.
+	array - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.
+	
+	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 	
 		* *type* (required)
 		
