@@ -24,7 +24,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ***
 
-## Add
+## Add Members
 Add members to a group.
 
 Multiple members can be added in a single request, and results are fetched with a separate call (since memberships are processed asynchronously). The response includes a results_id that's used in the results request.
@@ -90,7 +90,7 @@ Status: 202 Accepted
 
 ***
 
-## Results
+## Fetch "Add" Results
 Get the membership results from an add call.
 
 Successfully created memberships will be returned, including any GUIDs that were sent up in the add request. If GUIDs were absent, they are filled in automatically. Failed memberships and invites are omitted.
@@ -147,7 +147,7 @@ Results are no longer available. Don't try again.
 
 ***
 
-## Remove
+## Remove Member
 
 Remove a member (or yourself) from a group.
 
@@ -171,7 +171,7 @@ Status: 200 OK
 
 ***
 
-## Update
+## Change nickname
 
 Update your nickname in a group. The nickname must be between 1 and 50 characters.
 

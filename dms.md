@@ -172,7 +172,7 @@ Status: 200 OK
 
 ***
 
-## Create
+## Send DM
 
 Send a DM to another user
 
@@ -307,7 +307,7 @@ There's a problem with the parameters. Check errors.
 
 ***
 
-## Index
+## Index Blocks
 
 A list of contacts you have blocked. These people cannot DM you.
 
@@ -331,7 +331,7 @@ Status: 200 OK
 
 ***
 
-## Block Between
+## Block Between?
 
 Asks if a block exists between you and another user id
 
@@ -349,7 +349,7 @@ Status: 200 OK
 
 ***
 
-## Create Block
+## Block
 
 Creates a block between you and the contact
 
@@ -406,7 +406,7 @@ Status: 200 OK
 
 ***
 
-## Unblock
+## Unblock (Alternative method)
 Removes block between you and other user
 
 **Request**

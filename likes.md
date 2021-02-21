@@ -54,7 +54,7 @@ Status: 200 OK
 
 ***
 
-## Index
+## Leaderboard
 
 A list of the liked messages in the group for a given period of time. Messages are ranked in order of number of likes.
 

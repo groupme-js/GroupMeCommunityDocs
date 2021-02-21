@@ -124,7 +124,7 @@ Status: 200 OK
 
 ***
 
-## Create
+## Send Message
 
 Send a message to a group
 
