@@ -20,10 +20,24 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Bots](bots.md) - How to create, index, and use bots.
 
-[Account Management](self.md) - How to access/update information about an account, indexing and destroying tokens, and turning on/off SMS mode
+[Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens
 
 [Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments
 
 [Polls](polls.md) - Information on how to make and view polls
 
 [Push](push.md) - How to connect to the Push service to get real-time interaction with your program
+
+***
+
+### Still needs documenting:
+
+* Push service documentation is terrible right now
+
+* GroupMe calendar stuff isn't documented at all
+
+* Token management isn't documented yet
+
+* Image service documentation is really bad right now
+
+* Video documentation is even worse
