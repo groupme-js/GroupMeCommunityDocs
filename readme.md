@@ -24,4 +24,6 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments
 
+[Polls](polls.md) - Information on how to make and view polls
+
 [Push](push.md) - How to connect to the Push service to get real-time interaction with your program
