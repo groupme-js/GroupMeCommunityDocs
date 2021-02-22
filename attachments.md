@@ -124,7 +124,9 @@ Only for GroupMe-specific emoji. Standard Unicode emoji (e.g. 💩) do not use t
 
 	array - an array of arrays of two integers. That is, an array of the form `[[1, 62], [2, 0]]`.
 	
-	* Each number pair represents one emoji. The first number is the number of the emoji pack the emoji is found in (starting at one), and the second number is the position of the emoji in the array (starting at zero)
+	* Each number pair represents one emoji, in the order the placeholder character appears.
+	
+	* The first number is the number of the emoji pack the emoji is found in (starting at one), and the second number is the position of the emoji in the array (starting at zero)
 	
 	* The first placeholder will be replaced by the emoji indicated by the first charmap, the second placeholder will be replaced by the second, and so on.
 	

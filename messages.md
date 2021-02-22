@@ -197,38 +197,6 @@ POST /groups/:group_id/messages
 	array - A polymorphic list of attachments (locations, images, replies, etc). You may have more than one of any type of attachment, provided clients can display it.
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
-	
-		* *type* (required)
-		
-			string - Can be any of "image", "location", "split", or "emoji".
-
-		* *url* (required for images)
-		
-			string - Must be an image service (i.groupme.com) URL
-
-		* *name* (required for location)
-			
-			string - The name of the location
-
-		* *lat* (required for location)
-		
-			string - The latitude of the location
-			
-		* *lng* (required for location)
-		
-			string - the longitude of the location
-
-		* *token* (required for Split)
-		
-			string - the token associated with the Split payment feature
-			
-		* *placeholder* (required for emoji)
-		
-			string - A placeholder character for clients to replace with the proper character
-		
-		* *charmap* (required for emoji)
-		
-			array - Of the form \[\{pack_id\},\{offset\}\]. Honestly, I have no idea how this works and the official documentation is unclear.
 
 **Responses**
 
