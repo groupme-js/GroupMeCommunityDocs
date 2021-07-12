@@ -307,6 +307,20 @@ There's a problem with the parameters. Check errors.
 
 ***
 
+## Delete a message
+
+**Request**
+
+`DELETE /conversations/:group_id/messages/:message_id`
+
+**Responses**
+
+```
+Status: 204 Deleted
+```
+
+***
+
 ## Index Blocks
 
 A list of contacts you have blocked. These people cannot DM you.

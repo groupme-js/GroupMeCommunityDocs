@@ -18,6 +18,8 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups
 
+[Calendar Events](calendar.md) - How to list, create, and edit calendar events in a group.
+
 [Bots](bots.md) - How to create, index, and use bots.
 
 [Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens
@@ -33,8 +35,6 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 ### Still needs documenting:
 
 * Push service documentation is terrible right now
-
-* GroupMe calendar stuff isn't documented at all
 
 * Token management isn't documented yet
 

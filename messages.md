@@ -255,3 +255,17 @@ Status: 201 Created
   }
 }
 ```
+
+***
+
+## Delete a message
+
+**Request**
+
+`DELETE /conversations/:group_id/messages/:message_id`
+
+**Responses**
+
+```
+Status: 204 Deleted
+```
