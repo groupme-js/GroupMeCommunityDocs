@@ -59,7 +59,30 @@ Status: 200 OK
 
 ## Video
 
-I know it's possible to send video, but I have absolutely no clue how and I have no way I know of to find out. Please, someone, put that information here.
+**Object Structure**
+```
+{
+"type":"video",
+"url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.mp4",
+"preview_url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.jpg"
+}
+```
+**Parameters**
+
+ - *type*
+ 
+	 string - must be "video" for a video attachment
+	 
+ - *url*
+ 
+	 string - URL to video file, does not have to be a `v.groupme.com` link, though it would probably make the devs happy if it was
+	 
+- *preview_url*
+
+	string - URL to video file thumbnail, again it does not need to (but probably should be) a `v.groupme.com` link. Note that thumbnail images produced by the video service are not `i.groupme.com` links.
+	
+	
+
 
 ***
 
