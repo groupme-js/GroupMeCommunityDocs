@@ -40,6 +40,4 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 * Image service documentation is really bad right now
 
-* Video documentation is even worse
-
 * Document emoji packs? IDK if that'd be worth it, but might as well put it on here, right?
