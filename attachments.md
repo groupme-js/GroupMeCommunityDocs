@@ -36,9 +36,9 @@ POST https://image.groupme.com/pictures
 
 Importantly, this request MUST be done with the following headers:
 
-**Content-Type**: "image/jpeg" (For some reason it doesn't work with "image/png" as far as I can tell, but you can still send .png files under "image/jpeg")
-**Content-Length**: The size of your image in bytes
-**X-Access-Token**: Your user's token
+* **Content-Type**: "image/jpeg" (For some reason it doesn't work with "image/png" as far as I can tell, but you can still send .png files under "image/jpeg")
+* **Content-Length**: The size of your image in bytes
+* **X-Access-Token**: Your user's token
 
 Then, send the binary data of your image file. 
 
