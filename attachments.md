@@ -86,6 +86,32 @@ Status: 200 OK
 
 ***
 
+
+## File
+
+**Object Structure**
+```
+{
+"type":"file",
+"file_id":"abcdabcd-dead-beef-2222-111122223333"
+}
+```
+**Parameters**
+
+ - *type*
+ 
+	 string - must be "file" for a file attachment
+	 
+ - *url*
+ 
+	 file_id - valid file id from the [file service](files.md)
+	 
+
+
+***
+
+
+
 ## Location
 
 **Object structure**
