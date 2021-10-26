@@ -26,7 +26,7 @@ app.use(express.json());
  * Makes bot send given message via post request to GroupMe
  * @param {string} message
  */
-const sendMessage = (message) => {
+function sendMessage(message) {
     /*** Send post request to GroupMe with message and Bot ID. Could add a .then() to get response from GroupMe */
     axios.post(url, {
         text: message,
