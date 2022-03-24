@@ -7,7 +7,7 @@ const group_id = '85327648'
 let request_id = 1;
 let client_id;
 const user_id = '38301276';
-const access_token = 'G0uhuY3FaB74igrr12sTxnzrdbsFBu3iWaMpcP5y'
+const access_token = '{access_token}';
 
 const ws = new WebSocket('wss://push.groupme.com/faye');
 const channels = new EventEmitter()
