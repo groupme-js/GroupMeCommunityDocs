@@ -21,27 +21,27 @@ ws.on('message', data => handle(data));
 channels.once('/meta/handshake', (data) => {
     client_id = data.clientId;
     subscribe(`/user/${user_id}`);
-})
+});
 
 channels.once('/meta/subscribe', () => {
     connect();
-})
+});
 
 channels.on('/meta/connect', () => {
     connect();
-})
+});
 
 channels.on(`/user/${user_id}`, (data) => {
     const message = data['data']['subject']['text'];
     if (message.toLowerCase() === '!ping') {
         send_message(`Pong!`);
     }
-})
+});
 
 const handle = (data) => {
     const parsed = JSON.parse(data.toString())[0];
     channels.emit(parsed.channel, parsed);
-}
+};
 
 const handshake = () => {
     send({
@@ -56,14 +56,14 @@ const subscribe = (channel) => {
         channel: '/meta/subscribe',
         subscription: channel,
         ext: {access_token: access_token},
-    })
+    });
 };
 
 const connect = () => {
     send({
         channel: '/meta/connect',
         connectionType: 'websocket',
-    })
+    });
 };
 
 const send = (data) => {
@@ -76,7 +76,7 @@ const send = (data) => {
             console.error('An error occurred while trying to send:', data);
             throw err;
         }
-    })
+    });
 }
 
 const send_message = (message) => {
