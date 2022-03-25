@@ -15,9 +15,10 @@ implementations:
 Here is a list of some known WebSocket types and what they correspond to:
 
 * `ping` -> A ping from the web socket server
-* `line.create` -> New Group Message
-* `like.create` -> Someone likes a message that is not yours in a group
-* `favorite` -> Someone likes a message that is yours in a group
+* `line.create` -> New Group Message. This includes anything that makes a message such as calendar events,
+  joining/leaving events, polls, etc.
+* `like.create` -> Someone likes a message that is yours in a group
+* `favorite` -> Someone likes a message that is not yours in a group
 * `direct_message.create` -> New Direct Message
 
 Please help improve this page with more examples or, hopefully, some better information on how it works to begin with,
