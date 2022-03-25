@@ -4,45 +4,74 @@ import fetch from 'node-fetch';
 
 let request_id = 1;
 let client_id;
-const user_id = '{user_id}';
-const access_token = '{access_token}';
+const user_id = '{user_id}'; // replace with your user id
+const access_token = '{access_token}'; // replace with your access token
 
 const ws = new WebSocket('wss://push.groupme.com/faye');
 const channels = new EventEmitter()
 
+/**
+ * Send handshake on connection to the WebSocket server
+ */
 ws.on('open', () => {
     handshake();
 });
 
-ws.on('message', data => handle(data));
-
+/**
+ *  The request to subscribe to the /meta/handshake channel is sent by the handshake() function.
+ *  This function takes the client_id from the server and stores it and calls the subscribe() function.
+ */
 channels.once('/meta/handshake', (data) => {
     client_id = data.clientId;
     subscribe(`/user/${user_id}`);
 })
 
+/**
+ * Once the subscription is received from the server, call the connect function;
+ */
 channels.once('/meta/subscribe', () => {
     connect();
 })
 
+/**
+ * Reconnect when prompted by the server
+ */
 channels.on('/meta/connect', () => {
     connect();
 })
 
+/**
+ * Parse the messages from the WebSocket server
+ */
+ws.on('message', data => handle(data));
+
+/**
+ * On messages to the /user/{user_id} channel, check if the message is a incoming GroupMe message and if so, respond
+ */
 channels.on(`/user/${user_id}`, (data) => {
-    console.log(data);
-    const message = data['data']['subject']['text'];
-    const group_id = data['data']['subject']['group_id'];
-    if (message.toLowerCase() === '!ping') {
-        send_message(`Pong!`, group_id);
+    const message_type = data['data']['type'];
+    if (message_type === 'line.create') {
+        const message = data['data']['subject']['text'];
+        const group_id = data['data']['subject']['group_id'];
+        if (message.toLowerCase() === '!ping') {
+            send_message(`Pong!`, group_id);
+        }
     }
 })
 
+/**
+ * Parse the messages from the WebSocket server and emit it to the proper channel
+ *
+ * @param data
+ */
 const handle = (data) => {
     const parsed = JSON.parse(data.toString())[0];
     channels.emit(parsed.channel, parsed);
 }
 
+/**
+ * Send the handshake request to the WebSocket server
+ */
 const handshake = () => {
     send({
         channel: '/meta/handshake',
@@ -51,6 +80,11 @@ const handshake = () => {
     });
 };
 
+/**
+ * Send the subscribe request to the WebSocket server for the given channel
+ *
+ * @param channel
+ */
 const subscribe = (channel) => {
     send({
         channel: '/meta/subscribe',
@@ -59,6 +93,9 @@ const subscribe = (channel) => {
     })
 };
 
+/**
+ * Send the connect request to the WebSocket server
+ */
 const connect = () => {
     send({
         channel: '/meta/connect',
@@ -66,11 +103,15 @@ const connect = () => {
     })
 };
 
+/**
+ * Send a message to the WebSocket server
+ *
+ * @param data
+ */
 const send = (data) => {
     data.id = request_id++;
     data.clientId = client_id;
     const str = JSON.stringify([data]);
-
     ws.send(str, err => {
         if (err) {
             console.error('An error occurred while trying to send:', data);
@@ -79,6 +120,12 @@ const send = (data) => {
     })
 }
 
+/**
+ * Send a message to the GroupMe group specified by the group_id
+ *
+ * @param message
+ * @param group_id
+ */
 const send_message = (message, group_id) => {
     const headers = {'Content-Type': 'application/json'}
     const body = JSON.stringify(
