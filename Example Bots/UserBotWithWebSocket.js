@@ -1,3 +1,12 @@
+/**
+ * This is an example bot that uses the WebSocket interface to subscribe to all chats for a user
+ * and respond to the '!ping' command with 'pong'.
+ *
+ *This code was adapted from the
+ * node-groupme(https://github.com/groupme-js/node-groupme/blob/main/src/util/Websocket.ts) library by
+ * not-so-smart(https://github.com/not-so-smart)
+ */
+
 import WebSocket from 'ws';
 import EventEmitter from 'events';
 import fetch from 'node-fetch';
