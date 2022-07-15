@@ -76,11 +76,11 @@ The JSON format for the emoji attachment looks like this:
 The `placeholder` attribute tells you the Unicode character you should replace with an image (this is the same character that shows up in the
 message `text`).
 
-The `charmap` attribute tells you which emojis were used in the message.
+The `charmap` attribute tells you which emojis were used in the message (see the next section for details).
 
 Notice how there's only one � character given in the `placeholder` even though there are several emojis I used in this message. That's because each � character
 represents a different emoji in the `charmap`. So, the first � character in the message text represents the first item in the charmap array `[3, 13]`, the second � character
-represents the second item `[3, 12]`, and so on.
+represents the second item `[3, 12]`, and so on. So, if you're writing code to display these emojis, I would recommend looping through the `charmap` and replace the first `placeholder` character in the text with the emoji.
 
 Each emoji in the `charmap` is represented as an array of two integers (ex. `[3, 13]`). The first integer in the array is the emoji **pack number**--it tells
 you which emoji pack it came from. The second character is the **emoji index**--this tells you the specific emoji inside the pack. So, with the example `[3, 13]`,
@@ -89,7 +89,8 @@ this is the 13th emoji in the 3rd emoji pack.
 ## Finding which emoji is which
 
 If you have the GroupMe app on your device, open a chat and click on the emoji button next to the text box. The emoji packs are the tabs across the top
-(GroupMe Emoji, Summer, Back to School, Halloween, etc), and you can click on one of the tabs to see the emojis inside the pack.
+(GroupMe Emoji, Summer, Back to School, Halloween, etc), and you can click on one of the tabs to see the emojis inside the pack. **Note: The packs in the GroupMe app are not
+necessarily in the same order as the pack number!** More on that later.
 
 There's also an API endpoint which will give you all the emoji packs in JSON format--just send a GET request to `https://powerup.groupme.com/powerups` (you
 don't need to use an API key). The returned data looks like this (note: To save space, I reduced the results to show only a few emoji from one pack. If you'd
