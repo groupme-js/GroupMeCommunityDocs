@@ -32,6 +32,8 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Push](push.md) - How to connect to the Push service to get real-time interaction with your program
 
+[Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji
+
 ***
 
 ### Still needs documenting:
@@ -41,5 +43,3 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 * Token management isn't documented yet
 
 * Image service documentation is really bad right now
-
-* Document emoji packs? IDK if that'd be worth it, but might as well put it on here, right?
