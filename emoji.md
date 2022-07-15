@@ -411,7 +411,7 @@ descriptions of each emoji--useful for search keywords or when you're displaying
 Note that some of the higher-DPI `image_url`s are giving me Access Denied errors. I'm not sure why.
 
 
-##Sending emoji
+## Sending emoji
 
 There isn't really anything special to sending emojis--just craft a message whose `text` contains a placeholder character and create an attachment
 in the same format as above.
