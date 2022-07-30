@@ -24,9 +24,8 @@ All parameters are required unless otherwise specified.
 
 * *url*
 
-	string - the URL of the image to send. Does not have to be an i.groupme.com link, even though the official docs claim it does.
-	
-### Uploading images
+	string - the URL of the image to send. This does need to be an i.groupme.com URL.
+### Uploading local images
 
 If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](https://dev.groupme.com/docs/image_service). This is done with a simple request:
 
@@ -45,6 +44,29 @@ Then, send the binary data of your image file.
 Issues with this feature are often caused by problems with the user token.
 
 **Response**
+```
+Status: 200 OK
+{
+  "payload": {
+    "url": "https://i.groupme.com/123456789",
+    "picture_url": "https://i.groupme.com/123456789"
+  }
+}
+```
+
+### Uploading remote images
+
+If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](https://dev.groupme.com/docs/image_service). This will behave similar to uploading local images, but with a new url parameter:
+
+```
+POST https://image.groupme.com/pictures?url=<image_url>
+```
+
+As far as I can tell, you only need to provide the **X-Access-Token** user token as a header.
+
+**Response**
+
+Your response will be of the same format as above:
 ```
 Status: 200 OK
 {
