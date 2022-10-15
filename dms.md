@@ -132,6 +132,8 @@ Status: 200 OK
       "name": "John",
       "avatar_url": "https://i.groupme.com/123456789",
       "text": "Hello world ",
+      "pinned_by": "",
+      "pinned_at": null,
       "favorited_by": [
         "101"
       ],
@@ -260,6 +262,8 @@ Status: 201 Created
     "name": "John",
     "avatar_url": "https://i.groupme.com/123456789",
     "text": "Hello world ",
+    "pinned_by": "",
+    "pinned_at": null,
     "favorited_by": [
       "101"
     ],
