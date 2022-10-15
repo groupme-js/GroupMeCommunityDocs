@@ -34,6 +34,8 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji
 
+[Pins](pins.md) - How to use GroupMe's new Pin functionality
+
 ***
 
 ### Still needs documenting:
