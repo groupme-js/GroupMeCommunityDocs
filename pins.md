@@ -137,6 +137,6 @@ Status: 200 OK
 }
 ```
 
-For the full form of the message object, see [the Messages docs](messages.md). Note the new fields: `pinned_by` and `pinned_at`.
+For the full form of the message object, see [the Messages docs](messages.md). Note the new fields: `pinned_by` and `pinned_at`. `pinned_by` is the user who pinned it, and `pinned_at` is the timestamp (in seconds) of when it was pinned. When a message hasn't been pinned (which won't happen here, but will happen in other message-getting methods), `pinned_by` will be an empty string (`""`), and `pinned_at` will be `null`.
 
 ***
