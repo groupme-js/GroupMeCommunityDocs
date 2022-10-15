@@ -78,6 +78,8 @@ Status: 200 OK
       "avatar_url": "https://i.groupme.com/123456789",
       "text": "Hello world ",
       "system": true,
+      "pinned_by": "",
+      "pinned_at": null,
       "favorited_by": [
         "101",
         "66",
@@ -213,6 +215,8 @@ Status: 201 Created
     "avatar_url": "https://i.groupme.com/123456789",
     "text": "Hello world ",
     "system": true,
+    "pinned_by": "",
+    "pinned_at": null,
     "favorited_by": [
       "101",
       "66",
