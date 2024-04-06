@@ -97,11 +97,11 @@ Status: 200 OK
 	 
  - *url*
  
-	 string - URL to video file, does not have to be a `v.groupme.com` link, though it would probably make the devs happy if it was
+	 string - URL to video file, needs to be a `v.groupme.com` link.
 	 
 - *preview_url*
 
-	string - URL to video file thumbnail, again it does not need to (but probably should be) a `v.groupme.com` link. Note that thumbnail images produced by the video service are not `i.groupme.com` links.
+	string - URL to video file thumbnail, again it does need to `v.groupme.com` link. Note that thumbnail images produced by the video service are not `i.groupme.com` links.
 	
 	
 
