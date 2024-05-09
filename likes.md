@@ -67,6 +67,7 @@ POST /messages/:conversation_id/:message_id/like
 or
 
 ```
+POST /messages/:conversation_id/:message_id/like
 {
   "like_icon": {
     "type": "emoji",
@@ -86,14 +87,14 @@ or
 ```
 Status: 200 OK
 {
-	"reactions": [
-		{
-			"type": "unicode",
-			"pack_id": 0,
-			"pack_index": 0,
-			"code": "❤️"
-		}
-	]
+  "reactions": [
+    {
+      "type": "unicode",
+      "pack_id": 0,
+      "pack_index": 0,
+      "code": "❤️"
+    }
+  ]
 }
 ```
 
