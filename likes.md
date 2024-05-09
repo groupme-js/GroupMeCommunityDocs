@@ -42,7 +42,7 @@ Status: 200 OK
 
 ***
 
-## Reactions (Currently only in the v7 Beta. Hopefully will change soon)
+## Reactions (Currently only on the v7 beta)
 
 React to a message with either a unicode or GroupMe emoji.
 
