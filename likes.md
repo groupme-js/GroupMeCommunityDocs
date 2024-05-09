@@ -26,11 +26,13 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ## Like
 
-Like a message.
+Like a message. 
 
 **Request**
 
-`POST /messages/:conversation_id/:message_id/like`
+```
+POST /messages/:conversation_id/:message_id/like
+```
 
 **Responses**
 
@@ -40,8 +42,66 @@ Status: 200 OK
 
 ***
 
+## Reactions (Currently only on the v7 beta)
+
+React to a message with either a unicode or GroupMe emoji.
+
+Sending this POST request with no body results in a plain "❤️" reaction (It does NOT use the group's like icon as before in v6).
+
+As of writing this, the only client that renders unicode emoji beyond the 16 options that are displayed in the UI is web.
+
+Currently there is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with your new one.
+
+**Request**
+
+```
+POST /messages/:conversation_id/:message_id/like
+{
+  "like_icon": {
+    "type": "unicode",
+    "code": "❤️"
+  }
+}
+```
+
+or
+
+```
+POST /messages/:conversation_id/:message_id/like
+{
+  "like_icon": {
+    "type": "emoji",
+    "pack_id": 1,
+    "pack_index": 12
+  }
+}
+```
+
+**Parameters**
+
+* *like_icon* (optional)
+	object — can contain reaction objects of type `unicode` (for standard unicode characters/emojis) or `emoji` for GroupMe emoji/powerups. `unicode` type reacions have a `code` parameter that specifies what text should be displayed. `emoji` type reactions have parameters `pack_id` and `pack_index`. See the [emoji documentation](emoji.md) for more information on what these values mean.
+
+**Responses**
+
+```
+Status: 200 OK
+{
+  "reactions": [
+    {
+      "type": "unicode",
+      "pack_id": 0,
+      "pack_index": 0,
+      "code": "❤️"
+    }
+  ]
+}
+```
+
+***
+
 ## Unlike
-Unlike a message.
+Unlike / remove your reactions from a message.
 
 **Request**
 
