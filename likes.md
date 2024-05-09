@@ -80,7 +80,7 @@ POST /messages/:conversation_id/:message_id/like
 **Parameters**
 
 * *like_icon* (optional)
-	object — can contain reaction objects of type "unicode" (for standard unicode characters/emojis) or "emoji" for GroupMe emoji/powerups. "unicode" type reacions have a "code" parameter that specifies what text should be displayed. "emoji" type reactions have parameters "pack_id" and "pack_index". See the [emoji documentation](enoji.md) for more information on what these values mean.
+	object — can contain reaction objects of type `unicode` (for standard unicode characters/emojis) or `emoji` for GroupMe emoji/powerups. `unicode` type reacions have a `code` parameter that specifies what text should be displayed. `emoji` type reactions have parameters `pack_id` and `pack_index`. See the [emoji documentation](emoji.md) for more information on what these values mean.
 
 **Responses**
 
