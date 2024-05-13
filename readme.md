@@ -49,5 +49,3 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 * Image service documentation is really bad right now
 
 * Subgroups documentation is a work in progress
-
-* The new reactions system (which is replacing likes) in the new GroupMe v7.0 is not yet doumented
