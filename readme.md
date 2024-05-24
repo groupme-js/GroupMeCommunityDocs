@@ -10,6 +10,8 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Group management](groups.md) - How to create, join, list, update, etc. groups.
 
+[Subgroup management](subtopics.md) - How to work with subgroups within a parent group.
+
 [Member management](members.md) - How to add, remove, and update members.
 
 [Group Messages](messages.md) - How to list and send messages in groups
@@ -45,3 +47,5 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 * Token management isn't documented yet
 
 * Image service documentation is really bad right now
+
+* Subgroups documentation is a work in progress
