@@ -1,6 +1,6 @@
 # Members
 
-All endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise specified, all endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -24,7 +24,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ***
 
-## Index
+## Index Members
 
 Fetch a group's current or former member list.
 
@@ -196,6 +196,32 @@ Note: The creator of the group cannot be removed or exit.
 **Request**
 
 `POST /groups/:group_id/members/:membership_id/remove`
+
+**Parameters**
+
+* *membership_id* (required)
+
+	string - Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
+	
+**Responses**
+
+```
+Status: 200 OK
+```
+
+***
+
+## Ban Member
+
+Prevent a member from rejoining a group after they leave.
+
+Current members of the group cannot be banned from rejoining as they have not left.
+
+Note: This request is relative to `https://v2.groupme.com`, NOT `https://api.groupme.com/v3`.
+
+**Request**
+
+`POST /groups/:group_id/memberships/:membership_id/destroy`
 
 **Parameters**
 
