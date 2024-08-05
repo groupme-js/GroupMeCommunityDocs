@@ -50,7 +50,7 @@ Status: 200 OK
 	     "name": "Alureon",
 	     "nickname": "Alu",
 	     "image_url": "https://i.groupme.com/1a3c5e7g",
-     	"state": "active",
+      "state": "active",
 	     "roles": ["owner","admin"]
     },
     {
