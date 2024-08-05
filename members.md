@@ -211,7 +211,7 @@ Status: 200 OK
 
 ***
 
-## Ban Member
+## Ban Member (v2)
 
 Prevent a member from rejoining a group after they leave.
 
