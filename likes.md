@@ -46,9 +46,9 @@ Status: 200 OK
 
 React to a message with either a unicode or GroupMe emoji.
 
-As of writing this, web is the only client that renders any and all unicode emoji. The mobile apps are limited to rendering [GroupMe powerups](emoji.md) and the 15 options displayed in the client (❤️ 👍 🤣 🎉 🔥 😮 👀 😭 🥺 🙏 💀 🫶 🤬 💅 🫠). Any other unicode emojis will be accepted by the API but render as empty reactions in the conversation. It has been said that the full fluent emoji set by Microsoft may come in the future, however no hard deadlines or extra confirmation exists.
+GroupMe restricts reactions to [GroupMe powerups](emoji.md) and the 15 unicode options displayed in the client (❤️ 👍 🤣 🎉 🔥 😮 👀 😭 🥺 🙏 💀 🫶 🤬 💅 🫠). Any other unicode emojis will be rejected by the server.
 
-Currently there is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with the new one.
+There is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with the new one.
 
 **Request**
 
