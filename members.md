@@ -28,6 +28,8 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 Fetch a group's current or former member list.
 
+This call is limited to admins and owners in the group. Any other caller will receive a `401 Unauthorized` response.
+
 **Request**
 `GET /groups/:group_id/members`
 
