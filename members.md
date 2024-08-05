@@ -24,6 +24,46 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ***
 
+## Index
+
+Fetch a group's current or former member list.
+
+**Request**
+`GET /groups/:group_id/members`
+
+**Parameters**
+
+* *filter* (required)
+
+	string - to fetch either `active` (current memberships) or `inactive` (former memberships).
+	
+**Responses**
+```
+Status: 200 OK
+{
+  "memberships":[
+     {
+        "id": "24681012",
+	"user_id": "11223344",
+	"name": "Alureon",
+	"nickname": "Alu",
+	"image_url": "https://i.groupme.com/1a3c5e7g",
+	"state": "active",
+	"roles": ["owner","admin"]
+      },
+      {
+      	"id": "1357911131",
+      	"user_id": "55667788",
+      	"name": "Franco H",
+      	"nickname": "Fran",
+      	"image_url": "https://i.groupme.com/2b4d6f8h",
+      	"state": "active",
+      	"roles": ["user"]
+      }
+  ]
+}
+```
+
 ## Add Members
 Add members to a group.
 
