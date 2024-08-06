@@ -46,12 +46,12 @@ Status: 200 OK
   "memberships":[
     {
       "id": "24681012",
-	     "user_id": "11223344",
-	     "name": "Alureon",
-	     "nickname": "Alu",
-	     "image_url": "https://i.groupme.com/1a3c5e7g",
+      "user_id": "11223344",
+      "name": "Alureon",
+      "nickname": "Alu",
+      "image_url": "https://i.groupme.com/1a3c5e7g",
       "state": "active",
-	     "roles": ["owner","admin"]
+      "roles": ["owner","admin"]
     },
     {
       "id": "1357911131",
