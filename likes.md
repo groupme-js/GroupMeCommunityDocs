@@ -42,15 +42,13 @@ Status: 200 OK
 
 ***
 
-## Reactions (Currently only on the v7 beta)
+## Reactions (Replacing likes in the new v7 update)
 
 React to a message with either a unicode or GroupMe emoji.
 
-Sending this POST request with no body results in a plain "❤️" reaction (It does NOT use the group's like icon as before in v6).
+GroupMe restricts reactions to [GroupMe powerups](emoji.md) and the 15 unicode options displayed in the client (❤️ 👍 🤣 🎉 🔥 😮 👀 😭 🥺 🙏 💀 🫶 🤬 💅 🫠). Any other unicode emojis will be rejected by the server.
 
-As of writing this, the only client that renders unicode emoji beyond the 16 options that are displayed in the UI is web.
-
-Currently there is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with your new one.
+There is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with the new one.
 
 **Request**
 
