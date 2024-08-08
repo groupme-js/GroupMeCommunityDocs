@@ -31,7 +31,7 @@ Both send information about specific channels that a client wouldn't need to sen
 ## Subscribing to the `/user/:user_id` channel
 
 By far the simplest option for establishing a websocket connection is to use a Faye library to handle the boilerplate and manage connections for you.
-Here's how you'd do it in node.js using both the `faye`, and `axios` npm packages:
+Here's how you'd do it in Node.js using both the `faye` and `axios` npm packages:
 
 ```
 npm i faye axios
