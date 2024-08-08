@@ -171,7 +171,7 @@ const main = async (GroupmeAPItoken) => {
     dms = dms.data.response;
     for (let i = 0; i < dms.length; i++) {
         // subscribe to '/direct_message/:dm_id' for this DM channel.
-        // note that for some wierd reason, the REST API puts a '+' between the two 
+        // note that for some weird reason, the REST API puts a '+' between the two 
         // user IDs to denote the conversation ID but websockets use an underscore instead.
         client.subscribe(`/direct_message/${dms[i].conversation_id.replace("+", "_")}`, (msg) => { 
             ws.emit('message', msg);
