@@ -12,7 +12,7 @@ Here is a list of some known WebSocket types and what they correspond to:
 * `line.create` -> New Group Message. This includes anything that makes a message such as calendar events,
   joining/leaving events, polls, etc.
 * `like.create` -> Someone likes a message that is yours in a group
-* `favorite` -> Someone likes a message that is not yours in a group (can not be caught in the `/user/:user_id`, only in group or direct_message channels)
+* `favorite` -> Someone likes a message that is not yours in a group (can not be caught in the `/user/:user_id` channel, only in group or direct_message channels)
 * `direct_message.create` -> New Direct Message
 * `message.deleted` -> A message was deleted
 ***
