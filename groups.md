@@ -404,6 +404,24 @@ POST /groups/:id/update
   "share": true,
   "image_url": "https://i.groupme.com/123456789",
   "office_mode": true
+  "theme_name": "cogs"
+  "requires_approval": true,
+  "show_join_question": true,
+  "join_question": {
+    "text": "You're not a bot, are you?"
+    "type": "join_reason/questions/text"
+  },
+  "like_icon": {
+    "pack_id": 1,
+    "pack_index": 65,
+    "type": "emoji"
+  },
+  "visibility": "searchable",
+  "group_type": "closed",
+  "message_deletion_mode": [
+    "admin",
+    "sender"
+  ]
 }
 ```
 
@@ -424,11 +442,55 @@ POST /groups/:id/update
 * *office_mode*
 
 	boolean - If Office Mode is enabled, notifications won't buzz your phone.
-	
+
+* *theme_name*
+
+  	string - The name of a theme to apply to the group, set to null to return to the default theme.
+
 * *share*
 
 	boolean - If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
-	
+
+* *requires_approval*
+
+	boolean - If true, members must request to join the group before they can be admitted.
+
+* *show_join_question*
+
+	boolean - If true, members must answer a question prompt in oder to request to join a group. The question defaults to "Why do you want to join this group".
+                  `"requires_approval"` must be true for this value to take effect.
+* *join_question*
+
+  	object - Has two properties, `"type"` must always be set to `"join_reason/questions/text"` , and `"text"` is the custom join question. 
+                 Both `"requires_approval"` and `"show_join_question"` must be true for this value to take effect.
+
+* *like_icon*
+
+  	object - The GroupMe powerup emoji to set as the group's like icon.
+                 See the [emoji documentation](emoji.md) for more information on what these values mean.
+  
+* *visibility*
+
+  	string - Can be set to either `"searchable"` or `"hidden"`.
+
+  	`"searchable"` means anyone can find your group on the discover page in the app,
+
+  	`"hidden"` means it can only be found via its share URL.
+  
+* *group_type*
+
+  	string - Can be set to `"closed"`, `"private"`, or `"announcement"`.
+  
+  	`"closed"` means only admins can change settings for the group and manage the member list, anyone can send messages.
+  
+  	`"private"` means anyone in the group can manage settings and the roster, anyone can send messages.
+  
+  	`"announcement"` means only admins will be able to manage settings and the roster, only admins are allowed to send messages.
+  
+* *message_deletion_mode*
+
+  	array - Contains one or both `"admin"` and `"sender"` values. These are pretty self explanitory. If left empty, nobody will be able to delete messages.
+  
 **Responses**
 ```
 Status: 200 OK
