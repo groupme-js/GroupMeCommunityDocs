@@ -277,17 +277,17 @@ Interestingly, because of this system, you don't have to actually type someone's
 
 ***
 
-## Split
+## Copilot
 
-This seems to be entirely deprecated, but the official docs still mention it, so I'll bring it up here too.
+This attachment type is only used by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
 
-Split seems to be some sort of payment processer, where you can easily send 
-
-**Object structure**
+**Object Structure**
 ```
 {
-	"type": "split",
-	"token": "SPLIT_TOKEN"
+  "type": "copilot"
+  "message_id": "u6Us5bXBSQERTNfc6vWGB",
+  "part_id": "0",
+  "prompt_sender": "93645911",
 }
 ```
 
@@ -295,8 +295,18 @@ Split seems to be some sort of payment processer, where you can easily send
 
 * *type*
 
-	string - must be "split" for a Split attachment
+	string - must be "copilot" for a Copilot attachment
 	
-* *token*
+* *message_id*
 
-	string - the token associated with your Split transaction. Must be generated through Split's service, if it still exists.
+	string - Copilot specific internal message ID, not the same as the GroupMe message ID
+
+* *part_id*
+  
+  	string - the index of the message in the Coplilot response. Copilot can respond to a single query using multiple messages, this allows you to order them if there are more than one.
+
+* *prompt_sender*
+
+	string - the GroupMe user ID of the user who initiated the Copilot interaction
+
+***
