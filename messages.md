@@ -1,6 +1,6 @@
 # Group Messages
 
-All endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Most endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token. Some newer endpoints may be relative to https://api.groupme.com/v4.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -101,10 +101,6 @@ Status: 200 OK
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
@@ -161,10 +157,6 @@ POST /groups/:group_id/messages
         "lat": "40.738206",
         "lng": "-73.993285",
         "name": "GroupMe HQ"
-      },
-      {
-        "type": "split",
-        "token": "SPLIT_TOKEN"
       },
       {
         "type": "emoji",
@@ -238,10 +230,6 @@ Status: 201 Created
         "name": "GroupMe HQ"
       },
       {
-        "type": "split",
-        "token": "SPLIT_TOKEN"
-      },
-      {
         "type": "emoji",
         "placeholder": "",
         "charmap": [
@@ -261,6 +249,89 @@ Status: 201 Created
 ```
 
 ***
+
+## Edit Message
+
+Edit a message you've already sent
+
+If you want to attach an image, you must first process it through GroupMe's image service (More on that in the [attachments documentation](attachments.md))
+
+Attachments of type emoji rely on data from emoji PowerUps.
+
+NOTE: This request is relative to `https://api.groupme.com/v4`, instead of the standard v3 base URL.
+
+**Request**
+```
+PUT /v4/groups/:group_id/messages/:message_id
+{
+  "text": "Hello World!",
+  "attachments": [
+    {
+      "type": "image",
+      "url": "https://i.groupme.com/123456789"
+    },
+    {
+      "type": "location",
+      "lat": "40.738206",
+      "lng": "-73.993285",
+      "name": "GroupMe HQ"
+    },
+  ]
+}
+```
+
+**Parameters**
+* *text* (required)
+
+	string - This can be omitted if at least one attachment is present. The maximum length is 1,000 characters.
+	
+* *attachments*
+
+	array - A polymorphic list of attachments (locations, images, replies, etc). You may have more than one of any type of attachment, provided clients can display it.
+	
+	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
+
+**Responses**
+
+```
+Status: 200 OK
+{
+  "message": {
+    "id": "1234567890",
+    "source_guid": "GUID",
+    "created_at": 1302623328,
+    "updated_at": 1747065854,
+    "user_id": "1234567890",
+    "group_id": "1234567890",
+    "name": "John",
+    "avatar_url": "https://i.groupme.com/123456789",
+    "text": "Hello World!",
+    "system": true,
+    "pinned_by": "",
+    "pinned_at": null,
+    "favorited_by": [
+      "101",
+      "66",
+      "1234567890"
+    ],
+    "attachments": [
+      {
+        "type": "image",
+        "url": "https://i.groupme.com/123456789"
+      },
+      {
+        "type": "location",
+        "lat": "40.738206",
+        "lng": "-73.993285",
+        "name": "GroupMe HQ"
+      },
+    ]
+  }
+}
+```
+
+***
+
 
 ## Delete a message
 
