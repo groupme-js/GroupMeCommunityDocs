@@ -76,7 +76,7 @@ POST /bots
 		
 	* *avatar_url*
 	
-		string - a URL to an image which will be the bot's avatar. Does not need to be an i.groupme.com link.
+		string - a URL to an image which will be the bot's avatar. This image MUST be proccessed by GroupMe's [Image Service](images.md) before it can be sent.
 		
 	* *callback_url*
 	
