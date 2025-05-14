@@ -213,6 +213,104 @@ Status: 200 OK
 
 ***
 
+## Index Pending Join Requests
+
+Some groups have "Request to join" enabled, and thus require their applications approved by an admin. 
+
+This request can be sent by any member of the group, not just admins. However, in order to approve or deny requests, you must have permission to manage the group.
+
+**Request**
+
+`GET /groups/:group_id/pending_memberships`
+
+**Response**
+
+```
+Status: 200 OK
+[
+  {
+    "id": "1075936468",
+    "user_id": "43303468",
+    "nickname": "bob",
+    "image_url": "https://i.groupme.com/2320x3088.jpeg.df62e30722404d21acee182c1a3eb633",
+    "reason": {
+      "type": "join_reason/membership_join_reason",
+      "question": {
+        "type": "join_reason/questions/text",
+        "text": "Why do you want to join this group?"
+      },
+      "answer": {
+        "type": "join_reason/answers/text",
+        "response": "Because it looks awesome!"
+      },
+      "method": "discoverable"
+    },
+    "timestamp": 1747219206,
+    "state": "requested_pending"
+  },
+  {
+    "id": "1075937258",
+    "user_id": "43303469",
+    "nickname": "allice",
+    "image_url": "https://i.groupme.com/2320x3088.jpeg.df62e307b2402321acee182c1a3eb633",
+    "reason": {
+      "type": "join_reason/membership_join_reason",
+      "question": {
+        "type": "join_reason/questions/text",
+        "text": "Why do you want to join this group?"
+      },
+      "answer": {
+        "type": "join_reason/answers/text",
+        "response": "Because I love GroupMe!"
+      },
+      "method": "discoverable"
+    },
+    "timestamp": 1756219206,
+    "state": "requested_pending"
+  }
+]
+```
+
+***
+
+## Accept/Deny a Pending Join Request
+
+This request is exclusive to members with permission to manage the group, non Admin/Owners will receive a 401: Unauthorized response.
+
+**Request**
+```
+POST /groups/:group_id/members/:membership_id/approval
+{
+  "approval": true
+}
+```
+**Parameters**
+
+* *membership_id* (required)
+
+	string - The *group specific* ID of the membership you wish to handle. Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
+
+* *approval* (required)
+
+	boolean - `true` to approve, `false` to deny.
+
+**Response**
+
+Note: if you deny the membership, `state` will be "denied" instead of "active"
+```
+Status: 200 OK
+{
+  "membership_id": 1075929653,
+  "state": "active"
+}
+```
+```
+Status: 401 Unauthorized
+You are neither the Owner nor an Admin in this group
+```
+
+***
+
 ## Ban Member (v2)
 
 Prevent a member from rejoining a group after they leave.

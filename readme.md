@@ -38,6 +38,8 @@ Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com
 
 [Pins](pins.md) - How to use GroupMe's new Pin functionality
 
+[Image Service](images.md) - How to upload Images to GroupMe's CDN
+
 ***
 
 ### Still needs documenting:

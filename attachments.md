@@ -27,7 +27,7 @@ All parameters are required unless otherwise specified.
 	string - the URL of the image to send. This does need to be an i.groupme.com URL.
 ### Uploading local images
 
-If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](https://dev.groupme.com/docs/image_service). This is done with a simple request:
+If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](images.md). This is done with a simple request:
 
 ```
 POST https://image.groupme.com/pictures
@@ -56,7 +56,7 @@ Status: 200 OK
 
 ### Uploading remote images
 
-If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](https://dev.groupme.com/docs/image_service). This will behave similar to uploading local images, but with a new url parameter:
+If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](images.md). This will behave similar to uploading local images, but with a new url parameter:
 
 ```
 POST https://image.groupme.com/pictures?url=<image_url>
