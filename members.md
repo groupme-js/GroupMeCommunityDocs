@@ -213,6 +213,66 @@ Status: 200 OK
 
 ***
 
+## Index Pending Memberships
+
+Some groups have "Request to join" enabled, and thus require their applications approved by an admin. 
+
+This request can be sent by any member of the group, not just admins. However, in order to approve or deny requests, you must have permission to manage the group.
+
+**Request**
+
+`GET /groups/:group_id/pending_memberships`
+
+**Response**
+
+```
+Status: 200 OK
+[
+  {
+    "id": "1075936468",
+    "user_id": "43303468",
+    "nickname": "bob",
+    "image_url": "https://i.groupme.com/2320x3088.jpeg.df62e30722404d21acee182c1a3eb633",
+    "reason": {
+      "type": "join_reason/membership_join_reason",
+      "question": {
+        "type": "join_reason/questions/text",
+        "text": "Why do you want to join this group?"
+      },
+      "answer": {
+        "type": "join_reason/answers/text",
+        "response": "Because it looks awesome!"
+      },
+      "method": "discoverable"
+    },
+    "timestamp": 1747219206,
+    "state": "requested_pending"
+  },
+  {
+    "id": "1075937258",
+    "user_id": "43303469",
+    "nickname": "allice",
+    "image_url": "https://i.groupme.com/2320x3088.jpeg.df62e307b2402321acee182c1a3eb633",
+    "reason": {
+      "type": "join_reason/membership_join_reason",
+      "question": {
+        "type": "join_reason/questions/text",
+        "text": "Why do you want to join this group?"
+      },
+      "answer": {
+        "type": "join_reason/answers/text",
+        "response": "Because I love GroupMe!"
+      },
+      "method": "discoverable"
+    },
+    "timestamp": 1756219206,
+    "state": "requested_pending"
+  }
+]
+```
+
+***
+
 ## Ban Member (v2)
 
 Prevent a member from rejoining a group after they leave.
