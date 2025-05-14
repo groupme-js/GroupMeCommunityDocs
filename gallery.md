@@ -38,7 +38,7 @@ The response is paginated (sort of), with a default of 100 images per page. Spec
 
 * *acceptFiles*
 
-  boolean - A flag to tell the image service your client is capable of receiving non-image files. Setting this value to `0` or omiting it entirely will NOT omit messages with file attachments in the response; these messages will still be included, but the text property will be overwritten with `Please upgrade to download this file.` The file attachment will still be fully intact, however. In practice this means that if you care about the text in the message with an attachment, you should set `acceptFiles=1`.
+  boolean - A flag to tell the image service your client is capable of receiving non-image files. Setting this value to `0` or omitting it entirely will NOT omit messages with file attachments in the response; these messages will still be included, but the text property will be overwritten with `Please upgrade to download this file.` The file attachment will still be fully intact, however. In practice this means that if you care about the text in the message with an attachment, you should set `acceptFiles=1`.
 	
 * *limit*
 
