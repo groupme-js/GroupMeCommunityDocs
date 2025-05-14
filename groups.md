@@ -314,7 +314,7 @@ POST /groups
 	
 * *image_url*
 
-	string - GroupMe Image Service URL
+	string - GroupMe [Image Service](images.md) URL
 	
 * *share*
 
@@ -437,7 +437,7 @@ POST /groups/:id/update
 	
 * *image_url*
 
-	string - A URL to use as the avatar for the group
+	string - A URL to use as the avatar for the group. in order to be used, the Image must first be uploaded to GroupMe's [Image Service](images.md).
 	
 * *office_mode*
 
