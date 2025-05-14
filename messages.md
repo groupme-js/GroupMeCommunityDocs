@@ -128,7 +128,7 @@ Send a message to a group
 
 If you want to attach an image, you must first process it through GroupMe's image service (More on that in the [attachments documentation](attachments.md))
 
-Attachments of type emoji rely on data from emoji PowerUps.
+Attachments of type emoji rely on data from [GroupMe Emoji powerups](emoji.md).
 
 Clients use a placeholder character in the message text and specify a replacement charmap to substitute emoji characters
 
@@ -206,7 +206,7 @@ Status: 201 Created
     "name": "John",
     "avatar_url": "https://i.groupme.com/123456789",
     "text": "Hello world ",
-    "system": true,
+    "system": false,
     "pinned_by": "",
     "pinned_at": null,
     "favorited_by": [
@@ -256,7 +256,7 @@ Edit a message you've already sent
 
 If you want to attach an image, you must first process it through GroupMe's image service (More on that in the [attachments documentation](attachments.md))
 
-Attachments of type emoji rely on data from emoji PowerUps.
+Attachments of type emoji rely on data from [GroupMe Emoji powerups](emoji.md).
 
 NOTE: This request is relative to `https://api.groupme.com/v4`, instead of the standard v3 base URL.
 
@@ -306,7 +306,7 @@ Status: 200 OK
     "name": "John",
     "avatar_url": "https://i.groupme.com/123456789",
     "text": "Hello World!",
-    "system": true,
+    "system": false,
     "pinned_by": "",
     "pinned_at": null,
     "favorited_by": [
