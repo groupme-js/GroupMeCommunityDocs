@@ -4,6 +4,8 @@ GroupMe has a thriving developer community which has created a variety of applic
 
 Most of the information is pulled from [dev.groupme.com](https://dev.groupme.com/), which is the official GroupMe developers site. However, much of its information is outdated or incomplete, so please help keep this repo up-to-date.
 
+If you have any questions or would like to get in touch, please join the [GroupMe API Development Group](https://groupme.com/join_group/27317261/ibNNhx) or open an issue.
+
 **This documentation is not associated with GroupMe or Microsoft**
 
 ### Contents:
