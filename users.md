@@ -29,7 +29,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 Returns some basic profile information, like the name, bio, and groups you share with another user.
 
 > [!important]
-> This request is relative to `https://v2.groupme.com`, not `https://api.groupme.com/v3/`.
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
 **Request**
 ```
@@ -240,7 +240,7 @@ Each response is ordered by creation time. To get the next page of results:
 Repeat this process until the response contains an empty list, which means you've reached the end of the contact list.
 
 > [!important]
-> This request is relative to `https://api.groupme.com/v4`, not `https://api.groupme.com/v3/`.
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
 **Request**
 ```
@@ -302,7 +302,7 @@ Status: 200 OK
 Delete a relationship from your contact book
 
 > [!important]
-> This request is relative to `https://api.groupme.com/v4`, not `https://api.groupme.com/v3/`.
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
 **Request**
 ```
