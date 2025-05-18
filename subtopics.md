@@ -1,24 +1,22 @@
 # Subtopics
 
-All endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
-URLs which include a variable, such as `GET /groups/:parent_id/subgroups/:group_id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567/subgroups/7654321?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, `7654321` is replaced with the subgroup's ID, and `aSDFghJkl` is replaced with the user's token.
-
-In order to access the subtopics URLs, you need to specify the `parent_id` of the subtopic, which is just the `group_id` for the group the subtopic is under. 
+URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
 ```
 {
-	"response": {
-		"id": "12345",
-		"name": "Family"
-		...
-	},
-	"meta": {
-		"code": 200,
-		"errors": []
-	}
+  "response": {
+    "id": "12345",
+    "name": "Family"
+    ...
+  },
+  "meta": {
+    "code": 200,
+    "errors": []
+  }
 }
 ```
 
