@@ -1,8 +1,6 @@
 # Pins
 
-GroupMe has recently added the ability to pin messages! While this functionality is still very new, and we're likely to learn more about it in the future, here's a brief overview of the endpoints we know about. 
-
-As usual, all endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -10,15 +8,15 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 ```
 {
-	"response": {
-		"id": "12345",
-		"name": "Family"
-		...
-	},
-	"meta": {
-		"code": 200,
-		"errors": []
-	}
+  "response": {
+    "id": "12345",
+    "name": "Family"
+    ...
+  },
+  "meta": {
+    "code": 200,
+    "errors": []
+  }
 }
 ```
 
