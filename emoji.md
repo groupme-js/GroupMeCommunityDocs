@@ -12,18 +12,9 @@ Here's the JSON response for a sample message containing emoji:
   "attachments": [
     {
       "charmap": [
-        [
-          3,
-          13
-        ],
-        [
-          3,
-          12
-        ],
-        [
-          3,
-          11
-        ]
+        [3, 13],
+        [3, 12],
+        [3, 11]
       ],
       "placeholder": "�",
       "type": "emoji"
@@ -55,18 +46,9 @@ The JSON format for the emoji attachment looks like this:
 ```json
 {
   "charmap": [
-    [
-      3,
-      13
-    ],
-    [
-      3,
-      12
-    ],
-    [
-      3,
-      11
-    ]
+    [3, 13],
+    [3, 12],
+    [3, 11]
   ],
   "placeholder": "�",
   "type": "emoji"
