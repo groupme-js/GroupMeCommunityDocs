@@ -1,6 +1,6 @@
 # Group Messages
 
-Most endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token. Some newer endpoints may be relative to https://api.groupme.com/v4.
+Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -8,15 +8,15 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 ```
 {
-	"response": {
-		"id": "12345",
-		"name": "Family"
-		...
-	},
-	"meta": {
-		"code": 200,
-		"errors": []
-	}
+  "response": {
+    "id": "12345",
+    "name": "Family"
+    ...
+  },
+  "meta": {
+    "code": 200,
+    "errors": []
+  }
 }
 ```
 
@@ -263,11 +263,12 @@ If you want to attach an image, you must first process it through GroupMe's imag
 
 Attachments of type emoji rely on data from [GroupMe Emoji powerups](emoji.md).
 
-NOTE: This request is relative to `https://api.groupme.com/v4`, instead of the standard v3 base URL.
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
 **Request**
 ```
-PUT /v4/groups/:group_id/messages/:message_id
+PUT https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 {
   "text": "Hello World!",
   "attachments": [
