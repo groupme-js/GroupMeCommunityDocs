@@ -14,7 +14,7 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 [Subgroup management](subtopics.md) - How to work with subgroups within a parent group.
 
-[Member management](members.md) - How to add, remove, and update members.
+[Member management](members.md) - How to add, remove, and update members in a group.
 
 [Group Messages](messages.md) - How to list and send messages in groups
 
@@ -23,6 +23,10 @@ If you have any questions or would like to get in touch, please join the [GroupM
 [Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups
 
 [Calendar Events](calendar.md) - How to list, create, and edit calendar events in a group.
+
+[Directory Management](directories.md) - How to list, search, and join public and campus group directories.
+
+[Users/Contact Management](users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups 
 
 [Bots](bots.md) - How to create, index, and use bots.
 
