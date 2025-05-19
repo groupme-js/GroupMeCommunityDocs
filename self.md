@@ -105,6 +105,9 @@ The GroupMe API technically allows for two different calls that update your prof
 
 Note: all of the parameters in this request are optional, however I'm including them all here as an example for verbosity.
 
+> [!important]
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
+
 **Request**
 ```
 POST https://v2.groupme.com/users/:your_user_id (NOTE: THE BASE URL IS NOT /v3)
