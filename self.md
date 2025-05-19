@@ -248,7 +248,7 @@ PUT /directories/user/majors
 
 * *codes*
 
-	array — an array of Major indexes (as strings), these are numbers that represent the different options for Majors to choose from. The complete list of options alongside their indexes can be found [Here](https://web.groupme.com/assets/majors/majors.en-US.json).
+	array — an array of Major indexes (as strings), these are numbers that represent the different options for Majors to choose from. The complete list of options alongside their indexes can be found at https://web.groupme.com/assets/majors/majors.en-US.json.
 
 **Response**
 ```
@@ -305,6 +305,37 @@ Status: 200 OK
 
 ***
 
+## Toggle Profile Sharing
+
+Enables/disables your account's `share_url` and `share_qr_code_url` properties.
+
+Turning this off and back on again generates a new URL every time and invalidates past ones that you may have shared.
+
+**Request**
+```
+POST /users/features/share
+{
+  "status": "enable"
+}
+```
+
+**Parameters**
+
+* *status*
+
+    String - can be set to `enable` or `disable`, enable generates a share URL for your profile, disable invalidates it.
+
+**Response**
+```
+Status: 200 OK
+{
+  "share_url": "https://groupme.com/contact/74938777/OtzZPXiX",
+  "share_qr_code_url": "https://image.groupme.com/qr/contact/74938777/OtzZPXiX/preview"
+}
+```
+
+***
+
 ## Enable SMS mode
 
 Enables SMS mode for N hours, where N is at most 48. After N hours have elapsed, user will receive push notfications.
@@ -325,7 +356,7 @@ POST /users/sms_mode
 	
 * *registration_id*
 
-	string — The push notification ID/token that should be suppressed during SMS mode. If this is omitted, both SMS and push notifications will be delivered to the device.
+	string - The push notification ID/token that should be suppressed during SMS mode. If this is omitted, both SMS and push notifications will be delivered to the device.
 
 **Responses**
 ```
