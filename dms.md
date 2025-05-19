@@ -324,3 +324,45 @@ Status: 204 Deleted
 ```
 
 ***
+
+## Send a Read Receipt
+
+You can only mark new messages as read, attempting to read a message sent before one you have already read will update the timestamp on the latest read message.
+
+> [!important]
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
+
+**Request**
+```
+POST https://v2.groupme.com/read_receipts
+{
+  "read_receipt": {
+    "message_id": "174769395496126372",
+    "chat_id": "74938777+93645911"
+  },
+}
+```
+
+**Parameters**
+
+* *message_id*
+
+    String - The ID of the message  you'd like to mark read.
+
+* *chat_id*
+
+    String - The ID of the direct message channel the message can be found in.
+
+**Response**
+```
+Status: 200 OK
+{
+  read_receipt: {
+    id: '174769438312353599',
+    chat_id: '74938777+93645911',
+    message_id: '174769438312353599',
+    user_id: '93645911',
+    read_at: 1747694449
+  }
+}
+```
