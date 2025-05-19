@@ -323,7 +323,7 @@ POST /users/features/share
 
 * *status*
 
-    String - can be set to `enable` or `disable`, enable generates a share URL for your profile, disable invalidates it.
+    String - Can be set to `enable` or `disable`, enable generates a share URL for your profile, disable invalidates it.
 
 **Response**
 ```
