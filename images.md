@@ -31,21 +31,50 @@ Images are automatically thumbnailed at the following sizes:
 Nearly every instance of an image URL within the API **MUST** be processed by the Image CDN before it can be used. 
 
 You can upload a variety of different kinds of image formats (including GIFs) to the image CDN in order for them to be processed, stored, and thumbnailed.
+### Uploading local images
 
-**Request**
+If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](images.md). This is done with a simple request:
+
 ```
-Post https://image.groupme.com/pictures
-". . . binary image data . . ."
+POST https://image.groupme.com/pictures
 ```
 
-**Parameters**
+Importantly, this request MUST be done with the following headers:
 
-* *access_token* (required)
+* **Content-Type**: "image/jpeg" (For some reason it doesn't work with "image/png" as far as I can tell, but you can still send .png files under "image/jpeg")
+* **Content-Length**: The size of your image in bytes
+* **X-Access-Token**: Your user's token
 
-    string - Your API Access Token
+Then, send the binary data of your image file. 
+
+Issues with this feature are often caused by problems with the user token.
 
 **Response**
 ```
+Status: 200 OK
+{
+  "payload": {
+    "url": "https://i.groupme.com/123456789",
+    "picture_url": "https://i.groupme.com/123456789"
+  }
+}
+```
+
+### Uploading remote images
+
+If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](images.md). This will behave similar to uploading local images, but with a new url parameter:
+
+```
+POST https://image.groupme.com/pictures?url=<image_url>
+```
+
+As far as I can tell, you only need to provide the **X-Access-Token** user token as a header.
+
+**Response**
+
+Your response will be of the same format as above:
+```
+Status: 200 OK
 {
   "payload": {
     "url": "https://i.groupme.com/123456789",
