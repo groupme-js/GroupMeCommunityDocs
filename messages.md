@@ -127,6 +127,49 @@ Status: 200 OK
 
 ***
 
+## Show a Specific Message
+
+Fetches an individual message object by its ID
+
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+
+**Request**
+```
+GET https://api.groupme.com/v4/groups/:group_id/messages/:message_id
+```
+
+**Parameters**
+
+* *message_id*
+
+    string - The ID of the message you'd like to fetch
+
+**Response**
+```
+Status: 200 OK
+{
+  "message": {
+    "attachments": [],
+    "avatar_url": "https://i.groupme.com/572x525.png.e40a56a9f4c141868c56c2fc52bb8b4a",
+    "created_at": 1743898778,
+    "favorited_by": [],
+    "group_id": "28330125",
+    "id": "1743898778900707",
+    "name": "Bob",
+    "sender_id": "3274635",
+    "sender_type": "user",
+    "source_guid": "android-cbe3d2b5-d245-4b89-8555-838852949490",
+    "system": false,
+    "text": "hi there!",
+    "user_id": "3274635",
+    "platform": "gm",
+    "pinned_at": null,
+    "pinned_by": ""
+  }
+}
+```
+
 ## Send Message
 
 Send a message to a group
