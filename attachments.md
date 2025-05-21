@@ -24,58 +24,7 @@ All parameters are required unless otherwise specified.
 
 * *url*
 
-	string - the URL of the image to send. This does need to be an i.groupme.com URL.
-### Uploading local images
-
-If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](images.md). This is done with a simple request:
-
-```
-POST https://image.groupme.com/pictures
-```
-
-Importantly, this request MUST be done with the following headers:
-
-* **Content-Type**: "image/jpeg" (For some reason it doesn't work with "image/png" as far as I can tell, but you can still send .png files under "image/jpeg")
-* **Content-Length**: The size of your image in bytes
-* **X-Access-Token**: Your user's token
-
-Then, send the binary data of your image file. 
-
-Issues with this feature are often caused by problems with the user token.
-
-**Response**
-```
-Status: 200 OK
-{
-  "payload": {
-    "url": "https://i.groupme.com/123456789",
-    "picture_url": "https://i.groupme.com/123456789"
-  }
-}
-```
-
-### Uploading remote images
-
-If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](images.md). This will behave similar to uploading local images, but with a new url parameter:
-
-```
-POST https://image.groupme.com/pictures?url=<image_url>
-```
-
-As far as I can tell, you only need to provide the **X-Access-Token** user token as a header.
-
-**Response**
-
-Your response will be of the same format as above:
-```
-Status: 200 OK
-{
-  "payload": {
-    "url": "https://i.groupme.com/123456789",
-    "picture_url": "https://i.groupme.com/123456789"
-  }
-}
-```
+	string - the URL of the image to send. This image must first be processed by GroupMe's [Image Service](images.md)
 
 ***
 
@@ -103,11 +52,7 @@ Status: 200 OK
 
 	string - URL to video file thumbnail, again it does need to `v.groupme.com` link. Note that thumbnail images produced by the video service are not `i.groupme.com` links.
 	
-	
-
-
 ***
-
 
 ## File
 
@@ -128,11 +73,7 @@ Status: 200 OK
  
 	 file_id - valid file id from the [file service](files.md)
 	 
-
-
 ***
-
-
 
 ## Location
 
@@ -277,9 +218,35 @@ Interestingly, because of this system, you don't have to actually type someone's
 
 ***
 
+## Poll
+
+This is a read-only attachment type, as it is not sent in one of your messages. Rather, when you create a poll, a message with this attachment is sent for you. 
+
+Read more about polls [here](polls.md)
+
+**Object Structure**
+```
+{
+  "type": "poll",
+  "poll_id": "1747858596203713"
+}
+```
+
+**Parameters**
+
+* *type*
+
+	string - must be "poll" for a poll attachment
+
+* *pool_id*
+
+  	string - the ID of the poll attached to the message
+
+***
+
 ## Copilot
 
-This attachment type is only used by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
+This attachment type is read-only and used exclusively by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
 
 **Object Structure**
 ```
