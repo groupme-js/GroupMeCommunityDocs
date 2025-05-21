@@ -45,48 +45,94 @@ List all the upcoming events for the group
 **Responses**
 
 ```
-Status: 200 Success
+Status: 200 OK
 {
-	"events": [
-		{
-			"name": "Test",
-			"start_at": "2021-07-13T00:00:00-05:00",
-			"end_at": "2021-07-15T00:00:00-05:00",
-			"is_all_day": false,
-			"timezone": "America/Chicago",
-			"reminders": [
-				100,
-				2
-			],
-			"conversation_id": "12321",
-			"event_id": "1231231231212123123",
-			"creator_id": "23112312",
-			"going": [
-				"432"
-			],
-			"not_going": [],
-			"created_at": "2021-07-12T02:52:50Z",
-			"updated_at": "2021-07-12T02:52:50Z"
-		},
-		{
-			"name": "Test 2",
-			"start_at": "2021-07-14T20:45:00-05:00",
-			"end_at": "2021-07-15T21:00:00-05:00",
-			"is_all_day": false,
-			"timezone": "America/Chicago",
-			"reminders": [],
-			"conversation_id": "1231231322312",
-			"event_id": "1231231231322",
-			"creator_id": "1112312",
-			"going": [
-				"5463",
-				"112344"
-			],
-			"not_going": [],
-			"created_at": "2021-07-12T01:41:51Z",
-			"updated_at": "2021-07-12T02:35:16Z"
-		}
-	]
+  "events": [
+    {
+      "name": "Test",
+      "start_at": "2021-07-13T00:00:00-05:00",
+      "end_at": "2021-07-15T00:00:00-05:00",
+      "is_all_day": false,
+      "timezone": "America/Chicago",
+      "reminders": [100, 2],
+      "conversation_id": "12321",
+      "event_id": "1231231231212123123",
+      "creator_id": "23112312",
+      "going": [
+        "432"
+      ],
+      "not_going": [],
+      "created_at": "2021-07-12T02:52:50Z",
+      "updated_at": "2021-07-12T02:52:50Z"
+    },
+    {
+      "name": "Test 2",
+      "start_at": "2021-07-14T20:45:00-05:00",
+      "end_at": "2021-07-15T21:00:00-05:00",
+      "is_all_day": false,
+      "timezone": "America/Chicago",
+      "reminders": [],
+      "conversation_id": "1231231322312",
+      "event_id": "1231231231322",
+      "creator_id": "1112312",
+      "going": [
+        "5463",
+        "112344"
+      ],
+      "not_going": [],
+      "created_at": "2021-07-12T01:41:51Z",
+      "updated_at": "2021-07-12T02:35:16Z"
+    }
+  ]
+}
+```
+
+***
+
+## Show a Specific Event
+
+List details on a specific event given its ID
+
+**Request**
+```
+GET /conversations/:group_id/events/show?event_id=<event_id>
+```
+
+**Parameters**
+
+* *event_id*
+
+    String - The ID of the event you want to fetch
+
+**Response**
+```
+Status: 200 OK
+{
+  "event": {
+    "name": "Event Name",
+    "description": "Event Description",
+    "image_url": "https://i.groupme.com/1024x1024.png.8560aca484bf41f4863e2abec6016e07",
+    "location": {
+      "lat": 38.88949419381217,
+      "lng": -77.0352490246296,
+      "name": "Washington Monument",
+      "address": "2 15th St NW (btwn Constitution Ave NW & Independence Ave SW) \nWashington, D.C. 20560 \nUnited States"
+    },
+    "start_at": "2021-08-30T01:00:00-04:00",
+    "end_at": "2021-08-30T01:15:00-04:00",
+    "is_all_day": false,
+    "timezone": "America/New_York",
+    "reminders": [0, 604800],
+    "conversation_id": "70077952",
+    "event_id": "0f15691677e444ceb64118bf39d41ec8",
+    "creator_id": "74938777",
+    "going": [
+      "74938777"
+    ],
+    "not_going": [],
+    "created_at": "2021-08-30T05:01:50Z",
+    "updated_at": "2021-08-30T05:01:50Z"
+  }
 }
 ```
 
@@ -305,7 +351,7 @@ POST /conversations/:group_id/events/update?event_id=1123123
 **Responses**
 
 ```
-Status: 200 Success
+Status: 200 OK
 {
 	"event": {
 		... //Refer to Index or Create for information on the Event object
@@ -332,7 +378,7 @@ Cancel an upcoming event. In order to do this, you much be the creator of the ev
 **Responses**
 
 ```
-Status: 200 Success
+Status: 200 OK
 ```
 
 ***
@@ -358,7 +404,7 @@ Marks you as going or not going to an event.
 **Responses**
 
 ```
-Status: 200 Success
+Status: 200 OK
 {
 	"event": {
 		... //Refer to Index or Create for details on this object.
@@ -385,7 +431,7 @@ Marks the user as neither going nor not going; in other words, marks the user as
 **Responses**
 
 ```
-Status: 200 Success
+Status: 200 OK
 {
 	"event": {
 		... //Refer to Index or Create for details on this object.
