@@ -80,6 +80,59 @@ Status: 200 OK
 
 ***
 
+## Show Specific DM Channel
+
+Directly fetch details about a specific DM channel using its compound `chat_id`. 
+
+**Request**
+```
+GET /chats/:chat_id
+```
+
+**Parameters**
+
+* *chat_id*
+
+    string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
+
+**Response**
+```
+{
+  "created_at": 1705616604,
+  "last_message": {
+    "attachments": [],
+    "avatar_url": "https://i.groupme.com/1024x1024.jpeg.a13c40722d454d0e9c59d2cedb119056",
+    "conversation_id": "56366372+93645911",
+    "created_at": 1747778589,
+    "favorited_by": [],
+    "id": "174777858990222590",
+    "name": "Bob",
+    "recipient_id": "93645911",
+    "sender_id": "56366372",
+    "sender_type": "user",
+    "source_guid": "FB9B32E6-45B8-4A63-8FAA-4A60005A0A60",
+    "text": "I think it’s a good idea!",
+    "user_id": "56366372",
+    "pinned_at": null,
+    "pinned_by": ""
+  },
+  "messages_count": 742,
+  "other_user": {
+    "avatar_url": "https://i.groupme.com/1024x1024.jpeg.a13c409e2d454320e9c59d2cedb119056",
+    "id": "56366372",
+    "name": "Bob"
+  },
+  "updated_at": 1747778589,
+  "message_deletion_period": 2147483647,
+  "message_deletion_mode": ["sender"],
+  "requires_approval": false,
+  "unread_count": null,
+  "last_read_message_id": null,
+  "last_read_at": null,
+  "message_edit_period": 15
+}
+```
+
 ## Index Messages
 
 Fetch direct messages between two users.
@@ -156,14 +209,8 @@ Status: 200 OK
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
