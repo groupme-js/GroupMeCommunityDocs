@@ -251,6 +251,33 @@ Read more about polls [here](polls.md)
 
 ***
 
+## Calendar Event
+
+This is a read-only attachment type, as it is not sent in one of your messages. Rather, when you create an event, a message with this attachment is sent for you. 
+
+Read more about polls [here](calendar.md)
+
+**Object Structure**
+```
+{
+  "type": "event"
+  "event_id": "912fea48717643eda831e72306557100",
+  "view": "full",
+}
+```
+
+* *type*
+
+	string - must be "event" for a callendar event attachment
+
+* *event_id*
+
+  	string - the ID of the event attached to the message
+
+* *view*
+
+	string - describes the way the event should be rendered in chat. This value has not been observed to be anything other than `"full"` so far.
+
 ## Copilot
 
 This attachment type is read-only and used exclusively by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
