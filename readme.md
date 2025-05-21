@@ -48,12 +48,6 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 ***
 
-### Still needs documenting:
+### Contributing
 
-* Push service documentation is terrible right now
-
-* Token management isn't documented yet
-
-* Image service documentation is really bad right now
-
-* Subgroups documentation is a work in progress
+The GroupMe Community Docs are constantly evolving and updating! Check out the [Contributing Checklist](https://github.com/groupme-js/GroupMeCommunityDocs/issues/32) for insights on what documentation we're still in need of for full API coverage. 
