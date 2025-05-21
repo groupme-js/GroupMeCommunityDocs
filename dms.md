@@ -177,47 +177,35 @@ Status: 200 OK
   "count": 123,
   "direct_messages": [
     {
-      "id": "1234567890",
-      "source_guid": "GUID",
-      "recipient_id": "20",
-      "user_id": "1234567890",
-      "created_at": 1302623328,
-      "name": "John",
-      "avatar_url": "https://i.groupme.com/123456789",
-      "text": "Hello world ",
-      "pinned_by": "",
+      "attachments": [],
+      "avatar_url": "https://i.groupme.com/1024x1024.jpeg.a13c409e2d454d082c59d2cedb119056",
+      "conversation_id": "56366372+93645911",
+      "created_at": 1747778589,
+      "favorited_by": [],
+      "id": "174777858990222590",
+      "name": "Bob",
+      "recipient_id": "93645911",
+      "sender_id": "56366372",
+      "sender_type": "user",
+      "source_guid": "FB9B32E6-45B8-4A63-8FAA-4A60005A0A60",
+      "text": "I think it’s a good idea!",
+      "user_id": "56366372",
       "pinned_at": null,
-      "favorited_by": [
-        "101"
-      ],
-      "attachments": [
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
-          "type": "location",
-          "lat": "40.738206",
-          "lng": "-73.993285",
-          "name": "GroupMe HQ"
-        },
-        {
-          "type": "emoji",
-          "placeholder": "",
-          "charmap": [
-            [1, 42],
-            [2, 34]
-          ]
-        }
-      ]
+      "pinned_by": ""
     }
-  ]
+  ],
+  "read_receipt": {
+    "id": "",
+    "chat_id": "56366372+93645911",
+    "message_id": "174777858990222590",
+    "user_id": "93645911",
+    "read_at": 1747779017
+  }
 }
 ```
+
+> [!note]
+> If the server has no `read_receipt` parameter to share, it will be completely absent from the response.
 
 ***
 
