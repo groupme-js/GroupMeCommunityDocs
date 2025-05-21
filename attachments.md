@@ -255,7 +255,7 @@ Read more about polls [here](polls.md)
 
 This is a read-only attachment type, as it is not sent in one of your messages. Rather, when you create an event, a message with this attachment is sent for you. 
 
-Read more about polls [here](calendar.md)
+Read more about calendar events [here](calendar.md)
 
 **Object Structure**
 ```
