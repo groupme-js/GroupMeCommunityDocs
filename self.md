@@ -352,7 +352,7 @@ POST /users/sms_mode
 **Parameters**
 * *duration* (required)
 
-	integer - the number of hours to be in SMS mode for. Max of 48.
+	integer - the number of hours to be in SMS mode for. Max of 48. Alternatively can be set to `"always"` to never expire.
 	
 * *registration_id*
 
