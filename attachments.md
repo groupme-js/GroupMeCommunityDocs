@@ -218,6 +218,13 @@ Interestingly, because of this system, you don't have to actually type someone's
 
 ***
 
+# Read Only Attachments
+
+> [!note]
+> These attachment types cannot be sent in a message's attachments array and can only be observed through reading messages that have been sent in groups or direct messages. Most are added by the backend automatically.
+
+***
+
 ## Poll
 
 This is a read-only attachment type, as it is not sent in one of your messages. Rather, when you create a poll, a message with this attachment is sent for you. 
