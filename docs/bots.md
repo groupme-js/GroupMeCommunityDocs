@@ -7,7 +7,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -48,7 +48,7 @@ Lastly, while GroupMe does offer API endpoints for creating, destroying, and ind
 Create a bot. The response will include your bot_id - do NOT publish or let anyone else see this! Anyone with this will be able to send messages using your bot!
 
 **Request**
-```
+```json
 POST /bots
 {
 	"bot": {
@@ -84,7 +84,7 @@ POST /bots
 		string - if provided, whenever the bot receives a message, it will be sent as a POST request to this URL.
 		
 **Responses**
-```
+```json
 Status: 201 Created
 {
   "bot_id": "1234567890",
@@ -103,7 +103,7 @@ Status: 201 Created
 Post a message from a bot
 
 **Request**
-```
+```json
 POST /bots/post
 {
 	"bot_id": "1234567890",
@@ -134,7 +134,7 @@ POST /bots/post
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
 **Responses**
-```
+```json
 Status: 201 Created
 ```
 
@@ -145,11 +145,12 @@ Status: 201 Created
 List bots that you have created. The response will include multiple `bot_id`s - do NOT publish these or let anyone else see these! Anyone with this will be able to send messages using your bot!
 
 **Request**
-
-`GET /bots`
+```json
+GET /bots
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 [
   {
@@ -170,14 +171,15 @@ Status: 200 OK
 Remove a bot that you have created
 
 **Request**
-
-`POST /bots/destroy`
+```json
+POST /bots/destroy
+```
 
 **Parameters**
 
 * *bot_id* (required)
 
 **Responses**
-```
+```json
 Status: 200 OK
 ```
