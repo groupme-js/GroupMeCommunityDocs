@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -29,12 +29,12 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 This call allows a client to check if a public or campus group requires a "join question" in order to apply for membership.
 
 **Request**
-```
+```json
 GET /groups/:group_id/preview
 ```
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "id": "101646388",
@@ -62,7 +62,7 @@ Status: 200 OK
 Allows you to join (or request to join) a public group without a share token.
 
 **Request**
-```
+```json
 POST /groups/:group_id/join
 {
   "answer": {
@@ -78,7 +78,7 @@ POST /groups/:group_id/join
     String - The answer you'd like to give in response to the group's join question (if one is used, otherwise you can omit this parameter)
 
 **Response**
-```
+```json
 Status: 201 Created
 {
   "id": "1234567890",
@@ -147,7 +147,7 @@ Returned groups will be split into 4 different lists, depending on where they we
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v1/search
 ```
 
@@ -174,7 +174,7 @@ GET https://api.groupme.com/v1/search
     Decimal - The longitude coordinate for a point used to sort groups by their distance.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "directories": [
@@ -250,7 +250,7 @@ Returns a paginated list of the top 50 public groups, curated by GroupMe.
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v1/search/trending
 ```
 
@@ -265,7 +265,7 @@ GET https://api.groupme.com/v1/search/trending
     Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "trending": [
@@ -333,7 +333,7 @@ Returns a paginated list of all public groups, ordered by member count (largest 
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v1/search/popular
 ```
 
@@ -348,7 +348,7 @@ GET https://api.groupme.com/v1/search/popular
     Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "popular": [
@@ -420,12 +420,12 @@ Status: 200 OK
 List information about the campus directory you're a member of
 
 **Request**
-```
+```json
 GET /directories
 ```
 
 **Response**
-```
+```json
 {
   "id": 1928,
   "name": "Brigham Young University",
@@ -450,7 +450,7 @@ Returns a paginated list of groups that are a part of the domain.
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v1/search/directories
 ```
 
@@ -465,7 +465,7 @@ GET https://api.groupme.com/v1/search/directories
     Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "directories": [
@@ -504,7 +504,7 @@ Return a list containing all of the users who are visible to you within the camp
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v1/search/directory/users
 ```
 
@@ -527,7 +527,7 @@ GET https://api.groupme.com/v1/search/directory/users
     Integer - A graduation year you'd like to filter users by.
 
 **Response**
-```
+```json
 {
   "users": [
     {
