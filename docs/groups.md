@@ -86,31 +86,17 @@ Status: 200 OK
             "url": "https://i.groupme.com/123456789"
           },
           {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
-          {
             "type": "location",
             "lat": "40.738206",
             "lng": "-73.993285",
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -166,11 +152,7 @@ Status: 200 OK
           {
             "type": "image",
             "url": "https://i.groupme.com/123456789"
-          },
-          {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
+          },,
           {
             "type": "location",
             "lat": "40.738206",
@@ -178,21 +160,11 @@ Status: 200 OK
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -254,31 +226,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -597,31 +555,17 @@ Status: 200 OK
             "url": "https://i.groupme.com/123456789"
           },
           {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
-          {
             "type": "location",
             "lat": "40.738206",
             "lng": "-73.993285",
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -684,31 +628,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
