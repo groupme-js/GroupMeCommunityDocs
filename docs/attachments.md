@@ -9,7 +9,7 @@ All parameters are required unless otherwise specified.
 ## Images
 
 **Object structure**
-```
+```json
 {
 	"type": "image",
 	"url": "https://i.groupme.com/123456789"
@@ -31,11 +31,11 @@ All parameters are required unless otherwise specified.
 ## Video
 
 **Object Structure**
-```
+```json
 {
-"type":"video",
-"url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.mp4",
-"preview_url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.jpg"
+  "type": "video",
+  "url": "https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.mp4",
+  "preview_url": "https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.jpg"
 }
 ```
 **Parameters**
@@ -57,10 +57,10 @@ All parameters are required unless otherwise specified.
 ## File
 
 **Object Structure**
-```
+```json
 {
-"type":"file",
-"file_id":"abcdabcd-dead-beef-2222-111122223333"
+  "type":"file",
+  "file_id":"abcdabcd-dead-beef-2222-111122223333"
 }
 ```
 **Parameters**
@@ -78,12 +78,12 @@ All parameters are required unless otherwise specified.
 ## Location
 
 **Object structure**
-```
+```json
 {
-	"type": "location",
-	"name": "Heaven?",
-	"lat": "64.148430",
-	"lng": "-21.9355508"
+  "type": "location",
+  "name": "Heaven?",
+  "lat": "64.148430",
+  "lng": "-21.9355508"
 }
 ```
 
@@ -112,11 +112,11 @@ All parameters are required unless otherwise specified.
 Only for GroupMe-specific emoji. Standard Unicode emoji (e.g. 💩) do not use this feature.
 
 **Object structure**
-```
+```json
 {
-	"type": "emoji",
-	"placeholder": "�",
-	"charmap": [[1, 62]]
+  "type": "emoji",
+  "placeholder": "�",
+  "charmap": [[1, 62]]
 }
 ```
 
@@ -153,11 +153,11 @@ Only for GroupMe-specific emoji. Standard Unicode emoji (e.g. 💩) do not use t
 Designates a message as a reply to a previous message
 
 **Object structure**
-```
+```json
 {
-	"type": "reply",
-	"reply_id": "123456789",
-	"base_reply_id": "123456789"
+  "type": "reply",
+  "reply_id": "123456789",
+  "base_reply_id": "123456789"
 }
 ```
 
@@ -186,11 +186,11 @@ Designates a message as a reply to a previous message
 This is how you @mention someone.
 
 **Object structure**
-```
+```json
 {
-	"type": "mentions",
-	"user_ids": ["123456789", "1234567890"],
-	"loci": [[0, 6], [8, 6]]
+  "type": "mentions",
+  "user_ids": ["123456789", "1234567890"],
+  "loci": [[0, 6], [8, 6]]
 }
 ```
 
@@ -232,7 +232,7 @@ This is a read-only attachment type, as it is not sent in one of your messages. 
 Read more about polls [here](polls.md)
 
 **Object Structure**
-```
+```json
 {
   "type": "poll",
   "poll_id": "1747858596203713"
@@ -258,7 +258,7 @@ This is a read-only attachment type, as it is not sent in one of your messages. 
 Read more about calendar events [here](calendar.md)
 
 **Object Structure**
-```
+```json
 {
   "type": "event"
   "event_id": "912fea48717643eda831e72306557100",
@@ -283,7 +283,7 @@ Read more about calendar events [here](calendar.md)
 This attachment type is read-only and used exclusively by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
 
 **Object Structure**
-```
+```json
 {
   "type": "copilot"
   "message_id": "u6Us5bXBSQERTNfc6vWGB",
