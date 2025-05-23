@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -33,9 +33,9 @@ The response is paginated, with a default of 10 groups per page.
 Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
 
 **Request**
-
-`GET /groups`
-
+```
+GET /groups
+```
 **Parameters**
 
 * *page*
@@ -51,7 +51,7 @@ Please consider using of omit=memberships parameter. Not including member lists 
 	string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
-```
+```json
 Status: 200 OK
 [
   {
@@ -127,12 +127,13 @@ Status: 200 OK
 List the groups you have left but can rejoin.
 
 **Request**
-
-`GET /groups/former`
+```
+GET /groups/former
+```
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 [
   {
@@ -208,17 +209,18 @@ Status: 200 OK
 Load a specific group.
 
 **Request**
-
-`GET /groups/:id`
+```
+GET /groups/:group_id
+```
 
 **Parameters**
 
-* *id* (required)
+* *group_id* (required)
 
 	string - the ID of the group to show details of
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "id": "1234567890",
@@ -293,7 +295,7 @@ Create a new group
 
 **Request**
 
-```
+```json
 POST /groups
 {
   "name": "Family",
@@ -322,7 +324,7 @@ POST /groups
 
 **Responses**
 
-```
+```json
 Status: 201 Created
 {
   "id": "1234567890",
@@ -356,31 +358,17 @@ Status: 201 Created
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -397,7 +385,7 @@ Update a group after creation
 
 **Request**
 
-```
+```json
 POST /groups/:id/update
 {
   "name": "Family",
@@ -492,7 +480,7 @@ POST /groups/:id/update
   	array - Contains one or both `"admin"` and `"sender"` values. These are pretty self explanitory. If left empty, nobody will be able to delete messages.
   
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "id": "1234567890",
@@ -526,31 +514,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -567,12 +541,13 @@ Disband a group
 This action is only available to the group creator
 
 **Request**
-
-`POST /groups/:id/destroy`
+```
+POST /groups/:group_id/destroy
+```
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -582,12 +557,12 @@ Status: 200 OK
 Join a shared group
 
 **Request**
-
-`POST /groups/:id/join/:share_token`
-
+```
+POST /groups/:id/join/:share_token`
+```
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "group": {
@@ -663,8 +638,9 @@ Status: 200 OK
 Rejoin a group. Only works if you previously removed yourself.
 
 **Request**
-
-`POST /groups/join`
+```
+POST /groups/join
+```
 
 **Parameters**
 
@@ -674,7 +650,7 @@ Rejoin a group. Only works if you previously removed yourself.
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "id": "1234567890",
@@ -758,8 +734,9 @@ Response is array of result objects which contain status field - the result of c
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
 **Request**
-
-`POST /groups/change_owners`
+```
+POST /groups/change_owners
+```
 
 **Parameters**
 
@@ -779,7 +756,7 @@ Response is array of result objects which contain status field - the result of c
 		
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "results": [
