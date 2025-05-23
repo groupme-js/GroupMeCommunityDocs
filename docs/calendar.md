@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -29,8 +29,9 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 List all the upcoming events for the group
 
 **Request**
-
-`GET /conversations/:group_id/events/list?end_at=2021-07-12T02:52:50Z&limit=20`
+```json
+GET /conversations/:group_id/events/list?end_at=2021-07-12T02:52:50Z&limit=20
+```
 
 **Parameters**
 
@@ -44,7 +45,7 @@ List all the upcoming events for the group
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "events": [
@@ -94,7 +95,7 @@ Status: 200 OK
 List details on a specific event given its ID
 
 **Request**
-```
+```json
 GET /conversations/:group_id/events/show?event_id=<event_id>
 ```
 
@@ -105,7 +106,7 @@ GET /conversations/:group_id/events/show?event_id=<event_id>
     String - The ID of the event you want to fetch
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "event": {
@@ -144,7 +145,7 @@ Creates a calendar event.
 
 **Request**
 
-```
+```json
 POST /conversations/:id/events/create
 {
   "name": "Dasani Appreciation Day",
@@ -203,7 +204,7 @@ POST /conversations/:id/events/create
 	array - An array of integers, which represent automatic reminders from GroupMe. The number is the number of seconds between the reminder and the start of the event - for example, if one of the numbers is 300, that represents sending a reminder 5 minutes before the event starts. Only two reminders are permitted, and only certain values are permitted: 0, 300, 900, 1800, 3600, 7200, 86400, 172800, and 604800.
 
 **Responses**
-```
+```json
 Status: 201 Created
 {
     "response": {
@@ -285,7 +286,7 @@ Edit or update an event. In order to do this, you must be the original creator o
 
 **Request**
 
-```
+```json
 POST /conversations/:group_id/events/update?event_id=1123123
 {
   "name": "Dasani Appreciation Day",
@@ -350,7 +351,7 @@ POST /conversations/:group_id/events/update?event_id=1123123
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
 	"event": {
@@ -366,8 +367,9 @@ Status: 200 OK
 Cancel an upcoming event. In order to do this, you much be the creator of the event.
 
 **Request**
-
-`DELETE /conversations/:group_id/events/delete?event_id=12312312`
+```json
+DELETE /conversations/:group_id/events/delete?event_id=12312312
+```
 
 **Parameters**
 
@@ -377,7 +379,7 @@ Cancel an upcoming event. In order to do this, you much be the creator of the ev
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -389,7 +391,9 @@ Marks you as going or not going to an event.
 
 **Request**
 
-`POST /conversations/:group_id/events/rsvp?event_id=123123123123&going=true`
+```json
+POST /conversations/:group_id/events/rsvp?event_id=123123123123&going=true
+```
 
 **Parameters**
 
@@ -403,7 +407,7 @@ Marks you as going or not going to an event.
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
 	"event": {
@@ -420,7 +424,9 @@ Marks the user as neither going nor not going; in other words, marks the user as
 
 **Request**
 
-`DELETE /conversations/:group_id/events/rsvp/delete?event_id=123123`
+```json
+DELETE /conversations/:group_id/events/rsvp/delete?event_id=123123
+```
 
 **Parameters**
 
@@ -430,7 +436,7 @@ Marks the user as neither going nor not going; in other words, marks the user as
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
 	"event": {
