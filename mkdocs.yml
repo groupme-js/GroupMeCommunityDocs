@@ -2,3 +2,20 @@ site_name: OpenGM Community API Docs
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 theme:
   name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: light blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: light blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
