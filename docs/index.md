@@ -8,8 +8,6 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 **This documentation is not associated with GroupMe or Microsoft**
 
-**testing commit**
-
 ### Contents:
 
 [Group management](groups.md) - How to create, join, list, update, etc. groups.

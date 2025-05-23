@@ -1,0 +1,4 @@
+site_name: OpenGM Community API Docs
+site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
+theme:
+  name: material
