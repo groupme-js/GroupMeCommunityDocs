@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -28,8 +28,9 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 Returns a paginated list of direct message chats, or conversations, sorted by updated_at descending.
 
 **Request**
-
-`GET /chats`
+```json
+GET /chats
+```
 
 **Parameters**
 
@@ -43,7 +44,7 @@ Returns a paginated list of direct message chats, or conversations, sorted by up
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 [
   {
@@ -85,7 +86,7 @@ Status: 200 OK
 Directly fetch details about a specific DM channel using its compound `chat_id`. 
 
 **Request**
-```
+```json
 GET /chats/:chat_id
 ```
 
@@ -96,7 +97,7 @@ GET /chats/:chat_id
     string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
 
 **Response**
-```
+```json
 {
   "created_at": 1705616604,
   "last_message": {
@@ -144,8 +145,9 @@ If no messages are found (e.g. when filtering with since_id) we return code 304.
 Note that for historical reasons, likes are returned as an array of user ids in the favorited_by key.
 
 **Request**
-
-`GET /direct_messages`
+```json
+GET /direct_messages
+```
 
 **Parameters**
 
@@ -171,7 +173,7 @@ Note that for historical reasons, likes are returned as an array of user ids in 
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "count": 123,
@@ -224,7 +226,7 @@ The character map is an array of arrays containing rune data ([[{pack_id,offset}
 The placeholder should be a high-point/invisible UTF-8 character.
 
 **Request**
-```
+```json
 POST /direct_messages
 {
   "direct_message": {
@@ -250,14 +252,8 @@ POST /direct_messages
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
@@ -285,7 +281,7 @@ POST /direct_messages
 
 **Responses**
 
-```
+```json
 Status: 201 Created
 {
   "message": {
@@ -308,10 +304,6 @@ Status: 201 Created
         "url": "https://i.groupme.com/123456789"
       },
       {
-        "type": "image",
-        "url": "https://i.groupme.com/123456789"
-      },
-      {
         "type": "location",
         "lat": "40.738206",
         "lng": "-73.993285",
@@ -321,25 +313,19 @@ Status: 201 Created
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
   }
 }
 ```
-```
+```json
 Status: 403 Forbidden
 User has been auto-banned for sending too many messages.
 ```
-```
+```json
 Status: 400 Bad Request
 There's a problem with the parameters. Check errors.
 ```
@@ -349,12 +335,13 @@ There's a problem with the parameters. Check errors.
 ## Delete a message
 
 **Request**
-
-`DELETE /conversations/:group_id/messages/:message_id`
+```json
+DELETE /conversations/:group_id/messages/:message_id
+```
 
 **Responses**
 
-```
+```json
 Status: 204 Deleted
 ```
 
@@ -368,7 +355,7 @@ You can only mark new messages as read, attempting to read a message sent before
 > This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 POST https://v2.groupme.com/read_receipts
 {
   "read_receipt": {
@@ -389,7 +376,7 @@ POST https://v2.groupme.com/read_receipts
     String - The ID of the direct message channel the message can be found in.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   read_receipt: {
