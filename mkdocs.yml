@@ -2,6 +2,8 @@ site_name: OpenGM Community API Docs
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 theme:
   name: material
+  code:
+    highlight_theme: dracula
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -21,3 +23,15 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
 
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
