@@ -1,6 +1,5 @@
 site_name: OpenGM Community API Docs
-docs_dir: .
-site_dir: ../build
+docs_dir: /docs
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
@@ -53,8 +52,10 @@ markdown_extensions:
       alternate_style: true
 
 plugins:
-  - social:
-      cards_layout_dir: layouts
-      cards_layout: custom
-      debug: true
+  - social
   - search
+
+extra:
+  social:
+#    - icon: 
+    - link: https://github.com/groupme-js

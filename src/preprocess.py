@@ -1,7 +1,9 @@
 import os
+import shutil
 import re
 
 SOURCE_DIR = "docs"
+ROOT_DIR = "."
 
 # Mapping of GitHub-style admonition types to MkDocs-style
 ADMONITION_MAP = {
@@ -25,9 +27,7 @@ ADMONITION_MAP = {
 }
 
 def convert_admonitions(text):
-    # Matches:
-    # > [!WARNING]
-    # > content
+    # Matches > [!WARNING] style GitHub markdown
     pattern = re.compile(r'> \[!(\w+)\]\n((?:> .*\n?)*)')
 
     def replacer(match):
@@ -36,7 +36,7 @@ def convert_admonitions(text):
 
         label = ADMONITION_MAP.get(raw_label)
         if not label:
-            return match.group(0)  # Leave unchanged if unknown
+            return match.group(0)
 
         lines = [
             f"    {line[2:]}" for line in content.strip().splitlines()
@@ -46,31 +46,44 @@ def convert_admonitions(text):
 
     return pattern.sub(replacer, text)
 
-def rename_readme_to_index(root, filename):
+def rename_readme_to_index(filename):
     if filename.lower() == "readme.md":
-        old_path = os.path.join(root, filename)
-        new_path = os.path.join(root, "index.md")
-        # Only rename if index.md doesn't already exist to avoid overwriting
-        if not os.path.exists(new_path):
-            os.rename(old_path, new_path)
-            print(f"Renamed: {old_path} → {new_path}")
-            return "index.md"
+        return "index.md"
     return filename
 
-def process_file(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
-        content = f.read()
-    new_content = convert_admonitions(content)
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(new_content)
+def move_and_process_markdown_files():
+    os.makedirs(SOURCE_DIR, exist_ok=True)
 
-def walk_docs():
+    for file in os.listdir(ROOT_DIR):
+        full_path = os.path.join(ROOT_DIR, file)
+
+        if (
+            os.path.isfile(full_path)
+            and file.endswith(".md")
+            and file.lower() != "readme.md"
+            and not full_path.startswith(SOURCE_DIR)
+        ):
+            target_path = os.path.join(SOURCE_DIR, file)
+            shutil.move(full_path, target_path)
+            print(f"Moved: {file} → {SOURCE_DIR}/")
+
+    readme_path = os.path.join(ROOT_DIR, "README.md")
+    index_path = os.path.join(SOURCE_DIR, "index.md")
+    if os.path.exists(readme_path) and not os.path.exists(index_path):
+        shutil.move(readme_path, index_path)
+        print("Renamed and moved: README.md → docs/index.md")
+
+def process_docs():
     for root, _, files in os.walk(SOURCE_DIR):
         for file in files:
-            file = rename_readme_to_index(root, file)
             if file.endswith(".md"):
-                process_file(os.path.join(root, file))
+                filepath = os.path.join(root, file)
+                with open(filepath, "r", encoding="utf-8") as f:
+                    content = f.read()
+                new_content = convert_admonitions(content)
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(new_content)
 
 if __name__ == "__main__":
-    walk_docs()
-
+    move_and_process_markdown_files()
+    process_docs()
