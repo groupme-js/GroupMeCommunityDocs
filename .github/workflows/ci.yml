@@ -28,4 +28,8 @@ jobs:
       - run: pip install mkdocs-material "mkdocs-material[imaging]"
       - name: Preprocess Markdown Admonitions
         run: python src/preprocess.py
+      - name: Debug docs directory
+        run: |
+          echo "Files in ./docs:"
+          ls -R docs
       - run: mkdocs gh-deploy --force
