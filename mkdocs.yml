@@ -8,7 +8,7 @@ theme:
   icon:
     logo: OpenGM/logo
     repo: fontawesome/brands/github
-    
+
   name: material
 
   favicon: assets/opengm_logo.svg
@@ -16,7 +16,7 @@ theme:
   code:
     highlight_theme: dracula
 
-  custom_dir: overrides
+  custom_dir: src/overrides
 
   features:
     - navigation.instant
