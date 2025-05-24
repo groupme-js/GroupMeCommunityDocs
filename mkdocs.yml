@@ -5,6 +5,7 @@ repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 theme:
   icon:
+    logo: assets/opengm_logo_single.svg
     repo: fontawesome/brands/github
   name: material
   logo: assets/opengm_logo_single.svg
@@ -18,9 +19,10 @@ theme:
     - search.suggest
     - search.share
     - navigation.footer
+    - content.code.copy
+
 
   palette:
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: light blue
@@ -29,7 +31,6 @@ theme:
         icon: material/weather-sunny
         name: Switch to dark mode
 
-    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: light blue
@@ -37,6 +38,10 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+
+plugins:
+  - social
+  - search
 
 markdown_extensions:
   - admonition
@@ -50,7 +55,3 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
-
-plugins:
-  - social
-  - search
