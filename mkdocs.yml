@@ -1,5 +1,7 @@
 site_name: OpenGM Community API Docs
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
+repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
+copyright: Copyright &copy; 2025 - OpenGM Project
 theme:
   name: material
   logo: assets/opengm_logo_single.svg
@@ -9,6 +11,9 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
+    - search.suggest
+    - search.share
+    - navigation.footer
 
   palette:
     # Palette toggle for light mode
@@ -44,3 +49,8 @@ markdown_extensions:
 
 plugins:
   - social
+  - search
+  - optimize
+
+extra:
+  generator: false
