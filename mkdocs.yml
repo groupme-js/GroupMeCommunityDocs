@@ -3,13 +3,13 @@ docs_dir: src
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
+
 theme:
+  name: material
 
   icon:
     logo: OpenGM/logo
     repo: fontawesome/brands/github
-
-  name: material
 
   favicon: assets/opengm_logo.svg
 
@@ -25,6 +25,7 @@ theme:
     - search.share
     - navigation.footer
     - content.code.copy
+    - header.autohide
 
 
   palette:
