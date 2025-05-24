@@ -2,6 +2,7 @@ site_name: OpenGM Community API Docs
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 theme:
   name: material
+  logo: assets/opengm_logo_single.svg
   code:
     highlight_theme: dracula
 
