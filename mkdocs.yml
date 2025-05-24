@@ -1,10 +1,10 @@
-site_name: OpenGM Community API Docs
+site_name: OpenGM API Documentation
 docs_dir: src
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 
-site_description: "The OpenGM project: Unoffical community GroupMe API documentation for all."
+site_description: "The OpenGM Project: Community GroupMe API documentation for all."
 
 theme:
   name: material
