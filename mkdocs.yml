@@ -1,4 +1,5 @@
 site_name: OpenGM Community API Docs
+docs_dir: .
 site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
@@ -6,7 +7,8 @@ theme:
   icon:
     repo: fontawesome/brands/github
   name: material
-  logo: assets/opengm_logo_single.svg
+  logo: src/assets/opengm_logo_single.svg
+  favicon: src/assets/opengm_logo_single.svg
   code:
     highlight_theme: dracula
 
@@ -50,5 +52,8 @@ markdown_extensions:
       alternate_style: true
 
 plugins:
-  - social
+  - social:
+      cards_layout_dir: layouts
+      cards_layout: custom
+      debug: true
   - search

@@ -1,0 +1,5 @@
+size: { width: 1200, height: 630 }
+layers:
+  - background:
+      color: "#02a6f2"
+

@@ -46,6 +46,17 @@ def convert_admonitions(text):
 
     return pattern.sub(replacer, text)
 
+def rename_readme_to_index(root, filename):
+    if filename.lower() == "readme.md":
+        old_path = os.path.join(root, filename)
+        new_path = os.path.join(root, "index.md")
+        # Only rename if index.md doesn't already exist to avoid overwriting
+        if not os.path.exists(new_path):
+            os.rename(old_path, new_path)
+            print(f"Renamed: {old_path} → {new_path}")
+            return "index.md"
+    return filename
+
 def process_file(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
@@ -56,6 +67,7 @@ def process_file(filepath):
 def walk_docs():
     for root, _, files in os.walk(SOURCE_DIR):
         for file in files:
+            file = rename_readme_to_index(root, file)
             if file.endswith(".md"):
                 process_file(os.path.join(root, file))
 
