@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -30,13 +30,13 @@ Like a message.
 
 **Request**
 
-```
+```json
 POST /messages/:conversation_id/:message_id/like
 ```
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -52,7 +52,7 @@ There is no way to apply more than one reaction at a time to any given message, 
 
 **Request**
 
-```
+```json
 POST /messages/:conversation_id/:message_id/like
 {
   "like_icon": {
@@ -64,7 +64,7 @@ POST /messages/:conversation_id/:message_id/like
 
 or
 
-```
+```json
 POST /messages/:conversation_id/:message_id/like
 {
   "like_icon": {
@@ -82,7 +82,7 @@ POST /messages/:conversation_id/:message_id/like
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "reactions": [
@@ -102,11 +102,12 @@ Status: 200 OK
 Unlike / remove your reactions from a message.
 
 **Request**
-
-`POST /messages/:conversation_id/:message_id/unlike`
+```json
+POST /messages/:conversation_id/:message_id/unlike
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 ```
 
@@ -117,16 +118,16 @@ Status: 200 OK
 A list of the liked messages in the group for a given period of time. Messages are ranked in order of number of likes.
 
 **Request**
-
-`GET /groups/:group_id/likes?period=<day|week|month>`
-
+```json
+GET /groups/:group_id/likes?period=<day|week|month>
+```
 **Parameters**
 
 * *period* (required)
 	string — one of: 'day', 'week', or 'month'
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "messages": [
@@ -151,31 +152,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -200,31 +187,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -240,11 +213,12 @@ Status: 200 OK
 A list of messages you have liked. Messages are returned in reverse chrono-order. Note that the payload includes a liked_at timestamp in ISO-8601 format.
 
 **Request**
-
-`GET /groups/:group_id/likes/mine`
+```json
+GET /groups/:group_id/likes/mine
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "messages": [
@@ -269,31 +243,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ],
@@ -309,11 +269,12 @@ Status: 200 OK
 A list of messages others have liked.
 
 **Request**
-
-`GET /groups/:group_id/likes/for_me`
+```json
+GET /groups/:group_id/likes/for_me
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "messages": [
@@ -338,31 +299,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]

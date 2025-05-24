@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -29,7 +29,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 Creates a poll, which is immediately sent to the group.
 
 **Request**
-```
+```json
 POST /poll/:group_id
 {
 	"subject": "Is Dasani the objective best brand of bottled water?",
@@ -69,7 +69,7 @@ POST /poll/:group_id
 
 **Responses**
 
-```
+```json
 Status: 201 Created
 {
   "poll": {
@@ -142,12 +142,13 @@ Status: 201 Created
 Shows the responses to a poll
 
 **Request**
-
-`GET /poll/:group_id/:poll_id`
+```json
+GET /poll/:group_id/:poll_id
+```
 
 **Responses**
 
-```
+```json
 Status: 201 Created
 {
   "poll": {
@@ -201,12 +202,12 @@ Vote in a poll, or change your vote if you already voted.
 **Request**
 
 For single-response polls:
-```
+```json
 POST /poll/:group_id/:poll_id/:option_id
 ```
 
 For multi-response polls:
-```
+```json
 POST /poll/:group_id/:poll_id/
 {
 	"votes": ["1", "2"]
@@ -219,7 +220,7 @@ POST /poll/:group_id/:poll_id/
 	array - an array of the IDs of the options you want to vote for
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "poll": {
@@ -273,11 +274,12 @@ If the user has not voted, the "user_votes" field will not exist.
 End a poll right now
 
 **Request**
-
-`POST /poll/:group_id/:poll_id/end`
+```json
+POST /poll/:group_id/:poll_id/end
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "poll": {
@@ -327,12 +329,13 @@ Status: 200 OK
 List all the polls in this chat
 
 **Request**
-
-`GET /poll/:group_id`
+```json
+GET /poll/:group_id
+```
 
 **Responses**
-```
-200 OK
+```json
+Status: 200 OK
 {
   "polls": [
     {

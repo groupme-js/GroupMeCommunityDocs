@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -41,7 +41,9 @@ Note that for historical reasons, likes are returned as an array of user ids in 
 
 **Request**
 
-`GET /groups/:group_id/messages`
+```json
+GET /groups/:group_id/messages
+```
 
 **Parameters**
 
@@ -68,7 +70,7 @@ Note that for historical reasons, likes are returned as an array of user ids in 
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "count": 123,
@@ -96,10 +98,6 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
@@ -109,14 +107,8 @@ Status: 200 OK
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -135,7 +127,7 @@ Fetches an individual message object by its ID
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 GET https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 ```
 
@@ -146,7 +138,7 @@ GET https://api.groupme.com/v4/groups/:group_id/messages/:message_id
     string - The ID of the message you'd like to fetch
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "message": {
@@ -185,17 +177,13 @@ The character map is an array of arrays containing rune data ([[{pack_id,offset}
 The placeholder should be a high-point/invisible UTF-8 character.
 
 **Request**
-```
+```json
 POST /groups/:group_id/messages
 {
   "message": {
     "source_guid": "GUID",
     "text": "Hello world ",
     "attachments": [
-      {
-        "type": "image",
-        "url": "https://i.groupme.com/123456789"
-      },
       {
         "type": "image",
         "url": "https://i.groupme.com/123456789"
@@ -210,14 +198,8 @@ POST /groups/:group_id/messages
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
@@ -242,7 +224,7 @@ POST /groups/:group_id/messages
 
 **Responses**
 
-```
+```json
 Status: 201 Created
 {
   "message": {
@@ -268,10 +250,6 @@ Status: 201 Created
         "url": "https://i.groupme.com/123456789"
       },
       {
-        "type": "image",
-        "url": "https://i.groupme.com/123456789"
-      },
-      {
         "type": "location",
         "lat": "40.738206",
         "lng": "-73.993285",
@@ -281,14 +259,8 @@ Status: 201 Created
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
@@ -310,7 +282,7 @@ Attachments of type emoji rely on data from [GroupMe Emoji powerups](emoji.md).
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
+```json
 PUT https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 {
   "text": "Hello World!",
@@ -342,7 +314,7 @@ PUT https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "message": {
@@ -385,11 +357,12 @@ Status: 200 OK
 ## Delete a message
 
 **Request**
-
-`DELETE /conversations/:group_id/messages/:message_id`
+```json
+DELETE /conversations/:group_id/messages/:message_id
+```
 
 **Responses**
 
-```
+```json
 Status: 204 Deleted
 ```

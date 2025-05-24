@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -33,8 +33,9 @@ The response is paginated. It is assumed that the default is 10 groups per page,
 Adding `&omit=memberships` to the end of your request URL doesn't return an error, but as of now the responses don't include an array of members anyways. 
 
 **Request**
-
-`GET /groups/:id/subgroups`
+```json
+GET /groups/:id/subgroups
+```
 
 **Parameters**
 
@@ -57,50 +58,45 @@ Adding `&omit=memberships` to the end of your request URL doesn't return an erro
   string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 
 **Responses**
-```
-{
-  "meta": {
-    "code": 200
-  },
-  "response": [
-    {
-      "messages": {
-        "count": 4,
-        "last_message_id": "1234567890987654321",
-        "last_message_created_at": 1715574721,
-        "last_message_updated_at": 1715574721,
-        "preview": {
-          "nickname": "Bob Doe",
-          "text": "Hello everyone!",
-          "image_url": "https://i.groupme.com/1024x1024.jpeg.123456789e9876543211234567e",
-          "attachments": [
-            {
-              "type": "image",
-               "url": "https://i.groupme.com/123456789"
-            },
-            {
-              "type": "image",
-              "url": "https://i.groupme.com/123456789"
-            }
-          ]
-        }
-      },
-      "id": 123456789,
-      "parent_id": 123123123,
-      "topic": "Test Topic 1",
-      "description": "This is a testing topic",
-      "avatar_url": "https://i.groupme.com/1024x1024.jpeg.123456789a9876543211234567a",
-      "creator_user_id": 12345678,
-      "created_at": 1715574084,
-      "updated_at": 1715574721,
-      "muted_until": null,
-      "like_icon": null,
-      "unread_count": null,
-      "last_read_message_id": null,
-      "last_read_at": null
-    }
-  ]
-}
+```json
+[
+  {
+    "messages": {
+      "count": 4,
+      "last_message_id": "1234567890987654321",
+      "last_message_created_at": 1715574721,
+      "last_message_updated_at": 1715574721,
+      "preview": {
+        "nickname": "Bob Doe",
+        "text": "Hello everyone!",
+        "image_url": "https://i.groupme.com/1024x1024.jpeg.123456789e9876543211234567e",
+        "attachments": [
+          {
+            "type": "image",
+             "url": "https://i.groupme.com/123456789"
+          },
+          {
+            "type": "image",
+            "url": "https://i.groupme.com/123456789"
+          }
+        ]
+      }
+    },
+    "id": 123456789,
+    "parent_id": 123123123,
+    "topic": "Test Topic 1",
+    "description": "This is a testing topic",
+    "avatar_url": "https://i.groupme.com/1024x1024.jpeg.123456789a9876543211234567a",
+    "creator_user_id": 12345678,
+    "created_at": 1715574084,
+    "updated_at": 1715574721,
+    "muted_until": null,
+    "like_icon": null,
+    "unread_count": null,
+    "last_read_message_id": null,
+    "last_read_at": null
+  }
+]
 ```
 
 ***
@@ -111,7 +107,9 @@ Load a specific subgroup within a parent group.
 
 **Request**
 
-`GET /groups/:parent_group_id/subgroups/:id`
+```json
+GET /groups/:parent_group_id/subgroups/:id
+```
 
 **Parameters**
 
@@ -124,47 +122,42 @@ Load a specific subgroup within a parent group.
   string - the ID of the subgroup to show details of
 
 **Responses**
-```
+```json
 {
-  "meta": {
-    "code": 200
+  "messages": {
+    "count": 18,
+    "last_message_id": "1234567890987654321",
+    "last_message_created_at": 1715574721,
+    "last_message_updated_at": 1715574721,
+    "preview": {
+      "nickname": "Jane Doe",
+      "text": "Hey everyone!",
+      "image_url": "https://i.groupme.com/1024x1024.jpeg.eabcdefg1234567654321eabcdefg",
+      "attachments": [
+        {
+          "type": "image",
+          "url": "https://i.groupme.com/123456789"
+        },
+        {
+          "type": "image",
+          "url": "https://i.groupme.com/123456789"
+        }
+      ]
+    }
   },
-  "response": {
-    "messages": {
-      "count": 18,
-      "last_message_id": "1234567890987654321",
-      "last_message_created_at": 1715574721,
-      "last_message_updated_at": 1715574721,
-      "preview": {
-        "nickname": "Jane Doe",
-        "text": "Hey everyone!",
-        "image_url": "https://i.groupme.com/1024x1024.jpeg.eabcdefg1234567654321eabcdefg",
-        "attachments": [
-          {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
-          {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          }
-        ]
-      }
-    },
-    "id": 123456789,
-    "parent_id": 987654321,
-    "topic": "Test Topic",
-    "description": "This is a testing topic",
-    "avatar_url": "https://i.groupme.com/1024x1024.jpeg.iabcdefg1234567654321iabcdefg",
-    "creator_user_id": 123123123,
-    "created_at": 1715574084,
-    "updated_at": 1715574721,
-    "muted_until": null,
-    "like_icon": null,
-    "unread_count": null,
-    "last_read_message_id": null,
-    "last_read_at": null
-  }
+  "id": 123456789,
+  "parent_id": 987654321,
+  "topic": "Test Topic",
+  "description": "This is a testing topic",
+  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.iabcdefg1234567654321iabcdefg",
+  "creator_user_id": 123123123,
+  "created_at": 1715574084,
+  "updated_at": 1715574721,
+  "muted_until": null,
+  "like_icon": null,
+  "unread_count": null,
+  "last_read_message_id": null,
+  "last_read_at": null
 }
 ```
 

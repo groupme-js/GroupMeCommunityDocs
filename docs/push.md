@@ -77,7 +77,7 @@ Before opening a WebSocket, you must perform an initial handshake via HTTP to re
 
 Send a JSON array with a channel of `/meta/handshake`, the Bayeux version, and the supported connection types. You must include `"websocket"` in `supportedConnectionTypes`.
 
-```
+```json
 POST https://push.groupme.com/faye
 [
  {
@@ -95,7 +95,7 @@ GroupMe will respond with a `clientId`, which you'll use for all future messages
 
 Once you’ve received a valid `clientId`, initiate a WebSocket connection to:
 
-```
+```json
 wss://push.groupme.com/faye
 ```
 
@@ -105,7 +105,7 @@ After connecting, begin sending JSON-encoded Bayeux messages directly over the s
 
 Immediately after connecting, send a `/meta/connect` message to initiate the message delivery loop. This step essentially "registers" your client as ready to receive pushes.
 
-```
+```json
 {
   "channel": "/meta/connect",
   "clientId": "<YOUR CLIENT ID>",
@@ -137,7 +137,7 @@ To receive push notifications, you must subscribe to the appropriate channel(s).
 
 Subscriptions require authentication: you must include your GroupMe API access token and a Unix timestamp (in seconds) in the `ext` field.
 
-```
+```json
 {
   "channel": "/meta/subscribe",
   "clientId": "<YOUR CLIENT ID>",
@@ -180,23 +180,24 @@ All incoming WebSocket messages will be JSON arrays of Bayeux-style messages. Ea
   
 Example incoming message:
 
-```
+```json
 {
   "channel": "/user/185",
   "data": {
     "type": "line.create",
-    "subject": { "name": "Andygv",
-    "avatar_url":null,
-    "location": { "name": null, "lng": null,"foursquare_checkin": false,"foursquare_venue_id": null,"lat": null},
-    "created_at": 1322557919,
-    "picture_url": null,
-    "system": false,
-    "text": "hey",
-    "group_id": "1835",
-    "id": "15717",
-    "user_id": "162",
-    "source_guid": "GUID 13225579210290"
- },
+    "subject": { 
+      "name": "Andygv",
+      "avatar_url":null,
+      "location": { "name": null, "lng": null,"foursquare_checkin": false,"foursquare_venue_id": null,"lat": null},
+      "created_at": 1322557919,
+      "picture_url": null,
+      "system": false,
+      "text": "hey",
+      "group_id": "1835",
+      "id": "15717",
+      "user_id": "162",
+      "source_guid": "GUID 13225579210290"
+    },
   "alert": "Andygv: hey"
 },
 "clientId": "1lhg38m0sk6b63080mpc71r9d7q1",
@@ -239,7 +240,7 @@ To do this: repeat step 4 as many times as necessary, setting the `subscription`
 Start by establishing a connection with GroupMe's Faye server.
 
 Send a POST request to `https://push.groupme.com/faye`. It should look like this:
-```
+```json
 POST https://push.groupme.com/faye
 [
  {
@@ -252,7 +253,7 @@ POST https://push.groupme.com/faye
 ```
 
 The response should look something like:
-```
+```json
 [
  {
     "id": "1",
@@ -270,7 +271,7 @@ Note the `clientId` value we've just received, as we will need it in the next st
 
 In order to subscribe to channels we need to send another POST request with the following body, inserting the `ClientId` value we got from the last request in step one.
 
-```
+```json
 POST https://push.groupme.com/faye
 [
  {
@@ -294,7 +295,7 @@ POST https://push.groupme.com/faye
 
 GroupMe's response should look something like this:
 
-```
+```json
 [
  {
     "id": "2",
@@ -311,7 +312,7 @@ GroupMe's response should look something like this:
 
 The POST request for subscribing to a specific channel looks like this (Note that it is basically exactly the same except for a different subscription channel):
 
-```
+```json
 POST https://push.groupme.com/faye
 [
  {
@@ -332,7 +333,7 @@ POST https://push.groupme.com/faye
 
 This step is already handled for you by most Faye libraries. However, if you're doing this manually via HTTP and not WebSockets, you will need to manually check for updates from the Faye server.
 
-```
+```json
 POST https://push.groupme.com/faye
 [
  {
@@ -346,7 +347,7 @@ POST https://push.groupme.com/faye
 
 If GroupMe has nothing to report, it will respond with an array of placeholder objects for each of the channels you're subscribed to. That would look something like this:
 
-```
+```json
 [
  {
     "id": "4",
@@ -368,7 +369,7 @@ If GroupMe has nothing to report, it will respond with an array of placeholder o
 
 If there is something to report, GroupMe will respond with something that might look like this:
 
-```
+```json
 [
  {
     "id": "5",

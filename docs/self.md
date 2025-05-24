@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -29,11 +29,12 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 Get details about the authenticated user
 
 **Request**
-
-`GET /users/me`
+```json
+GET /users/me
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "id": "1234567890",
@@ -54,7 +55,7 @@ Status: 200 OK
 Update attributes about your own account
 
 **Request**
-```
+```json
 POST /users/update
 {
   "avatar_url": "https://4.bp.blogspot.com/-GAeMYT8SZoI/TtBTK209xMI/AAAAAAAAWts/5nmvpmmvoWo/s1600/TopGun_059Pyxurz.jpg",
@@ -83,7 +84,7 @@ POST /users/update
 	string — Zip code.
 	
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "id": "1234567890",
@@ -109,8 +110,8 @@ Note: all of the parameters in this request are optional, however I'm including 
 > This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
 **Request**
-```
-POST https://v2.groupme.com/users/:your_user_id (NOTE: THE BASE URL IS NOT /v3)
+```json
+POST https://v2.groupme.com/users/:your_user_id
 {
   "user": {
     "name": "Bilbo Baggins",
@@ -177,7 +178,7 @@ POST https://v2.groupme.com/users/:your_user_id (NOTE: THE BASE URL IS NOT /v3)
 	string — the name of the WAV file to play when you receive a DM notification on the Mobile App. These file names are internal to the app, so the options are not well documented. (However they appear to be the same options as the ones availibe for the `group_notification_sound` parameter).
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "user": {
@@ -234,7 +235,7 @@ Status: 200 OK
 This call is only allowed for accounts that are members of a school domain, which is not an easy proccess to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls availible for your account.
 
 **Request**
-```
+```json
 PUT /directories/user/majors
 {
   "codes": [
@@ -251,7 +252,7 @@ PUT /directories/user/majors
 	array — an array of Major indexes (as strings), these are numbers that represent the different options for Majors to choose from. The complete list of options alongside their indexes can be found at https://web.groupme.com/assets/majors/majors.en-US.json.
 
 **Response**
-```
+```json
 Status: 201 Accepted
 [
   "3702",
@@ -268,8 +269,7 @@ This call is only allowed for accounts that are members of a school domain, whic
 This call specifies your graduation year tag inside of your profile as well as what level of visibility you want your profile to be at within the campus domain.
 
 **Request**
-
-```
+```json
 PUT /directories/user/membership
 {
   "graduation_year": 2025,
@@ -288,7 +288,7 @@ PUT /directories/user/membership
 	string — The level of visibility you want your profile to be at within your domain directory. Can be `hidden` (nobody at all), `graduation_year`, `major`, or `visible` (everyone in your domain). `graduation_year` and `major` are not permitted unless you have specified a year or at least one major.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "id": 2990607,
@@ -312,7 +312,7 @@ Enables/disables your account's `share_url` and `share_qr_code_url` properties.
 Turning this off and back on again generates a new URL every time and invalidates past ones that you may have shared.
 
 **Request**
-```
+```json
 POST /users/features/share
 {
   "status": "enable"
@@ -326,7 +326,7 @@ POST /users/features/share
     String - Can be set to `enable` or `disable`, enable generates a share URL for your profile, disable invalidates it.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "share_url": "https://groupme.com/contact/74938777/OtzZPXiX",
@@ -341,7 +341,7 @@ Status: 200 OK
 Enables SMS mode for N hours, where N is at most 48. After N hours have elapsed, user will receive push notfications.
 
 **Request**
-```
+```json
 POST /users/sms_mode
 {
   "duration": 4,
@@ -359,7 +359,7 @@ POST /users/sms_mode
 	string - The push notification ID/token that should be suppressed during SMS mode. If this is omitted, both SMS and push notifications will be delivered to the device.
 
 **Responses**
-```
+```json
 Status: 201 Created
 ```
 
@@ -369,10 +369,11 @@ Status: 201 Created
 Disables SMS mode
 
 **Request**
-
-`POST /users/sms_mode/delete`
+```json
+POST /users/sms_mode/delete
+```
 
 **Responses**
-```
+```json
 Status: 200 OK
 ```

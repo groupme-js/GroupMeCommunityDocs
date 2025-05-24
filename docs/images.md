@@ -12,7 +12,7 @@ Where {width} and {height} are in pixels, {format} is for example "png" or "jpeg
 
 Store your access token in the GM_TOKEN environment variable first.
 
-```
+```bash
 curl 'https://image.groupme.com/pictures' -X POST -H "X-Access-Token: $GM_TOKEN" -H "Content-Type: image/jpeg" --data-binary @AwesomePicture.jpg
 ```
 
@@ -35,7 +35,7 @@ You can upload a variety of different kinds of image formats (including GIFs) to
 
 If you want to send an image you have stored locally, you first have to upload it to GroupMe's servers via their [image service](images.md). This is done with a simple request:
 
-```
+```json
 POST https://image.groupme.com/pictures
 ```
 
@@ -50,7 +50,7 @@ Then, send the binary data of your image file.
 Issues with this feature are often caused by problems with the user token.
 
 **Response**
-```
+```json
 Status: 200 OK
 {
   "payload": {
@@ -64,7 +64,7 @@ Status: 200 OK
 
 If you want to send a remote image by its URL, you'll still have to upload it to GroupMe's servers via their [image service](images.md). This will behave similar to uploading local images, but with a new url parameter:
 
-```
+```json
 POST https://image.groupme.com/pictures?url=<image_url>
 ```
 
@@ -73,7 +73,7 @@ As far as I can tell, you only need to provide the **X-Access-Token** user token
 **Response**
 
 Your response will be of the same format as above:
-```
+```json
 Status: 200 OK
 {
   "payload": {

@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -31,7 +31,9 @@ Fetch a group's current or former member list.
 This call is limited to admins and owners in the group. Any other caller will receive a `401 Unauthorized` response.
 
 **Request**
-`GET /groups/:group_id/members`
+```json
+GET /groups/:group_id/members
+```
 
 **Parameters**
 
@@ -40,7 +42,7 @@ This call is limited to admins and owners in the group. Any other caller will re
 	string - to fetch either `active` (current memberships) or `inactive` (former memberships).
 	
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "memberships":[
@@ -74,7 +76,7 @@ Multiple members can be added in a single request, and results are fetched with 
 In order to correlate request params with resulting memberships, GUIDs can be added to the members parameters. These GUIDs will be reflected in the membership JSON objects.
 
 **Request**
-```
+```json
 POST /groups/:group_id/members/add
 {
   "members": [
@@ -123,7 +125,7 @@ POST /groups/:group_id/members/add
 			string - If used, the GUID of the associated "results" object will match the value given
 				
 **Responses**
-```
+```json
 Status: 202 Accepted
 {
   "results_id": "GUID"
@@ -140,8 +142,9 @@ Successfully created memberships will be returned, including any GUIDs that were
 Keep in mind that results are temporary -- they will only be available for 1 hour after the add request.
 
 **Request**
-
-`GET /groups/:group_id/members/results/:results_id`
+```json
+GET /groups/:group_id/members/results/:results_id
+```
 
 **Parameters**
 
@@ -151,7 +154,7 @@ Keep in mind that results are temporary -- they will only be available for 1 hou
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 {
   "members": [
@@ -178,11 +181,11 @@ Status: 200 OK
   ]
 }
 ```
-```
+```json
 Status: 503 Service Unavailable
 Results aren't ready. Try again in a little bit.
 ```
-```
+```json
 Status: 404 Not Found
 Results are no longer available. Don't try again.
 ```
@@ -196,8 +199,9 @@ Remove a member (or yourself) from a group.
 Note: The creator of the group cannot be removed or exit.
 
 **Request**
-
-`POST /groups/:group_id/members/:membership_id/remove`
+```json
+POST /groups/:group_id/members/:membership_id/remove
+```
 
 **Parameters**
 
@@ -207,7 +211,7 @@ Note: The creator of the group cannot be removed or exit.
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -220,12 +224,13 @@ Some groups have "Request to join" enabled, and thus require their applications 
 This request can be sent by any member of the group, not just admins. However, in order to approve or deny requests, you must have permission to manage the group.
 
 **Request**
-
-`GET /groups/:group_id/pending_memberships`
+```json
+GET /groups/:group_id/pending_memberships
+```
 
 **Response**
 
-```
+```json
 Status: 200 OK
 [
   {
@@ -278,7 +283,7 @@ Status: 200 OK
 This request is exclusive to members with permission to manage the group, non Admin/Owners will receive a 401: Unauthorized response.
 
 **Request**
-```
+```json
 POST /groups/:group_id/members/:membership_id/approval
 {
   "approval": true
@@ -297,14 +302,15 @@ POST /groups/:group_id/members/:membership_id/approval
 **Response**
 
 Note: if you deny the membership, `state` will be "denied" instead of "active"
-```
+
+```json
 Status: 200 OK
 {
   "membership_id": 1075929653,
   "state": "active"
 }
 ```
-```
+```json
 Status: 401 Unauthorized
 You are neither the Owner nor an Admin in this group
 ```
@@ -320,8 +326,9 @@ Current members of the group cannot be banned from rejoining as they have not le
 Note: This request is relative to `https://v2.groupme.com`, NOT `https://api.groupme.com/v3`.
 
 **Request**
-
-`POST /groups/:group_id/memberships/:membership_id/destroy`
+```json
+POST /groups/:group_id/memberships/:membership_id/destroy
+```
 
 **Parameters**
 
@@ -331,7 +338,7 @@ Note: This request is relative to `https://v2.groupme.com`, NOT `https://api.gro
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -342,7 +349,7 @@ Status: 200 OK
 Update your nickname in a group. The nickname must be between 1 and 50 characters.
 
 **Request**
-```
+```json
 POST /groups/:group_id/memberships/update
 {
   "membership": {
@@ -350,8 +357,9 @@ POST /groups/:group_id/memberships/update
   }
 }
 ```
+
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "id": "MEMBERSHIP ID",

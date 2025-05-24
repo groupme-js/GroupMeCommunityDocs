@@ -12,22 +12,24 @@ Note: if you are using some kind of library to send the file, you shouldn't have
 The video should be in the POST request as multipart/form-data file
 The equivalent curl command is: 
 
-`curl 'https://video.groupme.com/transcode' -X POST -H "X-Access-Token: [ACCESS_TOKEN]" -H "X-Conversation-Id: [GROUP_ID]" --form file="@[FILE_NAME]"`
+```bash
+curl 'https://video.groupme.com/transcode' -X POST -H "X-Access-Token: [ACCESS_TOKEN]" -H "X-Conversation-Id: [GROUP_ID]" --form file="@[FILE_NAME]"
+```
 
 A properly uploaded video should have a response of `200 OK` to the previous request, along with a JSON object containing a job status id:
-```
+```json
 {
-"status_url":"https://video.groupme.com/status?job=[JOB_UUID]"
+  "status_url":"https://video.groupme.com/status?job=[JOB_UUID]"
 }
 ```
 
 To get the status of a working job, GET `https://video.groupme.com/status?job=[JOB_UUID]`
 A complete job will contain the following JSON in the response, with a header of `201 Created`:
-```
+```json
 {
-"status":"complete",
-"url":"[VIDEO_URL]",
-"thumbnail_url":"[THUMB_IMAGE_URL]"
+  "status":"complete",
+  "url":"[VIDEO_URL]",
+  "thumbnail_url":"[THUMB_IMAGE_URL]"
 }
 ```
 

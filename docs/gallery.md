@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -31,8 +31,9 @@ List a Group or DM conversation's previous *messages* that contain images or fil
 The response is paginated (sort of), with a default of 100 images per page. Specifying a `before` timestamp allows you to fetch beyond the first page of results.
 
 **Request**
-
-`GET /conversations/:conversation_id/gallery`
+```json
+GET /conversations/:conversation_id/gallery
+```
 
 **Parameters**
 
@@ -53,7 +54,7 @@ The response is paginated (sort of), with a default of 100 images per page. Spec
   string - A timestamp in ISO 8601 format denoting the oldest image timestamp to include in the response. This is used for pagination: the server will return images newer than this timestamp. Can be used with or without the `before` parameter.
 	
 **Responses**
-```
+```json
 Status: 200 OK
 {
   "messages": [

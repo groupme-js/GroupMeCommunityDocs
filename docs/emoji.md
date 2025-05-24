@@ -79,7 +79,6 @@ don't need to use an API key). The returned data looks like this (note: To save 
 like to see all the emoji packs, you can check out the full JSON at [https://powerup.groupme.com/powerups](https://powerup.groupme.com/powerups)):
 
 ```json
-
 {
   "powerups": [
     {
@@ -401,7 +400,6 @@ in the same format as above.
 If you'd like some example code to work off of, here's a short proof-of-concept I made that lets me send custom emojis:
 
 ```js
-
 (async () => {
   const rawResponse = await fetch('https://api.groupme.com/v3/groups/YOUR_GROUP_NAME/messages?token=YOUR_API_TOKEN', {
     method: 'POST',
@@ -415,7 +413,6 @@ If you'd like some example code to work off of, here's a short proof-of-concept 
 
   console.log(content);
 })();
-
 ```
 
 Note that in my experience it doesn't seem to matter what the placeholder is, as long as you keep it consistent with the message.

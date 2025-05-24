@@ -6,7 +6,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json
 {
   "response": {
     "id": "12345",
@@ -31,8 +31,9 @@ Pins a message.
 Note that trying to pin a message which is already pinned will result in an unhelpful 400 error. It may be difficult to programatically determine whether a given call fails due to an actual bad request, or if it's just because the message has already been pinned. For now, you just have to enumerate the pinned mesages and see if there's a match, or get the messatge object and see if the "pinned_at" field is null
 
 **Request**
-
-`POST /conversations/:conversation_id/messages/:message_id/pin`
+```json
+POST /conversations/:conversation_id/messages/:message_id/pin
+```
 
 **Parameters**
 
@@ -46,7 +47,7 @@ Note that trying to pin a message which is already pinned will result in an unhe
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -59,8 +60,9 @@ Unpins a message.
 The same note on errors applies - trying to unpin a message which is not already pinned will result in an unhelpful 400 error.
 
 **Request**
-
-`POST /conversations/:conversation_id/messages/:message_id/unpin`
+```json
+POST /conversations/:conversation_id/messages/:message_id/unpin
+```
 
 **Parameters**
 
@@ -74,7 +76,7 @@ The same note on errors applies - trying to unpin a message which is not already
 	
 **Responses**
 
-```
+```json
 Status: 200 OK
 ```
 
@@ -86,8 +88,12 @@ List all of the pinned messages. The request varies slightly for groups and DMs,
 
 **Request**
 
-`GET /pinned/groups/:group_id/messages/`
-`GET /pinned/direct_messages`
+```json
+GET /pinned/groups/:group_id/messages/`
+```
+```json
+GET /pinned/direct_messages
+```
 
 **Parameters**
 
@@ -102,16 +108,16 @@ List all of the pinned messages. The request varies slightly for groups and DMs,
 **Responses**
 
 For groups:
-```
+```json
 Status: 200 OK
 {
-  "count": 1
+  "count": 1,
   "messages": [
     {
-      id: "12345"
-      name: "Dasaniel Royer"
-      pinned_by: "54321"
-      pinned_at: 123312312
+      "id": "12345",
+      "name": "Dasaniel Royer",
+      "pinned_by": "54321",
+      "pinned_at": 123312312
       ...
     }
   ]
@@ -119,16 +125,16 @@ Status: 200 OK
 ```
 
 For DMs:
-```
+```json
 Status: 200 OK
 {
-  "count": 1
+  "count": 1,
   "messages": [
     {
-      id: "12345"
-      name: "Dasaniel Royer"
-      pinned_by: "54321"
-      pinned_at: 123312312
+      "id": "12345",
+      "name": "Dasaniel Royer",
+      "pinned_by": "54321",
+      "pinned_at": 123312312
       ...
     }
   ]

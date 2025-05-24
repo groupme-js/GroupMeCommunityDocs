@@ -33,7 +33,7 @@ The response is paginated, with a default of 10 groups per page.
 Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
 
 **Request**
-```
+```json
 GET /groups
 ```
 **Parameters**
@@ -113,7 +113,7 @@ Status: 200 OK
 List the groups you have left but can rejoin.
 
 **Request**
-```
+```json
 GET /groups/former
 ```
 
@@ -181,7 +181,7 @@ Status: 200 OK
 Load a specific group.
 
 **Request**
-```
+```json
 GET /groups/:group_id
 ```
 
@@ -499,7 +499,7 @@ Disband a group
 This action is only available to the group creator
 
 **Request**
-```
+```json
 POST /groups/:group_id/destroy
 ```
 
@@ -515,8 +515,8 @@ Status: 200 OK
 Join a shared group
 
 **Request**
-```
-POST /groups/:id/join/:share_token`
+```json
+POST /groups/:id/join/:share_token
 ```
 **Responses**
 
@@ -582,7 +582,7 @@ Status: 200 OK
 Rejoin a group. Only works if you previously removed yourself.
 
 **Request**
-```
+```json
 POST /groups/join
 ```
 
@@ -664,7 +664,7 @@ Response is array of result objects which contain status field - the result of c
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
 **Request**
-```
+```json
 POST /groups/change_owners
 ```
 
