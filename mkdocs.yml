@@ -54,8 +54,3 @@ markdown_extensions:
 plugins:
   - social
   - search
-
-extra:
-  social:
-#    - icon: 
-    - link: https://github.com/groupme-js
