@@ -67,11 +67,11 @@ def move_and_process_markdown_files():
             shutil.move(full_path, target_path)
             print(f"Moved: {file} → {SOURCE_DIR}/")
 
-    readme_path = os.path.join(ROOT_DIR, "README.md")
+    readme_path = os.path.join(ROOT_DIR, "readme.md")
     index_path = os.path.join(SOURCE_DIR, "index.md")
     if os.path.exists(readme_path) and not os.path.exists(index_path):
         shutil.move(readme_path, index_path)
-        print("Renamed and moved: README.md → docs/index.md")
+        print("Renamed and moved: readme.md → docs/index.md")
 
 def process_docs():
     for root, _, files in os.walk(SOURCE_DIR):
