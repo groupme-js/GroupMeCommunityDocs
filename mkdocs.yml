@@ -5,11 +5,11 @@ repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 theme:
   icon:
-    logo: assets/opengm_logo_single.svg
+    logo: OpenGM/logo
     repo: fontawesome/brands/github
   name: material
-  logo: assets/opengm_logo_single.svg
-  favicon: assets/opengm_logo_single.svg
+  logo: assets/branding/opengm_logo_single.svg
+  favicon: assets/branding/opengm_logo_single.svg
   code:
     highlight_theme: dracula
 
@@ -55,3 +55,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    options:
+      custom_icons:
+        - src/assets/overrides/.icons
