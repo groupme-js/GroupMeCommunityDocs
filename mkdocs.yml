@@ -4,13 +4,19 @@ site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 theme:
+
   icon:
     logo: OpenGM/logo
     repo: fontawesome/brands/github
+    
   name: material
+
   favicon: assets/opengm_logo.svg
+
   code:
     highlight_theme: dracula
+
+  custom_dir: overrides
 
   features:
     - navigation.instant
