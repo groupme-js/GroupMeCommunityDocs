@@ -2,7 +2,7 @@ import os
 import shutil
 import re
 
-SOURCE_DIR = "docs"
+SOURCE_DIR = "src"
 ROOT_DIR = "."
 
 # Mapping of GitHub-style admonition types to MkDocs-style
