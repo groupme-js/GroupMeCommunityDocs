@@ -1,3 +1,8 @@
+---
+title: "GroupMe File Management"
+description: "Learn how to interact with GroupMe's file CDN via the API."
+---
+
 # Uploading Files to GroupMe
 To upload a file to be processed to GroupMe's file service, POST to `https://file.groupme.com/v1/[GROUP_ID]/files?name=[FILE_NAME]` with the  following included in the HTTP header:
 

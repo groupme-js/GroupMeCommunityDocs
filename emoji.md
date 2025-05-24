@@ -1,3 +1,8 @@
+---
+title: "GroupMe Powerups"
+description: "Learn how to interact with GroupMe's Emoji Powerup system via the API."
+---
+
 # Emoji Packs (PowerUps)
 
 GroupMe allows users to send special non-standard (non-Unicode) emoji. They're basically just small inline images. These emojis are also known as Powerups.

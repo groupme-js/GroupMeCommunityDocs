@@ -1,3 +1,8 @@
+---
+title: "GroupMe API Overview"
+description: "Learn how to interact with GroupMe via the API."
+---
+
 # Overview
 
 GroupMe has a thriving developer community which has created a variety of applications, bots, and tools. However, while the platform has constantly matured, the public documentation has not. In an effort to help other developers understand and utilize the platform better, this is a community-led effort to document everything possible. If you discover something not listed here, or you find an error in what is listed, please bring it up on the discussion page or submit a pull request.

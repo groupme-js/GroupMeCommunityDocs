@@ -1,3 +1,8 @@
+---
+title: "GroupMe Attachments"
+description: "Learn how to interact with GroupMe's message attachments viw the API."
+---
+
 # Attachments
 
 When sending messages in groups or DM channels, users (or bots) can add any number of attachments, as noted in the relevant sections of [Group Messages](messages.md), [Direct Messages](dms.md), and [Bots](bots.md). In each of these instances, you add an attachment by including a corresponding object in the "attachments" array. This section will list all the different types of attachments possible (That we know of and can find documentation for) and how to send them.

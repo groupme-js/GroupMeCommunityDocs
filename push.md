@@ -1,3 +1,8 @@
+---
+title: "GroupMe Websockets"
+description: "Learn how to interact with GroupMe's Websocket Gateway via the API."
+---
+
 ## WebSockets Overview
 
 GroupMe’s real-time messaging is powered by a [Faye-based Bayeux WebSocket protocol](https://faye.jcoglan.com/browser/subscribing.html). Clients subscribe to various channels and receive structured push messages.

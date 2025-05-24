@@ -1,3 +1,8 @@
+---
+title: "GroupMe Image Service"
+description: "Learn how to interact with GroupMe's Image Service via the API."
+---
+
 ## Image Service
 
 Images uploaded to the GroupMe Image CDN will have URLs that look like this: 

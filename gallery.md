@@ -1,3 +1,8 @@
+---
+title: "GroupMe Image Galleries"
+description: "Learn how to interact with GroupMe's channel-specific image galleries via the API."
+---
+
 # Image Gallery
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.

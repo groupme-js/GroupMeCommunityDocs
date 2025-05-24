@@ -1,4 +1,9 @@
-# Uploading Your Own Video to the Video Service
+---
+title: "GroupMe Video Uploads"
+description: "Learn how to interact with GroupMe's video CDN via the API."
+---
+
+# Uploading Videos
 To upload a video to be processed to GroupMe's video processing service, POST to `https://video.groupme.com/transcode` with the  following included in the HTTP header:
 
 ```
