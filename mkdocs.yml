@@ -8,7 +8,6 @@ theme:
     logo: OpenGM/logo
     repo: fontawesome/brands/github
   name: material
-  logo: assets/opengm_logo.svg
   favicon: assets/opengm_logo.svg
   code:
     highlight_theme: dracula
