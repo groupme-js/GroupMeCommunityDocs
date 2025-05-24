@@ -49,7 +49,6 @@ theme:
 plugins:
   - social
   - search
-  - optimize
   - tags
 
 markdown_extensions:
