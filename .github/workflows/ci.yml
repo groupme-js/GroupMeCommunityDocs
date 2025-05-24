@@ -26,6 +26,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material "mkdocs-material[imaging]"
+      - run: "apt-get install pngquant"
       - name: Preprocess Markdown Admonitions
         run: python src/preprocess.py
       - name: Debug docs directory
