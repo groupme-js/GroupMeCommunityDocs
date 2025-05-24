@@ -50,4 +50,3 @@ markdown_extensions:
 plugins:
   - social
   - search
-  - optimize

@@ -1,4 +1,4 @@
-name: ci
+name: ci 
 on:
   push:
     branches:
@@ -11,45 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Log Checkout Complete
-        run: echo "✅ Checked out the repo"
-
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Log Git Credentials Configured
-        run: echo "✅ Git credentials configured"
-
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - name: Log Python Setup
-        run: python --version
-
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - name: Log Cache ID
-        run: echo "Cache ID is ${{ env.cache_id }}"
-
       - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache 
           restore-keys: |
             mkdocs-material-
-      - name: Log Cache Restored
-        run: echo "✅ Cache restored or created"
-
       - run: pip install mkdocs-material "mkdocs-material[imaging]"
-      - name: Log Packages Installed
-        run: pip list | grep mkdocs-material || echo "mkdocs-material not installed"
-
       - name: Preprocess Markdown Admonitions
         run: python preprocess.py
-      - name: Log Preprocessing Done
-        run: echo "✅ Markdown preprocessing done"
-
       - run: mkdocs gh-deploy --force
-      - name: Log Deployment Done
-        run: echo "✅ MkDocs deployment completed"
