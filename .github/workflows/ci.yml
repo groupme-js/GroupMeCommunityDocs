@@ -30,6 +30,6 @@ jobs:
         run: python src/preprocess.py
       - name: Debug docs directory
         run: |
-          echo "Files in ./docs:"
-          ls -R docs
+          echo "Files in ./src:"
+          ls -R src
       - run: mkdocs gh-deploy --force
