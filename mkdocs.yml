@@ -67,4 +67,4 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       options:
         custom_icons:
-          - src/assets/overrides/.icons
+          - overrides/.icons
