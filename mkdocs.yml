@@ -51,6 +51,3 @@ plugins:
   - social
   - search
   - optimize
-
-extra:
-  generator: false
