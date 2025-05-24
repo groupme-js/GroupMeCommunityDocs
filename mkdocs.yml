@@ -4,6 +4,11 @@ theme:
   name: material
   code:
     highlight_theme: dracula
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -35,3 +40,6 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+
+plugins:
+  - social
