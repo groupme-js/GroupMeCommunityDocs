@@ -4,9 +4,10 @@ site_url: https://AlureonTheVirus.github.io/GroupMeCommunityDocs
 repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 
+site_description: "The OpenGM project: Unoffical community GroupMe API documentation for all."
+
 theme:
   name: material
-
   icon:
     logo: OpenGM/logo
     repo: fontawesome/brands/github
