@@ -55,13 +55,13 @@ Create a bot. The response will include your bot_id - do NOT publish or let anyo
 ```json
 POST /bots
 {
-	"bot": {
-		"name": "Dasani Bot",
-		"group_id": "1234567890",
-		"avatar_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipvgzU.b0q4M/v0/1000x-1.jpg",
-		"callback_url": "https://example.herokuapp.com/",
-		"dm_notification": false
-	}
+  "bot": {
+	"name": "Dasani Bot",
+	"group_id": "1234567890",
+	"avatar_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipvgzU.b0q4M/v0/1000x-1.jpg",
+	"callback_url": "https://example.herokuapp.com/",
+	"dm_notification": false
+  }
 }
 ```
 
@@ -110,14 +110,14 @@ Post a message from a bot
 ```json
 POST /bots/post
 {
-	"bot_id": "1234567890",
-	"text": "Hello World",
-	"attachments": [
-		{
-			"type": "image",
-			"url": "https://i.groupme.com/123456789"
-		}
-	]
+  "bot_id": "1234567890",
+  "text": "Hello World",
+  "attachments": [
+    {
+      "type": "image",
+      "url": "https://i.groupme.com/123456789"
+    }
+  ]
 }
 ```
 

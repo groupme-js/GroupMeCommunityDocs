@@ -384,12 +384,12 @@ POST https://v2.groupme.com/read_receipts
 ```json
 Status: 200 OK
 {
-  read_receipt: {
-    id: '174769438312353599',
-    chat_id: '74938777+93645911',
-    message_id: '174769438312353599',
-    user_id: '93645911',
-    read_at: 1747694449
+  "read_receipt": {
+    "id": "174769438312353599",
+    "chat_id": "74938777+93645911",
+    "message_id": "174769438312353599",
+    "user_id": "93645911",
+    "read_at": 1747694449
   }
 }
 ```

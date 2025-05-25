@@ -16,8 +16,8 @@ All parameters are required unless otherwise specified.
 **Object structure**
 ```json
 {
-	"type": "image",
-	"url": "https://i.groupme.com/123456789"
+  "type": "image",
+  "url": "https://i.groupme.com/123456789"
 }
 ```
 

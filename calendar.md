@@ -212,74 +212,66 @@ POST /conversations/:id/events/create
 ```json
 Status: 201 Created
 {
-    "response": {
-        "event": {
-			"name": "Dasani Appreciation Day",
-			"start_at": "2021-07-11T20:45:00-05:00",
-			"end_at": "2021-07-12T20:45:00-05:00",
-			"timezone": "America/Chicago",
-			"description": "A day for us all to appreciate the wondrous water that is Dasani",
-			"is_all_day": false,
-			"image_url": "https://i.groupme.com/1051x816.jpeg.b6e08c195b35453c813843295a61b1a4",
-			"location": {
-				"address": "Kalkofnsvegur 2 101, 101 Reykjavík, Iceland",
-				"name": "Heaven?",
-				"lat": "64.148430",
-				"lng": "-21.9355508"
-			},
-			"reminders": [
-				0,
-				300
-			],
-            "conversation_id": "14538582",
-            "event_id": "dfgdfghs45q45z4eeease45",
-            "creator_id": "12312",
-            "going": [
-                "12312312312"
-            ],
-            "not_going": [],
-            "created_at": "2021-07-12T02:52:50Z",
-            "updated_at": "2021-07-12T02:52:50Z"
-        },
-        "message": {
-            "attachments": [
-                {
-                    "event_id": "123123123123123",
-                    "type": "event",
-                    "view": "full"
-                }
-            ],
-            "avatar_url": "https://i.groupme.com/1100x1148.jpeg.705e8e84384c4249bb956f230e43d67d",
-            "created_at": 1626058370,
-            "event": {
-                "data": {
-                    "event": {
-                        "id": "123123123123",
-                        "name": "Test"
-                    },
-                    "url": "https://s.groupme.com/1wcGxvER",
-                    "user": {
-                        "id": "123131231",
-                        "nickname": "Dasaniel Royer"
-                    }
-                },
-                "type": "calendar.event.created"
-            },
-            "favorited_by": [],
-            "group_id": "12312312312312",
-            "id": "21312312312",
-            "name": "Dasaniel Royer",
-            "sender_id": "123123123123123",
-            "sender_type": "user",
-            "source_guid": "dsfasdfgsfghukjfgdd",
-            "system": false,
-            "text": "Dasaniel Royer created event 'Dasani Appreciation Day' https://s.groupme.com/123123121",
-            "user_id": "12312311"
-        }
+  "event": {
+    "name": "Dasani Appreciation Day",
+    "start_at": "2021-07-11T20:45:00-05:00",
+    "end_at": "2021-07-12T20:45:00-05:00",
+    "timezone": "America/Chicago",
+    "description": "A day for us all to appreciate the wondrous water that is Dasani",
+    "is_all_day": false,
+    "image_url": "https://i.groupme.com/1051x816.jpeg.b6e08c195b35453c813843295a61b1a4",
+    "location": {
+      "address": "Kalkofnsvegur 2 101, 101 Reykjavík, Iceland",
+      "name": "Heaven?",
+      "lat": "64.148430",
+      "lng": "-21.9355508"
     },
-    "meta": {
-        "code": 201
-    }
+    "reminders": [0, 300],
+    "conversation_id": "14538582",
+    "event_id": "dfgdfghs45q45z4eeease45",
+    "creator_id": "12312",
+    "going": [
+      "12312312312"
+    ],
+    "not_going": [],
+    "created_at": "2021-07-12T02:52:50Z",
+    "updated_at": "2021-07-12T02:52:50Z"
+  },
+  "message": {
+    "attachments": [
+      {
+        "event_id": "123123123123123",
+        "type": "event",
+        "view": "full"
+      }
+    ],
+    "avatar_url": "https://i.groupme.com/1100x1148.jpeg.705e8e84384c4249bb956f230e43d67d",
+    "created_at": 1626058370,
+    "event": {
+      "data": {
+        "event": {
+          "id": "123123123123",
+          "name": "Test"
+        },
+        "url": "https://s.groupme.com/1wcGxvER",
+        "user": {
+          "id": "123131231",
+          "nickname": "Dasaniel Royer"
+        }
+      },
+      "type": "calendar.event.created"
+    },
+    "favorited_by": [],
+    "group_id": "12312312312312",
+    "id": "21312312312",
+    "name": "Dasaniel Royer",
+    "sender_id": "123123123123123",
+    "sender_type": "user",
+    "source_guid": "dsfasdfgsfghukjfgdd",
+    "system": false,
+    "text": "Dasaniel Royer created event 'Dasani Appreciation Day' https://s.groupme.com/123123121",
+    "user_id": "12312311"
+  }
 }
 ```
 
