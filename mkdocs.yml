@@ -70,6 +70,3 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
-
-extra_css:
-  - stylesheets/extra.css
