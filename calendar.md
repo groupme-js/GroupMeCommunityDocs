@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Calandar Events"
+title: "Calandar Events"
 description: "Learn how to interact with GroupMe's Calandar Events via the API."
 ---
 

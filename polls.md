@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Polls"
+title: "Polls"
 description: "Learn how to interact with GroupMe's polling system via the API."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Groups"
+title: "Groups"
 description: "Learn how to interact with GroupMe group channels via the API."
 ---
 

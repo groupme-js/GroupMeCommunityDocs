@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Pinned Messages"
+title: "Pinned Messages"
 description: "Learn how to interact with GroupMe's pins system via the API."
 ---
 

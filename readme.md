@@ -1,5 +1,5 @@
 ---
-title: "GroupMe API Overview"
+title: "API Overview"
 description: "Learn how to interact with GroupMe via the API."
 ---
 

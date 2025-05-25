@@ -1,5 +1,5 @@
 ---
-title: "GroupMe File Management"
+title: "File Management"
 description: "Learn how to interact with GroupMe's file CDN via the API."
 ---
 

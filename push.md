@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Websockets"
+title: "Websockets"
 description: "Learn how to interact with GroupMe's Websocket Gateway via the API."
 ---
 

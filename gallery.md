@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Image Galleries"
+title: "Image Galleries"
 description: "Learn how to interact with GroupMe's channel-specific image galleries via the API."
 ---
 

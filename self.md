@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Account Management"
+title: "Account Management"
 description: "Learn how to interact with GroupMe's account management system via the API."
 ---
 

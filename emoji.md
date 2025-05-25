@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Powerups"
+title: "Emoji Powerups"
 description: "Learn how to interact with GroupMe's Emoji Powerup system via the API."
 ---
 

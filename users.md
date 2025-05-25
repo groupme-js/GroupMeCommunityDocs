@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Contacts"
+title: "Contacts"
 description: "Learn how to interact with GroupMe's user relationship system via the API."
 ---
 

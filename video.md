@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Video Uploads"
+title: "Video Service"
 description: "Learn how to interact with GroupMe's video CDN via the API."
 ---
 

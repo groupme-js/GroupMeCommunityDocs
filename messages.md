@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Messages"
+title: "Messages"
 description: "Learn how to interact with GroupMe's group message objects via the API."
 ---
 

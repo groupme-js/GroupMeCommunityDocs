@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Reactions"
+title: "Reactions"
 description: "Learn how to interact with GroupMe's reaction system via the API."
 ---
 

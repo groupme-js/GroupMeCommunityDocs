@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Topics"
+title: "Subtopics"
 description: "Learn how to interact with GroupMe's subtopic system via the API."
 ---
 

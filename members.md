@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Group Memberships"
+title: "Group Memberships"
 description: "Learn how to interact with GroupMe's member objects via the API."
 ---
 

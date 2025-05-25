@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Directories"
+title: "Group Directories"
 description: "Learn how to interact with GroupMe's group directories via the API."
 ---
 

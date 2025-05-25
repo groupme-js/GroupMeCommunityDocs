@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Webhook Bots"
+title: "Webhook Bots"
 description: "Learn how to interact with GroupMe webhooks via the API."
 ---
 

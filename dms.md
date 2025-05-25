@@ -1,5 +1,5 @@
 ---
-title: "GroupMe Direct Messages"
+title: "Direct Messages"
 description: "Learn how to interact with GroupMe's direct message channels via the API."
 ---
 
