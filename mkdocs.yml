@@ -27,7 +27,7 @@ theme:
     - navigation.footer
     - content.code.copy
     - header.autohide
-
+    - announce.dismiss
 
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -70,3 +70,6 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+
+extra_css:
+  - stylesheets/extra.css

@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
-{% block htmltitle %}
-  <title>Lorem ipsum dolor sit amet</title>
+{% block header %}
+<!-- Custom Banner -->
+<div class="banner">
+    <p style="color:#17181e; display:inline;">THIS IS A COOL BANNER!!</p>
+</div>
+
+<!-- Original Header -->
+{% include "partials/header.html" %}
 {% endblock %}
