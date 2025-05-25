@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-````json linenums="1"
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -38,7 +38,7 @@ The response is paginated, with a default of 10 groups per page.
 Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 GET /groups
 ```
 **Parameters**
@@ -56,7 +56,7 @@ GET /groups
 	string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
 **Responses**
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 [
   {
@@ -118,13 +118,13 @@ Status: 200 OK
 List the groups you have left but can rejoin.
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 GET /groups/former
 ```
 
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 [
   {
@@ -186,7 +186,7 @@ Status: 200 OK
 Load a specific group.
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 GET /groups/:group_id
 ```
 
@@ -197,7 +197,7 @@ GET /groups/:group_id
 	string - the ID of the group to show details of
 
 **Responses**
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -258,7 +258,7 @@ Create a new group
 
 **Request**
 
-````json linenums="1"
+```json linenums="1"
 POST /groups
 {
   "name": "Family",
@@ -287,7 +287,7 @@ POST /groups
 
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 201 Created
 {
   "id": "1234567890",
@@ -348,7 +348,7 @@ Update a group after creation
 
 **Request**
 
-````json linenums="1"
+```json linenums="1"
 POST /groups/:id/update
 {
   "name": "Family",
@@ -443,7 +443,7 @@ POST /groups/:id/update
   	array - Contains one or both `"admin"` and `"sender"` values. These are pretty self explanitory. If left empty, nobody will be able to delete messages.
   
 **Responses**
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -504,13 +504,13 @@ Disband a group
 This action is only available to the group creator
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 POST /groups/:group_id/destroy
 ```
 
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 ```
 
@@ -520,12 +520,12 @@ Status: 200 OK
 Join a shared group
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 POST /groups/:id/join/:share_token
 ```
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 {
   "group": {
@@ -587,7 +587,7 @@ Status: 200 OK
 Rejoin a group. Only works if you previously removed yourself.
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 POST /groups/join
 ```
 
@@ -599,7 +599,7 @@ POST /groups/join
 
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -669,7 +669,7 @@ Response is array of result objects which contain status field - the result of c
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
 **Request**
-````json linenums="1"
+```json linenums="1"
 POST /groups/change_owners
 ```
 
@@ -691,7 +691,7 @@ POST /groups/change_owners
 		
 **Responses**
 
-````json linenums="1"
+```json linenums="1"
 Status: 200 OK
 {
   "results": [
