@@ -37,7 +37,7 @@ The response is paginated, with a default of 10 groups per page.
 
 Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 GET /groups
 ```
 **Parameters**
@@ -54,7 +54,7 @@ GET /groups
 
 	string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -115,11 +115,11 @@ Status: 200 OK
 
 List the groups you have left but can rejoin.
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 GET /groups/former
 ```
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -181,7 +181,7 @@ Status: 200 OK
 Load a specific group.
 
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 GET /groups/:group_id
 ```
 
@@ -191,7 +191,7 @@ GET /groups/:group_id
 
 	string - the ID of the group to show details of
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -250,7 +250,7 @@ Status: 200 OK
 
 Create a new group
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups
 {
   "name": "Family",
@@ -277,7 +277,7 @@ POST /groups
 
 	boolean - If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "id": "1234567890",
@@ -336,7 +336,7 @@ Status: 201 Created
 
 Update a group after creation
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups/:id/update
 {
   "name": "Family",
@@ -430,7 +430,7 @@ POST /groups/:id/update
 
   	array - Contains one or both `"admin"` and `"sender"` values. These are pretty self explanitory. If left empty, nobody will be able to delete messages.
   
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -490,11 +490,11 @@ Disband a group
 
 This action is only available to the group creator
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/destroy
 ```
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -503,7 +503,7 @@ Status: 200 OK
 ## Join
 Join a shared group
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups/:id/join/:share_token
 ```
 
@@ -568,7 +568,7 @@ Status: 200 OK
 
 Rejoin a group. Only works if you previously removed yourself.
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups/join
 ```
 
@@ -579,7 +579,7 @@ POST /groups/join
 	string - the ID of the group to join
 
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -648,7 +648,7 @@ Response is array of result objects which contain status field - the result of c
 * **'404'** - group or new owner not found or new owner is not member of the group
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
-```json linenums="1" title="Request"
+```json linenums="1" title="HTTP Request"
 POST /groups/change_owners
 ```
 
@@ -668,7 +668,7 @@ POST /groups/change_owners
 	
 		string - The ID of the person to be made owner
 
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "results": [
@@ -685,7 +685,7 @@ Status: 200 OK
   ]
 }
 ```
-```json linenums="1" title="Response"
+```json linenums="1" title="HTTP Response"
 Status: 400 Bad Request
 'requests' field missing in request body
 ```
