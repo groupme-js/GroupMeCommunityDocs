@@ -12,7 +12,7 @@ theme:
     logo: OpenGM/sprocket
     repo: fontawesome/brands/github
 
-  #favicon: assets/sprocket.svg
+  favicon: assets/sprocket.svg
 
   code:
     highlight_theme: dracula
