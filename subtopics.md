@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -37,8 +37,7 @@ The response is paginated. It is assumed that the default is 10 groups per page,
 
 Adding `&omit=memberships` to the end of your request URL doesn't return an error, but as of now the responses don't include an array of members anyways. 
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:id/subgroups
 ```
 
@@ -62,8 +61,8 @@ GET /groups/:id/subgroups
 
   string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 [
   {
     "messages": {
@@ -110,9 +109,7 @@ GET /groups/:id/subgroups
 
 Load a specific subgroup within a parent group.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:parent_group_id/subgroups/:id
 ```
 
@@ -126,8 +123,8 @@ GET /groups/:parent_group_id/subgroups/:id
 
   string - the ID of the subgroup to show details of
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 {
   "messages": {
     "count": 18,
@@ -167,7 +164,5 @@ GET /groups/:parent_group_id/subgroups/:id
 ```
 
 ***
-
-## POST Methods
 
 **This documentation is a work in progress. It is assumed (but not yet guaranteed) that the POST methods that work on `groups` also work here, just with the added `parent_id` parameter.**

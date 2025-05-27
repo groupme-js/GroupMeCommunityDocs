@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -33,15 +33,11 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 Like a message. 
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /messages/:conversation_id/:message_id/like
 ```
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -55,9 +51,7 @@ GroupMe restricts reactions to [GroupMe powerups](emoji.md) and the 15 unicode o
 
 There is no way to apply more than one reaction at a time to any given message, attempting to do so will overwrite the original reaction with the new one.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /messages/:conversation_id/:message_id/like
 {
   "like_icon": {
@@ -69,7 +63,7 @@ POST /messages/:conversation_id/:message_id/like
 
 or
 
-```json
+```json linenums="1" title="HTTP Request"
 POST /messages/:conversation_id/:message_id/like
 {
   "like_icon": {
@@ -85,9 +79,7 @@ POST /messages/:conversation_id/:message_id/like
 * *like_icon* (optional)
 	object — can contain reaction objects of type `unicode` (for standard unicode characters/emojis) or `emoji` for GroupMe emoji/powerups. `unicode` type reacions have a `code` parameter that specifies what text should be displayed. `emoji` type reactions have parameters `pack_id` and `pack_index`. See the [emoji documentation](emoji.md) for more information on what these values mean.
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "reactions": [
@@ -106,13 +98,11 @@ Status: 200 OK
 ## Unlike
 Unlike / remove your reactions from a message.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /messages/:conversation_id/:message_id/unlike
 ```
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -122,8 +112,7 @@ Status: 200 OK
 
 A list of the liked messages in the group for a given period of time. Messages are ranked in order of number of likes.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:group_id/likes?period=<day|week|month>
 ```
 **Parameters**
@@ -131,8 +120,7 @@ GET /groups/:group_id/likes?period=<day|week|month>
 * *period* (required)
 	string — one of: 'day', 'week', or 'month'
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "messages": [
@@ -217,13 +205,11 @@ Status: 200 OK
 
 A list of messages you have liked. Messages are returned in reverse chrono-order. Note that the payload includes a liked_at timestamp in ISO-8601 format.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:group_id/likes/mine
 ```
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "messages": [
@@ -273,13 +259,11 @@ Status: 200 OK
 ## My Hits
 A list of messages others have liked.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:group_id/likes/for_me
 ```
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "messages": [

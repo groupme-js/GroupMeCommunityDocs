@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -35,8 +35,7 @@ Pins a message.
 
 Note that trying to pin a message which is already pinned will result in an unhelpful 400 error. It may be difficult to programatically determine whether a given call fails due to an actual bad request, or if it's just because the message has already been pinned. For now, you just have to enumerate the pinned mesages and see if there's a match, or get the messatge object and see if the "pinned_at" field is null
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /conversations/:conversation_id/messages/:message_id/pin
 ```
 
@@ -50,9 +49,7 @@ POST /conversations/:conversation_id/messages/:message_id/pin
 
 	string - The ID of the message to pin.
 	
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -64,8 +61,7 @@ Unpins a message.
 
 The same note on errors applies - trying to unpin a message which is not already pinned will result in an unhelpful 400 error.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /conversations/:conversation_id/messages/:message_id/unpin
 ```
 
@@ -79,9 +75,7 @@ POST /conversations/:conversation_id/messages/:message_id/unpin
 
 	string - The ID of the message to unpin.
 	
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -91,12 +85,11 @@ Status: 200 OK
 
 List all of the pinned messages. The request varies slightly for groups and DMs, unlike the above methods.
 
-**Request**
-
-```json
-GET /pinned/groups/:group_id/messages/`
+```json linenums="1" title="HTTP Request (For Groups)"
+GET /pinned/groups/:group_id/messages/
 ```
-```json
+
+```json linenums="1" title="HTTP Request (For DMs)"
 GET /pinned/direct_messages
 ```
 
@@ -109,11 +102,8 @@ GET /pinned/direct_messages
 * *other_user_id* (required for DMs)
 
   string - The ID of the user (other than you) in the DM channel you're getting the Pins for
-	
-**Responses**
 
-For groups:
-```json
+```json linenums="1" title="HTTP Response (For Groups)"
 Status: 200 OK
 {
   "count": 1,
@@ -129,8 +119,7 @@ Status: 200 OK
 }
 ```
 
-For DMs:
-```json
+```json linenums="1" title="HTTP Response (For DMs)"
 Status: 200 OK
 {
   "count": 1,

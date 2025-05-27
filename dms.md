@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -32,8 +32,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ## List Existing DM Channels
 Returns a paginated list of direct message chats, or conversations, sorted by updated_at descending.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /chats
 ```
 
@@ -47,9 +46,7 @@ GET /chats
 
 	integer — Number of chats per page (Defaults to 20)
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -90,8 +87,7 @@ Status: 200 OK
 
 Directly fetch details about a specific DM channel using its compound `chat_id`. 
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /chats/:chat_id
 ```
 
@@ -101,8 +97,8 @@ GET /chats/:chat_id
 
     string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 {
   "created_at": 1705616604,
   "last_message": {
@@ -149,8 +145,7 @@ If no messages are found (e.g. when filtering with since_id) we return code 304.
 
 Note that for historical reasons, likes are returned as an array of user ids in the favorited_by key.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /direct_messages
 ```
 
@@ -176,9 +171,7 @@ GET /direct_messages
 
 	integer - Number of messages returned. Default is 20. Max is 100.
 	
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "count": 123,
@@ -230,8 +223,7 @@ The character map is an array of arrays containing rune data ([[{pack_id,offset}
 
 The placeholder should be a high-point/invisible UTF-8 character.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /direct_messages
 {
   "direct_message": {
@@ -284,9 +276,7 @@ POST /direct_messages
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "message": {
@@ -326,11 +316,11 @@ Status: 201 Created
   }
 }
 ```
-```json
+```json linenums="1" title="HTTP Response"
 Status: 403 Forbidden
 User has been auto-banned for sending too many messages.
 ```
-```json
+```json linenums="1" title="HTTP Response"
 Status: 400 Bad Request
 There's a problem with the parameters. Check errors.
 ```
@@ -339,14 +329,11 @@ There's a problem with the parameters. Check errors.
 
 ## Delete a message
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 DELETE /conversations/:group_id/messages/:message_id
 ```
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 204 Deleted
 ```
 
@@ -359,8 +346,7 @@ You can only mark new messages as read, attempting to read a message sent before
 > [!important]
 > This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST https://v2.groupme.com/read_receipts
 {
   "read_receipt": {
@@ -380,8 +366,7 @@ POST https://v2.groupme.com/read_receipts
 
     String - The ID of the direct message channel the message can be found in.
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "read_receipt": {

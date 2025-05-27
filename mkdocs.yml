@@ -9,10 +9,10 @@ site_description: "The OpenGM Project: Community GroupMe API documentation for a
 theme:
   name: material
   icon:
-    logo: OpenGM/logo
+    logo: OpenGM/sprocket
     repo: fontawesome/brands/github
 
-  favicon: assets/opengm_logo.svg
+  favicon: assets/sprocket.svg
 
   code:
     highlight_theme: dracula

@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -33,8 +33,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 List all the upcoming events for the group
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /conversations/:group_id/events/list?end_at=2021-07-12T02:52:50Z&limit=20
 ```
 
@@ -48,9 +47,7 @@ GET /conversations/:group_id/events/list?end_at=2021-07-12T02:52:50Z&limit=20
 
 	integer - the number of results to pull. GroupMe's default is 20, not sure what the limit is.
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "events": [
@@ -99,8 +96,7 @@ Status: 200 OK
 
 List details on a specific event given its ID
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /conversations/:group_id/events/show?event_id=<event_id>
 ```
 
@@ -110,8 +106,7 @@ GET /conversations/:group_id/events/show?event_id=<event_id>
 
     String - The ID of the event you want to fetch
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "event": {
@@ -148,9 +143,7 @@ Status: 200 OK
 
 Creates a calendar event.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /conversations/:id/events/create
 {
   "name": "Dasani Appreciation Day",
@@ -208,8 +201,7 @@ POST /conversations/:id/events/create
 
 	array - An array of integers, which represent automatic reminders from GroupMe. The number is the number of seconds between the reminder and the start of the event - for example, if one of the numbers is 300, that represents sending a reminder 5 minutes before the event starts. Only two reminders are permitted, and only certain values are permitted: 0, 300, 900, 1800, 3600, 7200, 86400, 172800, and 604800.
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "event": {
@@ -281,9 +273,7 @@ Status: 201 Created
 
 Edit or update an event. In order to do this, you must be the original creator of the event. Note that this is very similar to the Create request. You only need to provide whatever parameters you wish to change about the original event, but start_at, end_at, timezone, and is_all_day MUST be provided together if any of them are included!
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /conversations/:group_id/events/update?event_id=1123123
 {
   "name": "Dasani Appreciation Day",
@@ -346,9 +336,7 @@ POST /conversations/:group_id/events/update?event_id=1123123
 	array - An array of integers, which represent automatic reminders from GroupMe. The number is the number of seconds between the reminder and the start of the event - for example, if one of the numbers is 300, that represents sending a reminder 5 minutes before the event starts. Only two reminders are permitted, and only certain values are permitted: 0, 300, 900, 1800, 3600, 7200, 86400, 172800, and 604800.
 
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
 	"event": {
@@ -363,8 +351,7 @@ Status: 200 OK
 
 Cancel an upcoming event. In order to do this, you much be the creator of the event.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 DELETE /conversations/:group_id/events/delete?event_id=12312312
 ```
 
@@ -374,9 +361,7 @@ DELETE /conversations/:group_id/events/delete?event_id=12312312
 
 	string - The ID of the event to delete.
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -386,9 +371,7 @@ Status: 200 OK
 
 Marks you as going or not going to an event.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /conversations/:group_id/events/rsvp?event_id=123123123123&going=true
 ```
 
@@ -402,9 +385,7 @@ POST /conversations/:group_id/events/rsvp?event_id=123123123123&going=true
 
 	boolean - If true, this request will mark you as going. If false, this request will mark you as not going.
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
 	"event": {
@@ -419,9 +400,7 @@ Status: 200 OK
 
 Marks the user as neither going nor not going; in other words, marks the user as "unsure" or "pending".
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 DELETE /conversations/:group_id/events/rsvp/delete?event_id=123123
 ```
 
@@ -431,9 +410,7 @@ DELETE /conversations/:group_id/events/rsvp/delete?event_id=123123
 
 	string - the ID of the event you're responding to
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
 	"event": {

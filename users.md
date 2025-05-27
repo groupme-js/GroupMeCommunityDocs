@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -36,8 +36,7 @@ Returns some basic profile information, like the name, bio, and groups you share
 > [!important]
 > This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET https://v2.groupme.com/users/:user_id
 ```
 
@@ -47,8 +46,7 @@ GET https://v2.groupme.com/users/:user_id
 
     boolean - if `false`, the `shared_groups` property contained in the response will be `null`.
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "user": {
@@ -95,9 +93,7 @@ Status: 200 OK
 
 A list of contacts you have blocked. These people cannot DM you or add you to groups.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 GET /blocks?user=<user>
 ```
 
@@ -107,8 +103,7 @@ GET /blocks?user=<user>
 
     string - Your user ID
 
-**Responses**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "blocks": [
@@ -127,8 +122,7 @@ Status: 200 OK
 
 Asks if a block exists between you and another user id
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET /blocks/between?user=<user>&otherUser=<otherUser>
 ```
 
@@ -142,9 +136,7 @@ GET /blocks/between?user=<user>&otherUser=<otherUser>
   
     string - The other user's ID
 
-**Responses**
-```json
-Status: 200 OK
+```json linenums="1" title="HTTP Response"Status: 200 OK
 {
   "between": true
 }
@@ -156,8 +148,7 @@ Status: 200 OK
 
 Creates a block between you and the contact
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /blocks?user=<user>&otherUser=<otherUser>
 ```
 
@@ -171,9 +162,7 @@ POST /blocks?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 	
-**Responses**
-```json
-Status: 201 Created
+```json linenums="1" title="HTTP Response"Status: 201 Created
 {
   "block": {
     "user_id": "1234567890",
@@ -189,9 +178,7 @@ Status: 201 Created
 
 Removes block between you and other user
 
-**Request**
-
-```
+```json linenums="1" title="HTTP Request"
 DELETE /blocks?user=<user>&otherUser=<otherUser>
 ```
 
@@ -205,9 +192,7 @@ DELETE /blocks?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 
-**Responses**
-```json
-Status: 200 OK
+```json linenums="1" title="HTTP Response"Status: 200 OK
 ```
 
 ***
@@ -215,9 +200,7 @@ Status: 200 OK
 ## Unblock (Alternative method)
 Removes block between you and other user
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 POST /blocks/delete?user=<user>&otherUser=<otherUser>
 ```
 
@@ -231,10 +214,7 @@ POST /blocks/delete?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 
-**Responses**
-
-```json
-Status: 200 OK
+```json linenums="1" title="HTTP Response"Status: 200 OK
 ```
 
 ## Index Relationships
@@ -252,8 +232,7 @@ Repeat this process until the response contains an empty list, which means you'v
 > [!important]
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET https://api.groupme.com/v4/relationships
 ```
 
@@ -267,8 +246,7 @@ GET https://api.groupme.com/v4/relationships
 
     string - an ISO 8601 timestamp, marking the last contact you've received
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -314,12 +292,10 @@ Delete a relationship from your contact book
 > [!important]
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 DELETE https://api.groupme.com/v4/relationships/:user_id
 ```
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 202 Accepted
 ```

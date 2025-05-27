@@ -11,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```json
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -44,9 +44,7 @@ If no messages are found (e.g. when filtering with before_id) we return code 304
 
 Note that for historical reasons, likes are returned as an array of user ids in the favorited_by key.
 
-**Request**
-
-```json
+```json linenums="1" title="HTTP Request"
 GET /groups/:group_id/messages
 ```
 
@@ -73,9 +71,7 @@ GET /groups/:group_id/messages
   	boolean - A flag to tell the image service your client is capable of receiving non-image files. Setting this value to `0` or omitting it entirely will NOT omit messages with file attachments in the response; these messages will still be included, but the text property will be overwritten with `Please upgrade to download this file.` The file attachment will still be fully intact, however. In practice this means that if you care about the text in the message with an attachment, you should set `acceptFiles=1`.
 	
 	
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "count": 123,
@@ -131,8 +127,7 @@ Fetches an individual message object by its ID
 > [!important]
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 GET https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 ```
 
@@ -142,8 +137,7 @@ GET https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 
     string - The ID of the message you'd like to fetch
 
-**Response**
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "message": {
@@ -181,8 +175,7 @@ The character map is an array of arrays containing rune data ([[{pack_id,offset}
 
 The placeholder should be a high-point/invisible UTF-8 character.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/messages
 {
   "message": {
@@ -227,9 +220,7 @@ POST /groups/:group_id/messages
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "message": {
@@ -286,8 +277,7 @@ Attachments of type emoji rely on data from [GroupMe Emoji powerups](emoji.md).
 > [!important]
 > This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 PUT https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 {
   "text": "Hello World!",
@@ -317,9 +307,7 @@ PUT https://api.groupme.com/v4/groups/:group_id/messages/:message_id
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "message": {
@@ -361,13 +349,10 @@ Status: 200 OK
 
 ## Delete a message
 
-**Request**
-```json
+```json linenums="1" title="HTTP Request"
 DELETE /conversations/:group_id/messages/:message_id
 ```
 
-**Responses**
-
-```json
+```json linenums="1" title="HTTP Response"
 Status: 204 Deleted
 ```
