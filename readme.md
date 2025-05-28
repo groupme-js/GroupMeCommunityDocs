@@ -21,35 +21,37 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 [Member management](members.md) - How to add, remove, and update members in a group.
 
-[Group Messages](messages.md) - How to list and send messages in groups
+[Group Messages](messages.md) - How to list and send messages in groups.
 
-[Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users
+[Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users.
 
-[Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups
+[Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups.
 
 [Calendar Events](calendar.md) - How to list, create, and edit calendar events in a group.
 
 [Directory Management](directories.md) - How to list, search, and join public and campus group directories.
 
-[Users/Contact Management](users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups 
+[Users/Contact Management](users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
 
 [Bots](bots.md) - How to create, index, and use bots.
 
-[Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens
+[Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens.
 
-[Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments
+[Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments.
 
-[Videos](video.md) - Information on how to upload videos to be sent as attachments
+[Videos](video.md) - Information on how to upload videos to be sent as attachments.
 
-[Polls](polls.md) - Information on how to make and view polls
+[Polls](polls.md) - Information on how to make and view polls.
 
-[Push](push.md) - How to connect to the Push service to get real-time interaction with your program
+[Websocket Gateway](push.md) - How to connect to the Push service to get real-time interaction with your program.
 
-[Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji
+[Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji.
 
-[Pins](pins.md) - How to use GroupMe's new Pin functionality
+[Pins](pins.md) - How to use GroupMe's new Pin functionality.
 
-[Image Service](images.md) - How to upload Images to GroupMe's CDN
+[Image Service](images.md) - How to upload Images to GroupMe's CDN.
+
+[Oauth/MFA](oauth.md) - How to manage API tokens and handle multi-factor authentication with GroupMe.
 
 ***
 
