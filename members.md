@@ -1,3 +1,8 @@
+---
+title: "Group Memberships"
+description: "Learn how to interact with GroupMe's member objects via the API."
+---
+
 # Members
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -30,8 +35,9 @@ Fetch a group's current or former member list.
 
 This call is limited to admins and owners in the group. Any other caller will receive a `401 Unauthorized` response.
 
-**Request**
-`GET /groups/:group_id/members`
+```json linenums="1" title="HTTP Request"
+GET /groups/:group_id/members
+```
 
 **Parameters**
 
@@ -39,8 +45,7 @@ This call is limited to admins and owners in the group. Any other caller will re
 
 	string - to fetch either `active` (current memberships) or `inactive` (former memberships).
 	
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "memberships":[
@@ -73,8 +78,7 @@ Multiple members can be added in a single request, and results are fetched with 
 
 In order to correlate request params with resulting memberships, GUIDs can be added to the members parameters. These GUIDs will be reflected in the membership JSON objects.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/members/add
 {
   "members": [
@@ -122,8 +126,7 @@ POST /groups/:group_id/members/add
 			
 			string - If used, the GUID of the associated "results" object will match the value given
 				
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 202 Accepted
 {
   "results_id": "GUID"
@@ -139,9 +142,9 @@ Successfully created memberships will be returned, including any GUIDs that were
 
 Keep in mind that results are temporary -- they will only be available for 1 hour after the add request.
 
-**Request**
-
-`GET /groups/:group_id/members/results/:results_id`
+```json linenums="1" title="HTTP Request"
+GET /groups/:group_id/members/results/:results_id
+```
 
 **Parameters**
 
@@ -149,9 +152,7 @@ Keep in mind that results are temporary -- they will only be available for 1 hou
 
 	string - This is the guid that's returned from an add request.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "members": [
@@ -178,11 +179,11 @@ Status: 200 OK
   ]
 }
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 503 Service Unavailable
 Results aren't ready. Try again in a little bit.
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 404 Not Found
 Results are no longer available. Don't try again.
 ```
@@ -195,9 +196,9 @@ Remove a member (or yourself) from a group.
 
 Note: The creator of the group cannot be removed or exit.
 
-**Request**
-
-`POST /groups/:group_id/members/:membership_id/remove`
+```json linenums="1" title="HTTP Request"
+POST /groups/:group_id/members/:membership_id/remove
+```
 
 **Parameters**
 
@@ -205,9 +206,7 @@ Note: The creator of the group cannot be removed or exit.
 
 	string - Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -219,13 +218,11 @@ Some groups have "Request to join" enabled, and thus require their applications 
 
 This request can be sent by any member of the group, not just admins. However, in order to approve or deny requests, you must have permission to manage the group.
 
-**Request**
-
-`GET /groups/:group_id/pending_memberships`
-
-**Response**
-
+```json linenums="1" title="HTTP Request"
+GET /groups/:group_id/pending_memberships
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -277,8 +274,7 @@ Status: 200 OK
 
 This request is exclusive to members with permission to manage the group, non Admin/Owners will receive a 401: Unauthorized response.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/members/:membership_id/approval
 {
   "approval": true
@@ -294,17 +290,16 @@ POST /groups/:group_id/members/:membership_id/approval
 
 	boolean - `true` to approve, `false` to deny.
 
-**Response**
-
 Note: if you deny the membership, `state` will be "denied" instead of "active"
-```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "membership_id": 1075929653,
   "state": "active"
 }
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 401 Unauthorized
 You are neither the Owner nor an Admin in this group
 ```
@@ -319,9 +314,9 @@ Current members of the group cannot be banned from rejoining as they have not le
 
 Note: This request is relative to `https://v2.groupme.com`, NOT `https://api.groupme.com/v3`.
 
-**Request**
-
-`POST /groups/:group_id/memberships/:membership_id/destroy`
+```json linenums="1" title="HTTP Request"
+POST /groups/:group_id/memberships/:membership_id/destroy
+```
 
 **Parameters**
 
@@ -329,9 +324,7 @@ Note: This request is relative to `https://v2.groupme.com`, NOT `https://api.gro
 
 	string - Please note that this isn't the same as the user ID. In the members key in the group JSON, this is the id value, not the user_id.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -341,8 +334,7 @@ Status: 200 OK
 
 Update your nickname in a group. The nickname must be between 1 and 50 characters.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/memberships/update
 {
   "membership": {
@@ -350,8 +342,8 @@ POST /groups/:group_id/memberships/update
   }
 }
 ```
-**Responses**
-```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "MEMBERSHIP ID",

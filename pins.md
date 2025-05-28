@@ -1,3 +1,8 @@
+---
+title: "Pinned Messages"
+description: "Learn how to interact with GroupMe's pins system via the API."
+---
+
 # Pins
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -30,9 +35,9 @@ Pins a message.
 
 Note that trying to pin a message which is already pinned will result in an unhelpful 400 error. It may be difficult to programatically determine whether a given call fails due to an actual bad request, or if it's just because the message has already been pinned. For now, you just have to enumerate the pinned mesages and see if there's a match, or get the messatge object and see if the "pinned_at" field is null
 
-**Request**
-
-`POST /conversations/:conversation_id/messages/:message_id/pin`
+```json linenums="1" title="HTTP Request"
+POST /conversations/:conversation_id/messages/:message_id/pin
+```
 
 **Parameters**
 
@@ -44,9 +49,7 @@ Note that trying to pin a message which is already pinned will result in an unhe
 
 	string - The ID of the message to pin.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -58,9 +61,9 @@ Unpins a message.
 
 The same note on errors applies - trying to unpin a message which is not already pinned will result in an unhelpful 400 error.
 
-**Request**
-
-`POST /conversations/:conversation_id/messages/:message_id/unpin`
+```json linenums="1" title="HTTP Request"
+POST /conversations/:conversation_id/messages/:message_id/unpin
+```
 
 **Parameters**
 
@@ -72,9 +75,7 @@ The same note on errors applies - trying to unpin a message which is not already
 
 	string - The ID of the message to unpin.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -84,10 +85,13 @@ Status: 200 OK
 
 List all of the pinned messages. The request varies slightly for groups and DMs, unlike the above methods.
 
-**Request**
+```json linenums="1" title="HTTP Request (For Groups)"
+GET /pinned/groups/:group_id/messages/
+```
 
-`GET /pinned/groups/:group_id/messages/`
-`GET /pinned/direct_messages`
+```json linenums="1" title="HTTP Request (For DMs)"
+GET /pinned/direct_messages
+```
 
 **Parameters**
 
@@ -98,37 +102,33 @@ List all of the pinned messages. The request varies slightly for groups and DMs,
 * *other_user_id* (required for DMs)
 
   string - The ID of the user (other than you) in the DM channel you're getting the Pins for
-	
-**Responses**
 
-For groups:
-```
+```json linenums="1" title="HTTP Response (For Groups)"
 Status: 200 OK
 {
-  "count": 1
+  "count": 1,
   "messages": [
     {
-      id: "12345"
-      name: "Dasaniel Royer"
-      pinned_by: "54321"
-      pinned_at: 123312312
+      "id": "12345",
+      "name": "Dasaniel Royer",
+      "pinned_by": "54321",
+      "pinned_at": 123312312
       ...
     }
   ]
 }
 ```
 
-For DMs:
-```
+```json linenums="1" title="HTTP Response (For DMs)"
 Status: 200 OK
 {
-  "count": 1
+  "count": 1,
   "messages": [
     {
-      id: "12345"
-      name: "Dasaniel Royer"
-      pinned_by: "54321"
-      pinned_at: 123312312
+      "id": "12345",
+      "name": "Dasaniel Royer",
+      "pinned_by": "54321",
+      "pinned_at": 123312312
       ...
     }
   ]

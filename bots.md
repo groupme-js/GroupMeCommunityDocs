@@ -1,5 +1,9 @@
-# Bots
+---
+title: "Webhook Bots"
+description: "Learn how to interact with GroupMe webhooks via the API."
+---
 
+# Webhook Bots
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
@@ -7,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -47,17 +51,16 @@ Lastly, while GroupMe does offer API endpoints for creating, destroying, and ind
 
 Create a bot. The response will include your bot_id - do NOT publish or let anyone else see this! Anyone with this will be able to send messages using your bot!
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /bots
 {
-	"bot": {
-		"name": "Dasani Bot",
-		"group_id": "1234567890",
-		"avatar_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipvgzU.b0q4M/v0/1000x-1.jpg",
-		"callback_url": "https://example.herokuapp.com/",
-		"dm_notification": false
-	}
+  "bot": {
+	"name": "Dasani Bot",
+	"group_id": "1234567890",
+	"avatar_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipvgzU.b0q4M/v0/1000x-1.jpg",
+	"callback_url": "https://example.herokuapp.com/",
+	"dm_notification": false
+  }
 }
 ```
 
@@ -83,8 +86,7 @@ POST /bots
 	
 		string - if provided, whenever the bot receives a message, it will be sent as a POST request to this URL.
 		
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "bot_id": "1234567890",
@@ -102,18 +104,17 @@ Status: 201 Created
 
 Post a message from a bot
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /bots/post
 {
-	"bot_id": "1234567890",
-	"text": "Hello World",
-	"attachments": [
-		{
-			"type": "image",
-			"url": "https://i.groupme.com/123456789"
-		}
-	]
+  "bot_id": "1234567890",
+  "text": "Hello World",
+  "attachments": [
+    {
+      "type": "image",
+      "url": "https://i.groupme.com/123456789"
+    }
+  ]
 }
 ```
 
@@ -133,8 +134,7 @@ POST /bots/post
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 ```
 
@@ -144,12 +144,11 @@ Status: 201 Created
 
 List bots that you have created. The response will include multiple `bot_id`s - do NOT publish these or let anyone else see these! Anyone with this will be able to send messages using your bot!
 
-**Request**
-
-`GET /bots`
-
-**Responses**
+```json linenums="1" title="HTTP Request"
+GET /bots
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -169,15 +168,14 @@ Status: 200 OK
 
 Remove a bot that you have created
 
-**Request**
-
-`POST /bots/destroy`
+```json linenums="1" title="HTTP Request"
+POST /bots/destroy
+```
 
 **Parameters**
 
 * *bot_id* (required)
 
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```

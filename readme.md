@@ -1,4 +1,9 @@
-# GroupMe Community Docs
+---
+title: "API Overview"
+description: "Learn how to interact with GroupMe via the API."
+---
+
+# Overview
 
 GroupMe has a thriving developer community which has created a variety of applications, bots, and tools. However, while the platform has constantly matured, the public documentation has not. In an effort to help other developers understand and utilize the platform better, this is a community-led effort to document everything possible. If you discover something not listed here, or you find an error in what is listed, please bring it up on the discussion page or submit a pull request.
 
@@ -8,7 +13,7 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 **This documentation is not associated with GroupMe or Microsoft**
 
-### Contents:
+## Contents:
 
 [Group management](groups.md) - How to create, join, list, update, etc. groups.
 
@@ -48,6 +53,6 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 ***
 
-### Contributing
+## Contributing
 
 The GroupMe Community Docs are constantly evolving and updating! Check out the [Contributing Checklist](https://github.com/groupme-js/GroupMeCommunityDocs/issues/32) for insights on what documentation we're still in need of for full API coverage. 

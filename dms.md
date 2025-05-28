@@ -1,3 +1,8 @@
+---
+title: "Direct Messages"
+description: "Learn how to interact with GroupMe's direct message channels via the API."
+---
+
 # Direct Messages
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -27,9 +32,9 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ## List Existing DM Channels
 Returns a paginated list of direct message chats, or conversations, sorted by updated_at descending.
 
-**Request**
-
-`GET /chats`
+```json linenums="1" title="HTTP Request"
+GET /chats
+```
 
 **Parameters**
 
@@ -41,9 +46,7 @@ Returns a paginated list of direct message chats, or conversations, sorted by up
 
 	integer — Number of chats per page (Defaults to 20)
 
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -84,8 +87,7 @@ Status: 200 OK
 
 Directly fetch details about a specific DM channel using its compound `chat_id`. 
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 GET /chats/:chat_id
 ```
 
@@ -95,8 +97,8 @@ GET /chats/:chat_id
 
     string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
 
-**Response**
-```
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 {
   "created_at": 1705616604,
   "last_message": {
@@ -143,9 +145,9 @@ If no messages are found (e.g. when filtering with since_id) we return code 304.
 
 Note that for historical reasons, likes are returned as an array of user ids in the favorited_by key.
 
-**Request**
-
-`GET /direct_messages`
+```json linenums="1" title="HTTP Request"
+GET /direct_messages
+```
 
 **Parameters**
 
@@ -169,9 +171,7 @@ Note that for historical reasons, likes are returned as an array of user ids in 
 
 	integer - Number of messages returned. Default is 20. Max is 100.
 	
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "count": 123,
@@ -223,8 +223,7 @@ The character map is an array of arrays containing rune data ([[{pack_id,offset}
 
 The placeholder should be a high-point/invisible UTF-8 character.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /direct_messages
 {
   "direct_message": {
@@ -250,14 +249,8 @@ POST /direct_messages
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
@@ -283,9 +276,7 @@ POST /direct_messages
 	
 	For more information on types of attachments and how to send them, check out the [attachments documentation](attachments.md)
 
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "message": {
@@ -308,10 +299,6 @@ Status: 201 Created
         "url": "https://i.groupme.com/123456789"
       },
       {
-        "type": "image",
-        "url": "https://i.groupme.com/123456789"
-      },
-      {
         "type": "location",
         "lat": "40.738206",
         "lng": "-73.993285",
@@ -321,25 +308,19 @@ Status: 201 Created
         "type": "emoji",
         "placeholder": "",
         "charmap": [
-          [
-            1,
-            42
-          ],
-          [
-            2,
-            34
-          ]
+          [1, 42],
+          [2, 34]
         ]
       }
     ]
   }
 }
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 403 Forbidden
 User has been auto-banned for sending too many messages.
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 400 Bad Request
 There's a problem with the parameters. Check errors.
 ```
@@ -348,13 +329,11 @@ There's a problem with the parameters. Check errors.
 
 ## Delete a message
 
-**Request**
-
-`DELETE /conversations/:group_id/messages/:message_id`
-
-**Responses**
-
+```json linenums="1" title="HTTP Request"
+DELETE /conversations/:group_id/messages/:message_id
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 204 Deleted
 ```
 
@@ -367,8 +346,7 @@ You can only mark new messages as read, attempting to read a message sent before
 > [!important]
 > This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST https://v2.groupme.com/read_receipts
 {
   "read_receipt": {
@@ -388,16 +366,15 @@ POST https://v2.groupme.com/read_receipts
 
     String - The ID of the direct message channel the message can be found in.
 
-**Response**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
-  read_receipt: {
-    id: '174769438312353599',
-    chat_id: '74938777+93645911',
-    message_id: '174769438312353599',
-    user_id: '93645911',
-    read_at: 1747694449
+  "read_receipt": {
+    "id": "174769438312353599",
+    "chat_id": "74938777+93645911",
+    "message_id": "174769438312353599",
+    "user_id": "93645911",
+    "read_at": 1747694449
   }
 }
 ```

@@ -1,3 +1,8 @@
+---
+title: "Groups"
+description: "Learn how to interact with GroupMe group channels via the API."
+---
+
 # Groups
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -32,10 +37,9 @@ The response is paginated, with a default of 10 groups per page.
 
 Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
 
-**Request**
-
-`GET /groups`
-
+```json linenums="1" title="HTTP Request"
+GET /groups
+```
 **Parameters**
 
 * *page*
@@ -50,8 +54,7 @@ Please consider using of omit=memberships parameter. Not including member lists 
 
 	string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 	
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -86,31 +89,17 @@ Status: 200 OK
             "url": "https://i.groupme.com/123456789"
           },
           {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
-          {
             "type": "location",
             "lat": "40.738206",
             "lng": "-73.993285",
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -126,13 +115,11 @@ Status: 200 OK
 
 List the groups you have left but can rejoin.
 
-**Request**
-
-`GET /groups/former`
-
-**Responses**
-
+```json linenums="1" title="HTTP Request"
+GET /groups/former
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 [
   {
@@ -165,11 +152,7 @@ Status: 200 OK
           {
             "type": "image",
             "url": "https://i.groupme.com/123456789"
-          },
-          {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
+          },,
           {
             "type": "location",
             "lat": "40.738206",
@@ -177,21 +160,11 @@ Status: 200 OK
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -207,18 +180,18 @@ Status: 200 OK
 
 Load a specific group.
 
-**Request**
 
-`GET /groups/:id`
+```json linenums="1" title="HTTP Request"
+GET /groups/:group_id
+```
 
 **Parameters**
 
-* *id* (required)
+* *group_id* (required)
 
 	string - the ID of the group to show details of
 
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -252,31 +225,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -291,9 +250,7 @@ Status: 200 OK
 
 Create a new group
 
-**Request**
-
-```
+```json linenums="1" title="HTTP Request"
 POST /groups
 {
   "name": "Family",
@@ -320,9 +277,7 @@ POST /groups
 
 	boolean - If you pass a true value for share, we'll generate a share URL. Anybody with this URL can join the group.
 
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "id": "1234567890",
@@ -356,31 +311,17 @@ Status: 201 Created
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -395,9 +336,7 @@ Status: 201 Created
 
 Update a group after creation
 
-**Request**
-
-```
+```json linenums="1" title="HTTP Request"
 POST /groups/:id/update
 {
   "name": "Family",
@@ -491,8 +430,7 @@ POST /groups/:id/update
 
   	array - Contains one or both `"admin"` and `"sender"` values. These are pretty self explanitory. If left empty, nobody will be able to delete messages.
   
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -526,31 +464,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -566,13 +490,11 @@ Disband a group
 
 This action is only available to the group creator
 
-**Request**
-
-`POST /groups/:id/destroy`
-
-**Responses**
-
+```json linenums="1" title="HTTP Request"
+POST /groups/:group_id/destroy
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
 
@@ -581,13 +503,11 @@ Status: 200 OK
 ## Join
 Join a shared group
 
-**Request**
-
-`POST /groups/:id/join/:share_token`
-
-**Responses**
-
+```json linenums="1" title="HTTP Request"
+POST /groups/:id/join/:share_token
 ```
+
+```json linenums="1" title="Response"
 Status: 200 OK
 {
   "group": {
@@ -622,31 +542,17 @@ Status: 200 OK
             "url": "https://i.groupme.com/123456789"
           },
           {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          },
-          {
             "type": "location",
             "lat": "40.738206",
             "lng": "-73.993285",
             "name": "GroupMe HQ"
           },
           {
-            "type": "split",
-            "token": "SPLIT_TOKEN"
-          },
-          {
             "type": "emoji",
             "placeholder": "",
             "charmap": [
-              [
-                1,
-                42
-              ],
-              [
-                2,
-                34
-              ]
+              [1, 42],
+              [2, 34]
             ]
           }
         ]
@@ -662,9 +568,9 @@ Status: 200 OK
 
 Rejoin a group. Only works if you previously removed yourself.
 
-**Request**
-
-`POST /groups/join`
+```json linenums="1" title="HTTP Request"
+POST /groups/join
+```
 
 **Parameters**
 
@@ -672,9 +578,8 @@ Rejoin a group. Only works if you previously removed yourself.
 
 	string - the ID of the group to join
 
-**Responses**
 
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "id": "1234567890",
@@ -708,31 +613,17 @@ Status: 200 OK
           "url": "https://i.groupme.com/123456789"
         },
         {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
           "type": "location",
           "lat": "40.738206",
           "lng": "-73.993285",
           "name": "GroupMe HQ"
         },
         {
-          "type": "split",
-          "token": "SPLIT_TOKEN"
-        },
-        {
           "type": "emoji",
           "placeholder": "",
           "charmap": [
-            [
-              1,
-              42
-            ],
-            [
-              2,
-              34
-            ]
+            [1, 42],
+            [2, 34]
           ]
         }
       ]
@@ -757,9 +648,9 @@ Response is array of result objects which contain status field - the result of c
 * **'404'** - group or new owner not found or new owner is not member of the group
 * **'405'** - request object is missing required field or any of the required fields is not an ID
 
-**Request**
-
-`POST /groups/change_owners`
+```json linenums="1" title="HTTP Request"
+POST /groups/change_owners
+```
 
 **Parameters**
 
@@ -776,10 +667,8 @@ Response is array of result objects which contain status field - the result of c
 	* *owner_id* (required)
 	
 		string - The ID of the person to be made owner
-		
-**Responses**
 
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "results": [
@@ -796,7 +685,7 @@ Status: 200 OK
   ]
 }
 ```
-```
+```json linenums="1" title="HTTP Response"
 Status: 400 Bad Request
 'requests' field missing in request body
 ```

@@ -1,3 +1,8 @@
+---
+title: "Image Galleries"
+description: "Learn how to interact with GroupMe's channel-specific image galleries via the API."
+---
+
 # Image Gallery
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -30,9 +35,9 @@ List a Group or DM conversation's previous *messages* that contain images or fil
 
 The response is paginated (sort of), with a default of 100 images per page. Specifying a `before` timestamp allows you to fetch beyond the first page of results.
 
-**Request**
-
-`GET /conversations/:conversation_id/gallery`
+```json linenums="1" title="HTTP Request"
+GET /conversations/:conversation_id/gallery
+```
 
 **Parameters**
 
@@ -52,8 +57,7 @@ The response is paginated (sort of), with a default of 100 images per page. Spec
 
   string - A timestamp in ISO 8601 format denoting the oldest image timestamp to include in the response. This is used for pagination: the server will return images newer than this timestamp. Can be used with or without the `before` parameter.
 	
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "messages": [

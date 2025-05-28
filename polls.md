@@ -1,3 +1,8 @@
+---
+title: "Polls"
+description: "Learn how to interact with GroupMe's polling system via the API."
+---
+
 # Polls
 
 Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
@@ -6,7 +11,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-```
+```json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -28,8 +33,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 Creates a poll, which is immediately sent to the group.
 
-**Request**
-```
+```json linenums="1" title="HTTP Request"
 POST /poll/:group_id
 {
 	"subject": "Is Dasani the objective best brand of bottled water?",
@@ -67,9 +71,7 @@ POST /poll/:group_id
 
 	
 
-**Responses**
-
-```
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "poll": {
@@ -141,13 +143,11 @@ Status: 201 Created
 
 Shows the responses to a poll
 
-**Request**
-
-`GET /poll/:group_id/:poll_id`
-
-**Responses**
-
+```json linenums="1" title="HTTP Request"
+GET /poll/:group_id/:poll_id
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 201 Created
 {
   "poll": {
@@ -198,15 +198,11 @@ In an anonymous poll, the "voter_ids" field does not exist.
 
 Vote in a poll, or change your vote if you already voted.
 
-**Request**
-
-For single-response polls:
-```
+```json linenums="1" title="HTTP Request (Single-Response Polls)"
 POST /poll/:group_id/:poll_id/:option_id
 ```
 
-For multi-response polls:
-```
+```json linenums="1" title="HTTP Request (Multi-Response Polls)"
 POST /poll/:group_id/:poll_id/
 {
 	"votes": ["1", "2"]
@@ -218,8 +214,7 @@ POST /poll/:group_id/:poll_id/
 * *votes*
 	array - an array of the IDs of the options you want to vote for
 
-**Responses**
-```
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "poll": {
@@ -272,12 +267,11 @@ If the user has not voted, the "user_votes" field will not exist.
 
 End a poll right now
 
-**Request**
-
-`POST /poll/:group_id/:poll_id/end`
-
-**Responses**
+```json linenums="1" title="HTTP Request"
+POST /poll/:group_id/:poll_id/end
 ```
+
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "poll": {
@@ -326,13 +320,12 @@ Status: 200 OK
 
 List all the polls in this chat
 
-**Request**
-
-`GET /poll/:group_id`
-
-**Responses**
+```json linenums="1" title="HTTP Request"
+GET /poll/:group_id
 ```
-200 OK
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 {
   "polls": [
     {

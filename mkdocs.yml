@@ -1,0 +1,72 @@
+site_name: OpenGM API Documentation
+docs_dir: src
+site_url: https://groupme-js.github.io/GroupMeCommunityDocs
+repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
+copyright: Copyright &copy; 2025 - OpenGM Project
+
+site_description: "The OpenGM Project: Community GroupMe API documentation for all."
+
+theme:
+  name: material
+  icon:
+    logo: OpenGM/sprocket
+    repo: fontawesome/brands/github
+
+  favicon: assets/sprocket.svg
+
+  code:
+    highlight_theme: dracula
+
+  custom_dir: src/overrides
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - search.suggest
+    - search.share
+    - navigation.footer
+    - content.code.copy
+    - header.autohide
+    - announce.dismiss
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: light blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: light blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+plugins:
+  - social
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons

@@ -1,3 +1,8 @@
+---
+title: "Emoji Powerups"
+description: "Learn how to interact with GroupMe's Emoji Powerup system via the API."
+---
+
 # Emoji Packs (PowerUps)
 
 GroupMe allows users to send special non-standard (non-Unicode) emoji. They're basically just small inline images. These emojis are also known as Powerups.
@@ -6,7 +11,7 @@ If any message contains special GroupMe emoji, there will be an attachment in th
 
 Here's the JSON response for a sample message containing emoji:
 
-```json
+```json linenums="1" title="HTTP Response"
 
 {
   "attachments": [
@@ -43,7 +48,7 @@ are merely placeholders to be replaced later on with the emoji images.
 
 The JSON format for the emoji attachment looks like this:
 
-```json
+```json linenums="1" title="Object Structure"
 {
   "charmap": [
     [3, 13],
@@ -78,8 +83,7 @@ There's also an API endpoint which will give you all the emoji packs in JSON for
 don't need to use an API key). The returned data looks like this (note: To save space, I reduced the results to show only a few emoji from one pack. If you'd
 like to see all the emoji packs, you can check out the full JSON at [https://powerup.groupme.com/powerups](https://powerup.groupme.com/powerups)):
 
-```json
-
+```json linenums="1" title="HTTP Response"
 {
   "powerups": [
     {
@@ -400,8 +404,7 @@ in the same format as above.
 
 If you'd like some example code to work off of, here's a short proof-of-concept I made that lets me send custom emojis:
 
-```js
-
+```js linenums="1"
 (async () => {
   const rawResponse = await fetch('https://api.groupme.com/v3/groups/YOUR_GROUP_NAME/messages?token=YOUR_API_TOKEN', {
     method: 'POST',
@@ -415,7 +418,6 @@ If you'd like some example code to work off of, here's a short proof-of-concept 
 
   console.log(content);
 })();
-
 ```
 
 Note that in my experience it doesn't seem to matter what the placeholder is, as long as you keep it consistent with the message.

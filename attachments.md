@@ -1,3 +1,8 @@
+---
+title: "Attachments"
+description: "Learn how to interact with GroupMe's message attachments viw the API."
+---
+
 # Attachments
 
 When sending messages in groups or DM channels, users (or bots) can add any number of attachments, as noted in the relevant sections of [Group Messages](messages.md), [Direct Messages](dms.md), and [Bots](bots.md). In each of these instances, you add an attachment by including a corresponding object in the "attachments" array. This section will list all the different types of attachments possible (That we know of and can find documentation for) and how to send them.
@@ -8,11 +13,10 @@ All parameters are required unless otherwise specified.
 
 ## Images
 
-**Object structure**
-```
+```json linenums="1" title="Object Structure"
 {
-	"type": "image",
-	"url": "https://i.groupme.com/123456789"
+  "type": "image",
+  "url": "https://i.groupme.com/123456789"
 }
 ```
 
@@ -30,12 +34,11 @@ All parameters are required unless otherwise specified.
 
 ## Video
 
-**Object Structure**
-```
+```json linenums="1" title="Object Structure"
 {
-"type":"video",
-"url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.mp4",
-"preview_url":"https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.jpg"
+  "type": "video",
+  "url": "https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.mp4",
+  "preview_url": "https://v.groupme.com/123456/2021-12-11T16:33:43Z/9999a999.1280x720r90.jpg"
 }
 ```
 **Parameters**
@@ -56,11 +59,10 @@ All parameters are required unless otherwise specified.
 
 ## File
 
-**Object Structure**
-```
+```json linenums="1" title="Object Structure"
 {
-"type":"file",
-"file_id":"abcdabcd-dead-beef-2222-111122223333"
+  "type":"file",
+  "file_id":"abcdabcd-dead-beef-2222-111122223333"
 }
 ```
 **Parameters**
@@ -77,13 +79,12 @@ All parameters are required unless otherwise specified.
 
 ## Location
 
-**Object structure**
-```
+```json linenums="1" title="Object Structure"
 {
-	"type": "location",
-	"name": "Heaven?",
-	"lat": "64.148430",
-	"lng": "-21.9355508"
+  "type": "location",
+  "name": "Heaven?",
+  "lat": "64.148430",
+  "lng": "-21.9355508"
 }
 ```
 
@@ -111,12 +112,11 @@ All parameters are required unless otherwise specified.
 
 Only for GroupMe-specific emoji. Standard Unicode emoji (e.g. 💩) do not use this feature.
 
-**Object structure**
-```
+```json linenums="1" title="Object Structure"
 {
-	"type": "emoji",
-	"placeholder": "�",
-	"charmap": [[1, 62]]
+  "type": "emoji",
+  "placeholder": "�",
+  "charmap": [[1, 62]]
 }
 ```
 
@@ -152,12 +152,11 @@ Only for GroupMe-specific emoji. Standard Unicode emoji (e.g. 💩) do not use t
 
 Designates a message as a reply to a previous message
 
-**Object structure**
-```
+```json linenums="1" title="Object Structure"
 {
-	"type": "reply",
-	"reply_id": "123456789",
-	"base_reply_id": "123456789"
+  "type": "reply",
+  "reply_id": "123456789",
+  "base_reply_id": "123456789"
 }
 ```
 
@@ -185,12 +184,11 @@ Designates a message as a reply to a previous message
 
 This is how you @mention someone.
 
-**Object structure**
-```
+```json linenums="1" title="Object Structure"
 {
-	"type": "mentions",
-	"user_ids": ["123456789", "1234567890"],
-	"loci": [[0, 6], [8, 6]]
+  "type": "mentions",
+  "user_ids": ["123456789", "1234567890"],
+  "loci": [[0, 6], [8, 6]]
 }
 ```
 
@@ -231,8 +229,7 @@ This is a read-only attachment type, as it is not sent in one of your messages. 
 
 Read more about polls [here](polls.md)
 
-**Object Structure**
-```
+```json linenums="1" title="Object Structure"
 {
   "type": "poll",
   "poll_id": "1747858596203713"
@@ -257,8 +254,7 @@ This is a read-only attachment type, as it is not sent in one of your messages. 
 
 Read more about calendar events [here](calendar.md)
 
-**Object Structure**
-```
+```json linenums="1" title="Object Structure"
 {
   "type": "event"
   "event_id": "912fea48717643eda831e72306557100",
@@ -282,8 +278,7 @@ Read more about calendar events [here](calendar.md)
 
 This attachment type is read-only and used exclusively by Copilot in its messages to attach extra information about the Copilot interaction and the user that requested it.
 
-**Object Structure**
-```
+```json linenums="1" title="Object Structure"
 {
   "type": "copilot"
   "message_id": "u6Us5bXBSQERTNfc6vWGB",
