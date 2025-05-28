@@ -176,6 +176,45 @@ Status: 200 OK
 
 ***
 
+## Summarize Group Memberships
+
+Returns an *unpaginated* succinct list of all group IDs your account has ever been in, and your membership status within them. Useful for quickly fetching all of your group IDs without extra garbage attached.
+
+Possible States:
+
+- `"active"`: you're currently a member of the group
+- `"exited"`: you've left the group
+- `"removed"`: you've been kicked from the group
+- `"exited_removed"`: you've left the group on your own, and have been barred from re-entering
+
+```json linenums="1" title="HTTP Request"
+GET /memberships/states
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+[
+  {
+    "group_id": "107702077",
+    "state": "active"
+  },
+  {
+    "group_id": "106666358",
+    "state": "exited"
+  },
+  {
+    "group_id": "102270238",
+    "state": "removed"
+  },
+  {
+    "group_id": "91620876",
+    "state": "exited_removed"
+  }
+]
+```
+
+***
+
 ## Show
 
 Load a specific group.
