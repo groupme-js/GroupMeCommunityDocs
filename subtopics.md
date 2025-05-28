@@ -33,19 +33,15 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 List the authenticated user's active subgroups under a certain parent group.
 
-The response is paginated. It is assumed that the default is 10 groups per page, but it is unlikely for a group to have 10 subgroups anyways, so this has not been tested. 
-
-Adding `&omit=memberships` to the end of your request URL doesn't return an error, but as of now the responses don't include an array of members anyways. 
-
 ```json linenums="1" title="HTTP Request"
-GET /groups/:id/subgroups
+GET /groups/:group_id/subgroups
 ```
 
 **Parameters**
 
   The following parameters are assumed to match the behavior of `groups`. More testing is needed to determine if these default values match up exactly, so take these as a best guess.
 
-* *id* (required)
+* *group_id* (required)
 
   string - the ID of the parent group to get the subgroups for
 
@@ -57,9 +53,6 @@ GET /groups/:id/subgroups
 
   integer - Define page size. Defaults to 10. 
 
-* *omit*
-
-  string - Comma separated list of data to omit from output. Currently supported value is only "memberships". If used then response will contain empty (null) members field.
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
@@ -110,16 +103,16 @@ Status: 200 OK
 Load a specific subgroup within a parent group.
 
 ```json linenums="1" title="HTTP Request"
-GET /groups/:parent_group_id/subgroups/:id
+GET /groups/:group_id/subgroups/:subgroup_id
 ```
 
 **Parameters**
 
-* *parent_group_id* (required)
+* *group_id* (required)
 
   string - the ID of the parent group to get the subgroup for
 
-* *id* (required)
+* *subgroup_id* (required)
 
   string - the ID of the subgroup to show details of
 
@@ -165,4 +158,146 @@ Status: 200 OK
 
 ***
 
-**This documentation is a work in progress. It is assumed (but not yet guaranteed) that the POST methods that work on `groups` also work here, just with the added `parent_id` parameter.**
+## Create
+
+Create a topic. You must be an admin in the group to make this call.
+
+```json linenums="1" title="HTTP Request"
+POST /groups/:group_id/subgroups
+{
+  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "description": "this is a description",
+  "group_type": "announcement",
+  "topic": "test topic"
+}
+```
+
+**Parameters**
+
+* *group_id* (required)
+
+  string - the ID of the parent group to get the subgroup for
+
+* *avatar_url*
+
+  string - an Image URL for the topic processed by GroupMe's Image Service
+
+* *description*
+
+  string - the description for the topic
+
+* *group_type*
+
+  string - can be either `"private"` (anyone can post to this topic) or `"announcement"` (only admins can post to this topic)
+
+* *topic*
+
+  string - the name of the new topic
+
+```json linenums="1" title="HTTP Response"
+Status: 201 Accepted
+{
+  "id": 107877040,
+  "topic": "test topic",
+  "type": "announcement",
+  "description": "this is a description",
+  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "created_at": 1748457450,
+  "updated_at": 1748457450,
+  "parent_id": 107876923,
+  "like_icon": null
+}
+```
+
+***
+
+## Update
+
+Update a topic's details
+
+```json linenums="1" title="HTTP Request"
+PUT /groups/:group_id/subgroups/:subgroup_id
+{
+  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "description": "this is a new description",
+  "group_type": "private",
+  "topic": "new name",
+	"like_icon": {
+		"pack_id": 1,
+		"pack_index": 49,
+		"type": "emoji"
+	}
+}
+```
+
+**Parameters**
+
+* *group_id* (required)
+
+  string - the ID of the parent group to get the subgroup for
+
+* *subgroup_id* (required)
+
+    string - the ID of the topic you want to update
+  
+* *avatar_url*
+
+  string - an Image URL for the topic processed by GroupMe's Image Service
+
+* *description*
+
+  string - the description for the topic
+
+* *group_type*
+
+  string - can be either `"private"` (anyone can post to this topic) or `"announcement"` (only admins can post to this topic)
+
+* *topic*
+
+  string - the name of the new topic
+
+* *like icon*
+
+  object - The GroupMe powerup emoji to set as the group's like icon. See the [emoji documentation](emoji.md) for more information on what these values mean.
+
+```json linenums="1" title="HTTP Response"
+{
+  "id": 107877040,
+  "topic": "new name",
+  "type": "private",
+  "description": "this is a new description",
+  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.742b941f7eea46998438cee6838268ec",
+  "created_at": 1748457450,
+  "updated_at": 1748457988,
+  "parent_id": 107876923,
+  "like_icon": {
+    "pack_id": 1,
+    "pack_index": 49,
+    "type": "emoji"
+  }
+}
+```
+
+***
+
+## Delete
+
+Delete a topic
+
+```json linenums="1" title="HTTP Request"
+DELETE /groups/:group_id/subgroups/:subgroup_id
+```
+
+**Parameters**
+
+* *group_id* (required)
+
+  string - the ID of the parent group to get the subgroup for
+
+* *subgroup_id* (required)
+
+    string - the ID of the topic you want to update
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+```
