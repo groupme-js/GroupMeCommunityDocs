@@ -366,3 +366,66 @@ POST /users/sms_mode/delete
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
+
+## Index pinned conversations
+
+Lists out the IDs of messaging channels you've pinned to the top of your conversations list.
+
+Interestingly, groups that you have left or have been deleted by their owners will still appear in this list. However, they will not show in the UI. The only way to remove an ID from this list is to unpin it manually.
+
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+
+```json linenums="1" title="HTTP Request"
+GET https://api.groupme.com/v4/pinned_conversations
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+{
+  "pinned_conversation_ids": [
+    "98905953",
+    "98905970",
+    "93645911+118825642",
+    "99566681",
+    "97673234",
+    "27317261",
+    "28330145"
+  ]
+}
+```
+
+***
+
+## Update pinned conversations
+
+Alter the list of pinned conversations you've pinned
+
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+
+```json linenums="1" title="HTTP Request"
+PUT https://api.groupme.com/v4/pinned_conversations
+{
+  "pinned_conversation_ids": [
+    "98905953",
+    "98905970",
+    "93645911+118825642",
+    "99566681",
+    "97673234",
+    "27317261",
+    "28330145"
+  ]
+}
+```
+
+**Parameters**
+* *pinned_conversation_ids* (required)
+
+    list (strings) - the IDs of conversations you'd like to have pinned. If an ID is not present in this list but is currently pinned, it will be removed. You don't actually have to be in a group to pin it, but it will not display in your pins list unless you're a member.
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+```
+
+***
