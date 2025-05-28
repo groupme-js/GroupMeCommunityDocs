@@ -266,7 +266,7 @@ List applications with active tokens.
 Please note that this call does not list the tokens themselves, or when they will expire. It only provides enough information to tell you which clients currently have access to your account.
 
 > [!important]
-> This request is relative to `https://v2.groupme.com//`, not `https://api.groupme.com/v3/`.
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
 ```json linenums="1" title="HTTP Request"
 GET https://v2.groupme.com/access_tokens
@@ -297,7 +297,7 @@ Status: 200 OK
 This call invalidates a token with a particular token ID, which can be identified using the call above.
 
 > [!important]
-> This request is relative to `https://v2.groupme.com//`, not `https://api.groupme.com/v3/`.
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
 
 ```json linenums="1" title="HTTP Request"
 POST https://v2.groupme.com/access_tokens/:token_id/destroy
