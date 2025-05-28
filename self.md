@@ -40,14 +40,50 @@ GET /users/me
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
-  "id": "1234567890",
-  "phone_number": "+1 2123001234",
-  "image_url": "https://i.groupme.com/123456789",
-  "name": "Ronald Swanson",
-  "created_at": 1302623328,
-  "updated_at": 1302623328,
-  "email": "me@example.com",
-  "sms": false
+  "created_at": 1622678742,
+  "email": "email@example.con",
+  "email_verified": false,
+  "facebook_connected": false,
+  "id": "93645911",
+  "image_url": "https://i.groupme.com/200x200.jpeg.94e0ac5891aa4e6f8ad4bbf961defe4d",
+  "locale": "en_us",
+  "microsoft_connected": false,
+  "name": "Isaac",
+  "bio": "“Before you criticize someone, walk a mile in their shoes. That way, when you criticize them, you'll be a mile away and you’ll have their shoes.” -Someone wiser than me\n",
+  "phone_number": "+1 2345678910",
+  "sms": false,
+  "twitter_connected": false,
+  "updated_at": 1747863063,
+  "user_id": "93645911",
+  "zip_code": null,
+  "share_url": "https://groupme.com/contact/93645911/njLqSwBU",
+  "share_qr_code_url": "https://image.groupme.com/qr/contact/93645911/njLqSwBU/preview?avatarUrl=https%3A%2F%2Fi.groupme.com%2F200x200.jpeg.94e0ac5891aa4e6f8ad4bbf961defe4d",
+  "mfa": {
+    "enabled": false,
+    "channels": null
+  },
+  "tags": [
+    "phone-us"
+  ],
+  "prompt_for_survey": false,
+  "show_age_gate": false,
+  "birth_date_set": true,
+  "major_codes": [
+    3702,
+    5506
+  ],
+  "graduation_year": "",
+  "campus_profile_visibility": "major",
+  "photo_urls": [
+    "https://i.groupme.com/408x723.jpeg.cc234ac0ee8a4d3a82ead19dee523193",
+    "https://i.groupme.com/408x723.jpeg.35e3736109b44d788ec5ff3b7a444a57",
+    "https://i.groupme.com/408x723.jpeg.3a23a3abaef64de98b541eee846fdb2d"
+  ],
+  "song_url": "https://open.spotify.com/track/5532lQKkhAZUyUKOBA9yrB?si=teTgTqVqTjmAnnHCvXLtyw",
+  "interests": [
+    1026,
+    3015
+  ]
 }
 ```
 
