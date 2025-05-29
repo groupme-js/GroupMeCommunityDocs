@@ -169,7 +169,7 @@ POST /verifications/:mfa_id/confirm
 
 * *pin*
 
-    string - the pin texted to you when you initiated the MFA challenge.
+    string - the pin texted to you when you initiated the MFA challenge. Alternatively, this can be a backup code that was generated when you initially activated MFA for your account.
 
 If the pin is correct, you will receive a response that looks like this:
 
@@ -257,6 +257,140 @@ Status: 200 OK
 ```
 
 At this point, the MFA code you've been given should be verified and you can pass it along to whatever call initiated the MFA interaction.
+
+***
+
+## Creating an MFA backup code
+
+This allows you to pass an MFA challenge without access to your phone. It's submitted exactly the same way you would an SMS pin.
+
+```json linenums="1" title="HTTP Request"
+POST /user/mfa/backup
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+{
+  "mfa": {
+    "backup_code": "cuzmg-xo2xm"
+  }
+}
+```
+
+***
+
+## Enabling MFA
+
+This call activates an MFA channel for your account, it works just like logging in. 
+
+You make this call once without an MFA verification object, receive an MFA ID for the interaction, validate it using the steps detailed in the [Handling MFA Challenges](#Handling-MFA-Challenges) section, then make this call a second time including the now verified MFA ID.
+
+After establishing the MFA channel you must enable it with a seperate call.
+
+> [!important]
+> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.
+
+```json linenums="1" title="HTTP Request"
+POST /user/mfa
+{
+  "channel": {
+    "method": "phone_number"
+  },
+  "verification": {
+    "code": "5bdbac1c43224a21d02dc94747ae732e31161ba4-5deced22aa9ceeb24c2d6501f5f293188dee872f"
+  }
+}
+```
+
+**Parameters**
+
+* *method* (required)
+
+    string - Must be `"phone_number"` (the only known working method)
+
+* *code*
+
+    string - A verified MFA ID obtained by completing the verification challenge. This only needs to be inlcuded on the second request you make to this endpoint.
+
+On the first call you make, whithout sending a verification code, the response should look like this:
+
+```json linenums="1" title="HTTP Response"
+Status: 202 Accepted
+{
+  "verification": {
+    "code": "5bdbac1c43224a21d02dc94747ae732e31161ba4-5deced22aa9ceeb24c2d6501f5f293188dee872f",
+    "methods": {
+      "sms": "22",
+      "call": "22"
+    },
+    "status": "unverified",
+    "long_pin": "8b4801ccd56b",
+    "system_number": "+1 2533728988"
+  }
+}
+```
+
+After the second call including a verified MFA ID, the response should look like this:
+
+```json linenums="1" title="HTTP Response"
+Status: 201 Created
+{
+  "status": 20100
+}
+```
+
+Now that the MFA channel is established, we can enable it like this:
+
+```json linenums="1" title="HTTP Request"
+POST /user/mfa
+{
+  "mfa": {
+    "status": "enable"
+  }
+}
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+{
+  "mfa": {
+    "backup_code": "h1mie-y775n"
+  },
+  "access_token": {
+    "access_token": "s0i7K5Jif0u4YS7hOKa8SyADgWHUs4D4ulBqX1di",
+    "user_id": "93645911",
+    "user_name": "Bob",
+    "expires_at": null,
+    "user": {
+      "id": "93645911",
+      "name": "Bob",
+      "email": "email@example.com",
+      "avatar_url": "https://i.groupme.com/200x200.jpeg.94e0ac5891aa4e6f8ad4bbf961defe4d",
+      "admin": false
+    }
+  }
+}
+```
+
+***
+
+## Disabling MFA
+
+This call turns off MFA for your account
+
+```json linenums="1" title="HTTP Request"
+POST /user/mfa
+{
+  "mfa": {
+    "status": "disable"
+  }
+}
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+```
+
 ***
 
 ## Index authorized apps
@@ -329,3 +463,30 @@ Status: 200 OK
 
 ***
 
+## Changing your Account Password
+
+> [!important]
+> This call will log you out *everywhere* and will revoke the token you're currently using. In order to get a new API token, you will need to [log back in](#Logging-In) with your new password
+
+```json linenums="1" title="HTTP Request"
+POST /users/password
+{
+  "password": "12345678",
+  "password_current": "blahblahblah"
+}
+```
+
+**Parameters**
+
+* *password*
+
+    string - this is your new password
+
+* *password_current*
+
+    string - this is your current password
+
+```json linenums="1" title="HTTP Response"
+Status: 201 Created
+{}
+```
