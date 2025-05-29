@@ -29,6 +29,9 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ***
 
+> [!note]
+> Calls related to account security, such as managing your password or updating MFA settings are located in the [Oauth / MFA Managment](oauth.md) section.
+
 ## About
 
 Get details about the authenticated user
