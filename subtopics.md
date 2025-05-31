@@ -301,3 +301,52 @@ DELETE /groups/:group_id/subgroups/:subgroup_id
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 ```
+
+## Mute/Unmute a specific Topic
+
+Silence general notifications for the main chat in a group, as well as all of the subtopics. This does not silence @mentions, replies, or reaction notifications for your own messages.
+
+Both calls return your member object for the group.
+
+```json linenums="1" title="HTTP Request (To mute)"
+POST /groups/:group_id/subgroups/:subgroup_id/mute
+{
+  "duration": 60
+}
+```
+
+**Parameters**
+
+* *duration* (required)
+
+	string - The length of time (in minutes) you want notifications to be silent for. To silence notifications until you enable them again, use `null`.
+
+```json linenums="1" title="HTTP Request (To unmute)"
+POST /groups/:group_id/subgroups/:subgroup_id/unmute
+```
+
+```json linenums="1" title="HTTP Response (For both muting and unmuting)"
+Status: 200 OK
+{
+  "membership": {
+    "id": "1080225494",
+    "user_id": "93645911",
+    "country_code": "1",
+    "phone_number": "3192414622",
+    "email": "stanger.isaac@gmail.com",
+    "avatar_url": "https://i.groupme.com/200x200.jpeg.94e0ac5891aa4e6f8ad4bbf961defe4d",
+    "nickname": "Isaac",
+    "creator": true,
+    "muted": false,
+    "snoozed": false,
+    "has_sound_enabled": true,
+    "pending": false,
+    "muted_until": null,
+    "muted_children": {
+      "107933452": 253402300800
+    }
+  }
+}
+```
+
+***
