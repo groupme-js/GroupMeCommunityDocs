@@ -415,9 +415,24 @@ If there is something to report, GroupMe will respond with something that might 
 
 ## Websocket Message Structure
 
-There are a few different kinds of Websocket message types, these are denoted by the value they send in their `data.type` parameter. Some message types are exclusive to group or DM channels, and you will not receive them over your user channel. The message types that can be caught in any websocket channel include:
+When your client is connected to the GroupMe WebSocket server and subscribed to channels, you will receive messages. These messages follow the Bayeux protocol, and the core information is typically found within the data object of the incoming Faye message.
 
-* `ping` - 
+The most important field within data is data.type, which indicates the kind of event that has occurred.
+
+```json linenums="1"
+// General structure of an incoming Faye message
+{
+  "channel": "/user/:your_user_id" || "/group/:group_id" || "/direct_message/:direct_message_id",
+  "clientId": "Faye client ID", // this was documented in the steps for connecting to the websocket above
+  "id": "Incrementing Faye message ID",
+  "data": {
+    "type": "ping" || "line.create" || "like.create" etc...,
+    // The rest of the data object. These properties depend on the `type` parameter
+  }
+}
+```
+
+* `ping` - A keep-alive message. You don't usually have to bother handling these.
 * `line.create` - A message was sent in a channel you participate in. This is the most common type of message, and includes many events that normally send system messages.
 * `like.create` - Someone reacted to one of your messages.
 
@@ -428,6 +443,11 @@ Messages specific to a group or direct message channel include:
 * `message.deleted` - A message was deleted.
 * `message.update` - A message was edited.
 * `typing` - Someone started typing.
+
+As far as we're aware, clients only send two types of messages upstream besides subscriptions. Those types are:
+
+* `typing` - Used to initiate a typing indicator in a channel, these are good for 5 seconds and then must be resent to keep the indicator alive.
+* `ping` - A keep-alive or presence message, can be used to measure websocket latency.
 
 ***
 
