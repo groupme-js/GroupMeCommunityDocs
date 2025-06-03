@@ -230,7 +230,7 @@ The `/meta/connect` message must be sent repeatedly. This acts as a heartbeat an
 
 Follow the `advice.interval` and `advice.timeout` values returned in `/meta/connect` responses to avoid premature disconnection.
 
-### Optional: Subscribing to Group or DM Channels
+**Optional: Subscribing to Group or DM Channels**
 
 You can also subscribe to `/group/:group_id` and `/direct_message/:direct_message_id` channels to get additional channel-specific messages that wouldn't usually buzz your phone, like typing indicators.
 
@@ -413,12 +413,30 @@ If there is something to report, GroupMe will respond with something that might 
 
 ***
 
+## Websocket Message Structure
+
+There are a few different kinds of Websocket message types, these are denoted by the value they send in their `data.type` parameter. Some message types are exclusive to group or DM channels, and you will not receive them over your user channel. The message types that can be caught in any websocket channel include:
+
+* `ping` - 
+* `line.create` - A message was sent in a channel you participate in. This is the most common type of message, and includes many events that normally send system messages.
+* `like.create` - Someone reacted to one of your messages.
+
+Messages specific to a group or direct message channel include: 
+
+* `favorite` - Someone likes a message that is not yours.
+* `direct_message.create` - `line.create`, but for DM channels.
+* `message.deleted` - A message was deleted.
+* `message.update` - A message was edited.
+* `typing` - Someone started typing.
+
+***
+
 ## Other Implementations
 For those curious here are some other working implementations beyond the scope of the example posted in these docs:
 
 * [My bot, Lowes.](https://github.com/2CATteam/gmuserbot/blob/master/bot.js) I'm sure I stole this working code from
   somewhere, but I can't for the life of me figure out where.
 
-* [groupme_push](https://github.com/cuuush/groupme-push), a GroupMe push implementation in Python. 
+* [groupme_push](https://github.com/cuuush/groupme-push), a GroupMe push implementation in Python.
 
 * [The GroupMe npm package](https://github.com/njoubert/node-groupme/blob/master/lib/IncomingStream.js)
