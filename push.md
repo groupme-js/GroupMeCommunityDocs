@@ -1,9 +1,9 @@
 ---
-title: "Websockets"
+title: "Websocket Gateway"
 description: "Learn how to interact with GroupMe's Websocket Gateway via the API."
 ---
 
-## WebSockets Overview
+# WebSockets Overview
 
 GroupMe’s real-time messaging is powered by a [Faye-based Bayeux WebSocket protocol](https://faye.jcoglan.com/browser/subscribing.html). Clients subscribe to various channels and receive structured push messages.
 
@@ -76,7 +76,7 @@ If you're not using a Faye client library, you can still connect to GroupMe’s 
 
 > For complex steps (like subscription formatting), we’ll show JavaScript snippets to help illustrate what your code might look like.
 
-### Step 1: Perform the Handshake (via HTTP)
+**Step 1: Perform the Handshake (via HTTP)**
 
 Before opening a WebSocket, you must perform an initial handshake via HTTP to receive a `clientId`. This is a one-time HTTP POST request to the Bayeux endpoint.
 
@@ -96,7 +96,7 @@ POST https://push.groupme.com/faye
 
 GroupMe will respond with a `clientId`, which you'll use for all future messages. The response also includes a list of supported transport types (confirm `"websocket"` is included), and an `advice` object for reconnection behavior.
 
-### Step 2: Open a WebSocket to the Push Server
+**Step 2: Open a WebSocket to the Push Server**
 
 Once you’ve received a valid `clientId`, initiate a WebSocket connection to:
 
@@ -106,7 +106,7 @@ wss://push.groupme.com/faye
 
 After connecting, begin sending JSON-encoded Bayeux messages directly over the socket.
 
-### Step 3: Start the `/meta/connect` Loop
+**Step 3: Start the `/meta/connect` Loop**
 
 Immediately after connecting, send a `/meta/connect` message to initiate the message delivery loop. This step essentially "registers" your client as ready to receive pushes.
 
@@ -136,7 +136,7 @@ const connect = () => {
 
 The server will respond with `successful: true` and may include an `advice` field specifying a `timeout` or `interval` before the next call.
 
-### Step 4: Subscribe to Channels
+**Step 4: Subscribe to Channels**
 
 To receive push notifications, you must subscribe to the appropriate channel(s). Most useful real-time events will come through `/user/:user_id`.
 
@@ -174,7 +174,7 @@ const subscribe = (channel) => {
 subscribe(`/user/${GROUPME_USER_ID}`); // <YOUR GROUPME USER ID>
 ```
 
-### Step 5: Listen for Messages
+**Step 5: Listen for Messages**
 
 All incoming WebSocket messages will be JSON arrays of Bayeux-style messages. Each one will include:
 
@@ -224,7 +224,7 @@ socket.onmessage = (event) => {
 };
 ```
 
-### Step 6: Maintain the Connection Loop
+**Step 6: Maintain the Connection Loop**
 
 The `/meta/connect` message must be sent repeatedly. This acts as a heartbeat and delivery mechanism for future messages.
 
