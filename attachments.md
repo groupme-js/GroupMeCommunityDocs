@@ -216,7 +216,7 @@ Interestingly, because of this system, you don't have to actually type someone's
 
 ***
 
-# Read Only Attachments
+## Read Only Attachments
 
 > [!note]
 > These attachment types cannot be sent in a message's attachments array and can only be observed through reading messages that have been sent in groups or direct messages. Most are added by the backend automatically.
