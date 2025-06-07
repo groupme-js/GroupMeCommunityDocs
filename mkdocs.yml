@@ -61,7 +61,6 @@ plugins:
       enable_creation_date: true
   - git-committers:
       repository: groupme-js/GroupMeCommunityDocs
-      branch: master
 
 markdown_extensions:
   - admonition
