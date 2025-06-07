@@ -29,7 +29,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 ***
 
-# Important notes
+## Important notes
 
 The bots described in this page are what GroupMe describes as "bots". These bots have serious limitations, including but not limited to:
 
