@@ -449,20 +449,6 @@ Status: 200 OK
 
 ***
 
-## Revoking Your Own Token (Logging Out)
-
-This call invalidates whatever API token is used to make the call.
-
-```json linenums="1" title="HTTP Request"
-POST /web_pings/destroy
-```
-
-```json linenums="1" title="HTTP Response"
-Status: 200 OK
-```
-
-***
-
 ## Changing your Account Password
 
 > [!important]
