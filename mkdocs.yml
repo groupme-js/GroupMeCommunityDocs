@@ -22,6 +22,9 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
+    - navigation.top
+    - navigation.sections
+    - toc.integrate
     - search.suggest
     - search.share
     - navigation.footer
