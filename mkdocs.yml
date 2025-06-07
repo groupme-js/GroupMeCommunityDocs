@@ -55,7 +55,7 @@ plugins:
   - social
   - search
   - tags
-  - git-revision-date-localized
+  - git-revision-date-localized:
       enable_creation_date: true
   - git-committers:
       repository: groupme-js/GroupMeCommunityDocs
