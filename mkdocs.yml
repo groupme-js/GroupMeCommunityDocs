@@ -20,7 +20,8 @@ theme:
   custom_dir: src/overrides
 
   features:
-    - navigation.tabs
+    - content.action.edit
+    - content.action.view
     - navigation.instant
     - navigation.instant.progress
     - navigation.top
@@ -54,6 +55,11 @@ plugins:
   - social
   - search
   - tags
+  - git-revision-date-localized
+      enable_creation_date: true
+  - git-committers:
+      repository: groupme-js/GroupMeCommunityDocs
+      branch: main
 
 markdown_extensions:
   - admonition
