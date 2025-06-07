@@ -15,43 +15,50 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 ## Contents:
 
-[Group management](groups.md) - How to create, join, list, update, etc. groups.
+<div class="grid cards" markdown>
 
-[Subgroup management](subtopics.md) - How to work with subgroups within a parent group.
+- :material-account-group: __[Group Management]__ – How to create, join, list, update, etc. groups
+- :material-account-group: __[Subgroup Management]__ – How to work with subgroups within a parent group
+- :fontawesome-solid-users-gear: __[Member management]__ – How to add, remove, and update members in a group
+- :material-message: __[Group Messages]__ – How to list and send messages in groups
+- :material-message: __[Direct Messages]__ – How to list, read, and send DMs, as well as how to block/unblock users
+- :fontawesome-solid-face-smile-wink: __[Reactions]__ – How to react to messages, and how to see your reactions and the likes leaderboard in groups
+- :material-calendar: __[Calendar Events]__ – How to list, create, and edit calendar events in a group.
+- :octicons-search-16: __[Directory Management]__ – How to list, search, and join public and campus group directories.
+- :material-contacts: __[Users/Contact Management]__ – How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
+- :material-robot-excited: __[Bots]__ – How to create, index, and use bots.
 
-[Member management](members.md) - How to add, remove, and update members in a group.
+- :material-account-cog: __[Account Management]__ – How to access/update information about your account, turning on/off SMS mode, and configuring profile details.
+- :material-attachment-plus: __[Attachments]__ – Information on how message attachments work, as well as how to upload images to be sent as attachments.
+- :material-video: __[Videos]__ – Information on how to upload videos to be sent as attachments.
+- :material-poll: __[Polls]__ – Information on how to make and view polls.
+- :octicons-arrow-switch-16: __[Websocket Gateway]__ – How to connect to the Push service to get real-time interaction with your program.
+- :fontawesome-regular-face-smile-wink: __[Emoji]__ – How GroupMe's custom emoji system works, as well as how to display and send emoji.
+- :material-pin: __[Pins]__ – How to use GroupMe's new Pin functionality.
+- :material-image: __[Image Service]__ – How to upload Images to GroupMe's CDN.
+- :material-cellphone-key: __[Oauth/MFA]__ – How to manage API tokens and handle multi-factor authentication with GroupMe.
 
-[Group Messages](messages.md) - How to list and send messages in groups.
+</div>
 
-[Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users.
-
-[Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups.
-
-[Calendar Events](calendar.md) - How to list, create, and edit calendar events in a group.
-
-[Directory Management](directories.md) - How to list, search, and join public and campus group directories.
-
-[Users/Contact Management](users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
-
-[Bots](bots.md) - How to create, index, and use bots.
-
-[Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens.
-
-[Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments.
-
-[Videos](video.md) - Information on how to upload videos to be sent as attachments.
-
-[Polls](polls.md) - Information on how to make and view polls.
-
-[Websocket Gateway](push.md) - How to connect to the Push service to get real-time interaction with your program.
-
-[Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji.
-
-[Pins](pins.md) - How to use GroupMe's new Pin functionality.
-
-[Image Service](images.md) - How to upload Images to GroupMe's CDN.
-
-[Oauth/MFA](oauth.md) - How to manage API tokens and handle multi-factor authentication with GroupMe.
+  [Group Management]: groups.md
+  [Subgroup Management]: subtopics.md
+  [Member management]: members.md
+  [Group Messages]: messages.md
+  [Direct Messages]: dms.md
+  [Reactions]: likes.md
+  [Calendar Events]: calendar.md
+  [Directory Management]: directories.md
+  [Users/Contact Management]: users.md
+  [Bots]: bots.md
+  [Account Management]: self.md
+  [Attachments]: attachments.md
+  [Videos]: video.md
+  [Polls]: polls.md
+  [Websocket Gateway]: push.md
+  [Emoji]: emoji.md
+  [Pins]: pins.md
+  [Oauth/MFA]: oauth.md
+  [Image Service]: images.md
 
 ***
 
