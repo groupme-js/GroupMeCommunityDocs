@@ -25,7 +25,7 @@ jobs:
           path: .cache 
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material "mkdocs-material[imaging]"
+      - run: pip install mkdocs-material "mkdocs-material[imaging]" mkdocs-git-revision-date-localized-plugin mkdocs-git-committers-plugin-2
       - run: "sudo apt-get install pngquant"
       - name: Preprocess Markdown
         run: python src/preprocess.py
