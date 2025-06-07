@@ -19,6 +19,8 @@ theme:
 
   custom_dir: src/overrides
 
+  edit_uri: edit/master/
+
   features:
     - content.action.edit
     - content.action.view
