@@ -9,7 +9,7 @@ site_description: "The OpenGM Project: Community GroupMe API documentation for a
 theme:
   name: material
   font:
-    code: Mona Sans
+    text: Mona Sans
   icon:
     logo: OpenGM/sprocket
     repo: fontawesome/brands/github
