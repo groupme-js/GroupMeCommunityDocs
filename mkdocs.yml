@@ -60,7 +60,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - git-committers:
-      repository: groupme-js/GroupMeCommunityDocs
+      repository: AlureonTheVirus/GroupMeCommunityDocs
 
 markdown_extensions:
   - attr_list
