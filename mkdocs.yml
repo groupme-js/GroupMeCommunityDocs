@@ -1,7 +1,7 @@
 site_name: OpenGM API Documentation
-docs_dir: src
-site_url: https://groupme-js.github.io/GroupMeCommunityDocs
-repo_url: https://github.com/groupme-js/GroupMeCommunityDocs
+docs_dir: docs
+site_url: https://alureonthevirus.github.io/GroupMeCommunityDocs/
+repo_url: https://github.com/AlureonTheVirus/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
 
 site_description: "The OpenGM Project: Community GroupMe API documentation for all."
@@ -19,7 +19,7 @@ theme:
 
   custom_dir: src/overrides
 
-  edit_uri: edit/master/
+  edit_uri: edit/master/docs
 
   features:
     - content.action.edit
@@ -60,9 +60,13 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - git-committers:
-      repository: groupme-js/GroupMeCommunityDocs
+      repository: AlureonTheVirus/GroupMeCommunityDocs
+      branch: main
+      token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - codehilite
   - toc:
@@ -75,6 +79,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

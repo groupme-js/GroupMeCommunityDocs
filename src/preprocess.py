@@ -1,5 +1,4 @@
 import os
-import shutil
 import re
 
 SOURCE_DIR = "src"
@@ -46,33 +45,6 @@ def convert_admonitions(text):
 
     return pattern.sub(replacer, text)
 
-def rename_readme_to_index(filename):
-    if filename.lower() == "readme.md":
-        return "index.md"
-    return filename
-
-def move_and_process_markdown_files():
-    os.makedirs(SOURCE_DIR, exist_ok=True)
-
-    for file in os.listdir(ROOT_DIR):
-        full_path = os.path.join(ROOT_DIR, file)
-
-        if (
-            os.path.isfile(full_path)
-            and file.endswith(".md")
-            and file.lower() != "readme.md"
-            and not full_path.startswith(SOURCE_DIR)
-        ):
-            target_path = os.path.join(SOURCE_DIR, file)
-            shutil.move(full_path, target_path)
-            print(f"Moved: {file} → {SOURCE_DIR}/")
-
-    readme_path = os.path.join(ROOT_DIR, "readme.md")
-    index_path = os.path.join(SOURCE_DIR, "index.md")
-    if os.path.exists(readme_path) and not os.path.exists(index_path):
-        shutil.move(readme_path, index_path)
-        print("Renamed and moved: readme.md → docs/index.md")
-
 def process_docs():
     for root, _, files in os.walk(SOURCE_DIR):
         for file in files:
@@ -85,5 +57,4 @@ def process_docs():
                     f.write(new_content)
 
 if __name__ == "__main__":
-    move_and_process_markdown_files()
     process_docs()

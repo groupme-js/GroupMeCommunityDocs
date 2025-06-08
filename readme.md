@@ -1,8 +1,3 @@
----
-title: "API Overview"
-description: "Learn how to interact with GroupMe via the API."
----
-
 # Overview
 
 GroupMe has a thriving developer community which has created a variety of applications, bots, and tools. However, while the platform has constantly matured, the public documentation has not. In an effort to help other developers understand and utilize the platform better, this is a community-led effort to document everything possible. If you discover something not listed here, or you find an error in what is listed, please bring it up on the discussion page or submit a pull request.
@@ -15,43 +10,43 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 ## Contents:
 
-[Group management](groups.md) - How to create, join, list, update, etc. groups.
+[Group management](docs/groups.md) - How to create, join, list, update, etc. groups.
 
-[Subgroup management](subtopics.md) - How to work with subgroups within a parent group.
+[Subgroup management](docs/subtopics.md) - How to work with subgroups within a parent group.
 
-[Member management](members.md) - How to add, remove, and update members in a group.
+[Member management](docs/members.md) - How to add, remove, and update members in a group.
 
-[Group Messages](messages.md) - How to list and send messages in groups.
+[Group Messages](docs/messages.md) - How to list and send messages in groups.
 
-[Direct Messages](dms.md) - How to list, read, and send DMs, as well as how to block/unblock users.
+[Direct Messages](docs/dms.md) - How to list, read, and send DMs, as well as how to block/unblock users.
 
-[Likes](likes.md) - How to like/unlike messages, and how to see the leaderboard in groups.
+[Likes](docs/likes.md) - How to like/unlike messages, and how to see the leaderboard in groups.
 
-[Calendar Events](calendar.md) - How to list, create, and edit calendar events in a group.
+[Calendar Events](docs/calendar.md) - How to list, create, and edit calendar events in a group.
 
-[Directory Management](directories.md) - How to list, search, and join public and campus group directories.
+[Directory Management](docs/directories.md) - How to list, search, and join public and campus group directories.
 
-[Users/Contact Management](users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
+[Users/Contact Management](docs/users.md) - How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
 
-[Bots](bots.md) - How to create, index, and use bots.
+[Bots](docs/bots.md) - How to create, index, and use bots.
 
-[Account Management](self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens.
+[Account Management](docs/self.md) - How to access/update information about an account, turning on/off SMS mode, and indexing and destroying tokens.
 
-[Attachments](attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments.
+[Attachments](docs/attachments.md) - Information on how message attachments work, as well as how to upload images to be sent as attachments.
 
-[Videos](video.md) - Information on how to upload videos to be sent as attachments.
+[Videos](docs/video.md) - Information on how to upload videos to be sent as attachments.
 
-[Polls](polls.md) - Information on how to make and view polls.
+[Polls](docs/polls.md) - Information on how to make and view polls.
 
-[Websocket Gateway](push.md) - How to connect to the Push service to get real-time interaction with your program.
+[Websocket Gateway](docs/push.md) - How to connect to the Push service to get real-time interaction with your program.
 
-[Emoji](emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji.
+[Emoji](docs/emoji.md) - How GroupMe's custom emoji system works, as well as how to display and send emoji.
 
-[Pins](pins.md) - How to use GroupMe's new Pin functionality.
+[Pins](docs/pins.md) - How to use GroupMe's new Pin functionality.
 
-[Image Service](images.md) - How to upload Images to GroupMe's CDN.
+[Image Service](docs/images.md) - How to upload Images to GroupMe's CDN.
 
-[Oauth/MFA](oauth.md) - How to manage API tokens and handle multi-factor authentication with GroupMe.
+[Oauth/MFA](docs/oauth.md) - How to manage API tokens and handle multi-factor authentication with GroupMe.
 
 ***
 
