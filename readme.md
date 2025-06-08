@@ -27,13 +27,12 @@ If you have any questions or would like to get in touch, please join the [GroupM
 - :octicons-search-16: __[Directory Management]__ – How to list, search, and join public and campus group directories.
 - :material-contacts: __[Users/Contact Management]__ – How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
 - :material-robot-excited: __[Bots]__ – How to create, index, and use bots.
-
 - :material-account-cog: __[Account Management]__ – How to access/update information about your account, turning on/off SMS mode, and configuring profile details.
 - :material-attachment-plus: __[Attachments]__ – Information on how message attachments work, as well as how to upload images to be sent as attachments.
 - :material-video: __[Videos]__ – Information on how to upload videos to be sent as attachments.
 - :material-poll: __[Polls]__ – Information on how to make and view polls.
 - :octicons-arrow-switch-16: __[Websocket Gateway]__ – How to connect to the Push service to get real-time interaction with your program.
-- :fontawesome-regular-face-smile-wink: __[Emoji]__ – How GroupMe's custom emoji system works, as well as how to display and send emoji.
+- :fontawesome-solid-face-smile-wink: __[Emoji]__ – How GroupMe's custom emoji system works, as well as how to display and send emoji.
 - :material-pin: __[Pins]__ – How to use GroupMe's new Pin functionality.
 - :material-image: __[Image Service]__ – How to upload Images to GroupMe's CDN.
 - :material-cellphone-key: __[Oauth/MFA]__ – How to manage API tokens and handle multi-factor authentication with GroupMe.
