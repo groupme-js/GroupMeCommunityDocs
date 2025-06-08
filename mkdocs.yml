@@ -1,5 +1,5 @@
 site_name: OpenGM API Documentation
-docs_dir: src
+docs_dir: docs
 site_url: https://alureonthevirus.github.io/GroupMeCommunityDocs/
 repo_url: https://github.com/AlureonTheVirus/GroupMeCommunityDocs
 copyright: Copyright &copy; 2025 - OpenGM Project
@@ -18,7 +18,6 @@ theme:
     highlight_theme: dracula
 
   custom_dir: src/overrides
-  docs_dir: docs
 
   edit_uri: edit/master/
 
