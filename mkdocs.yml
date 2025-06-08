@@ -18,6 +18,7 @@ theme:
     highlight_theme: dracula
 
   custom_dir: src/overrides
+  docs_dir: docs
 
   edit_uri: edit/master/
 
