@@ -9,15 +9,15 @@ site_description: "The OpenGM Project: Community GroupMe API documentation for a
 theme:
   name: material
   icon:
-  #  logo: OpenGM/sprocket
+    logo: OpenGM/sprocket
     repo: fontawesome/brands/github
 
-  #favicon: assets/sprocket.svg
+  favicon: assets/sprocket.svg
 
   code:
     highlight_theme: dracula
 
-  # custom_dir: src/overrides
+  custom_dir: src/overrides
 
   edit_uri: edit/master/docs
 
@@ -62,6 +62,7 @@ plugins:
   - git-committers:
       repository: AlureonTheVirus/GroupMeCommunityDocs
       branch: main
+      token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 markdown_extensions:
   - attr_list
