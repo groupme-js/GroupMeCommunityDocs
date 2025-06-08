@@ -1,7 +1,7 @@
 site_name: OpenGM API Documentation
 docs_dir: docs
-site_url: https://alureonthevirus.github.io/GroupMeCommunityDocs/
-repo_url: https://github.com/AlureonTheVirus/GroupMeCommunityDocs
+site_url: https://groupme-js.github.io/GroupMeCommunityDocs/
+repo_url: https://github.com/groupme-js/GroupMeCommunityDocs/
 copyright: Copyright &copy; 2025 - OpenGM Project
 
 site_description: "The OpenGM Project: Community GroupMe API documentation for all."
@@ -60,7 +60,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - git-committers:
-      repository: AlureonTheVirus/GroupMeCommunityDocs
+      repository: groupme-js/GroupMeCommunityDocs/
       branch: main
       token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
