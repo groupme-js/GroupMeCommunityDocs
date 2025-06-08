@@ -19,7 +19,7 @@ theme:
 
   custom_dir: src/overrides
 
-  edit_uri: edit/master/
+  edit_uri: edit/master/docs
 
   features:
     - content.action.edit
@@ -61,6 +61,7 @@ plugins:
       enable_creation_date: true
   - git-committers:
       repository: AlureonTheVirus/GroupMeCommunityDocs
+      branch: main
 
 markdown_extensions:
   - attr_list
