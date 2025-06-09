@@ -65,6 +65,8 @@ plugins:
       repository: groupme-js/GroupMeCommunityDocs
       branch: master
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
+      exclude_comitters:
+        - web-flow
 
 markdown_extensions:
   - attr_list
