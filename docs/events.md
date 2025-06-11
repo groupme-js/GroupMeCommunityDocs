@@ -23,7 +23,7 @@ Events related to group membership changes (users joining, leaving, etc.). These
 
 Indicates that one or more users have been added to the group by an existing member.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "membership.announce.added",
   "data": {
@@ -76,7 +76,7 @@ Indicates that a user has joined the group (e.g., via a share link or if the gro
 > [!NOTE]
 > This event typically fires in groups that either have "Request to Join" enabled or in smaller groups (generally with fewer than ~200 members). In very large, open groups, individual join events might not always be generated.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "membership.announce.joined",
   "data": {
@@ -110,7 +110,7 @@ Indicates that a user has joined the group (e.g., via a share link or if the gro
 
 Indicates that a user has rejoined the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "membership.announce.rejoined",
   "data": {
@@ -144,7 +144,7 @@ Indicates that a user has rejoined the group.
 
 Indicates that a user has left the group themselves.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "membership.notifications.exited",
   "data": {
@@ -178,7 +178,7 @@ Indicates that a user has left the group themselves.
 
 Indicates that a user has been removed from the group by another member.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "membership.notifications.removed",
   "data": {
@@ -230,7 +230,7 @@ Events related to changes in main group settings and properties.
 
 Indicates that the group's avatar has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.avatar_change",
   "data": {
@@ -269,7 +269,7 @@ Indicates that the group's avatar has been changed.
 
 Indicates that the group's custom like icon has been removed, reverting to the default.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.like_icon_removed",
   "data": {
@@ -303,7 +303,7 @@ Indicates that the group's custom like icon has been removed, reverting to the d
 
 Indicates that a custom like icon has been set for the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.like_icon_set",
   "data": {
@@ -356,7 +356,7 @@ Indicates that a custom like icon has been set for the group.
 
 Indicates that the group's name has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.name_change",
   "data": {
@@ -395,7 +395,7 @@ Indicates that the group's name has been changed.
 
 Indicates that the ownership of the group has been transferred.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.owner_changed",
   "data": {
@@ -443,7 +443,7 @@ Indicates that the ownership of the group has been transferred.
 
 Indicates that the "join requires approval" setting has been disabled for the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.requires_approval_disabled",
   "data": {
@@ -477,7 +477,7 @@ Indicates that the "join requires approval" setting has been disabled for the gr
 
 Indicates that the "join requires approval" setting has been enabled for the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.requires_approval_enabled",
   "data": {
@@ -511,7 +511,7 @@ Indicates that the "join requires approval" setting has been enabled for the gro
 
 Indicates that a member's role has been changed regarding admin status.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.role_change_admin",
   "data": {
@@ -564,7 +564,7 @@ Indicates that a member's role has been changed regarding admin status.
 
 Indicates that group sharing (join link) has been enabled.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.shared",
   "data": {
@@ -608,7 +608,7 @@ Indicates that group sharing (join link) has been enabled.
 
 Indicates that a new topic (subgroup/channel) has been created within the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_created",
   "data": {
@@ -657,7 +657,7 @@ Indicates that a new topic (subgroup/channel) has been created within the group.
 
 Indicates that a topic (subgroup/channel) has been removed from the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_removed",
   "data": {
@@ -701,7 +701,7 @@ Indicates that a topic (subgroup/channel) has been removed from the group.
 
 Indicates that the group's chat theme has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.theme_change",
   "data": {
@@ -740,7 +740,7 @@ Indicates that the group's chat theme has been changed.
 
 Indicates that the group's description (often referred to as "topic" in settings) has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.topic_change",
   "data": {
@@ -779,7 +779,7 @@ Indicates that the group's description (often referred to as "topic" in settings
 
 Indicates that the group's type (e.g., private, closed, announcement) has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.type_change",
   "data": {
@@ -826,7 +826,7 @@ Indicates that the group's type (e.g., private, closed, announcement) has been c
 
 Indicates that group sharing (join link) has been disabled.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.unshared",
   "data": {
@@ -860,7 +860,7 @@ Indicates that group sharing (join link) has been disabled.
 
 Indicates the group's visibility has been set to a specific community (e.g., a campus).
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.visibility_set.community",
   "data": {
@@ -895,7 +895,7 @@ Indicates the group's visibility has been set to a specific community (e.g., a c
 
 Indicates the group has been made hidden and is not discoverable.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.visibility_set.hidden",
   "data": {
@@ -929,7 +929,7 @@ Indicates the group has been made hidden and is not discoverable.
 
 Indicates the group has been made visible and can be found in Discover.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.visibility_set.searchable",
   "data": {
@@ -967,7 +967,7 @@ Events related to changes in subgroup (topic/channel) settings and properties wi
 
 Indicates that a subgroup's avatar has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_avatar_change",
   "data": {
@@ -1016,7 +1016,7 @@ Indicates that a subgroup's avatar has been changed.
 
 Indicates that a subgroup's description has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_description_change",
   "data": {
@@ -1065,7 +1065,7 @@ Indicates that a subgroup's description has been changed.
 
 Indicates that a subgroup's custom like icon has been changed or removed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_like_icon_change",
   "data": {
@@ -1128,7 +1128,7 @@ Indicates that a subgroup's custom like icon has been changed or removed.
 
 Indicates that a subgroup's name (topic) has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_name_change",
   "data": {
@@ -1172,7 +1172,7 @@ Indicates that a subgroup's name (topic) has been changed.
 
 Indicates that a subgroup's type (e.g., closed, announcement) has been changed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.subgroup_type_change",
   "data": {
@@ -1230,7 +1230,7 @@ Events related to group calls.
 
 Indicates that a group call has ended.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.call.ended",
   "data": {
@@ -1269,7 +1269,7 @@ Indicates that a group call has ended.
 
 Indicates that a group call has been started.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "group.call.started",
   "data": {
@@ -1312,7 +1312,7 @@ Events related to polls created within a group or subgroup.
 
 Indicates that a new poll has been created.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "poll.created",
   "data": {
@@ -1369,7 +1369,7 @@ Indicates that a new poll has been created.
 
 Indicates that a poll has expired or been closed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "poll.finished",
   "data": {
@@ -1449,7 +1449,7 @@ Events related to the group or DM calendar feature.
 
 Indicates that a calendar event has been canceled.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.cancelled",
   "data": {
@@ -1497,7 +1497,7 @@ Indicates that a calendar event has been canceled.
 
 Indicates that a new calendar event has been created.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.created",
   "data": {
@@ -1554,7 +1554,7 @@ Indicates that a new calendar event has been created.
 
 Indicates that a calendar event is starting soon or now.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.starting",
   "data": {
@@ -1589,7 +1589,7 @@ Indicates that a calendar event is starting soon or now.
 
 Indicates that a calendar event's details have been updated.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.updated",
   "data": {
@@ -1644,7 +1644,7 @@ Indicates that a calendar event's details have been updated.
 
 Indicates a user has RSVP'd as "going" to a calendar event.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.user.going",
   "data": {
@@ -1692,7 +1692,7 @@ Indicates a user has RSVP'd as "going" to a calendar event.
 
 Indicates a user has RSVP'd as "not going" to a calendar event.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.user.not_going",
   "data": {
@@ -1740,7 +1740,7 @@ Indicates a user has RSVP'd as "not going" to a calendar event.
 
 Indicates a user has changed their RSVP to "undecided" for a calendar event.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "calendar.event.user.undecided",
   "data": {
@@ -1792,7 +1792,7 @@ Events that can apply to messages in various contexts (groups, DMs, subgroups).
 
 Indicates that a message has been deleted.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "message.deleted",
   "data": {
@@ -1827,7 +1827,7 @@ Indicates that a message has been deleted.
 
 Indicates that a message has been pinned in the chat.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "message.pinned",
   "data": {
@@ -1863,37 +1863,6 @@ Indicates that a message has been pinned in the chat.
 
 ***
 
-### **`message.unpinned`**
-
-Indicates that a message has been unpinned in the chat.
-
-```json linenums="1" title="Event Object Structure"
-{
-  "type": "message.unpinned",
-  "data": {
-    "message_id": "169386238854117065",
-    "unpinned": true
-  }
-}
-```
-
-*   *type*
-
-    string - Must be `message.unpinned`.
-
-*   *data* (object) - Contains details of the unpinned message.
-
-    *   *message_id*
-
-        string - The ID of the message that was unpinned.
-
-    *   *unpinned*
-
-        boolean - Always `true` for this event type.
-    *(Note: `unpinned_by` and `unpinned_at` were not observed in the example for this event type).*
-
-***
-
 ## Bot Events
 
 Events related to bots being added, removed, or modified in a group.
@@ -1902,7 +1871,7 @@ Events related to bots being added, removed, or modified in a group.
 
 Indicates that a bot has been added to the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "bot.add",
   "data": {
@@ -1941,7 +1910,7 @@ Indicates that a bot has been added to the group.
 
 Indicates that a bot has been removed from the group.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "bot.del",
   "data": {
@@ -1980,7 +1949,7 @@ Indicates that a bot has been removed from the group.
 
 Indicates that a bot has been renamed.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "bot.rename",
   "data": {
@@ -2028,7 +1997,7 @@ Events related to the GroupMe Copilot (AI assistant) feature.
 
 Indicates that a privacy notice regarding the Copilot feature has been posted in the group. This typically occurs when Copilot is activated or first mentioned.
 
-```json linenums="1" title="Event Object Structure"
+```json linenums="1" title="Object Structure"
 {
   "type": "copilot.group.privacy_notice",
   "data": {
