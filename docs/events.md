@@ -61,7 +61,7 @@ Indicates that one or more users have been added to the group by an existing mem
 
         *   *id*
 
-            number - The ID of the user who added the new member(s) (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who added the new member(s).
 
         *   *nickname*
 
@@ -204,7 +204,7 @@ Indicates that a user has been removed from the group by another member.
 
         *   *id*
 
-            number - The ID of the user who performed the removal (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who performed the removal.
 
         *   *nickname*
 
@@ -253,7 +253,7 @@ Indicates that the group's avatar has been changed.
 
         *   *id*
 
-            number - The ID of the user who changed the avatar (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the avatar.
 
         *   *nickname*
 
@@ -291,7 +291,7 @@ Indicates that the group's custom like icon has been removed, reverting to the d
 
         *   *id*
 
-            number - The ID of the user who removed the custom like icon (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who removed the custom like icon.
 
         *   *nickname*
 
@@ -330,7 +330,7 @@ Indicates that a custom like icon has been set for the group.
 
         *   *id*
 
-            number - The ID of the user who set the like icon (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who set the like icon.
 
         *   *nickname*
 
@@ -379,7 +379,7 @@ Indicates that the group's name has been changed.
 
         *   *id*
 
-            number - The ID of the user who changed the group name (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the group name.
 
         *   *nickname*
 
@@ -431,7 +431,7 @@ Indicates that the ownership of the group has been transferred.
 
         *   *id*
 
-            number - The ID of the new owner (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the new owner.
 
         *   *nickname*
 
@@ -465,7 +465,7 @@ Indicates that the "join requires approval" setting has been disabled for the gr
 
         *   *id*
 
-            number - The ID of the user who changed the setting (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the setting.
 
         *   *nickname*
 
@@ -499,7 +499,7 @@ Indicates that the "join requires approval" setting has been enabled for the gro
 
         *   *id*
 
-            number - The ID of the user who changed the setting (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the setting.
 
         *   *nickname*
 
@@ -538,7 +538,7 @@ Indicates that a member's role has been changed regarding admin status.
 
         *   *id*
 
-            number - The ID of the user who performed the role change (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who performed the role change.
 
         *   *nickname*
 
@@ -588,7 +588,7 @@ Indicates that group sharing (join link) has been enabled.
 
         *   *id*
 
-            number - The ID of the user who enabled sharing (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who enabled sharing.
 
         *   *nickname*
 
@@ -633,7 +633,7 @@ Indicates that a new topic (subgroup/channel) has been created within the group.
 
         *   *id*
 
-            number - The ID of the user who created the topic (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who created the topic.
 
         *   *nickname*
 
@@ -681,7 +681,7 @@ Indicates that a topic (subgroup/channel) has been removed from the group.
 
         *   *id*
 
-            number - The ID of the user who removed the topic (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who removed the topic.
 
         *   *nickname*
 
@@ -724,7 +724,7 @@ Indicates that the group's chat theme has been changed.
 
         *   *id*
 
-            number - The ID of the user who changed the theme (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the theme.
 
         *   *nickname*
 
@@ -763,7 +763,7 @@ Indicates that the group's description (often referred to as "topic" in settings
 
         *   *id*
 
-            number - The ID of the user who changed the group description (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the group description.
 
         *   *nickname*
 
@@ -803,7 +803,7 @@ Indicates that the group's type (e.g., private, closed, announcement) has been c
 
         *   *id*
 
-            number - The ID of the user who changed the group type (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the group type.
 
         *   *nickname*
 
@@ -818,7 +818,7 @@ Indicates that the group's type (e.g., private, closed, announcement) has been c
 
     *   *message_edit_period*
 
-        number (optional, may not be present in all contexts, e.g., WebSocket events) - The time window (in minutes or a similar unit, contextually) during which messages can be edited. This value can change based on the group type (e.g., `15` for closed/private, `43200` for announcement, or `null`/absent).
+        number - The time window (in minutes) during which messages can be edited. This value can change based on the group type (e.g., `15` for closed/private, `43200` for announcement, or `null`/absent).
 
 ***
 
@@ -848,7 +848,7 @@ Indicates that group sharing (join link) has been disabled.
 
         *   *id*
 
-            number - The ID of the user who disabled sharing (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who disabled sharing.
 
         *   *nickname*
 
@@ -858,7 +858,10 @@ Indicates that group sharing (join link) has been disabled.
 
 ### **`group.visibility_set.community`**
 
-Indicates the group's visibility has been set to a specific community (e.g., a campus).
+Indicates the group's visibility has been set to a specific community (e.g., a campus directory).
+
+> [!note]
+> The specific school directory information is usually part of the message text rather than the event data.
 
 ```json linenums="1" title="Object Structure"
 {
@@ -882,12 +885,11 @@ Indicates the group's visibility has been set to a specific community (e.g., a c
 
         *   *id*
 
-            number - The ID of the user who changed the visibility (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the visibility.
 
         *   *nickname*
 
             string - The nickname of the user who changed the visibility.
-        *(Note: The specific community information is usually part of the message text rather than the event data).*
 
 ***
 
@@ -917,7 +919,7 @@ Indicates the group has been made hidden and is not discoverable.
 
         *   *id*
 
-            number - The ID of the user who changed the visibility (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the visibility.
 
         *   *nickname*
 
@@ -951,7 +953,7 @@ Indicates the group has been made visible and can be found in Discover.
 
         *   *id*
 
-            number - The ID of the user who changed the visibility (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who changed the visibility.
 
         *   *nickname*
 
@@ -992,7 +994,7 @@ Indicates that a subgroup's avatar has been changed.
 
         *   *id*
 
-            number - The ID of the user (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user.
 
         *   *nickname*
 
@@ -1041,7 +1043,7 @@ Indicates that a subgroup's description has been changed.
 
         *   *id*
 
-            number - The ID of the user (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user.
 
         *   *nickname*
 
@@ -1094,7 +1096,7 @@ Indicates that a subgroup's custom like icon has been changed or removed.
 
         *   *id*
 
-            number - The ID of the user (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user.
 
         *   *nickname*
 
@@ -1152,7 +1154,7 @@ Indicates that a subgroup's name (topic) has been changed.
 
         *   *id*
 
-            number - The ID of the user (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user.
 
         *   *nickname*
 
@@ -1198,7 +1200,7 @@ Indicates that a subgroup's type (e.g., closed, announcement) has been changed.
 
         *   *id*
 
-            number - The ID of the user (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user.
 
         *   *nickname*
 
@@ -1257,7 +1259,7 @@ Indicates that a group call has ended.
 
         *   *id*
 
-            string - The ID of the user who ended the call (e.g., `"system"`). In some cases, if a user ends it, this might be their numerical ID as a string or number - API is inconsistent. Example shows string.
+            string - The ID of the user who ended the call (e.g., `"system"`). In some cases, if a user ends it, this might be their numerical ID as a string or number - API is inconsistent.
 
         *   *nickname*
 
@@ -1296,7 +1298,7 @@ Indicates that a group call has been started.
 
         *   *id*
 
-            string - The ID of the user who started the call (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who started the call.
 
         *   *nickname*
 
@@ -1325,7 +1327,7 @@ Indicates that a new poll has been created.
     },
     "user": {
       "id": "93645911",
-      "nickname": "Totally NOT Isaac Stanger"
+      "nickname": "Isaac"
     }
   }
 }
@@ -1357,7 +1359,7 @@ Indicates that a new poll has been created.
 
         *   *id*
 
-            string - The ID of the user who created the poll (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who created the poll
 
         *   *nickname*
 
@@ -1443,7 +1445,7 @@ Indicates that a poll has expired or been closed.
 Events related to the group or DM calendar feature.
 
 > [!note]
-> These events can occur in both group chats and Direct Messages. In DMs, the relevant `conversation_id` in the message object will reflect the DM participants.
+> These events can occur in both group chats and Direct Messages.
 
 ### **`calendar.event.cancelled`**
 
@@ -1485,7 +1487,7 @@ Indicates that a calendar event has been canceled.
 
         *   *id*
 
-            string - The ID of the user who canceled the event (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who canceled the event.
 
         *   *nickname*
 
@@ -1532,7 +1534,7 @@ Indicates that a new calendar event has been created.
 
     *   *original_url*
 
-        string (optional) - The full URL to the event on GroupMe's website. (Path may vary based on context, e.g., group ID or DM ID). May not always be present in WebSocket events.
+        string (optional) - The full URL to the event on GroupMe's website. (Path may vary based on context, e.g., group ID or DM ID).
 
     *   *url*
 
@@ -1542,7 +1544,7 @@ Indicates that a new calendar event has been created.
 
         *   *id*
 
-            string - The ID of the user who created the event (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who created the event.
 
         *   *nickname*
 
@@ -1632,7 +1634,7 @@ Indicates that a calendar event's details have been updated.
 
         *   *id*
 
-            string - The ID of the user who updated the event (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who updated the event.
 
         *   *nickname*
 
@@ -1680,7 +1682,7 @@ Indicates a user has RSVP'd as "going" to a calendar event.
 
         *   *id*
 
-            string - The ID of the user who RSVP'd (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who RSVP'd.
 
         *   *nickname*
 
@@ -1728,7 +1730,7 @@ Indicates a user has RSVP'd as "not going" to a calendar event.
 
         *   *id*
 
-            string - The ID of the user who RSVP'd (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who RSVP'd.
 
         *   *nickname*
 
@@ -1776,7 +1778,7 @@ Indicates a user has changed their RSVP to "undecided" for a calendar event.
 
         *   *id*
 
-            string - The ID of the user who changed their RSVP (e.g., `"93645911"`). (See warning about User ID types).
+            string - The ID of the user who changed their RSVP.
 
         *   *nickname*
 
@@ -1855,7 +1857,7 @@ Indicates that a message has been pinned in the chat.
 
     *   *pinned_by*
 
-        string - The user ID of the person who pinned the message (e.g., `"74938777"`). (See warning about User ID types).
+        string - The user ID of the person who pinned the message.
 
     *   *pinned_at*
 
@@ -1894,7 +1896,7 @@ Indicates that a bot has been added to the group.
 
         *   *id*
 
-            number - The ID of the user who added the bot (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who added the bot.
 
         *   *nickname*
 
@@ -1933,7 +1935,7 @@ Indicates that a bot has been removed from the group.
 
         *   *id*
 
-            number - The ID of the user who removed the bot (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who removed the bot.
 
         *   *nickname*
 
@@ -1973,7 +1975,7 @@ Indicates that a bot has been renamed.
 
         *   *id*
 
-            number - The ID of the user who renamed the bot (e.g., `93645911`). (See warning about User ID types).
+            number - The ID of the user who renamed the bot.
 
         *   *nickname*
 
