@@ -11,7 +11,6 @@ This document lists the different `event.type` values observed, along with the s
 
 > [!WARNING]
 > **API Inconsistency: User ID Data Types**
->
 > Developers should be aware that within the `event.data` objects detailed below, user IDs (such as `user.id`, `member.id`, `pinned_by`, etc.) are sometimes represented as **numbers** and other times as **strings**. This is inconsistent with the general GroupMe API practice where user IDs are typically strings. These types may be patched at any time. **This highlights the critical need to handle both types robustly in your code.**
 
 ***
