@@ -30,26 +30,41 @@ def convert_admonitions(text):
 
     def replacer(match):
         raw_label = match.group(1).lower()
-        body = match.group(2).strip()
+        block = match.group(2)
 
         label = ADMONITION_MAP.get(raw_label)
         if not label:
             return match.group(0)
 
-        lines = [line[2:] for line in body.splitlines() if line.startswith("> ")]
-        title = ""
-        if lines:
-            first_line = lines[0].strip()
-            bold_match = re.match(r"\*\*(.+?)\*\*", first_line)
-            if bold_match:
-                title = bold_match.group(1)
-                lines = lines[1:]  # remove title line from body
+        # Preserve all lines including blank ones
+        raw_lines = []
+        for line in block.splitlines():
+            if line.startswith("> "):
+                raw_lines.append(line[2:])
+            elif line.strip() == ">":
+                raw_lines.append("")
+        
+        # Clean leading/trailing blank lines
+        while raw_lines and raw_lines[0].strip() == "":
+            raw_lines.pop(0)
+        while raw_lines and raw_lines[-1].strip() == "":
+            raw_lines.pop()
 
-        body_text = "\n".join(f"    {line}" for line in lines)
-        if title:
-            return f'!!! {label} "{title}"\n{body_text}'
-        else:
-            return f'!!! {label}\n{body_text}'
+        # Check if first line is a title
+        title = ""
+        if raw_lines and re.match(r"\*\*(.+?)\*\*", raw_lines[0].strip()):
+            title = re.match(r"\*\*(.+?)\*\*", raw_lines[0].strip()).group(1)
+            raw_lines = raw_lines[1:]  # remove title line
+
+            # Remove blank line directly after title
+            if raw_lines and raw_lines[0].strip() == "":
+                raw_lines.pop(0)
+
+        # Indent the rest
+        content = "\n".join(f"    {line}" for line in raw_lines)
+
+        return f'!!! {label} "{title}"\n{content}' if title else f'!!! {label}\n{content}'
+
 
 
     return pattern.sub(replacer, text)
