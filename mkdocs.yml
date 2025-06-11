@@ -30,7 +30,7 @@ theme:
     - navigation.instant.progress
     - navigation.top
     - navigation.sections
-    #- toc.integrate
+    - toc.integrate
     - search.suggest
     - search.share
     - navigation.footer
