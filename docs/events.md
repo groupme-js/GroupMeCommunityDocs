@@ -20,7 +20,7 @@ This document lists the different `event.type` values observed, along with the s
 
 Events related to group membership changes (users joining, leaving, etc.). These apply to main groups.
 
-**`membership.announce.added`**
+### **`membership.announce.added`**
 
 Indicates that one or more users have been added to the group by an existing member.
 
@@ -70,7 +70,7 @@ Indicates that one or more users have been added to the group by an existing mem
 
 ***
 
-**`membership.announce.joined`**
+### **`membership.announce.joined`**
 
 Indicates that a user has joined the group (e.g., via a share link or if the group is open).
 
@@ -107,7 +107,7 @@ Indicates that a user has joined the group (e.g., via a share link or if the gro
 
 ***
 
-**`membership.announce.rejoined`**
+### **`membership.announce.rejoined`**
 
 Indicates that a user has rejoined the group.
 
@@ -141,7 +141,7 @@ Indicates that a user has rejoined the group.
 
 ***
 
-**`membership.notifications.exited`**
+### **`membership.notifications.exited`**
 
 Indicates that a user has left the group themselves.
 
@@ -175,7 +175,7 @@ Indicates that a user has left the group themselves.
 
 ***
 
-**`membership.notifications.removed`**
+### **`membership.notifications.removed`**
 
 Indicates that a user has been removed from the group by another member.
 
@@ -227,7 +227,7 @@ Indicates that a user has been removed from the group by another member.
 
 Events related to changes in main group settings and properties.
 
-**`group.avatar_change`**
+### **`group.avatar_change`**
 
 Indicates that the group's avatar has been changed.
 
@@ -266,7 +266,7 @@ Indicates that the group's avatar has been changed.
 
 ***
 
-**`group.like_icon_removed`**
+### **`group.like_icon_removed`**
 
 Indicates that the group's custom like icon has been removed, reverting to the default.
 
@@ -300,7 +300,7 @@ Indicates that the group's custom like icon has been removed, reverting to the d
 
 ***
 
-**`group.like_icon_set`**
+### **`group.like_icon_set`**
 
 Indicates that a custom like icon has been set for the group.
 
@@ -353,7 +353,7 @@ Indicates that a custom like icon has been set for the group.
 
 ***
 
-**`group.name_change`**
+### **`group.name_change`**
 
 Indicates that the group's name has been changed.
 
@@ -392,7 +392,7 @@ Indicates that the group's name has been changed.
 
 ***
 
-**`group.owner_changed`**
+### **`group.owner_changed`**
 
 Indicates that the ownership of the group has been transferred.
 
@@ -440,7 +440,7 @@ Indicates that the ownership of the group has been transferred.
 
 ***
 
-**`group.requires_approval_disabled`**
+### **`group.requires_approval_disabled`**
 
 Indicates that the "join requires approval" setting has been disabled for the group.
 
@@ -474,7 +474,7 @@ Indicates that the "join requires approval" setting has been disabled for the gr
 
 ***
 
-**`group.requires_approval_enabled`**
+### **`group.requires_approval_enabled`**
 
 Indicates that the "join requires approval" setting has been enabled for the group.
 
@@ -508,7 +508,7 @@ Indicates that the "join requires approval" setting has been enabled for the gro
 
 ***
 
-**`group.role_change_admin`**
+### **`group.role_change_admin`**
 
 Indicates that a member's role has been changed regarding admin status.
 
@@ -561,7 +561,7 @@ Indicates that a member's role has been changed regarding admin status.
 
 ***
 
-**`group.shared`**
+### **`group.shared`**
 
 Indicates that group sharing (join link) has been enabled.
 
@@ -605,7 +605,7 @@ Indicates that group sharing (join link) has been enabled.
 
 ***
 
-**`group.subgroup_created`**
+### **`group.subgroup_created`**
 
 Indicates that a new topic (subgroup/channel) has been created within the group.
 
@@ -654,7 +654,7 @@ Indicates that a new topic (subgroup/channel) has been created within the group.
 
 ***
 
-**`group.subgroup_removed`**
+### **`group.subgroup_removed`**
 
 Indicates that a topic (subgroup/channel) has been removed from the group.
 
@@ -698,7 +698,7 @@ Indicates that a topic (subgroup/channel) has been removed from the group.
 
 ***
 
-**`group.theme_change`**
+### **`group.theme_change`**
 
 Indicates that the group's chat theme has been changed.
 
@@ -737,7 +737,7 @@ Indicates that the group's chat theme has been changed.
 
 ***
 
-**`group.topic_change`**
+### **`group.topic_change`**
 
 Indicates that the group's description (often referred to as "topic" in settings) has been changed.
 
@@ -776,7 +776,7 @@ Indicates that the group's description (often referred to as "topic" in settings
 
 ***
 
-**`group.type_change`**
+### **`group.type_change`**
 
 Indicates that the group's type (e.g., private, closed, announcement) has been changed.
 
@@ -823,7 +823,7 @@ Indicates that the group's type (e.g., private, closed, announcement) has been c
 
 ***
 
-**`group.unshared`**
+### **`group.unshared`**
 
 Indicates that group sharing (join link) has been disabled.
 
@@ -857,7 +857,7 @@ Indicates that group sharing (join link) has been disabled.
 
 ***
 
-**`group.visibility_set.community`**
+### **`group.visibility_set.community`**
 
 Indicates the group's visibility has been set to a specific community (e.g., a campus).
 
@@ -892,7 +892,7 @@ Indicates the group's visibility has been set to a specific community (e.g., a c
 
 ***
 
-**`group.visibility_set.hidden`**
+### **`group.visibility_set.hidden`**
 
 Indicates the group has been made hidden and is not discoverable.
 
@@ -926,7 +926,7 @@ Indicates the group has been made hidden and is not discoverable.
 
 ***
 
-**`group.visibility_set.searchable`**
+### **`group.visibility_set.searchable`**
 
 Indicates the group has been made visible and can be found in Discover.
 
@@ -964,7 +964,7 @@ Indicates the group has been made visible and can be found in Discover.
 
 Events related to changes in subgroup (topic/channel) settings and properties within a main group.
 
-**`group.subgroup_avatar_change`**
+### **`group.subgroup_avatar_change`**
 
 Indicates that a subgroup's avatar has been changed.
 
@@ -1013,7 +1013,7 @@ Indicates that a subgroup's avatar has been changed.
 
 ***
 
-**`group.subgroup_description_change`**
+### **`group.subgroup_description_change`**
 
 Indicates that a subgroup's description has been changed.
 
@@ -1062,7 +1062,7 @@ Indicates that a subgroup's description has been changed.
 
 ***
 
-**`group.subgroup_like_icon_change`**
+### **`group.subgroup_like_icon_change`**
 
 Indicates that a subgroup's custom like icon has been changed or removed.
 
@@ -1125,7 +1125,7 @@ Indicates that a subgroup's custom like icon has been changed or removed.
 
 ***
 
-**`group.subgroup_name_change`**
+### **`group.subgroup_name_change`**
 
 Indicates that a subgroup's name (topic) has been changed.
 
@@ -1169,7 +1169,7 @@ Indicates that a subgroup's name (topic) has been changed.
 
 ***
 
-**`group.subgroup_type_change`**
+### **`group.subgroup_type_change`**
 
 Indicates that a subgroup's type (e.g., closed, announcement) has been changed.
 
@@ -1227,7 +1227,7 @@ Indicates that a subgroup's type (e.g., closed, announcement) has been changed.
 
 Events related to group calls.
 
-**`group.call.ended`**
+### **`group.call.ended`**
 
 Indicates that a group call has ended.
 
@@ -1266,7 +1266,7 @@ Indicates that a group call has ended.
 
 ***
 
-**`group.call.started`**
+### **`group.call.started`**
 
 Indicates that a group call has been started.
 
@@ -1309,7 +1309,7 @@ Indicates that a group call has been started.
 
 Events related to polls created within a group or subgroup.
 
-**`poll.created`**
+### **`poll.created`**
 
 Indicates that a new poll has been created.
 
@@ -1366,7 +1366,7 @@ Indicates that a new poll has been created.
 
 ***
 
-**`poll.finished`**
+### **`poll.finished`**
 
 Indicates that a poll has expired or been closed.
 
@@ -1442,10 +1442,11 @@ Indicates that a poll has expired or been closed.
 ## Calendar Events
 
 Events related to the group or DM calendar feature.
+
 > [!note]
 > These events can occur in both group chats and Direct Messages. In DMs, the relevant `conversation_id` in the message object will reflect the DM participants.
 
-**`calendar.event.cancelled`**
+### **`calendar.event.cancelled`**
 
 Indicates that a calendar event has been canceled.
 
@@ -1493,7 +1494,7 @@ Indicates that a calendar event has been canceled.
 
 ***
 
-**`calendar.event.created`**
+### **`calendar.event.created`**
 
 Indicates that a new calendar event has been created.
 
@@ -1550,7 +1551,7 @@ Indicates that a new calendar event has been created.
 
 ***
 
-**`calendar.event.starting`**
+### **`calendar.event.starting`**
 
 Indicates that a calendar event is starting soon or now.
 
@@ -1585,7 +1586,7 @@ Indicates that a calendar event is starting soon or now.
 
 ***
 
-**`calendar.event.updated`**
+### **`calendar.event.updated`**
 
 Indicates that a calendar event's details have been updated.
 
@@ -1640,7 +1641,7 @@ Indicates that a calendar event's details have been updated.
 
 ***
 
-**`calendar.event.user.going`**
+### **`calendar.event.user.going`**
 
 Indicates a user has RSVP'd as "going" to a calendar event.
 
@@ -1688,7 +1689,7 @@ Indicates a user has RSVP'd as "going" to a calendar event.
 
 ***
 
-**`calendar.event.user.not_going`**
+### **`calendar.event.user.not_going`**
 
 Indicates a user has RSVP'd as "not going" to a calendar event.
 
@@ -1736,7 +1737,7 @@ Indicates a user has RSVP'd as "not going" to a calendar event.
 
 ***
 
-**`calendar.event.user.undecided`**
+### **`calendar.event.user.undecided`**
 
 Indicates a user has changed their RSVP to "undecided" for a calendar event.
 
@@ -1788,7 +1789,7 @@ Indicates a user has changed their RSVP to "undecided" for a calendar event.
 
 Events that can apply to messages in various contexts (groups, DMs, subgroups).
 
-**`message.deleted`**
+### **`message.deleted`**
 
 Indicates that a message has been deleted.
 
@@ -1823,7 +1824,7 @@ Indicates that a message has been deleted.
 
 ***
 
-**`message.pinned`**
+### **`message.pinned`**
 
 Indicates that a message has been pinned in the chat.
 
@@ -1863,7 +1864,7 @@ Indicates that a message has been pinned in the chat.
 
 ***
 
-**`message.unpinned`**
+### **`message.unpinned`**
 
 Indicates that a message has been unpinned in the chat.
 
@@ -1898,7 +1899,7 @@ Indicates that a message has been unpinned in the chat.
 
 Events related to bots being added, removed, or modified in a group.
 
-**`bot.add`**
+### **`bot.add`**
 
 Indicates that a bot has been added to the group.
 
@@ -1937,7 +1938,7 @@ Indicates that a bot has been added to the group.
 
 ***
 
-**`bot.del`**
+### **`bot.del`**
 
 Indicates that a bot has been removed from the group.
 
@@ -1976,7 +1977,7 @@ Indicates that a bot has been removed from the group.
 
 ***
 
-**`bot.rename`**
+### **`bot.rename`**
 
 Indicates that a bot has been renamed.
 
@@ -2024,7 +2025,7 @@ Indicates that a bot has been renamed.
 
 Events related to the GroupMe Copilot (AI assistant) feature.
 
-**`copilot.group.privacy_notice`**
+### **`copilot.group.privacy_notice`**
 
 Indicates that a privacy notice regarding the Copilot feature has been posted in the group. This typically occurs when Copilot is activated or first mentioned.
 
