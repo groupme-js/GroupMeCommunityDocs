@@ -1045,15 +1045,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#messageunpinned" class="md-nav__link">
-    <span class="md-ellipsis">
-      message.unpinned
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1507,7 +1498,7 @@
 <p>Events related to group membership changes (users joining, leaving, etc.). These apply to main groups.</p>
 <h3 id="membershipannounceadded"><strong><code>membership.announce.added</code></strong><a class="headerlink" href="#membershipannounceadded" title="Permanent link">&para;</a></h3>
 <p>Indicates that one or more users have been added to the group by an existing member.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1581,7 +1572,7 @@
 <p class="admonition-title">Note</p>
 <p>This event typically fires in groups that either have "Request to Join" enabled or in smaller groups (generally with fewer than ~200 members). In very large, open groups, individual join events might not always be generated.</p>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -1626,7 +1617,7 @@
 <hr />
 <h3 id="membershipannouncerejoined"><strong><code>membership.announce.rejoined</code></strong><a class="headerlink" href="#membershipannouncerejoined" title="Permanent link">&para;</a></h3>
 <p>Indicates that a user has rejoined the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
@@ -1671,7 +1662,7 @@
 <hr />
 <h3 id="membershipnotificationsexited"><strong><code>membership.notifications.exited</code></strong><a class="headerlink" href="#membershipnotificationsexited" title="Permanent link">&para;</a></h3>
 <p>Indicates that a user has left the group themselves.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -1716,7 +1707,7 @@
 <hr />
 <h3 id="membershipnotificationsremoved"><strong><code>membership.notifications.removed</code></strong><a class="headerlink" href="#membershipnotificationsremoved" title="Permanent link">&para;</a></h3>
 <p>Indicates that a user has been removed from the group by another member.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -1784,7 +1775,7 @@
 <p>Events related to changes in main group settings and properties.</p>
 <h3 id="groupavatar_change"><strong><code>group.avatar_change</code></strong><a class="headerlink" href="#groupavatar_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's avatar has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -1835,7 +1826,7 @@
 <hr />
 <h3 id="grouplike_icon_removed"><strong><code>group.like_icon_removed</code></strong><a class="headerlink" href="#grouplike_icon_removed" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's custom like icon has been removed, reverting to the default.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
@@ -1880,7 +1871,7 @@
 <hr />
 <h3 id="grouplike_icon_set"><strong><code>group.like_icon_set</code></strong><a class="headerlink" href="#grouplike_icon_set" title="Permanent link">&para;</a></h3>
 <p>Indicates that a custom like icon has been set for the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -1952,7 +1943,7 @@
 <hr />
 <h3 id="groupname_change"><strong><code>group.name_change</code></strong><a class="headerlink" href="#groupname_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's name has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
@@ -2003,7 +1994,7 @@
 <hr />
 <h3 id="groupowner_changed"><strong><code>group.owner_changed</code></strong><a class="headerlink" href="#groupowner_changed" title="Permanent link">&para;</a></h3>
 <p>Indicates that the ownership of the group has been transferred.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
@@ -2069,7 +2060,7 @@
 <hr />
 <h3 id="grouprequires_approval_disabled"><strong><code>group.requires_approval_disabled</code></strong><a class="headerlink" href="#grouprequires_approval_disabled" title="Permanent link">&para;</a></h3>
 <p>Indicates that the "join requires approval" setting has been disabled for the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
@@ -2114,7 +2105,7 @@
 <hr />
 <h3 id="grouprequires_approval_enabled"><strong><code>group.requires_approval_enabled</code></strong><a class="headerlink" href="#grouprequires_approval_enabled" title="Permanent link">&para;</a></h3>
 <p>Indicates that the "join requires approval" setting has been enabled for the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
@@ -2159,7 +2150,7 @@
 <hr />
 <h3 id="grouprole_change_admin"><strong><code>group.role_change_admin</code></strong><a class="headerlink" href="#grouprole_change_admin" title="Permanent link">&para;</a></h3>
 <p>Indicates that a member's role has been changed regarding admin status.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
@@ -2231,7 +2222,7 @@
 <hr />
 <h3 id="groupshared"><strong><code>group.shared</code></strong><a class="headerlink" href="#groupshared" title="Permanent link">&para;</a></h3>
 <p>Indicates that group sharing (join link) has been enabled.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
@@ -2288,7 +2279,7 @@
 <hr />
 <h3 id="groupsubgroup_created"><strong><code>group.subgroup_created</code></strong><a class="headerlink" href="#groupsubgroup_created" title="Permanent link">&para;</a></h3>
 <p>Indicates that a new topic (subgroup/channel) has been created within the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
@@ -2351,7 +2342,7 @@
 <hr />
 <h3 id="groupsubgroup_removed"><strong><code>group.subgroup_removed</code></strong><a class="headerlink" href="#groupsubgroup_removed" title="Permanent link">&para;</a></h3>
 <p>Indicates that a topic (subgroup/channel) has been removed from the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
@@ -2408,7 +2399,7 @@
 <hr />
 <h3 id="grouptheme_change"><strong><code>group.theme_change</code></strong><a class="headerlink" href="#grouptheme_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's chat theme has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
@@ -2459,7 +2450,7 @@
 <hr />
 <h3 id="grouptopic_change"><strong><code>group.topic_change</code></strong><a class="headerlink" href="#grouptopic_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's description (often referred to as "topic" in settings) has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
@@ -2510,7 +2501,7 @@
 <hr />
 <h3 id="grouptype_change"><strong><code>group.type_change</code></strong><a class="headerlink" href="#grouptype_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that the group's type (e.g., private, closed, announcement) has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
@@ -2570,7 +2561,7 @@
 <hr />
 <h3 id="groupunshared"><strong><code>group.unshared</code></strong><a class="headerlink" href="#groupunshared" title="Permanent link">&para;</a></h3>
 <p>Indicates that group sharing (join link) has been disabled.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span>
 <span class="normal"><a href="#__codelineno-19-4">4</a></span>
@@ -2615,7 +2606,7 @@
 <hr />
 <h3 id="groupvisibility_setcommunity"><strong><code>group.visibility_set.community</code></strong><a class="headerlink" href="#groupvisibility_setcommunity" title="Permanent link">&para;</a></h3>
 <p>Indicates the group's visibility has been set to a specific community (e.g., a campus).</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
 <span class="normal"><a href="#__codelineno-20-3">3</a></span>
 <span class="normal"><a href="#__codelineno-20-4">4</a></span>
@@ -2661,7 +2652,7 @@
 <hr />
 <h3 id="groupvisibility_sethidden"><strong><code>group.visibility_set.hidden</code></strong><a class="headerlink" href="#groupvisibility_sethidden" title="Permanent link">&para;</a></h3>
 <p>Indicates the group has been made hidden and is not discoverable.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
 <span class="normal"><a href="#__codelineno-21-2">2</a></span>
 <span class="normal"><a href="#__codelineno-21-3">3</a></span>
 <span class="normal"><a href="#__codelineno-21-4">4</a></span>
@@ -2706,7 +2697,7 @@
 <hr />
 <h3 id="groupvisibility_setsearchable"><strong><code>group.visibility_set.searchable</code></strong><a class="headerlink" href="#groupvisibility_setsearchable" title="Permanent link">&para;</a></h3>
 <p>Indicates the group has been made visible and can be found in Discover.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
 <span class="normal"><a href="#__codelineno-22-2">2</a></span>
 <span class="normal"><a href="#__codelineno-22-3">3</a></span>
 <span class="normal"><a href="#__codelineno-22-4">4</a></span>
@@ -2753,7 +2744,7 @@
 <p>Events related to changes in subgroup (topic/channel) settings and properties within a main group.</p>
 <h3 id="groupsubgroup_avatar_change"><strong><code>group.subgroup_avatar_change</code></strong><a class="headerlink" href="#groupsubgroup_avatar_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that a subgroup's avatar has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
@@ -2816,7 +2807,7 @@
 <hr />
 <h3 id="groupsubgroup_description_change"><strong><code>group.subgroup_description_change</code></strong><a class="headerlink" href="#groupsubgroup_description_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that a subgroup's description has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
@@ -2879,7 +2870,7 @@
 <hr />
 <h3 id="groupsubgroup_like_icon_change"><strong><code>group.subgroup_like_icon_change</code></strong><a class="headerlink" href="#groupsubgroup_like_icon_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that a subgroup's custom like icon has been changed or removed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
@@ -2963,7 +2954,7 @@
 <hr />
 <h3 id="groupsubgroup_name_change"><strong><code>group.subgroup_name_change</code></strong><a class="headerlink" href="#groupsubgroup_name_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that a subgroup's name (topic) has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
@@ -3020,7 +3011,7 @@
 <hr />
 <h3 id="groupsubgroup_type_change"><strong><code>group.subgroup_type_change</code></strong><a class="headerlink" href="#groupsubgroup_type_change" title="Permanent link">&para;</a></h3>
 <p>Indicates that a subgroup's type (e.g., closed, announcement) has been changed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
@@ -3091,7 +3082,7 @@
 <p>Events related to group calls.</p>
 <h3 id="groupcallended"><strong><code>group.call.ended</code></strong><a class="headerlink" href="#groupcallended" title="Permanent link">&para;</a></h3>
 <p>Indicates that a group call has ended.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
@@ -3142,7 +3133,7 @@
 <hr />
 <h3 id="groupcallstarted"><strong><code>group.call.started</code></strong><a class="headerlink" href="#groupcallstarted" title="Permanent link">&para;</a></h3>
 <p>Indicates that a group call has been started.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
@@ -3195,7 +3186,7 @@
 <p>Events related to polls created within a group or subgroup.</p>
 <h3 id="pollcreated"><strong><code>poll.created</code></strong><a class="headerlink" href="#pollcreated" title="Permanent link">&para;</a></h3>
 <p>Indicates that a new poll has been created.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
@@ -3276,7 +3267,7 @@
 <hr />
 <h3 id="pollfinished"><strong><code>poll.finished</code></strong><a class="headerlink" href="#pollfinished" title="Permanent link">&para;</a></h3>
 <p>Indicates that a poll has expired or been closed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
@@ -3387,7 +3378,7 @@
 </div>
 <h3 id="calendareventcancelled"><strong><code>calendar.event.cancelled</code></strong><a class="headerlink" href="#calendareventcancelled" title="Permanent link">&para;</a></h3>
 <p>Indicates that a calendar event has been canceled.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
@@ -3453,7 +3444,7 @@
 <hr />
 <h3 id="calendareventcreated"><strong><code>calendar.event.created</code></strong><a class="headerlink" href="#calendareventcreated" title="Permanent link">&para;</a></h3>
 <p>Indicates that a new calendar event has been created.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
@@ -3529,7 +3520,7 @@
 <hr />
 <h3 id="calendareventstarting"><strong><code>calendar.event.starting</code></strong><a class="headerlink" href="#calendareventstarting" title="Permanent link">&para;</a></h3>
 <p>Indicates that a calendar event is starting soon or now.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
 <span class="normal"><a href="#__codelineno-34-2">2</a></span>
 <span class="normal"><a href="#__codelineno-34-3">3</a></span>
 <span class="normal"><a href="#__codelineno-34-4">4</a></span>
@@ -3571,7 +3562,7 @@
 <hr />
 <h3 id="calendareventupdated"><strong><code>calendar.event.updated</code></strong><a class="headerlink" href="#calendareventupdated" title="Permanent link">&para;</a></h3>
 <p>Indicates that a calendar event's details have been updated.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-35-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-35-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-35-4"> 4</a></span>
@@ -3647,7 +3638,7 @@
 <hr />
 <h3 id="calendareventusergoing"><strong><code>calendar.event.user.going</code></strong><a class="headerlink" href="#calendareventusergoing" title="Permanent link">&para;</a></h3>
 <p>Indicates a user has RSVP'd as "going" to a calendar event.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-36-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-36-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-36-4"> 4</a></span>
@@ -3713,7 +3704,7 @@
 <hr />
 <h3 id="calendareventusernot_going"><strong><code>calendar.event.user.not_going</code></strong><a class="headerlink" href="#calendareventusernot_going" title="Permanent link">&para;</a></h3>
 <p>Indicates a user has RSVP'd as "not going" to a calendar event.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-37-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-37-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-37-4"> 4</a></span>
@@ -3779,7 +3770,7 @@
 <hr />
 <h3 id="calendareventuserundecided"><strong><code>calendar.event.user.undecided</code></strong><a class="headerlink" href="#calendareventuserundecided" title="Permanent link">&para;</a></h3>
 <p>Indicates a user has changed their RSVP to "undecided" for a calendar event.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-38-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-38-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-38-4"> 4</a></span>
@@ -3847,7 +3838,7 @@
 <p>Events that can apply to messages in various contexts (groups, DMs, subgroups).</p>
 <h3 id="messagedeleted"><strong><code>message.deleted</code></strong><a class="headerlink" href="#messagedeleted" title="Permanent link">&para;</a></h3>
 <p>Indicates that a message has been deleted.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
 <span class="normal"><a href="#__codelineno-39-2">2</a></span>
 <span class="normal"><a href="#__codelineno-39-3">3</a></span>
 <span class="normal"><a href="#__codelineno-39-4">4</a></span>
@@ -3889,7 +3880,7 @@
 <hr />
 <h3 id="messagepinned"><strong><code>message.pinned</code></strong><a class="headerlink" href="#messagepinned" title="Permanent link">&para;</a></h3>
 <p>Indicates that a message has been pinned in the chat.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
 <span class="normal"><a href="#__codelineno-40-2">2</a></span>
 <span class="normal"><a href="#__codelineno-40-3">3</a></span>
 <span class="normal"><a href="#__codelineno-40-4">4</a></span>
@@ -3935,66 +3926,29 @@
 </li>
 </ul>
 <hr />
-<h3 id="messageunpinned"><strong><code>message.unpinned</code></strong><a class="headerlink" href="#messageunpinned" title="Permanent link">&para;</a></h3>
-<p>Indicates that a message has been unpinned in the chat.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span>
-<span class="normal"><a href="#__codelineno-41-2">2</a></span>
-<span class="normal"><a href="#__codelineno-41-3">3</a></span>
-<span class="normal"><a href="#__codelineno-41-4">4</a></span>
-<span class="normal"><a href="#__codelineno-41-5">5</a></span>
-<span class="normal"><a href="#__codelineno-41-6">6</a></span>
-<span class="normal"><a href="#__codelineno-41-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="p">{</span>
-<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;message.unpinned&quot;</span><span class="p">,</span>
-<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;169386238854117065&quot;</span><span class="p">,</span>
-<a id="__codelineno-41-5" name="__codelineno-41-5"></a><span class="w">    </span><span class="nt">&quot;unpinned&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li>
-<p><em>type</em></p>
-<p>string - Must be <code>message.unpinned</code>.</p>
-</li>
-<li>
-<p><em>data</em> (object) - Contains details of the unpinned message.</p>
-<ul>
-<li>
-<p><em>message_id</em></p>
-<p>string - The ID of the message that was unpinned.</p>
-</li>
-<li>
-<p><em>unpinned</em></p>
-<p>boolean - Always <code>true</code> for this event type.
-    <em>(Note: <code>unpinned_by</code> and <code>unpinned_at</code> were not observed in the example for this event type).</em></p>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
 <h2 id="bot-events">Bot Events<a class="headerlink" href="#bot-events" title="Permanent link">&para;</a></h2>
 <p>Events related to bots being added, removed, or modified in a group.</p>
 <h3 id="botadd"><strong><code>bot.add</code></strong><a class="headerlink" href="#botadd" title="Permanent link">&para;</a></h3>
 <p>Indicates that a bot has been added to the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-42-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-42-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-42-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-42-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-42-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-42-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-42-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="p">{</span>
-<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.add&quot;</span><span class="p">,</span>
-<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
-<a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
-<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-42-8" name="__codelineno-42-8"></a><span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jerry&quot;</span>
-<a id="__codelineno-42-9" name="__codelineno-42-9"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-42-10" name="__codelineno-42-10"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-41-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-41-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-41-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-41-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-41-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-41-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-41-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="p">{</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.add&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8"></a><span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jerry&quot;</span>
+<a id="__codelineno-41-9" name="__codelineno-41-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>
@@ -4027,25 +3981,25 @@
 <hr />
 <h3 id="botdel"><strong><code>bot.del</code></strong><a class="headerlink" href="#botdel" title="Permanent link">&para;</a></h3>
 <p>Indicates that a bot has been removed from the group.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-43-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-43-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-43-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-43-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-43-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-43-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-43-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-43-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-43-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="p">{</span>
-<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.del&quot;</span><span class="p">,</span>
-<a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
-<a id="__codelineno-43-6" name="__codelineno-43-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
-<a id="__codelineno-43-7" name="__codelineno-43-7"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-43-8" name="__codelineno-43-8"></a><span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tom&quot;</span>
-<a id="__codelineno-43-9" name="__codelineno-43-9"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-43-10" name="__codelineno-43-10"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-42-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-42-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-42-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-42-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-42-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-42-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-42-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="p">{</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.del&quot;</span><span class="p">,</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8"></a><span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tom&quot;</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>
@@ -4078,27 +4032,27 @@
 <hr />
 <h3 id="botrename"><strong><code>bot.rename</code></strong><a class="headerlink" href="#botrename" title="Permanent link">&para;</a></h3>
 <p>Indicates that a bot has been renamed.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-44-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-44-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-44-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-44-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-44-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-44-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-44-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-44-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-44-10">10</a></span>
-<span class="normal"><a href="#__codelineno-44-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="p">{</span>
-<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.rename&quot;</span><span class="p">,</span>
-<a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-44-5" name="__codelineno-44-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
-<a id="__codelineno-44-6" name="__codelineno-44-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
-<a id="__codelineno-44-7" name="__codelineno-44-7"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-44-8" name="__codelineno-44-8"></a><span class="w">    </span><span class="nt">&quot;bot_name_old&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jerry&quot;</span><span class="p">,</span>
-<a id="__codelineno-44-9" name="__codelineno-44-9"></a><span class="w">    </span><span class="nt">&quot;bot_name_new&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tom&quot;</span>
-<a id="__codelineno-44-10" name="__codelineno-44-10"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-44-11" name="__codelineno-44-11"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-43-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-43-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-43-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-43-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-43-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-43-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-43-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-43-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-43-10">10</a></span>
+<span class="normal"><a href="#__codelineno-43-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="p">{</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bot.rename&quot;</span><span class="p">,</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">93645911</span><span class="p">,</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6"></a><span class="w">      </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isaac&quot;</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-43-8" name="__codelineno-43-8"></a><span class="w">    </span><span class="nt">&quot;bot_name_old&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jerry&quot;</span><span class="p">,</span>
+<a id="__codelineno-43-9" name="__codelineno-43-9"></a><span class="w">    </span><span class="nt">&quot;bot_name_new&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tom&quot;</span>
+<a id="__codelineno-43-10" name="__codelineno-43-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-43-11" name="__codelineno-43-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>
@@ -4137,17 +4091,17 @@
 <p>Events related to the GroupMe Copilot (AI assistant) feature.</p>
 <h3 id="copilotgroupprivacy_notice"><strong><code>copilot.group.privacy_notice</code></strong><a class="headerlink" href="#copilotgroupprivacy_notice" title="Permanent link">&para;</a></h3>
 <p>Indicates that a privacy notice regarding the Copilot feature has been posted in the group. This typically occurs when Copilot is activated or first mentioned.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Event Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span>
-<span class="normal"><a href="#__codelineno-45-2">2</a></span>
-<span class="normal"><a href="#__codelineno-45-3">3</a></span>
-<span class="normal"><a href="#__codelineno-45-4">4</a></span>
-<span class="normal"><a href="#__codelineno-45-5">5</a></span>
-<span class="normal"><a href="#__codelineno-45-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="p">{</span>
-<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copilot.group.privacy_notice&quot;</span><span class="p">,</span>
-<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="w">    </span><span class="nt">&quot;trigger_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174959917958988616&quot;</span>
-<a id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-45-6" name="__codelineno-45-6"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Object Structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
+<span class="normal"><a href="#__codelineno-44-2">2</a></span>
+<span class="normal"><a href="#__codelineno-44-3">3</a></span>
+<span class="normal"><a href="#__codelineno-44-4">4</a></span>
+<span class="normal"><a href="#__codelineno-44-5">5</a></span>
+<span class="normal"><a href="#__codelineno-44-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="p">{</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copilot.group.privacy_notice&quot;</span><span class="p">,</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="w">    </span><span class="nt">&quot;trigger_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174959917958988616&quot;</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>
@@ -4191,7 +4145,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 11, 2025 00:57:58 UTC">June 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 11, 2025 01:32:45 UTC">June 11, 2025</span>
   </span>
 
     
@@ -4222,6 +4176,11 @@
         <a href="https://github.com/AlureonTheVirus" class="md-author" title="@AlureonTheVirus">
           
           <img src="https://avatars.githubusercontent.com/u/82665946?v=4&size=72" alt="AlureonTheVirus">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
       
