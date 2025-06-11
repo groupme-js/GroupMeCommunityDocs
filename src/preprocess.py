@@ -30,18 +30,26 @@ def convert_admonitions(text):
 
     def replacer(match):
         raw_label = match.group(1).lower()
-        body = match.group(2).strip()
+        block = match.group(2)
 
         label = ADMONITION_MAP.get(raw_label)
         if not label:
             return match.group(0)
 
-        # Convert each '> ' line into normal text lines
-        lines = [
-            f"    {line[2:]}" for line in body.splitlines() if line.startswith("> ")
-        ] if body.startswith("> ") else [f"    {body.strip()}"]
+        lines = []
+        for line in block.splitlines():
+            if line.startswith("> "):
+                lines.append(line[2:])
+            elif line.strip() == ">":
+                lines.append("")  # preserve blank lines
 
-        return f"!!! {label}\n" + "\n".join(lines)
+        title = ""
+        if lines and re.match(r"\*\*(.+?)\*\*", lines[0].strip()):
+            title = re.match(r"\*\*(.+?)\*\*", lines[0].strip()).group(1)
+            lines = lines[1:]  # Remove title from body
+
+        content = "\n".join(f"    {line}" if line != "" else "" for line in lines)
+        return f'!!! {label} "{title}"\n{content}' if title else f'!!! {label}\n{content}'
 
     return pattern.sub(replacer, text)
 
