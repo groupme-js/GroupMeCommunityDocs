@@ -1,6 +1,6 @@
 ---
 title: "Attachments"
-description: "Learn how to interact with GroupMe's message attachments viw the API."
+description: "Learn how to interact with GroupMe's message attachments via the API."
 ---
 
 # Attachments

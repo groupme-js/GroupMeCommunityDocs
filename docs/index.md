@@ -17,26 +17,26 @@ If you have any questions or would like to get in touch, please join the [GroupM
 
 <div class="grid cards" markdown>
 
-- :material-robot-excited: __[Bots]__ – How to create, index, and use bots.
-
+- :material-robot-excited: __[Bots]__ – How to create, index, and use bots
 - :material-account-group: __[Group Management]__ – How to create, join, list, update, etc. groups
 - :material-account-group: __[Subgroup Management]__ – How to work with subgroups within a parent group
 - :fontawesome-solid-users-gear: __[Member management]__ – How to add, remove, and update members in a group
 - :material-message: __[Group Messages]__ – How to list and send messages in groups
-- :material-calendar: __[Calendar Events]__ – How to list, create, and edit calendar events in a group.
-- :material-poll: __[Polls]__ – Information on how to make and view polls.
-- :octicons-search-16: __[Directory Management]__ – How to list, search, and join public and campus group directories.
+- :material-calendar: __[Calendar Events]__ – How to list, create, and edit calendar events in a group
+- :material-poll: __[Polls]__ – Information on how to make and view polls
+- :material-message-badge: __[Message Events]__ – How to parse system message events
+- :octicons-search-16: __[Directory Management]__ – How to list, search, and join public and campus group directories
 - :material-message: __[Direct Messages]__ – How to list, read, and send DMs, as well as how to block/unblock users
-- :material-contacts: __[Users/Contact Management]__ – How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups.
-- :material-attachment-plus: __[Attachments]__ – Information on how message attachments work, as well as how to upload images to be sent as attachments.
+- :material-contacts: __[Users/Contact Management]__ – How to create, destroy, and manage contacts; as well as fetch info on other users outside of groups
+- :material-attachment-plus: __[Attachments]__ – Information on how message attachments work, as well as how to upload images to be sent as attachments
 - :fontawesome-solid-face-smile-wink: __[Reactions]__ – How to react to messages, and how to see your reactions and the likes leaderboard in groups
-- :material-pin: __[Pins]__ – How to use GroupMe's message pinning functionality.
-- :fontawesome-solid-face-smile-wink: __[Emoji]__ – How GroupMe's custom emoji system works, as well as how to display and send emoji.
-- :material-video: __[Videos]__ – Information on how to upload videos to be sent as attachments.
-- :material-image: __[Image Service]__ – How to upload Images to GroupMe's CDN.
-- :material-account-cog: __[Account Management]__ – How to access/update information about your account, turning on/off SMS mode, and configuring profile details.
-- :material-cellphone-key: __[Oauth/MFA]__ – How to manage API tokens and handle multi-factor authentication with GroupMe.
-- :octicons-arrow-switch-16: __[Websocket Gateway]__ – How to connect to the Push service to get real-time interaction with your program.
+- :material-pin: __[Pins]__ – How to use GroupMe's message pinning functionality
+- :fontawesome-solid-face-smile-wink: __[Emoji]__ – How GroupMe's custom emoji system works, as well as how to display and send emoji
+- :material-video: __[Videos]__ – Information on how to upload videos to be sent as attachments
+- :material-image: __[Image Service]__ – How to upload Images to GroupMe's CDN
+- :material-account-cog: __[Account Management]__ – How to access/update information about your account, turning on/off SMS mode, and configuring profile details
+- :material-cellphone-key: __[Oauth/MFA]__ – How to manage API tokens and handle multi-factor authentication with GroupMe
+- :octicons-arrow-switch-16: __[Websocket Gateway]__ – How to connect to the Push service to get real-time interaction with your program
 
 </div>
 
@@ -59,6 +59,7 @@ If you have any questions or would like to get in touch, please join the [GroupM
   [Pins]: pins.md
   [Oauth/MFA]: oauth.md
   [Image Service]: images.md
+  [Message Events]: events.md
 
 ***
 
