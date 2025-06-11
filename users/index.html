@@ -527,6 +527,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/" class="md-nav__link">
         
   
@@ -990,10 +1012,10 @@
 <hr />
 <h2 id="index-user">Index User<a class="headerlink" href="#index-user" title="Permanent link">&para;</a></h2>
 <p>Returns some basic profile information, like the name, bio, and groups you share with another user.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//v2.groupme.com/users/:user_id</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1212,11 +1234,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Repeat this process until the response contains an empty list, which means you&#39;ve reached the end of the contact list.
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>&gt; [!important]
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>&gt; This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>GET https://api.groupme.com/v4/relationships
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>!!! important
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>GET https://api.groupme.com/v4/relationships
 </code></pre></div></p>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1300,10 +1321,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 <hr />
 <h2 id="delete-relationship">Delete Relationship<a class="headerlink" href="#delete-relationship" title="Permanent link">&para;</a></h2>
 <p>Delete a relationship from your contact book</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships/:user_id</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="err">Accep</span><span class="kc">te</span><span class="err">d</span>

@@ -623,6 +623,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/" class="md-nav__link">
         
   
@@ -1257,10 +1279,10 @@
 <a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p>[!note]
-If the server has no <code>read_receipt</code> parameter to share, it will be completely absent from the response.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the server has no <code>read_receipt</code> parameter to share, it will be completely absent from the response.</p>
+</div>
 <hr />
 <h2 id="send-dm">Send DM<a class="headerlink" href="#send-dm" title="Permanent link">&para;</a></h2>
 <p>Send a DM to another user</p>
@@ -1446,10 +1468,10 @@ If the server has no <code>read_receipt</code> parameter to share, it will be co
 <hr />
 <h2 id="send-a-read-receipt">Send a Read Receipt<a class="headerlink" href="#send-a-read-receipt" title="Permanent link">&para;</a></h2>
 <p>You can only mark new messages as read, attempting to read a message sent before one you have already read will update the timestamp on the latest read message.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>

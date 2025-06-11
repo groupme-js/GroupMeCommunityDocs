@@ -527,6 +527,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/" class="md-nav__link">
         
   
@@ -1042,10 +1064,10 @@
 </code></pre></div></td></tr></table></div>
 <p>If the request succeeds, <code>meta.errors</code> will be null, and if the request fails, <code>response</code> will be null.</p>
 <hr />
-<blockquote>
-<p>[!note]
-Calls related to account security, such as managing your password or updating MFA settings are located in the <a href="../oauth/">Oauth / MFA Managment</a> section.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calls related to account security, such as managing your password or updating MFA settings are located in the <a href="../oauth/">Oauth / MFA Managment</a> section.</p>
+</div>
 <h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
 <p>Get details about the authenticated user</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/users/me</span>
@@ -1206,10 +1228,10 @@ Calls related to account security, such as managing your password or updating MF
 <h2 id="update-details-alternativeextended-method">Update Details (Alternative/Extended Method)<a class="headerlink" href="#update-details-alternativeextended-method" title="Permanent link">&para;</a></h2>
 <p>The GroupMe API technically allows for two different calls that update your profile details: the officially documented call to <code>/users/update</code> above, and also a more useful (but also unofficially documented) call to <code>https://v2.groupme.com/users/:your_user_id</code>. This second option is the one that all official clients currently use and seems to be the most current way clients update the newest addition to profiles, such as your profile gallery, theme song, bio, and intrest tags. </p>
 <p>Note: all of the parameters in this request are optional, however I'm including them all here as an example for verbosity.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1541,10 +1563,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 <h2 id="index-pinned-conversations">Index pinned conversations<a class="headerlink" href="#index-pinned-conversations" title="Permanent link">&para;</a></h2>
 <p>Lists out the IDs of messaging channels you've pinned to the top of your conversations list.</p>
 <p>Interestingly, groups that you have left or have been deleted by their owners will still appear in this list. However, they will not show in the UI. The only way to remove an ID from this list is to unpin it manually.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/pinned_conversations</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -1574,10 +1596,10 @@ This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>
 <hr />
 <h2 id="update-pinned-conversations">Update pinned conversations<a class="headerlink" href="#update-pinned-conversations" title="Permanent link">&para;</a></h2>
 <p>Alter the list of pinned conversations you've pinned</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-19-3"> 3</a></span>

@@ -614,6 +614,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/" class="md-nav__link">
         
   
@@ -1167,10 +1189,10 @@
 * <code>popular</code> if they were found among the general list of public groups
 * <code>trending</code> if they were found on the curated list of groups published by GroupMe,
 * <code>nearby</code> if they were found in the automatically curated list of groups close to you.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1325,10 +1347,10 @@ This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>
 <hr />
 <h2 id="index-trending">Index Trending<a class="headerlink" href="#index-trending" title="Permanent link">&para;</a></h2>
 <p>Returns a paginated list of the top 50 public groups, curated by GroupMe. </p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/trending</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1455,10 +1477,10 @@ This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>
 <hr />
 <h2 id="index-popular">Index Popular<a class="headerlink" href="#index-popular" title="Permanent link">&para;</a></h2>
 <p>Returns a paginated list of all public groups, ordered by member count (largest first).</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/popular</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1588,10 +1610,10 @@ This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h1 id="campus-directories">Campus Directories<a class="headerlink" href="#campus-directories" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!note]
-These calls are exclusive to users who are already members of <a href="https://groupme.com/campus">campus directories</a>. For simplicity, this documentation will not cover how to join a campus domain via the API, but it does discuss how to navigate and manage one once you're a member. </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These calls are exclusive to users who are already members of <a href="https://groupme.com/campus">campus directories</a>. For simplicity, this documentation will not cover how to join a campus domain via the API, but it does discuss how to navigate and manage one once you're a member.</p>
+</div>
 <h2 id="index">Index<a class="headerlink" href="#index" title="Permanent link">&para;</a></h2>
 <p>List information about the campus directory you're a member of</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">ories</span>
@@ -1625,10 +1647,10 @@ These calls are exclusive to users who are already members of <a href="https://g
 <hr />
 <h2 id="index-groups">Index Groups<a class="headerlink" href="#index-groups" title="Permanent link">&para;</a></h2>
 <p>Returns a paginated list of groups that are a part of the domain.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directories</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1700,10 +1722,10 @@ This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>
 </code></pre></div></td></tr></table></div>
 <h2 id="index-members">Index Members<a class="headerlink" href="#index-members" title="Permanent link">&para;</a></h2>
 <p>Return a list containing all of the users who are visible to you within the campus directory. Note that the responses you get are also dependant on the privacy status of other users in the directory. Some people have their profiles set to be visible to only their major or graduation year, or hidden entirely.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directory/users</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>

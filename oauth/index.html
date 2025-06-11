@@ -527,6 +527,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/" class="md-nav__link">
         
   
@@ -1027,10 +1049,10 @@
 <h2 id="logging-in">Logging In<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
 <p>This is how you authenticate a GroupMe account's email and password in order to receive an API token. </p>
 <p>Sometimes, when an account has MFA enabled or you're logging in from a new device, this call requires a user to answer an MFA challenge using a pin sent to their phone and then retry logging in using the code attached to the MFA interaction.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1224,10 +1246,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 </code></pre></div></td></tr></table></div>
 <p>Where <code>c9b6acf22f61</code> is the <code>long_pin</code> you received from the server.</p>
 <p>Because sending a text is asynchronous, you need to wait and validate that the server has received your SMS before attempting to use the MFA ID. You can do this via polling the ID to see if it's validated yet.</p>
-<blockquote>
-<p>[!tip]
-You can use this call to check if any MFA ID is valid, not just ones where you're sending the text. It's most relevant here, so thats why we include it.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use this call to check if any MFA ID is valid, not just ones where you're sending the text. It's most relevant here, so thats why we include it.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/</span><span class="p">:</span><span class="err">m</span><span class="kc">fa</span><span class="err">_id</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1320,10 +1342,10 @@ You can use this call to check if any MFA ID is valid, not just ones where you'r
 <p>This call activates an MFA channel for your account, it works just like logging in. </p>
 <p>You make this call once without an MFA verification object, receive an MFA ID for the interaction, validate it using the steps detailed in the <a href="#Handling-MFA-Challenges">Handling MFA Challenges</a> section, then make this call a second time including the now verified MFA ID.</p>
 <p>After establishing the MFA channel you must enable it with a seperate call.</p>
-<blockquote>
-<p>[!important]
-Activating MFA will log you out <em>everywhere</em>, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Activating MFA will log you out <em>everywhere</em>, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
@@ -1461,10 +1483,10 @@ Activating MFA will log you out <em>everywhere</em>, including 3rd party Oauth a
 <h2 id="index-authorized-apps">Index authorized apps<a class="headerlink" href="#index-authorized-apps" title="Permanent link">&para;</a></h2>
 <p>List applications with active tokens. </p>
 <p>Please note that this call does not list the tokens themselves, or when they will expire. It only provides enough information to tell you which clients currently have access to your account.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//v2.groupme.com/access_tokens</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
@@ -1500,10 +1522,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 <hr />
 <h2 id="revoking-an-api-token-oauth-application">Revoking an API token / Oauth Application<a class="headerlink" href="#revoking-an-api-token-oauth-application" title="Permanent link">&para;</a></h2>
 <p>This call invalidates a token with a particular token ID, which can be identified using the call above.</p>
-<blockquote>
-<p>[!important]
-This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//v2.groupme.com/access_tokens/:token_id/destroy</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
@@ -1517,10 +1539,10 @@ This request is relative to <code>https://v2.groupme.com/</code>, not <code>http
 </code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="changing-your-account-password">Changing your Account Password<a class="headerlink" href="#changing-your-account-password" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!important]
-This call will log you out <em>everywhere</em> and will revoke the token you're currently using. In order to get a new API token, you will need to <a href="#Logging-In">log back in</a> with your new password</p>
-</blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This call will log you out <em>everywhere</em> and will revoke the token you're currently using. In order to get a new API token, you will need to <a href="#Logging-In">log back in</a> with your new password</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
 <span class="normal"><a href="#__codelineno-26-2">2</a></span>
 <span class="normal"><a href="#__codelineno-26-3">3</a></span>
