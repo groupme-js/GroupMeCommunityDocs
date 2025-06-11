@@ -1,8 +1,7 @@
 import os
 import re
 
-SOURCE_DIR = "src"
-ROOT_DIR = "."
+SOURCE_DIR = "docs"
 
 # Mapping of GitHub-style admonition types to MkDocs-style
 ADMONITION_MAP = {
