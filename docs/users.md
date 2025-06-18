@@ -136,7 +136,8 @@ GET /blocks/between?user=<user>&otherUser=<otherUser>
   
     string - The other user's ID
 
-```json linenums="1" title="HTTP Response"Status: 200 OK
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 {
   "between": true
 }
@@ -162,7 +163,8 @@ POST /blocks?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 	
-```json linenums="1" title="HTTP Response"Status: 201 Created
+```json linenums="1" title="HTTP Response"
+Status: 201 Created
 {
   "block": {
     "user_id": "1234567890",
@@ -192,7 +194,8 @@ DELETE /blocks?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 
-```json linenums="1" title="HTTP Response"Status: 200 OK
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 ```
 
 ***
@@ -214,7 +217,8 @@ POST /blocks/delete?user=<user>&otherUser=<otherUser>
 
 	string — user id of person you want to block.
 
-```json linenums="1" title="HTTP Response"Status: 200 OK
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
 ```
 
 ## Index Relationships
