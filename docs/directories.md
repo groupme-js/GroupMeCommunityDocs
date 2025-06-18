@@ -436,6 +436,27 @@ Status: 200 OK
 
 ***
 
+## Leave Domain
+
+Disconnect your account from a campus directory
+
+```json linenums="1" title="HTTP Request"
+DELETE /directories/:directory_id/membership
+```
+
+**Parameters**
+
+* *directory_id*
+
+    String - the ID of the directory you're trying to leave
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+[]
+```
+
+***
+
 ## Index Groups
 
 Returns a paginated list of groups that are a part of the domain.
