@@ -285,6 +285,122 @@ Status: 200 OK
 
 ***
 
+## Add Relationship
+
+Add a contact given a user ID and their share token. This can be grabbed from the user's share URL, i.e.: `https://groupme.com/contact/:user_id/:share_token`
+
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+
+```json linenums="1" title="HTTP Request"
+POST https://api.groupme.com/v4/relationships/create
+{
+  "user_id": "93645911",
+  "token": "njLqSwBU"
+}
+```
+
+**Parameters**
+
+* *user_id*
+
+    string - the user's ID
+
+* *token*
+
+    string - the share token of the user you're adding as a contact. This is extracted from that user's share URL.
+
+```json linenums="1" title="HTTP Response"
+Status: 201 Created
+{}
+```
+
+***
+
+## Import Relationship From Contact
+
+Imports a list of phone contacts into the user's GroupMe relationships. Returns a batch ID, so that you can fetch the results of the import as they could take some time to process.
+
+```json linenums="1" title="HTTP Request"
+POST /relationships/import_contacts
+[
+  {
+    "name": "Bob",
+    "guid": "7FC59EDB-A35D-43DA-A5D2-9D94C37C7E69",
+    "phone_number": "+13195557012"
+  },
+  {
+    "name": "Alice",
+    "guid": "2F0D88D3-CFB5-468F-BDA5-E3B3213A6D7D",
+    "phone_number": "+13855551493"
+  }
+]
+```
+
+**Parameters**
+
+* *name*
+
+    string - the contact’s display name (e.g., from your address book).
+
+* *guid*
+
+    string - a client-generated unique identifier for this contact (UUID format recommended). Used to track contacts across requests and responses.
+
+* *phone_number*
+
+    string - the contact's phone number. No dashes, spaces, or parens. Must include the country code.
+
+```json linenums="1" title="HTTP Response"
+Status: 202 Accepted
+{
+  "batch_id": "f392a4802e01013ef9156aba1bbf95fc"
+}
+```
+
+***
+
+## Fetch Relationship Import Results
+
+Retrieves an array of results from a previously submitted relationship import. Each result includes a matched GroupMe user, mapped back to the original contact via the guid.
+
+> [!important]
+> This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
+
+```json linenums="1" title="HTTP Request"
+GET https://api.groupme.com/v4/relationships/batch/:batch_id
+```
+
+**Parameters**
+
+* *batch_id*
+
+    string - The batch ID received from the `/relationships/import_contacts` endpoint.
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+[
+  {
+    "id": "86864140",
+    "user_id": "86864140",
+    "name": "Bob",
+    "avatar_url": null,
+    "reason": 2,
+    "app_installed": true,
+    "hidden": false,
+    "mri": "8:gid:04d9d058-c8f3-45a6-b898-4686dbfe7163",
+    "guid": "7533921A-154F-402D-AD51-AFE99F5D0CDC",
+    "created_at": 1750202866,
+    "created_at_iso8601": "2025-06-17T23:27:46.474950Z",
+    "updated_at": 1750202866,
+    "updated_at_iso8601": "2025-06-17T23:27:46.474950Z"
+  },
+  ...
+]
+```
+
+***
+
 ## Delete Relationship
 
 Delete a relationship from your contact book

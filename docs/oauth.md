@@ -449,6 +449,21 @@ Status: 200 OK
 
 ***
 
+## Logging out (Invalidating your current token)
+
+You will not be able to send any subsequent requests using the token that authorizes this request.
+
+> [!important]
+> This request is relative to `https://v2.groupme.com/`, not `https://api.groupme.com/v3/`.
+
+```json linenums="1" title="HTTP Request"
+POST https://v2.groupme.com/access_tokens/current/destroy
+```
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+```
+
 ## Changing your Account Password
 
 > [!important]
