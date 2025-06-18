@@ -912,6 +912,69 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unblock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unblock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unblock-alternative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unblock (Alternative method)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index Relationships
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Relationship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-relationship-from-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Relationship From Contact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-relationship-import-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Relationship Import Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#delete-relationship" class="md-nav__link">
     <span class="md-ellipsis">
       Delete Relationship
@@ -1149,19 +1212,19 @@
 <p>string - The other user's ID</p>
 </li>
 </ul>
-<p>```json linenums="1" title="HTTP Response"Status: 200 OK
-{
-  "between": true
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>***
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>## Block
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Creates a block between you and the contact
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>POST /blocks?user=&lt;user&gt;&amp;otherUser=&lt;otherUser&gt;
-</code></pre></div></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;between&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="block">Block<a class="headerlink" href="#block" title="Permanent link">&para;</a></h2>
+<p>Creates a block between you and the contact</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/blocks?user=&lt;user&gt;&amp;o</span><span class="kc">t</span><span class="err">herUser=&lt;o</span><span class="kc">t</span><span class="err">herUser&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
 <li>
@@ -1173,23 +1236,27 @@
 <p>string — user id of person you want to block.</p>
 </li>
 </ul>
-<p>```json linenums="1" title="HTTP Response"Status: 201 Created
-{
-  "block": {
-    "user_id": "1234567890",
-    "blocked_user_id": "1234567890",
-    "created_at": 1302623328
-  }
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>***
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>## Unblock
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Removes block between you and other user
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>DELETE /blocks?user=&lt;user&gt;&amp;otherUser=&lt;otherUser&gt;
-</code></pre></div></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Crea</span><span class="kc">te</span><span class="err">d</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;block&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;blocked_user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1302623328</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="unblock">Unblock<a class="headerlink" href="#unblock" title="Permanent link">&para;</a></h2>
+<p>Removes block between you and other user</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">/blocks?user=&lt;user&gt;&amp;o</span><span class="kc">t</span><span class="err">herUser=&lt;o</span><span class="kc">t</span><span class="err">herUser&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
 <li>
@@ -1201,15 +1268,13 @@
 <p>string — user id of person you want to block.</p>
 </li>
 </ul>
-<p>```json linenums="1" title="HTTP Response"Status: 200 OK
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>***
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>## Unblock (Alternative method)
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Removes block between you and other user
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>POST /blocks/delete?user=&lt;user&gt;&amp;otherUser=&lt;otherUser&gt;
-</code></pre></div></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="unblock-alternative-method">Unblock (Alternative method)<a class="headerlink" href="#unblock-alternative-method" title="Permanent link">&para;</a></h2>
+<p>Removes block between you and other user</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/blocks/dele</span><span class="kc">te</span><span class="err">?user=&lt;user&gt;&amp;o</span><span class="kc">t</span><span class="err">herUser=&lt;o</span><span class="kc">t</span><span class="err">herUser&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
 <li>
@@ -1221,24 +1286,26 @@
 <p>string — user id of person you want to block.</p>
 </li>
 </ul>
-<p>```json linenums="1" title="HTTP Response"Status: 200 OK
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>## Index Relationships
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>This endpoint lists all the users in your GroupMe contact book. However, the server—not the client—decides how many results to return in each response. To retrieve the full list of contacts, you’ll need to make repeated requests using the since parameter.
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Each response is ordered by creation time. To get the next page of results:
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>1. Take the created_at_iso8601 timestamp from the last contact in the response.
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>2. Use that timestamp as the `since` parameter in your next request.
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Repeat this process until the response contains an empty list, which means you&#39;ve reached the end of the contact list.
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>!!! important
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>```json linenums=&quot;1&quot; title=&quot;HTTP Request&quot;
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>GET https://api.groupme.com/v4/relationships
-</code></pre></div></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="index-relationships">Index Relationships<a class="headerlink" href="#index-relationships" title="Permanent link">&para;</a></h2>
+<p>This endpoint lists all the users in your GroupMe contact book. However, the server—not the client—decides how many results to return in each response. To retrieve the full list of contacts, you’ll need to make repeated requests using the since parameter.</p>
+<p>Each response is ordered by creation time. To get the next page of results:</p>
+<ol>
+<li>
+<p>Take the created_at_iso8601 timestamp from the last contact in the response.</p>
+</li>
+<li>
+<p>Use that timestamp as the <code>since</code> parameter in your next request.</p>
+</li>
+</ol>
+<p>Repeat this process until the response contains an empty list, which means you've reached the end of the contact list.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
 <li>
@@ -1250,73 +1317,211 @@
 <p>string - an ISO 8601 timestamp, marking the last contact you've received</p>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span>
-<span class="normal"><a href="#__codelineno-10-18">18</a></span>
-<span class="normal"><a href="#__codelineno-10-19">19</a></span>
-<span class="normal"><a href="#__codelineno-10-20">20</a></span>
-<span class="normal"><a href="#__codelineno-10-21">21</a></span>
-<span class="normal"><a href="#__codelineno-10-22">22</a></span>
-<span class="normal"><a href="#__codelineno-10-23">23</a></span>
-<span class="normal"><a href="#__codelineno-10-24">24</a></span>
-<span class="normal"><a href="#__codelineno-10-25">25</a></span>
-<span class="normal"><a href="#__codelineno-10-26">26</a></span>
-<span class="normal"><a href="#__codelineno-10-27">27</a></span>
-<span class="normal"><a href="#__codelineno-10-28">28</a></span>
-<span class="normal"><a href="#__codelineno-10-29">29</a></span>
-<span class="normal"><a href="#__codelineno-10-30">30</a></span>
-<span class="normal"><a href="#__codelineno-10-31">31</a></span>
-<span class="normal"><a href="#__codelineno-10-32">32</a></span>
-<span class="normal"><a href="#__codelineno-10-33">33</a></span>
-<span class="normal"><a href="#__codelineno-10-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">[</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10416580&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1658526371</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="nt">&quot;created_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-07-22T21:46:11.637999Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1678148063</span><span class="p">,</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="nt">&quot;updated_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-03-07T00:14:23.125308Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10416580&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/887x887.jpeg.5db37ecbb4b444f5b87a58406dc3e2b9&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">    </span><span class="nt">&quot;app_installed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="nt">&quot;mri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8:gid:d1299e35-01bc-4d90-b520-e216ab375aa8&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="nt">&quot;blocked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9822918&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1658790566</span><span class="p">,</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">    </span><span class="nt">&quot;created_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-07-25T23:09:26.874527Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1678148063</span><span class="p">,</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">    </span><span class="nt">&quot;updated_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-03-07T00:14:23.126924Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9822918&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/492x492.jpeg.47d67a5c7e3b4aa59150fd12aff8a502&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">    </span><span class="nt">&quot;app_installed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">    </span><span class="nt">&quot;mri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8:gid:a05385a5-ca5a-4747-b963-2d97aa0f401a&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">    </span><span class="nt">&quot;blocked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">  </span><span class="err">...</span>
-<a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="p">]</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span>
+<span class="normal"><a href="#__codelineno-14-30">30</a></span>
+<span class="normal"><a href="#__codelineno-14-31">31</a></span>
+<span class="normal"><a href="#__codelineno-14-32">32</a></span>
+<span class="normal"><a href="#__codelineno-14-33">33</a></span>
+<span class="normal"><a href="#__codelineno-14-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">[</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10416580&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1658526371</span><span class="p">,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">    </span><span class="nt">&quot;created_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-07-22T21:46:11.637999Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1678148063</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">    </span><span class="nt">&quot;updated_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-03-07T00:14:23.125308Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10416580&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/887x887.jpeg.5db37ecbb4b444f5b87a58406dc3e2b9&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">    </span><span class="nt">&quot;app_installed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">    </span><span class="nt">&quot;mri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8:gid:d1299e35-01bc-4d90-b520-e216ab375aa8&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">    </span><span class="nt">&quot;blocked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9822918&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1658790566</span><span class="p">,</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">    </span><span class="nt">&quot;created_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-07-25T23:09:26.874527Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1678148063</span><span class="p">,</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">    </span><span class="nt">&quot;updated_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-03-07T00:14:23.126924Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9822918&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/492x492.jpeg.47d67a5c7e3b4aa59150fd12aff8a502&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="w">    </span><span class="nt">&quot;app_installed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="w">    </span><span class="nt">&quot;mri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8:gid:a05385a5-ca5a-4747-b963-2d97aa0f401a&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="w">    </span><span class="nt">&quot;blocked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="w">  </span><span class="err">...</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="add-relationship">Add Relationship<a class="headerlink" href="#add-relationship" title="Permanent link">&para;</a></h2>
+<p>Add a contact given a user ID and their share token. This can be grabbed from the user's share URL, i.e.: <code>https://groupme.com/contact/:user_id/:share_token</code></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships/create</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;njLqSwBU&quot;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>user_id</em></p>
+<p>string - the user's ID</p>
+</li>
+<li>
+<p><em>token</em></p>
+<p>string - the share token of the user you're adding as a contact. This is extracted from that user's share URL.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Crea</span><span class="kc">te</span><span class="err">d</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="import-relationship-from-contact">Import Relationship From Contact<a class="headerlink" href="#import-relationship-from-contact" title="Permanent link">&para;</a></h2>
+<p>Imports a list of phone contacts into the user's GroupMe relationships. Returns a batch ID, so that you can fetch the results of the import as they could take some time to process.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/rela</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">hips/impor</span><span class="kc">t</span><span class="err">_co</span><span class="kc">nta</span><span class="err">c</span><span class="kc">ts</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="p">[</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">    </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7FC59EDB-A35D-43DA-A5D2-9D94C37C7E69&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">    </span><span class="nt">&quot;phone_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+13195557012&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="w">    </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2F0D88D3-CFB5-468F-BDA5-E3B3213A6D7D&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="w">    </span><span class="nt">&quot;phone_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+13855551493&quot;</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>name</em></p>
+<p>string - the contact’s display name (e.g., from your address book).</p>
+</li>
+<li>
+<p><em>guid</em></p>
+<p>string - a client-generated unique identifier for this contact (UUID format recommended). Used to track contacts across requests and responses.</p>
+</li>
+<li>
+<p><em>phone_number</em></p>
+<p>string - the contact's phone number. No dashes, spaces, or parens. Must include the country code.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="err">Accep</span><span class="kc">te</span><span class="err">d</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">  </span><span class="nt">&quot;batch_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f392a4802e01013ef9156aba1bbf95fc&quot;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="fetch-relationship-import-results">Fetch Relationship Import Results<a class="headerlink" href="#fetch-relationship-import-results" title="Permanent link">&para;</a></h2>
+<p>Retrieves an array of results from a previously submitted relationship import. Each result includes a matched GroupMe user, mapped back to the original contact via the guid.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships/batch/:batch_id</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>batch_id</em></p>
+<p>string - The batch ID received from the <code>/relationships/import_contacts</code> endpoint.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span>
+<span class="normal"><a href="#__codelineno-20-16">16</a></span>
+<span class="normal"><a href="#__codelineno-20-17">17</a></span>
+<span class="normal"><a href="#__codelineno-20-18">18</a></span>
+<span class="normal"><a href="#__codelineno-20-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="p">[</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;86864140&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;86864140&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">    </span><span class="nt">&quot;app_installed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="w">    </span><span class="nt">&quot;mri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8:gid:04d9d058-c8f3-45a6-b898-4686dbfe7163&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="w">    </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7533921A-154F-402D-AD51-AFE99F5D0CDC&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1750202866</span><span class="p">,</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="w">    </span><span class="nt">&quot;created_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-17T23:27:46.474950Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1750202866</span><span class="p">,</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">    </span><span class="nt">&quot;updated_at_iso8601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-17T23:27:46.474950Z&quot;</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18"></a><span class="w">  </span><span class="err">...</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19"></a><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="delete-relationship">Delete Relationship<a class="headerlink" href="#delete-relationship" title="Permanent link">&para;</a></h2>
@@ -1325,9 +1530,9 @@
 <p class="admonition-title">Important</p>
 <p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships/:user_id</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v4/relationships/:user_id</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="err">Accep</span><span class="kc">te</span><span class="err">d</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="err">Accep</span><span class="kc">te</span><span class="err">d</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1351,7 +1556,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2025 00:12:50 UTC">June 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 18, 2025 02:21:02 UTC">June 18, 2025</span>
   </span>
 
     
