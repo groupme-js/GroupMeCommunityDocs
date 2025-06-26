@@ -306,3 +306,31 @@ This attachment type is read-only and used exclusively by Copilot in its message
 	string - the GroupMe user ID of the user who initiated the Copilot interaction
 
 ***
+
+## Partial Image
+
+This attachment type is read-only and used exclusively by Copilot in its messages to attach partial images as they are being generated. Copilot will edit its messages containing in-progress images as they finish. When an image is complete, its partial image attachement is swapped for a regular image attachment containing a CDN URL.
+
+```json linenums="1" title="Object Structure"
+{
+  "type": "partial_image",
+  "id": "1",
+  "content": "9j6zLfSlAXAAAAAAAAADLVanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAMq9qdW1..."
+}
+```
+
+**Parameters**
+
+* *type*
+
+	string - must be "partial_image" for a partial image attachment.
+	
+* *id*
+
+	string - This number increments for every edit copilot makes to the image.
+
+* *content* (optional)
+  
+  	string - binary image data of the partial image. If this is missing, GroupMe will automatically supply a blank shimmering placeholder image to tell the client that an image is being generated but has not yet reached a step that can be rendered.
+
+***
