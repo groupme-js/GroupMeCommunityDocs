@@ -1645,13 +1645,29 @@
 <a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <hr />
+<h2 id="leave-domain">Leave Domain<a class="headerlink" href="#leave-domain" title="Permanent link">&para;</a></h2>
+<p>Disconnect your account from a campus directory</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">ories/</span><span class="p">:</span><span class="err">direc</span><span class="kc">t</span><span class="err">ory_id/membership</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>directory_id</em></p>
+<p>String - the ID of the directory you're trying to leave</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+<hr />
 <h2 id="index-groups">Index Groups<a class="headerlink" href="#index-groups" title="Permanent link">&para;</a></h2>
 <p>Returns a paginated list of groups that are a part of the domain.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directories</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directories</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1662,89 +1678,6 @@
 <li>
 <p><em>from</em></p>
 <p>Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.</p>
-</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span>
-<span class="normal"><a href="#__codelineno-14-11">11</a></span>
-<span class="normal"><a href="#__codelineno-14-12">12</a></span>
-<span class="normal"><a href="#__codelineno-14-13">13</a></span>
-<span class="normal"><a href="#__codelineno-14-14">14</a></span>
-<span class="normal"><a href="#__codelineno-14-15">15</a></span>
-<span class="normal"><a href="#__codelineno-14-16">16</a></span>
-<span class="normal"><a href="#__codelineno-14-17">17</a></span>
-<span class="normal"><a href="#__codelineno-14-18">18</a></span>
-<span class="normal"><a href="#__codelineno-14-19">19</a></span>
-<span class="normal"><a href="#__codelineno-14-20">20</a></span>
-<span class="normal"><a href="#__codelineno-14-21">21</a></span>
-<span class="normal"><a href="#__codelineno-14-22">22</a></span>
-<span class="normal"><a href="#__codelineno-14-23">23</a></span>
-<span class="normal"><a href="#__codelineno-14-24">24</a></span>
-<span class="normal"><a href="#__codelineno-14-25">25</a></span>
-<span class="normal"><a href="#__codelineno-14-26">26</a></span>
-<span class="normal"><a href="#__codelineno-14-27">27</a></span>
-<span class="normal"><a href="#__codelineno-14-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">&quot;directories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;101838896&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYU Geology Club&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New geoclub group chat!😊&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.ec0495b9ac3f47b79f4ae279e1aeb4a5&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">      </span><span class="nt">&quot;directory_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1928&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">      </span><span class="nt">&quot;group_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">      </span><span class="nt">&quot;max_members&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">      </span><span class="nt">&quot;members_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">      </span><span class="nt">&quot;children_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;104386559&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYU Wildlife and Range&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🦅Wildlife and Range Student Association 🦌&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.0d027c5a80934f22a2ac2e6204b9e563&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">      </span><span class="nt">&quot;directory_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1928&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">      </span><span class="nt">&quot;group_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">      </span><span class="nt">&quot;max_members&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
-<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">      </span><span class="nt">&quot;members_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span>
-<a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">      </span><span class="nt">&quot;children_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">    </span><span class="err">...</span>
-<a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="index-members">Index Members<a class="headerlink" href="#index-members" title="Permanent link">&para;</a></h2>
-<p>Return a list containing all of the users who are visible to you within the campus directory. Note that the responses you get are also dependant on the privacy status of other users in the directory. Some people have their profiles set to be visible to only their major or graduation year, or hidden entirely.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directory/users</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>
-<p><em>per_page</em></p>
-<p>Integer - Defines how many groups to return in the response. This value maxes out at 10,000 and defaults to 20 if omitted.</p>
-</li>
-<li>
-<p><em>from</em></p>
-<p>Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.</p>
-</li>
-<li>
-<p><em>majors</em></p>
-<p>Integer - A major code you'd like to filter by. The full dictionary of majors and their assigned codes can be found here: https://web.groupme.com/assets/majors/majors.en-US.json. You can include this parameter multiple times in one request to filter by multiple majors.</p>
-</li>
-<li>
-<p><em>graduation_year</em></p>
-<p>Integer - A graduation year you'd like to filter users by.</p>
 </li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
@@ -1774,46 +1707,129 @@
 <span class="normal"><a href="#__codelineno-16-25">25</a></span>
 <span class="normal"><a href="#__codelineno-16-26">26</a></span>
 <span class="normal"><a href="#__codelineno-16-27">27</a></span>
-<span class="normal"><a href="#__codelineno-16-28">28</a></span>
-<span class="normal"><a href="#__codelineno-16-29">29</a></span>
-<span class="normal"><a href="#__codelineno-16-30">30</a></span>
-<span class="normal"><a href="#__codelineno-16-31">31</a></span>
-<span class="normal"><a href="#__codelineno-16-32">32</a></span>
-<span class="normal"><a href="#__codelineno-16-33">33</a></span>
-<span class="normal"><a href="#__codelineno-16-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<span class="normal"><a href="#__codelineno-16-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="p">{</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;directories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;105436130&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.63a049689246446ca2685764191ce7c3&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mikey&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">      </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">      </span><span class="nt">&quot;graduation_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">      </span><span class="nt">&quot;majors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;3702&quot;</span><span class="p">],</span>
-<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">      </span><span class="nt">&quot;social_media_links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">      </span><span class="nt">&quot;shared_group_ids&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-08-24T17:52:38+0000&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">      </span><span class="nt">&quot;photo_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">      </span><span class="nt">&quot;song_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">      </span><span class="nt">&quot;interests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93031586&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.4a1dca36b02744b0bac8cfe85a2d0331&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spencer&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">      </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">      </span><span class="nt">&quot;graduation_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">      </span><span class="nt">&quot;majors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;3702&quot;</span><span class="p">],</span>
-<a id="__codelineno-16-25" name="__codelineno-16-25"></a><span class="w">      </span><span class="nt">&quot;social_media_links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-16-26" name="__codelineno-16-26"></a><span class="w">      </span><span class="nt">&quot;shared_group_ids&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-16-27" name="__codelineno-16-27"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-04T17:25:12+0000&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-28" name="__codelineno-16-28"></a><span class="w">      </span><span class="nt">&quot;photo_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-16-29" name="__codelineno-16-29"></a><span class="w">      </span><span class="nt">&quot;song_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-16-30" name="__codelineno-16-30"></a><span class="w">      </span><span class="nt">&quot;interests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<a id="__codelineno-16-31" name="__codelineno-16-31"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-16-32" name="__codelineno-16-32"></a><span class="w">    </span><span class="err">...</span>
-<a id="__codelineno-16-33" name="__codelineno-16-33"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="p">}</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;101838896&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYU Geology Club&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New geoclub group chat!😊&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.ec0495b9ac3f47b79f4ae279e1aeb4a5&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">      </span><span class="nt">&quot;directory_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1928&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">      </span><span class="nt">&quot;group_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">      </span><span class="nt">&quot;max_members&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">      </span><span class="nt">&quot;members_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">      </span><span class="nt">&quot;children_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;104386559&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYU Wildlife and Range&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🦅Wildlife and Range Student Association 🦌&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.0d027c5a80934f22a2ac2e6204b9e563&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">      </span><span class="nt">&quot;directory_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1928&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">      </span><span class="nt">&quot;group_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">      </span><span class="nt">&quot;max_members&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">      </span><span class="nt">&quot;members_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">      </span><span class="nt">&quot;children_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26"></a><span class="w">    </span><span class="err">...</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="index-members">Index Members<a class="headerlink" href="#index-members" title="Permanent link">&para;</a></h2>
+<p>Return a list containing all of the users who are visible to you within the campus directory. Note that the responses you get are also dependant on the privacy status of other users in the directory. Some people have their profiles set to be visible to only their major or graduation year, or hidden entirely.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v1/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//api.groupme.com/v1/search/directory/users</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>per_page</em></p>
+<p>Integer - Defines how many groups to return in the response. This value maxes out at 10,000 and defaults to 20 if omitted.</p>
+</li>
+<li>
+<p><em>from</em></p>
+<p>Integer - The offset index to begin returning results from in the paginated list of groups. For example, from=0 returns results starting at the beginning, from=20 skips the first 20 groups. Defaults to 0 if omitted.</p>
+</li>
+<li>
+<p><em>majors</em></p>
+<p>Integer - A major code you'd like to filter by. The full dictionary of majors and their assigned codes can be found here: https://web.groupme.com/assets/majors/majors.en-US.json. You can include this parameter multiple times in one request to filter by multiple majors.</p>
+</li>
+<li>
+<p><em>graduation_year</em></p>
+<p>Integer - A graduation year you'd like to filter users by.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span>
+<span class="normal"><a href="#__codelineno-18-17">17</a></span>
+<span class="normal"><a href="#__codelineno-18-18">18</a></span>
+<span class="normal"><a href="#__codelineno-18-19">19</a></span>
+<span class="normal"><a href="#__codelineno-18-20">20</a></span>
+<span class="normal"><a href="#__codelineno-18-21">21</a></span>
+<span class="normal"><a href="#__codelineno-18-22">22</a></span>
+<span class="normal"><a href="#__codelineno-18-23">23</a></span>
+<span class="normal"><a href="#__codelineno-18-24">24</a></span>
+<span class="normal"><a href="#__codelineno-18-25">25</a></span>
+<span class="normal"><a href="#__codelineno-18-26">26</a></span>
+<span class="normal"><a href="#__codelineno-18-27">27</a></span>
+<span class="normal"><a href="#__codelineno-18-28">28</a></span>
+<span class="normal"><a href="#__codelineno-18-29">29</a></span>
+<span class="normal"><a href="#__codelineno-18-30">30</a></span>
+<span class="normal"><a href="#__codelineno-18-31">31</a></span>
+<span class="normal"><a href="#__codelineno-18-32">32</a></span>
+<span class="normal"><a href="#__codelineno-18-33">33</a></span>
+<span class="normal"><a href="#__codelineno-18-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">  </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;105436130&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.63a049689246446ca2685764191ce7c3&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mikey&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">      </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">      </span><span class="nt">&quot;graduation_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">      </span><span class="nt">&quot;majors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;3702&quot;</span><span class="p">],</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">      </span><span class="nt">&quot;social_media_links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">      </span><span class="nt">&quot;shared_group_ids&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-08-24T17:52:38+0000&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="w">      </span><span class="nt">&quot;photo_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="w">      </span><span class="nt">&quot;song_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="w">      </span><span class="nt">&quot;interests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93031586&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.4a1dca36b02744b0bac8cfe85a2d0331&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spencer&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22"></a><span class="w">      </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23"></a><span class="w">      </span><span class="nt">&quot;graduation_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="w">      </span><span class="nt">&quot;majors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;3702&quot;</span><span class="p">],</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25"></a><span class="w">      </span><span class="nt">&quot;social_media_links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26"></a><span class="w">      </span><span class="nt">&quot;shared_group_ids&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-04T17:25:12+0000&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28"></a><span class="w">      </span><span class="nt">&quot;photo_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-18-29" name="__codelineno-18-29"></a><span class="w">      </span><span class="nt">&quot;song_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-30" name="__codelineno-18-30"></a><span class="w">      </span><span class="nt">&quot;interests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-18-31" name="__codelineno-18-31"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-18-32" name="__codelineno-18-32"></a><span class="w">    </span><span class="err">...</span>
+<a id="__codelineno-18-33" name="__codelineno-18-33"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 
@@ -1838,7 +1854,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2025 00:12:50 UTC">June 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 18, 2025 16:29:46 UTC">June 18, 2025</span>
   </span>
 
     
