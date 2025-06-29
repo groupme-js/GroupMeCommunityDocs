@@ -78,6 +78,11 @@ Multiple members can be added in a single request, and results are fetched with 
 
 In order to correlate request params with resulting memberships, GUIDs can be added to the members parameters. These GUIDs will be reflected in the membership JSON objects.
 
+> [!WARNING]
+> **Breaking Change: Device Verification**
+> This endpoint now requires platform-level device verification (e.g., Apple App Attest or Google Play Integrity). Requests must include valid attestation headers (`X-verify-token`), or they will be rejected.
+> This change was introduced by GroupMe to mitigate automated abuse. Unfortunately, it also blocks all third-party clients, including many valuable community projects. As such, this endpoint is no longer accessible to third-party applications and is retained here for historical reference only.
+
 ```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/members/add
 {
