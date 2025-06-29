@@ -325,6 +325,11 @@ Status: 201 Created
 
 Imports a list of phone contacts into the user's GroupMe relationships. Returns a batch ID, so that you can fetch the results of the import as they could take some time to process.
 
+> [!WARNING]
+> **Breaking Change: Device Verification**
+> This endpoint now requires platform-level device verification (e.g., Apple App Attest or Google Play Integrity). Requests must include valid attestation headers (`X-verify-token`), or they will be rejected.
+> This change was introduced by GroupMe to mitigate automated abuse. Unfortunately, it also blocks all third-party clients, including many valuable community projects. As such, this endpoint is no longer accessible to third-party applications and is retained here for historical reference only.
+
 ```json linenums="1" title="HTTP Request"
 POST /relationships/import_contacts
 [
