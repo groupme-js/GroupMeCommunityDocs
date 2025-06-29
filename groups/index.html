@@ -1480,6 +1480,13 @@
 </code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Breaking Change: Device Verification</p>
+<p>This endpoint now requires platform-level device verification (e.g., Apple App Attest or Google Play Integrity). Requests must include valid attestation headers (<code>X-verify-token</code>), or they will be rejected.&gt;</p>
+</div>
+<blockquote>
+<p>This change was introduced by GroupMe to mitigate automated abuse. Unfortunately, it also blocks all third-party clients, including many valuable community projects. As such, this endpoint is no longer accessible to third-party applications and is retained here for historical reference only.</p>
+</blockquote>
 <p>Create a new group</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
@@ -2260,7 +2267,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2025 00:12:50 UTC">June 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 29, 2025 18:41:58 UTC">June 29, 2025</span>
   </span>
 
     
@@ -2291,6 +2298,11 @@
         <a href="https://github.com/AlureonTheVirus" class="md-author" title="@AlureonTheVirus">
           
           <img src="https://avatars.githubusercontent.com/u/82665946?v=4&size=72" alt="AlureonTheVirus">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
       
