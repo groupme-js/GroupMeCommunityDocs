@@ -37,7 +37,6 @@ Next, we need to tell our Client to add our GroupMe API token to any subsequent 
 // adds your API credentials to any 'subscribe' request sent to GroupMe.
 client.addExtension({ 
   outgoing: (msg, callback) => {
-    if (msg.channel !== '/meta/subscribe') return callback(msg);
     msg.ext = msg.ext || {};
     msg.ext.access_token = "<YOUR GROUPME API ACCESS TOKEN>";
     msg.ext.timestamp = Math.round(Date.now() / 1000);
