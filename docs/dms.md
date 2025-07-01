@@ -135,6 +135,28 @@ Status: 200 OK
 }
 ```
 
+***
+
+## Delete DM Channel
+
+Clears chat history and removes an existing DM channel from your chats list
+
+```json linenums="1" title="HTTP Request"
+DELETE /chats/:chat_id
+```
+
+**Parameters**
+
+* *chat_id*
+
+    string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
+
+```json linenums="1" title="HTTP Response"
+Status: 200 OK
+```
+
+***
+
 ## Index Messages
 
 Fetch direct messages between two users.
