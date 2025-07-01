@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/sprocket.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -551,6 +551,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#delete-dm-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete DM Channel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#index-messages" class="md-nav__link">
     <span class="md-ellipsis">
       Index Messages
@@ -984,7 +993,7 @@
 
 
   
-    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/dms.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/dms.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1189,12 +1198,27 @@
 <a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">  </span><span class="nt">&quot;message_edit_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
 <a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="delete-dm-channel">Delete DM Channel<a class="headerlink" href="#delete-dm-channel" title="Permanent link">&para;</a></h2>
+<p>Clears chat history and removes an existing DM channel from your chats list</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">/cha</span><span class="kc">ts</span><span class="err">/</span><span class="p">:</span><span class="err">cha</span><span class="kc">t</span><span class="err">_id</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>chat_id</em></p>
+<p>string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like <code>93645911+118825642</code>.</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+</code></pre></div></td></tr></table></div>
+<hr />
 <h2 id="index-messages">Index Messages<a class="headerlink" href="#index-messages" title="Permanent link">&para;</a></h2>
 <p>Fetch direct messages between two users.</p>
 <p>DMs are returned in groups of 20, ordered by created_at descending.</p>
 <p>If no messages are found (e.g. when filtering with since_id) we return code 304.</p>
 <p>Note that for historical reasons, likes are returned as an array of user ids in the favorited_by key.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">_messages</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">_messages</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1219,163 +1243,7 @@
 <p>integer - Number of messages returned. Default is 20. Max is 100.</p>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span>
-<span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span>
-<span class="normal"><a href="#__codelineno-6-17">17</a></span>
-<span class="normal"><a href="#__codelineno-6-18">18</a></span>
-<span class="normal"><a href="#__codelineno-6-19">19</a></span>
-<span class="normal"><a href="#__codelineno-6-20">20</a></span>
-<span class="normal"><a href="#__codelineno-6-21">21</a></span>
-<span class="normal"><a href="#__codelineno-6-22">22</a></span>
-<span class="normal"><a href="#__codelineno-6-23">23</a></span>
-<span class="normal"><a href="#__codelineno-6-24">24</a></span>
-<span class="normal"><a href="#__codelineno-6-25">25</a></span>
-<span class="normal"><a href="#__codelineno-6-26">26</a></span>
-<span class="normal"><a href="#__codelineno-6-27">27</a></span>
-<span class="normal"><a href="#__codelineno-6-28">28</a></span>
-<span class="normal"><a href="#__codelineno-6-29">29</a></span>
-<span class="normal"><a href="#__codelineno-6-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;direct_messages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">      </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.a13c409e2d454d082c59d2cedb119056&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span><span class="nt">&quot;conversation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372+93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747778589</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">      </span><span class="nt">&quot;favorited_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174777858990222590&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">      </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">      </span><span class="nt">&quot;sender_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">      </span><span class="nt">&quot;sender_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">      </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FB9B32E6-45B8-4A63-8FAA-4A60005A0A60&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">      </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I think it’s a good idea!&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">      </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">      </span><span class="nt">&quot;pinned_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">      </span><span class="nt">&quot;pinned_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372+93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174777858990222590&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="nt">&quot;read_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747779017</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the server has no <code>read_receipt</code> parameter to share, it will be completely absent from the response.</p>
-</div>
-<hr />
-<h2 id="send-dm">Send DM<a class="headerlink" href="#send-dm" title="Permanent link">&para;</a></h2>
-<p>Send a DM to another user</p>
-<p>If you want to attach an image, you must first process it through the image service (More on that in the <a href="../attachments/">attachments documentation</a>).</p>
-<p>Attachments of type emoji rely on data from emoji PowerUps.</p>
-<p>Clients use a placeholder character in the message text and specify a replacement charmap to substitute emoji characters</p>
-<p>The character map is an array of arrays containing rune data ([[{pack_id,offset}],...]).</p>
-<p>The placeholder should be a high-point/invisible UTF-8 character.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span>
-<span class="normal"><a href="#__codelineno-7-13">13</a></span>
-<span class="normal"><a href="#__codelineno-7-14">14</a></span>
-<span class="normal"><a href="#__codelineno-7-15">15</a></span>
-<span class="normal"><a href="#__codelineno-7-16">16</a></span>
-<span class="normal"><a href="#__codelineno-7-17">17</a></span>
-<span class="normal"><a href="#__codelineno-7-18">18</a></span>
-<span class="normal"><a href="#__codelineno-7-19">19</a></span>
-<span class="normal"><a href="#__codelineno-7-20">20</a></span>
-<span class="normal"><a href="#__codelineno-7-21">21</a></span>
-<span class="normal"><a href="#__codelineno-7-22">22</a></span>
-<span class="normal"><a href="#__codelineno-7-23">23</a></span>
-<span class="normal"><a href="#__codelineno-7-24">24</a></span>
-<span class="normal"><a href="#__codelineno-7-25">25</a></span>
-<span class="normal"><a href="#__codelineno-7-26">26</a></span>
-<span class="normal"><a href="#__codelineno-7-27">27</a></span>
-<span class="normal"><a href="#__codelineno-7-28">28</a></span>
-<span class="normal"><a href="#__codelineno-7-29">29</a></span>
-<span class="normal"><a href="#__codelineno-7-30">30</a></span>
-<span class="normal"><a href="#__codelineno-7-31">31</a></span>
-<span class="normal"><a href="#__codelineno-7-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">_messages</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;direct_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GUID&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello world &quot;</span><span class="p">,</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">      </span><span class="p">},</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">      </span><span class="p">},</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40.738206&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-73.993285&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GroupMe HQ&quot;</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">      </span><span class="p">},</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">        </span><span class="nt">&quot;placeholder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">        </span><span class="nt">&quot;charmap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">          </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">],</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">          </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">        </span><span class="p">]</span>
-<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<strong>Parameters</strong>
-* <em>source_guid</em> (required)</p>
-<div class="codehilite"><pre><span></span><code>string - Client-side IDs for messages. This can be used by clients to set their own identifiers on messages, but the server also scans these for de-duplication. That is, if two messages are sent with the same source_guid within one minute of each other, the second message will fail with a 409 Conflict response. So it&#39;s important to set this to a unique value for each message.
-</code></pre></div>
-
-<ul>
-<li>
-<p><em>recipient_id</em> (required)</p>
-<p>string - the GroupMe user ID of the recipient of this message.</p>
-</li>
-<li>
-<p><em>text</em> (required)</p>
-<p>string - This can be omitted if at least one attachment is present. The maximum length is 1,000 characters.</p>
-</li>
-<li>
-<p><em>attachments</em></p>
-<p>array - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.</p>
-<p>For more information on types of attachments and how to send them, check out the <a href="../attachments/">attachments documentation</a></p>
-</li>
-</ul>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
@@ -1404,66 +1272,222 @@
 <span class="normal"><a href="#__codelineno-8-27">27</a></span>
 <span class="normal"><a href="#__codelineno-8-28">28</a></span>
 <span class="normal"><a href="#__codelineno-8-29">29</a></span>
-<span class="normal"><a href="#__codelineno-8-30">30</a></span>
-<span class="normal"><a href="#__codelineno-8-31">31</a></span>
-<span class="normal"><a href="#__codelineno-8-32">32</a></span>
-<span class="normal"><a href="#__codelineno-8-33">33</a></span>
-<span class="normal"><a href="#__codelineno-8-34">34</a></span>
-<span class="normal"><a href="#__codelineno-8-35">35</a></span>
-<span class="normal"><a href="#__codelineno-8-36">36</a></span>
-<span class="normal"><a href="#__codelineno-8-37">37</a></span>
-<span class="normal"><a href="#__codelineno-8-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Crea</span><span class="kc">te</span><span class="err">d</span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GUID&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1302623328</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello world &quot;</span><span class="p">,</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="nt">&quot;pinned_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="nt">&quot;pinned_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">    </span><span class="nt">&quot;favorited_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">      </span><span class="s2">&quot;101&quot;</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="p">],</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">      </span><span class="p">},</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40.738206&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-73.993285&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GroupMe HQ&quot;</span>
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">      </span><span class="p">},</span>
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">        </span><span class="nt">&quot;placeholder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">        </span><span class="nt">&quot;charmap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">          </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">],</span>
-<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">          </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span>
-<a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="w">        </span><span class="p">]</span>
-<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-38" name="__codelineno-8-38"></a><span class="p">}</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;direct_messages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">      </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">      </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/1024x1024.jpeg.a13c409e2d454d082c59d2cedb119056&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">      </span><span class="nt">&quot;conversation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372+93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747778589</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">      </span><span class="nt">&quot;favorited_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174777858990222590&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">      </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">      </span><span class="nt">&quot;sender_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">      </span><span class="nt">&quot;sender_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">      </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FB9B32E6-45B8-4A63-8FAA-4A60005A0A60&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">      </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I think it’s a good idea!&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">      </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">      </span><span class="nt">&quot;pinned_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">      </span><span class="nt">&quot;pinned_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56366372+93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174777858990222590&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">    </span><span class="nt">&quot;read_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747779017</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="w"> </span><span class="err">Forbidde</span><span class="kc">n</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="err">User</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">bee</span><span class="kc">n</span><span class="w"> </span><span class="err">au</span><span class="kc">t</span><span class="err">o</span><span class="mi">-</span><span class="err">ba</span><span class="kc">nne</span><span class="err">d</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">se</span><span class="kc">n</span><span class="err">di</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">oo</span><span class="w"> </span><span class="err">ma</span><span class="kc">n</span><span class="err">y</span><span class="w"> </span><span class="err">messages.</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the server has no <code>read_receipt</code> parameter to share, it will be completely absent from the response.</p>
+</div>
+<hr />
+<h2 id="send-dm">Send DM<a class="headerlink" href="#send-dm" title="Permanent link">&para;</a></h2>
+<p>Send a DM to another user</p>
+<p>If you want to attach an image, you must first process it through the image service (More on that in the <a href="../attachments/">attachments documentation</a>).</p>
+<p>Attachments of type emoji rely on data from emoji PowerUps.</p>
+<p>Clients use a placeholder character in the message text and specify a replacement charmap to substitute emoji characters</p>
+<p>The character map is an array of arrays containing rune data ([[{pack_id,offset}],...]).</p>
+<p>The placeholder should be a high-point/invisible UTF-8 character.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span>
+<span class="normal"><a href="#__codelineno-9-28">28</a></span>
+<span class="normal"><a href="#__codelineno-9-29">29</a></span>
+<span class="normal"><a href="#__codelineno-9-30">30</a></span>
+<span class="normal"><a href="#__codelineno-9-31">31</a></span>
+<span class="normal"><a href="#__codelineno-9-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/direc</span><span class="kc">t</span><span class="err">_messages</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;direct_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GUID&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello world &quot;</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40.738206&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-73.993285&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GroupMe HQ&quot;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">        </span><span class="nt">&quot;placeholder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">        </span><span class="nt">&quot;charmap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">          </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">],</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">          </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Bad</span><span class="w"> </span><span class="err">Reques</span><span class="kc">t</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="err">There&#39;s</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">problem</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">parame</span><span class="kc">ters</span><span class="err">.</span><span class="w"> </span><span class="err">Check</span><span class="w"> </span><span class="err">errors.</span>
+<strong>Parameters</strong>
+* <em>source_guid</em> (required)</p>
+<div class="codehilite"><pre><span></span><code>string - Client-side IDs for messages. This can be used by clients to set their own identifiers on messages, but the server also scans these for de-duplication. That is, if two messages are sent with the same source_guid within one minute of each other, the second message will fail with a 409 Conflict response. So it&#39;s important to set this to a unique value for each message.
+</code></pre></div>
+
+<ul>
+<li>
+<p><em>recipient_id</em> (required)</p>
+<p>string - the GroupMe user ID of the recipient of this message.</p>
+</li>
+<li>
+<p><em>text</em> (required)</p>
+<p>string - This can be omitted if at least one attachment is present. The maximum length is 1,000 characters.</p>
+</li>
+<li>
+<p><em>attachments</em></p>
+<p>array - A polymorphic list of attachments (locations, images, etc). You may have more than one of any type of attachment, provided clients can display it.</p>
+<p>For more information on types of attachments and how to send them, check out the <a href="../attachments/">attachments documentation</a></p>
+</li>
+</ul>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span>
+<span class="normal"><a href="#__codelineno-10-25">25</a></span>
+<span class="normal"><a href="#__codelineno-10-26">26</a></span>
+<span class="normal"><a href="#__codelineno-10-27">27</a></span>
+<span class="normal"><a href="#__codelineno-10-28">28</a></span>
+<span class="normal"><a href="#__codelineno-10-29">29</a></span>
+<span class="normal"><a href="#__codelineno-10-30">30</a></span>
+<span class="normal"><a href="#__codelineno-10-31">31</a></span>
+<span class="normal"><a href="#__codelineno-10-32">32</a></span>
+<span class="normal"><a href="#__codelineno-10-33">33</a></span>
+<span class="normal"><a href="#__codelineno-10-34">34</a></span>
+<span class="normal"><a href="#__codelineno-10-35">35</a></span>
+<span class="normal"><a href="#__codelineno-10-36">36</a></span>
+<span class="normal"><a href="#__codelineno-10-37">37</a></span>
+<span class="normal"><a href="#__codelineno-10-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Crea</span><span class="kc">te</span><span class="err">d</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;source_guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GUID&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="nt">&quot;recipient_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1302623328</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="nt">&quot;avatar_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello world &quot;</span><span class="p">,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="nt">&quot;pinned_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="nt">&quot;pinned_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">    </span><span class="nt">&quot;favorited_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">      </span><span class="s2">&quot;101&quot;</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">    </span><span class="nt">&quot;attachments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://i.groupme.com/123456789&quot;</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40.738206&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-73.993285&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GroupMe HQ&quot;</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emoji&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">        </span><span class="nt">&quot;placeholder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">        </span><span class="nt">&quot;charmap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">          </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">],</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">          </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="w"> </span><span class="err">Forbidde</span><span class="kc">n</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="err">User</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">bee</span><span class="kc">n</span><span class="w"> </span><span class="err">au</span><span class="kc">t</span><span class="err">o</span><span class="mi">-</span><span class="err">ba</span><span class="kc">nne</span><span class="err">d</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">se</span><span class="kc">n</span><span class="err">di</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">oo</span><span class="w"> </span><span class="err">ma</span><span class="kc">n</span><span class="err">y</span><span class="w"> </span><span class="err">messages.</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Bad</span><span class="w"> </span><span class="err">Reques</span><span class="kc">t</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="err">There&#39;s</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">problem</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">parame</span><span class="kc">ters</span><span class="err">.</span><span class="w"> </span><span class="err">Check</span><span class="w"> </span><span class="err">errors.</span>
 </code></pre></div></td></tr></table></div></p>
 <hr />
 <h2 id="delete-a-message">Delete a message<a class="headerlink" href="#delete-a-message" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">/co</span><span class="kc">n</span><span class="err">versa</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/</span><span class="p">:</span><span class="err">group_id/messages/</span><span class="p">:</span><span class="err">message_id</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">DELETE</span><span class="w"> </span><span class="err">/co</span><span class="kc">n</span><span class="err">versa</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/</span><span class="p">:</span><span class="err">group_id/messages/</span><span class="p">:</span><span class="err">message_id</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">Dele</span><span class="kc">te</span><span class="err">d</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">Dele</span><span class="kc">te</span><span class="err">d</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="send-a-read-receipt">Send a Read Receipt<a class="headerlink" href="#send-a-read-receipt" title="Permanent link">&para;</a></h2>
@@ -1472,19 +1496,19 @@
 <p class="admonition-title">Important</p>
 <p>This request is relative to <code>https://v2.groupme.com/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span>
-<span class="normal"><a href="#__codelineno-13-4">4</a></span>
-<span class="normal"><a href="#__codelineno-13-5">5</a></span>
-<span class="normal"><a href="#__codelineno-13-6">6</a></span>
-<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//v2.groupme.com/read_receipts</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769395496126372&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74938777+93645911&quot;</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Request</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//v2.groupme.com/read_receipts</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769395496126372&quot;</span><span class="p">,</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74938777+93645911&quot;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1497,25 +1521,25 @@
 <p>String - The ID of the direct message channel the message can be found in.</p>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769438312353599&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74938777+93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769438312353599&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">    </span><span class="nt">&quot;read_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747694449</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTTP Response</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="err">S</span><span class="kc">tatus</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;read_receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769438312353599&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74938777+93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174769438312353599&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93645911&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">    </span><span class="nt">&quot;read_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1747694449</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1539,7 +1563,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2025 00:12:50 UTC">June 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 1, 2025 20:43:05 UTC">July 1, 2025</span>
   </span>
 
     
@@ -1570,6 +1594,11 @@
         <a href="https://github.com/AlureonTheVirus" class="md-author" title="@AlureonTheVirus">
           
           <img src="https://avatars.githubusercontent.com/u/82665946?v=4&size=72" alt="AlureonTheVirus">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
       
@@ -1675,7 +1704,7 @@
       <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.sections", "toc.integrate", "search.suggest", "search.share", "navigation.footer", "content.code.copy", "header.autohide", "announce.dismiss"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
