@@ -24,7 +24,7 @@ For verbosity, we outline how to authenticate and connect using a Faye client li
 
 ***
 
-## Option 1: Using a Faye client (Recommended)
+Option 1: Using a Faye client (Recommended)
 
 Start by initiating a connection with GroupMe's Faye server:
 ```js linenums="1"
@@ -974,7 +974,7 @@ A keep-alive or presence message. Sending a `ping` type message causes the serve
 
 ```json linenums="1" title="Data Object Structure"
 {
-	"type": "ping"
+  "type": "ping"
 }
 ```
 
