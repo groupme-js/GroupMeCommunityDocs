@@ -190,18 +190,18 @@ Example incoming message:
   "data": {
     "type": "line.create",
     "subject": { 
-      "name": "Andygv",
-      "avatar_url":null,
-      "location": { "name": null, "lng": null,"foursquare_checkin": false,"foursquare_venue_id": null,"lat": null},
-      "created_at": 1322557919,
-      "picture_url": null,
-      "system": false,
-      "text": "hey",
-      "group_id": "1835",
-      "id": "15717",
-      "user_id": "162",
-      "source_guid": "GUID 13225579210290"
-    },
+  "name": "Andygv",
+     "avatar_url":null,
+     "location": { "name": null, "lng": null,"foursquare_checkin": false,"foursquare_venue_id": null,"lat": null},
+     "created_at": 1322557919,
+     "picture_url": null,
+     "system": false,
+     "text": "hey",
+     "group_id": "1835",
+     "id": "15717",
+     "user_id": "162",
+     "source_guid": "GUID 13225579210290"
+  },
   "alert": "Andygv: hey"
 },
 "clientId": "1lhg38m0sk6b63080mpc71r9d7q1",
@@ -425,8 +425,8 @@ The most important field within data is data.type, which indicates the kind of e
   "clientId": "Faye client ID", // this was documented in the steps for connecting to the websocket above
   "id": "Incrementing Faye message ID",
   "data": {
-    "type": "ping" || "line.create" || "like.create" etc...,
-    // The rest of the data object. These properties depend on the `type` parameter
+  "type": "ping" || "line.create" || "like.create" etc...,
+  // The rest of the data object. These properties depend on the `type` parameter
   }
 }
 ```
@@ -447,9 +447,9 @@ A keep-alive message. This message is sent down every 30 seconds in order to ens
 }
 ```
 
-*   *type*
+*  *type*
   
-    string - Must be `ping`.
+  string - Must be `ping`.
 
 ***
 
@@ -493,21 +493,21 @@ Generally, incoming messages will look like this:
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `line.create`.
+  string - Must be `line.create`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The message object this push is refering to.
+  object - The message object this push is refering to.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 However, in some cases you may observe a system message with an attached `subject.event` property. These events are documented [here](events.md).
 
@@ -554,21 +554,21 @@ However, in some cases you may observe a system message with an attached `subjec
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `line.create`.
+  string - Must be `line.create`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The message object this push is refering to.
+  object - The message object this push is refering to.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 ***
 
@@ -607,21 +607,21 @@ Generally, incoming messages will look like this:
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `direct_message.create`.
+  string - Must be `direct_message.create`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The message object this push is refering to.
+  object - The message object this push is refering to.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 However, in some cases you may observe a system message with an attached `subject.event` property. These are documented [here](events.md).
 
@@ -663,21 +663,21 @@ However, in some cases you may observe a system message with an attached `subjec
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `line.create`.
+  string - Must be `line.create`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The message object this push is refering to.
+  object - The message object this push is refering to.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 ***
 
@@ -711,21 +711,21 @@ Fired when you're added to a group.
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `membership.create`.
+  string - Must be `membership.create`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - A cut down group object describing the group that you've joined.
+  object - A cut down group object describing the group that you've joined.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 ***
 
@@ -763,12 +763,12 @@ Someone reacted to a message. This message is also sent when someone removes a r
     },
     "reactions": [
       {
-      	"code": "❤️",
-      	"type": "unicode",
-    	  "user_ids": [
-    		  "131245991",
-    		  "93645911"
-    	  ]
+  	    "code": "❤️",
+  	    "type": "unicode",
+  	    "user_ids": [
+  		    "131245991",
+  		    "93645911"
+  	    ]
       }
     ],
     "user_id": "131245991"
@@ -777,25 +777,25 @@ Someone reacted to a message. This message is also sent when someone removes a r
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `favorite`.
+  string - Must be `favorite`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview. In this case, there is no text, so `alert` will always be an empty string.
+  string - The text that would usually populate the push notification preview. In this case, there is no text, so `alert` will always be an empty string.
 
-*   *subject.line*
+*  *subject.line*
 
-    object - The message being reacted to.
+  object - The message being reacted to.
 
-*   *subject.reactions*
+*  *subject.reactions*
 
-    array - A list of reaction objects currently tied to the message.
+  array - A list of reaction objects currently tied to the message.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 
 ***
@@ -838,21 +838,21 @@ A message was deleted. This type is limited to group or direct message channels 
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `message.deleted`.
+  string - Must be `message.deleted`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The message object that needs to be deleted.
+  object - The message object that needs to be deleted.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 ***
 
@@ -894,21 +894,21 @@ A message was edited. This type is limited to group or direct message channels w
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `message.update`.
+  string - Must be `message.update`.
 
-*   *alert*
+*  *alert*
 
-    string - The text that would usually populate the push notification preview.
+  string - The text that would usually populate the push notification preview.
 
-*   *subject*
+*  *subject*
 
-    object - The new message object that should replace the existing message.
+  object - The new message object that should replace the existing message.
 
-*   *received_at*
+*  *received_at*
 
-    number - the timestamp corresponding to when the notification was sent.
+  number - the timestamp corresponding to when the notification was sent.
 
 ***
 
@@ -924,17 +924,17 @@ Someone started typing. This type is limited to group or direct message channels
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `typing`.
+  string - Must be `typing`.
 
-*   *user_id*
+*  *user_id*
 
-    string - The ID of the user who is typing.
+  string - The ID of the user who is typing.
 
-*   *started*
+*  *started*
 
-    number - A timestamp corresponding to when the typing started.
+  number - A timestamp corresponding to when the typing started.
 
 ***
 
@@ -978,9 +978,9 @@ A keep-alive or presence message. Sending a `ping` type message causes the serve
 }
 ```
 
-*   *type*
+*  *type*
   
-    string - Must be `ping`.
+  string - Must be `ping`.
 
 ***
 
@@ -996,16 +996,16 @@ Used to initiate a typing indicator in a channel, these are good for 5 seconds a
 }
 ```
 
-*   *type*
+*  *type*
 
-    string - Must be `typing`.
+  string - Must be `typing`.
 
-*   *user_id*
+*  *user_id*
 
-    string - your user ID
+  string - your user ID
 
-*   *started*
+*  *started*
 
-    number - A timestamp in millisconds since the Unix epoch. This value should virtually always be the current time.
+  number - A timestamp in millisconds since the Unix epoch. This value should virtually always be the current time.
 
 ***
