@@ -8,30 +8,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Community-led effort to document the reverse-engineered GroupMe API.">
+        <meta name="description" content="Learn how you can contribute to and help improve the GroupMe Community API documentation.">
       
       
       
-        <link rel="canonical" href="https://groupme-js.github.io/GroupMeCommunityDocs/">
+        <link rel="canonical" href="https://groupme-js.github.io/GroupMeCommunityDocs/contributing/">
       
       
+        <link rel="prev" href="../examples/dinobot/">
       
-        <link rel="next" href="api/">
+      
+        <link rel="next" href="styleguide/">
       
       
-      <link rel="icon" href="overrides/assets/sprocket.svg">
+      <link rel="icon" href="../overrides/assets/sprocket.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Home - OpenGM API Documentation</title>
+        <title>Contributing to the Docs - OpenGM API Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="OpenGM API Documentation" >
+        <meta  property="og:title"  content="Contributing to the Docs - OpenGM API Documentation" >
       
-        <meta  property="og:description"  content="Community-led effort to document the reverse-engineered GroupMe API." >
+        <meta  property="og:description"  content="Learn how you can contribute to and help improve the GroupMe Community API documentation." >
       
-        <meta  property="og:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/contributing/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,20 +73,20 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://groupme-js.github.io/GroupMeCommunityDocs/" >
+        <meta  property="og:url"  content="https://groupme-js.github.io/GroupMeCommunityDocs/contributing/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="OpenGM API Documentation" >
+        <meta  name="twitter:title"  content="Contributing to the Docs - OpenGM API Documentation" >
       
-        <meta  name="twitter:description"  content="Community-led effort to document the reverse-engineered GroupMe API." >
+        <meta  name="twitter:description"  content="Learn how you can contribute to and help improve the GroupMe Community API documentation." >
       
-        <meta  name="twitter:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/contributing/index.png" >
       
     
     
   
-  <link rel="stylesheet" href="assets/stylesheets/admonitions.css">
+  <link rel="stylesheet" href="../assets/stylesheets/admonitions.css">
 
   </head>
   
@@ -105,12 +107,32 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-opengm-project" class="md-skip">
+        <a href="#contributing-to-the-documentation" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  For updates join the <strong>API Development Group</strong> on <strong>GroupMe</strong>:
+  <a rel="me" href="https://groupme.com/join_group/27317261/ibNNhx">
+    <strong>https://groupme.com/join_group/27317261/ibNNhx</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
       
     </div>
     
@@ -119,7 +141,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="OpenGM API Documentation" class="md-header__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
+    <a href=".." title="OpenGM API Documentation" class="md-header__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -179,7 +201,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Contributing to the Docs
             
           </span>
         </div>
@@ -284,7 +306,6 @@
     <div class="md-container" data-md-component="container">
       
       
-  
         
           
             
@@ -296,11 +317,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -321,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="api/" class="md-tabs__link">
+        <a href="../api/" class="md-tabs__link">
           
   
   
@@ -343,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="examples/" class="md-tabs__link">
+        <a href="../examples/" class="md-tabs__link">
           
   
   
@@ -361,11 +380,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="contributing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -385,83 +406,10 @@
           
         
       
-
-  <style>
-    .md-sidebar--secondary { display: none; }
-    @media screen and (min-width: 76.25em) {
-      .md-sidebar--primary { display: none; }
-    }
-
-    .tx-container {
-      background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1));
-      padding: 2rem 0;
-    }
-
-    .tx-hero { margin: 0; color: var(--md-primary-bg-color); text-align: center; }
-    .tx-hero__image { width: 14rem; height: 14rem; margin: 0 auto 1.5rem; }
-    .tx-hero__image img { width: 100%; height: 100%; object-fit: contain; }
-    .tx-hero h1 { margin-bottom: 1rem; color: currentColor; font-weight: 700; font-size: 2.4rem; }
-    .tx-hero p { font-size: 1.1rem; max-width: 35rem; margin-left: auto; margin-right: auto; }
-
-    .tx-hero__content {
-      margin-bottom: 2rem;
-    }
-
-    .tx-hero .md-button { margin-top: 0.8rem; margin-right: 0.8rem; border-width: 2px; }
-    .tx-hero .md-button:not(.md-button--primary) { background-color: transparent; border-color: var(--md-primary-bg-color); color: var(--md-primary-bg-color) !important; }
-    .tx-hero .md-button--primary { background-color: var(--md-primary-bg-color); border-color: var(--md-primary-bg-color); color: #212121 !important; }
-    .tx-hero .md-button:hover { background-color: var(--md-primary-fg-color); border-color: var(--md-primary-fg-color); color: var(--md-primary-bg-color) !important; }
-    
-    @media screen and (min-width: 60em) {
-      .tx-hero {
-        display: flex;
-        align-items: center;
-        text-align: left;
-      }
-      .tx-hero__content {
-        max-width: 32rem;
-        margin-bottom: 0;
-      }
-      .tx-hero p, .tx-hero h1 { margin-left: 0; margin-right: 0; }
-      
-      .tx-hero__image {
-        margin-left: auto;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-right: 0;
-        flex-shrink: 0;
-        width: 17rem;
-        height: 17rem;
-      }
-    }
-  </style>
-
-  <section class="tx-container">
-    <div class="md-grid">
-      <div class="tx-hero">
-        <div class="tx-hero__content">
-          <h1>GroupMe Community Docs</h1>
-          <p>Community GroupMe API documentation for all.</p>
-
-          <div class="md-typeset"><a href="api/" title="API Reference" class="md-button md-button--primary">
-              API Reference
-            </a><a href="examples/" title="Example Projects" class="md-button">
-              Example Projects
-            </a></div>
-        </div>
-        <div class="tx-hero__image">
-          <img src="assets/sprocket.svg" draggable="false">
-        </div>
-      </div>
-    </div>
-  </section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -474,7 +422,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OpenGM API Documentation" class="md-nav__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
+    <a href=".." title="OpenGM API Documentation" class="md-nav__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -541,32 +489,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -577,35 +503,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why this project?
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -656,7 +553,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/" class="md-nav__link ">
+            <a href="../api/" class="md-nav__link ">
               
   
   
@@ -714,7 +611,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/bots/" class="md-nav__link ">
+            <a href="../api/bots/" class="md-nav__link ">
               
   
   
@@ -777,7 +674,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/ws/" class="md-nav__link ">
+            <a href="../api/ws/" class="md-nav__link ">
               
   
   
@@ -812,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/ws/messageTypes/" class="md-nav__link">
+      <a href="../api/ws/messageTypes/" class="md-nav__link">
         
   
   
@@ -870,7 +767,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/account/" class="md-nav__link ">
+            <a href="../api/account/" class="md-nav__link ">
               
   
   
@@ -905,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/account/contacts/" class="md-nav__link">
+      <a href="../api/account/contacts/" class="md-nav__link">
         
   
   
@@ -928,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/account/oauth/" class="md-nav__link">
+      <a href="../api/account/oauth/" class="md-nav__link">
         
   
   
@@ -994,7 +891,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/groups/" class="md-nav__link ">
+            <a href="../api/groups/" class="md-nav__link ">
               
   
   
@@ -1029,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/subgroups/" class="md-nav__link">
+      <a href="../api/groups/subgroups/" class="md-nav__link">
         
   
   
@@ -1052,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/members/" class="md-nav__link">
+      <a href="../api/groups/members/" class="md-nav__link">
         
   
   
@@ -1075,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/messages/" class="md-nav__link">
+      <a href="../api/groups/messages/" class="md-nav__link">
         
   
   
@@ -1098,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/polls/" class="md-nav__link">
+      <a href="../api/groups/polls/" class="md-nav__link">
         
   
   
@@ -1121,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/directories/" class="md-nav__link">
+      <a href="../api/groups/directories/" class="md-nav__link">
         
   
   
@@ -1144,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/campus/" class="md-nav__link">
+      <a href="../api/groups/campus/" class="md-nav__link">
         
   
   
@@ -1198,7 +1095,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/dms/" class="md-nav__link ">
+            <a href="../api/dms/" class="md-nav__link ">
               
   
   
@@ -1267,7 +1164,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/conversations/" class="md-nav__link ">
+            <a href="../api/conversations/" class="md-nav__link ">
               
   
   
@@ -1302,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/reactions/" class="md-nav__link">
+      <a href="../api/conversations/reactions/" class="md-nav__link">
         
   
   
@@ -1325,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/calendar/" class="md-nav__link">
+      <a href="../api/conversations/calendar/" class="md-nav__link">
         
   
   
@@ -1348,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/gallery/" class="md-nav__link">
+      <a href="../api/conversations/gallery/" class="md-nav__link">
         
   
   
@@ -1371,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/pins/" class="md-nav__link">
+      <a href="../api/conversations/pins/" class="md-nav__link">
         
   
   
@@ -1431,7 +1328,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/common/" class="md-nav__link ">
+            <a href="../api/common/" class="md-nav__link ">
               
   
   
@@ -1466,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/attachments/" class="md-nav__link">
+      <a href="../api/common/attachments/" class="md-nav__link">
         
   
   
@@ -1489,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/emoji/" class="md-nav__link">
+      <a href="../api/common/emoji/" class="md-nav__link">
         
   
   
@@ -1512,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/events/" class="md-nav__link">
+      <a href="../api/common/events/" class="md-nav__link">
         
   
   
@@ -1572,7 +1469,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/uploads/" class="md-nav__link ">
+            <a href="../api/uploads/" class="md-nav__link ">
               
   
   
@@ -1607,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/images/" class="md-nav__link">
+      <a href="../api/uploads/images/" class="md-nav__link">
         
   
   
@@ -1630,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/video/" class="md-nav__link">
+      <a href="../api/uploads/video/" class="md-nav__link">
         
   
   
@@ -1653,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/files/" class="md-nav__link">
+      <a href="../api/uploads/files/" class="md-nav__link">
         
   
   
@@ -1718,7 +1615,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="examples/" class="md-nav__link ">
+            <a href="../examples/" class="md-nav__link ">
               
   
   
@@ -1753,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/pingpong/" class="md-nav__link">
+      <a href="../examples/pingpong/" class="md-nav__link">
         
   
   
@@ -1776,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/dinobot/" class="md-nav__link">
+      <a href="../examples/dinobot/" class="md-nav__link">
         
   
   
@@ -1803,6 +1700,8 @@
       
   
   
+    
+  
   
   
     
@@ -1820,20 +1719,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="contributing/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -1846,13 +1748,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Contributing
@@ -1868,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/styleguide/" class="md-nav__link">
+      <a href="styleguide/" class="md-nav__link">
         
   
   
@@ -1891,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/licensing/" class="md-nav__link">
+      <a href="licensing/" class="md-nav__link">
         
   
   
@@ -1922,9 +1824,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1943,11 +1843,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-this-project" class="md-nav__link">
+  <a href="#how-can-i-contribute" class="md-nav__link">
     <span class="md-ellipsis">
-      Why this project?
+      How Can I Contribute?
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-change-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting a Change (Pull Requests)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting a Change (Pull Requests)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-fork-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Fork the Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-clone-your-fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Clone Your Fork
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-new-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Create a New Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-make-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Make Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-push-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Push Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-open-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Open a Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1964,12 +1933,10 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
-    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/contributing/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1978,23 +1945,89 @@
     
       
     
-    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/raw/master/docs/contributing/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="welcome-to-the-opengm-project">Welcome to the OpenGM Project<a class="headerlink" href="#welcome-to-the-opengm-project" title="Permanent link">&para;</a></h1>
-<p>This is the community-driven, open-source documentation for the GroupMe Public API. Our goal is to provide a comprehensive, up-to-date resource for developers looking to build on the GroupMe platform.</p>
-<h2 id="why-this-project">Why this project?<a class="headerlink" href="#why-this-project" title="Permanent link">&para;</a></h2>
+<h1 id="contributing-to-the-documentation">Contributing to the Documentation<a class="headerlink" href="#contributing-to-the-documentation" title="Permanent link">&para;</a></h1>
+<p>Thank you for your interest in contributing! This project is a community effort, and we're thrilled to have you here. Whether you're fixing a typo, documenting a new endpoint, or correcting an error, every contribution helps create a better resource for all GroupMe API developers.</p>
+<p>This guide will walk you through the process of contributing.</p>
+<hr />
+<h2 id="how-can-i-contribute">How Can I Contribute?<a class="headerlink" href="#how-can-i-contribute" title="Permanent link">&para;</a></h2>
+<p>There are many ways to contribute, and not all of them require writing code or documentation yourself.</p>
 <ul>
-<li><strong>Up-to-Date:</strong> The official documentation is extremely outdated. We strive to keep our docs current with the latest API changes.</li>
-<li><strong>Community-Powered:</strong> Anyone can contribute! If you find an error or a missing endpoint, you can help improve the docs for everyone.</li>
-<li><strong>Rich Examples:</strong> These docs are here to provide practical code samples and way more detail than the official docs ever did to make development easier.</li>
-<li><strong>High Coverage:</strong> These docs cover nearly all endpoints, including those not documented by GroupMe.</li>
+<li><strong>🐛 Reporting Issues:</strong> Find a typo, a broken link, or information that seems incorrect or outdated? The best way to let us know is by <a href="https://github.com/groupme-js/GroupMeCommunityDocs/issues">opening an issue</a> on our GitHub repository.</li>
+<li><strong>✍️ Editing and Improving Content:</strong> You can help by clarifying confusing sentences, adding more detailed explanations, or correcting inaccuracies directly.</li>
+<li><strong>✨ Adding New Content:</strong> If you've discovered a new API endpoint, an undocumented event type, or a hidden parameter, you can help by adding a new page or section.</li>
+<li><strong>💡 Suggesting Enhancements:</strong> Have an idea for how to make the documentation better? Maybe a new example bot, a different page structure, or a better explanation of a core concept? Feel free to open an issue to discuss your ideas.</li>
 </ul>
-<p>Ready to dive in? Check out the <a href="/api/index.md"><strong>API Reference</strong></a> guide or browse the provided <a href="/examples/index.md"><strong>Examples</strong></a>.</p>
+<hr />
+<h2 id="submitting-a-change-pull-requests">Submitting a Change (Pull Requests)<a class="headerlink" href="#submitting-a-change-pull-requests" title="Permanent link">&para;</a></h2>
+<p>For those who want to directly edit or add content, we use the standard GitHub <strong>Fork &amp; Pull Request</strong> workflow. If you've never contributed to an open-source project before, don't worry! Here's a step-by-step guide.</p>
+<hr />
+<h3 id="step-1-fork-the-repository">Step 1: Fork the Repository<a class="headerlink" href="#step-1-fork-the-repository" title="Permanent link">&para;</a></h3>
+<p>First, you need to create your own copy of the repository. Go to the <a href="https://github.com/groupme-js/GroupMeCommunityDocs">main repository page</a> and click the <strong>"Fork"</strong> button in the top-right corner. This will create a copy under your own GitHub account.</p>
+<hr />
+<h3 id="step-2-clone-your-fork">Step 2: Clone Your Fork<a class="headerlink" href="#step-2-clone-your-fork" title="Permanent link">&para;</a></h3>
+<p>Next, clone your forked repository to your local machine so you can make changes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR_USERNAME/GroupMeCommunityDocs.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>GroupMeCommunityDocs
+</code></pre></div>
+<hr />
+<h3 id="step-3-create-a-new-branch">Step 3: Create a New Branch<a class="headerlink" href="#step-3-create-a-new-branch" title="Permanent link">&para;</a></h3>
+<p>It's best practice to make your changes in a new branch instead of the <code>main</code> branch. This keeps your work organized. Choose a descriptive name for your branch.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># For a bug fix or correction</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/correct-reactions-endpoint
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># For a new feature or page</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feat/document-calendar-api
+</code></pre></div>
+<hr />
+<h3 id="step-4-make-your-changes">Step 4: Make Your Changes<a class="headerlink" href="#step-4-make-your-changes" title="Permanent link">&para;</a></h3>
+<p>Now you're ready to make your changes! Open the project in your favorite text editor (like VS Code) and start editing the Markdown (<code>.md</code>) files in the <code>docs/</code> directory.</p>
+<p>Make sure to follow the existing style and structure of the documentation. This is laid out in our <a href="styleguide/">Style Guide</a>, but if you have any questions please reach out <em>before</em> making your change. Here are some key points to remember:</p>
+<ul>
+<li>Use clear, concise language.</li>
+<li>Use code blocks for examples, specifying the language (e.g., <code>json</code>, <code>bash</code>, <code>js</code>).</li>
+<li>Use admonitions (like <code>!!! note</code>, <code>!!! warning</code>, <code>!!! tip</code>) to highlight important information.</li>
+<li>Use headings and subheadings to structure your content clearly.</li>
+<li>If you're documenting an API endpoint, include the HTTP method and path, and provide example requests and responses. Refer to existing endpoint documentation for examples.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>!!! note
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    We use a special flavor of Markdown that supports additional features like admonitions and special UI elements. You can dind its reference in the [<span class="nt">Material for MKDocs Reference Guide</span>](<span class="na">https://squidfunk.github.io/mkdocs-material/reference/</span>)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>***
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="gu">### Step 5: Commit Your Changes</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Once you&#39;re happy with your changes, commit them with a clear and descriptive message. 
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>```bash
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="gh"># Example commit</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>git commit -m &quot;docs: clarify the difference between reply_id and base_reply_id&quot;
+</code></pre></div>
+<hr />
+<h3 id="step-6-push-your-changes">Step 6: Push Your Changes<a class="headerlink" href="#step-6-push-your-changes" title="Permanent link">&para;</a></h3>
+<p>Push your new branch and its commits to your fork on GitHub.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>fix/correct-reactions-endpoint
+</code></pre></div>
+<hr />
+<h3 id="step-7-open-a-pull-request">Step 7: Open a Pull Request<a class="headerlink" href="#step-7-open-a-pull-request" title="Permanent link">&para;</a></h3>
+<p>Go back to your fork on GitHub. You should see a prompt to <strong>"Compare &amp; pull request"</strong>. Click it, and it will take you to a new page.</p>
+<ul>
+<li>Give your pull request a clear title.</li>
+<li>In the description, explain <strong>what</strong> you changed and <strong>why</strong>.</li>
+<li>Click <strong>"Create pull request"</strong>.</li>
+</ul>
+<p>That's it! A project maintainer will review your changes, provide feedback if needed, and merge it once it's ready.</p>
+<p>Thank you again for your contribution!</p>
+<hr />
+<p>By submitting a pull request, you agree to license your contribution under the respective licenses of this project as described in our <a href="licensing/">license</a>.</p>
+<hr />
 
 
 
@@ -2017,7 +2050,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 5, 2025 22:43:42 UTC">July 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2025 03:59:20 UTC">July 6, 2025</span>
   </span>
 
     
@@ -2027,7 +2060,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 3, 2025 07:42:37 UTC">July 3, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 3, 2025 10:13:15 UTC">July 3, 2025</span>
   </span>
 
     
@@ -2050,11 +2083,6 @@
           <img src="https://avatars.githubusercontent.com/u/82665946?v=4&size=72" alt="AlureonTheVirus">
         </a>
       
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
       
       
     </nav>
@@ -2064,8 +2092,6 @@
   </aside>
 
 
-
-  
 
 
 
@@ -2091,19 +2117,33 @@
   
     
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" hidden>
+          
+          <a href="../examples/dinobot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DinoBot">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                DinoBot
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="api/" class="md-footer__link md-footer__link--next" aria-label="Next: API Overview">
+          <a href="styleguide/" class="md-footer__link md-footer__link--next" aria-label="Next: Style Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                API Overview
+                Style Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2182,14 +2222,14 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.action.view", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "search.suggest", "search.share", "header.autohide", "announce.dismiss"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "content.action.view", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "search.suggest", "search.share", "header.autohide", "announce.dismiss"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   
-      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
-  <script src="assets/javascripts/docs-links.js"></script>
+  <script src="../assets/javascripts/docs-links.js"></script>
 
   </body>
 </html>

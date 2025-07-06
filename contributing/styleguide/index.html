@@ -8,30 +8,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Community-led effort to document the reverse-engineered GroupMe API.">
+        <meta name="description" content="Guidelines and best practices for contributing to the GroupMe Community API documentation.">
       
       
       
-        <link rel="canonical" href="https://groupme-js.github.io/GroupMeCommunityDocs/">
+        <link rel="canonical" href="https://groupme-js.github.io/GroupMeCommunityDocs/contributing/styleguide/">
       
       
+        <link rel="prev" href="../">
       
-        <link rel="next" href="api/">
+      
+        <link rel="next" href="../licensing/">
       
       
-      <link rel="icon" href="overrides/assets/sprocket.svg">
+      <link rel="icon" href="../../overrides/assets/sprocket.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Home - OpenGM API Documentation</title>
+        <title>Documentation Style Guide - OpenGM API Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="OpenGM API Documentation" >
+        <meta  property="og:title"  content="Documentation Style Guide - OpenGM API Documentation" >
       
-        <meta  property="og:description"  content="Community-led effort to document the reverse-engineered GroupMe API." >
+        <meta  property="og:description"  content="Guidelines and best practices for contributing to the GroupMe Community API documentation." >
       
-        <meta  property="og:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/contributing/styleguide.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,20 +73,20 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://groupme-js.github.io/GroupMeCommunityDocs/" >
+        <meta  property="og:url"  content="https://groupme-js.github.io/GroupMeCommunityDocs/contributing/styleguide/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="OpenGM API Documentation" >
+        <meta  name="twitter:title"  content="Documentation Style Guide - OpenGM API Documentation" >
       
-        <meta  name="twitter:description"  content="Community-led effort to document the reverse-engineered GroupMe API." >
+        <meta  name="twitter:description"  content="Guidelines and best practices for contributing to the GroupMe Community API documentation." >
       
-        <meta  name="twitter:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://groupme-js.github.io/GroupMeCommunityDocs/assets/images/social/contributing/styleguide.png" >
       
     
     
   
-  <link rel="stylesheet" href="assets/stylesheets/admonitions.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/admonitions.css">
 
   </head>
   
@@ -105,12 +107,32 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-opengm-project" class="md-skip">
+        <a href="#documentation-style-guide" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  For updates join the <strong>API Development Group</strong> on <strong>GroupMe</strong>:
+  <a rel="me" href="https://groupme.com/join_group/27317261/ibNNhx">
+    <strong>https://groupme.com/join_group/27317261/ibNNhx</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
       
     </div>
     
@@ -119,7 +141,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="OpenGM API Documentation" class="md-header__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
+    <a href="../.." title="OpenGM API Documentation" class="md-header__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -179,7 +201,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Documentation Style Guide
             
           </span>
         </div>
@@ -284,7 +306,6 @@
     <div class="md-container" data-md-component="container">
       
       
-  
         
           
             
@@ -296,11 +317,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -321,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="api/" class="md-tabs__link">
+        <a href="../../api/" class="md-tabs__link">
           
   
   
@@ -343,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="examples/" class="md-tabs__link">
+        <a href="../../examples/" class="md-tabs__link">
           
   
   
@@ -361,11 +380,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="contributing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -385,83 +406,10 @@
           
         
       
-
-  <style>
-    .md-sidebar--secondary { display: none; }
-    @media screen and (min-width: 76.25em) {
-      .md-sidebar--primary { display: none; }
-    }
-
-    .tx-container {
-      background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1));
-      padding: 2rem 0;
-    }
-
-    .tx-hero { margin: 0; color: var(--md-primary-bg-color); text-align: center; }
-    .tx-hero__image { width: 14rem; height: 14rem; margin: 0 auto 1.5rem; }
-    .tx-hero__image img { width: 100%; height: 100%; object-fit: contain; }
-    .tx-hero h1 { margin-bottom: 1rem; color: currentColor; font-weight: 700; font-size: 2.4rem; }
-    .tx-hero p { font-size: 1.1rem; max-width: 35rem; margin-left: auto; margin-right: auto; }
-
-    .tx-hero__content {
-      margin-bottom: 2rem;
-    }
-
-    .tx-hero .md-button { margin-top: 0.8rem; margin-right: 0.8rem; border-width: 2px; }
-    .tx-hero .md-button:not(.md-button--primary) { background-color: transparent; border-color: var(--md-primary-bg-color); color: var(--md-primary-bg-color) !important; }
-    .tx-hero .md-button--primary { background-color: var(--md-primary-bg-color); border-color: var(--md-primary-bg-color); color: #212121 !important; }
-    .tx-hero .md-button:hover { background-color: var(--md-primary-fg-color); border-color: var(--md-primary-fg-color); color: var(--md-primary-bg-color) !important; }
-    
-    @media screen and (min-width: 60em) {
-      .tx-hero {
-        display: flex;
-        align-items: center;
-        text-align: left;
-      }
-      .tx-hero__content {
-        max-width: 32rem;
-        margin-bottom: 0;
-      }
-      .tx-hero p, .tx-hero h1 { margin-left: 0; margin-right: 0; }
-      
-      .tx-hero__image {
-        margin-left: auto;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-right: 0;
-        flex-shrink: 0;
-        width: 17rem;
-        height: 17rem;
-      }
-    }
-  </style>
-
-  <section class="tx-container">
-    <div class="md-grid">
-      <div class="tx-hero">
-        <div class="tx-hero__content">
-          <h1>GroupMe Community Docs</h1>
-          <p>Community GroupMe API documentation for all.</p>
-
-          <div class="md-typeset"><a href="api/" title="API Reference" class="md-button md-button--primary">
-              API Reference
-            </a><a href="examples/" title="Example Projects" class="md-button">
-              Example Projects
-            </a></div>
-        </div>
-        <div class="tx-hero__image">
-          <img src="assets/sprocket.svg" draggable="false">
-        </div>
-      </div>
-    </div>
-  </section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -474,7 +422,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OpenGM API Documentation" class="md-nav__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
+    <a href="../.." title="OpenGM API Documentation" class="md-nav__button md-logo" aria-label="OpenGM API Documentation" data-md-component="logo">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -541,32 +489,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -577,35 +503,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why this project?
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -656,7 +553,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/" class="md-nav__link ">
+            <a href="../../api/" class="md-nav__link ">
               
   
   
@@ -714,7 +611,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/bots/" class="md-nav__link ">
+            <a href="../../api/bots/" class="md-nav__link ">
               
   
   
@@ -777,7 +674,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/ws/" class="md-nav__link ">
+            <a href="../../api/ws/" class="md-nav__link ">
               
   
   
@@ -812,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/ws/messageTypes/" class="md-nav__link">
+      <a href="../../api/ws/messageTypes/" class="md-nav__link">
         
   
   
@@ -870,7 +767,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/account/" class="md-nav__link ">
+            <a href="../../api/account/" class="md-nav__link ">
               
   
   
@@ -905,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/account/contacts/" class="md-nav__link">
+      <a href="../../api/account/contacts/" class="md-nav__link">
         
   
   
@@ -928,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/account/oauth/" class="md-nav__link">
+      <a href="../../api/account/oauth/" class="md-nav__link">
         
   
   
@@ -994,7 +891,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/groups/" class="md-nav__link ">
+            <a href="../../api/groups/" class="md-nav__link ">
               
   
   
@@ -1029,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/subgroups/" class="md-nav__link">
+      <a href="../../api/groups/subgroups/" class="md-nav__link">
         
   
   
@@ -1052,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/members/" class="md-nav__link">
+      <a href="../../api/groups/members/" class="md-nav__link">
         
   
   
@@ -1075,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/messages/" class="md-nav__link">
+      <a href="../../api/groups/messages/" class="md-nav__link">
         
   
   
@@ -1098,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/polls/" class="md-nav__link">
+      <a href="../../api/groups/polls/" class="md-nav__link">
         
   
   
@@ -1121,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/directories/" class="md-nav__link">
+      <a href="../../api/groups/directories/" class="md-nav__link">
         
   
   
@@ -1144,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/groups/campus/" class="md-nav__link">
+      <a href="../../api/groups/campus/" class="md-nav__link">
         
   
   
@@ -1198,7 +1095,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/dms/" class="md-nav__link ">
+            <a href="../../api/dms/" class="md-nav__link ">
               
   
   
@@ -1267,7 +1164,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/conversations/" class="md-nav__link ">
+            <a href="../../api/conversations/" class="md-nav__link ">
               
   
   
@@ -1302,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/reactions/" class="md-nav__link">
+      <a href="../../api/conversations/reactions/" class="md-nav__link">
         
   
   
@@ -1325,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/calendar/" class="md-nav__link">
+      <a href="../../api/conversations/calendar/" class="md-nav__link">
         
   
   
@@ -1348,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/gallery/" class="md-nav__link">
+      <a href="../../api/conversations/gallery/" class="md-nav__link">
         
   
   
@@ -1371,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/conversations/pins/" class="md-nav__link">
+      <a href="../../api/conversations/pins/" class="md-nav__link">
         
   
   
@@ -1431,7 +1328,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/common/" class="md-nav__link ">
+            <a href="../../api/common/" class="md-nav__link ">
               
   
   
@@ -1466,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/attachments/" class="md-nav__link">
+      <a href="../../api/common/attachments/" class="md-nav__link">
         
   
   
@@ -1489,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/emoji/" class="md-nav__link">
+      <a href="../../api/common/emoji/" class="md-nav__link">
         
   
   
@@ -1512,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/common/events/" class="md-nav__link">
+      <a href="../../api/common/events/" class="md-nav__link">
         
   
   
@@ -1572,7 +1469,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api/uploads/" class="md-nav__link ">
+            <a href="../../api/uploads/" class="md-nav__link ">
               
   
   
@@ -1607,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/images/" class="md-nav__link">
+      <a href="../../api/uploads/images/" class="md-nav__link">
         
   
   
@@ -1630,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/video/" class="md-nav__link">
+      <a href="../../api/uploads/video/" class="md-nav__link">
         
   
   
@@ -1653,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/uploads/files/" class="md-nav__link">
+      <a href="../../api/uploads/files/" class="md-nav__link">
         
   
   
@@ -1718,7 +1615,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="examples/" class="md-nav__link ">
+            <a href="../../examples/" class="md-nav__link ">
               
   
   
@@ -1753,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/pingpong/" class="md-nav__link">
+      <a href="../../examples/pingpong/" class="md-nav__link">
         
   
   
@@ -1776,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/dinobot/" class="md-nav__link">
+      <a href="../../examples/dinobot/" class="md-nav__link">
         
   
   
@@ -1803,6 +1700,8 @@
       
   
   
+    
+  
   
   
     
@@ -1820,20 +1719,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="contributing/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1846,13 +1748,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Contributing
@@ -1865,10 +1767,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="contributing/styleguide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Style Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1879,6 +1803,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Philosophy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-yaml-frontmatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. YAML Frontmatter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-page-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Page Title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-api-boilerplate-for-endpoint-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. API Boilerplate (For Endpoint Docs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#headings-and-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headings and Sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callouts-admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callouts (Admonitions)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1891,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/licensing/" class="md-nav__link">
+      <a href="../licensing/" class="md-nav__link">
         
   
   
@@ -1922,9 +1977,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1943,11 +1996,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-this-project" class="md-nav__link">
+  <a href="#general-philosophy" class="md-nav__link">
     <span class="md-ellipsis">
-      Why this project?
+      General Philosophy
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-yaml-frontmatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. YAML Frontmatter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-page-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Page Title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-api-boilerplate-for-endpoint-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. API Boilerplate (For Endpoint Docs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#headings-and-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headings and Sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callouts-admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callouts (Admonitions)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1964,12 +2119,10 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
-    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/edit/master/docs/contributing/styleguide.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1978,23 +2131,164 @@
     
       
     
-    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/groupme-js/GroupMeCommunityDocs/raw/master/docs/contributing/styleguide.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="welcome-to-the-opengm-project">Welcome to the OpenGM Project<a class="headerlink" href="#welcome-to-the-opengm-project" title="Permanent link">&para;</a></h1>
-<p>This is the community-driven, open-source documentation for the GroupMe Public API. Our goal is to provide a comprehensive, up-to-date resource for developers looking to build on the GroupMe platform.</p>
-<h2 id="why-this-project">Why this project?<a class="headerlink" href="#why-this-project" title="Permanent link">&para;</a></h2>
+<h1 id="documentation-style-guide">Documentation Style Guide<a class="headerlink" href="#documentation-style-guide" title="Permanent link">&para;</a></h1>
+<p>Welcome, contributor! To ensure our documentation is clear, consistent, and easy to navigate, we've established this set of style guidelines. Following these standards will help everyone, from first-time readers to experienced developers, get the most out of this resource.</p>
+<hr />
+<h2 id="general-philosophy">General Philosophy<a class="headerlink" href="#general-philosophy" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Up-to-Date:</strong> The official documentation is extremely outdated. We strive to keep our docs current with the latest API changes.</li>
-<li><strong>Community-Powered:</strong> Anyone can contribute! If you find an error or a missing endpoint, you can help improve the docs for everyone.</li>
-<li><strong>Rich Examples:</strong> These docs are here to provide practical code samples and way more detail than the official docs ever did to make development easier.</li>
-<li><strong>High Coverage:</strong> These docs cover nearly all endpoints, including those not documented by GroupMe.</li>
+<li><strong>Clarity is Key:</strong> Write for a technical audience, but don't assume they know everything about the GroupMe API. Explain GroupMe-specific concepts clearly.</li>
+<li><strong>Be Direct:</strong> Use a professional and informative tone. Get straight to the point.</li>
+<li><strong>Show, Don't Just Tell:</strong> Every endpoint should be accompanied by clear request and response examples.</li>
 </ul>
-<p>Ready to dive in? Check out the <a href="/api/index.md"><strong>API Reference</strong></a> guide or browse the provided <a href="/examples/index.md"><strong>Examples</strong></a>.</p>
+<hr />
+<h2 id="page-structure">Page Structure<a class="headerlink" href="#page-structure" title="Permanent link">&para;</a></h2>
+<p>Every documentation page should follow a consistent structure.</p>
+<h3 id="1-yaml-frontmatter">1. YAML Frontmatter<a class="headerlink" href="#1-yaml-frontmatter" title="Permanent link">&para;</a></h3>
+<p>All pages must begin with a YAML frontmatter block. This provides metadata for the page. At a minimum, include a <code>title</code> and a <code>description</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Page</span><span class="nv"> </span><span class="s">Title&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">brief,</span><span class="nv"> </span><span class="s">one-sentence</span><span class="nv"> </span><span class="s">summary</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">page&#39;s</span><span class="nv"> </span><span class="s">content.&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nn">---</span>
+</code></pre></div>
+<hr />
+<h3 id="2-page-title">2. Page Title<a class="headerlink" href="#2-page-title" title="Permanent link">&para;</a></h3>
+<p>The first element after the frontmatter must be a Level 1 Heading (<code>#</code>) that matches the <code>title</code> from the frontmatter.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Page Title</span>
+</code></pre></div>
+<hr />
+<h3 id="3-api-boilerplate-for-endpoint-docs">3. API Boilerplate (For Endpoint Docs)<a class="headerlink" href="#3-api-boilerplate-for-endpoint-docs" title="Permanent link">&para;</a></h3>
+<p>For pages documenting API endpoints, include the standard boilerplate introduction immediately after the title. This sets the context for all subsequent requests. Use a horizontal rule (<code>***</code>) to separate it from the main content.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Unless otherwise stated, endpoints are relative to <span class="sb">`https://api.groupme.com/v3/`</span> and must include the token of the user making the call - so, for example, if an endpoint is <span class="sb">`GET /groups`</span>, the request you make should be using the URL <span class="sb">`https://api.groupme.com/v3/groups?token=aSDFghJkl`</span>, where <span class="sb">`aSDFghJkl`</span> is replaced with the user&#39;s token.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>URLs which include a variable, such as <span class="sb">`GET /groups/:id`</span>, have their variables marked with a colon. So a request to that endpoint would look like <span class="sb">`https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`</span>, where <span class="sb">`1234567`</span> is replaced with the group&#39;s ID, and <span class="sb">`aSDFghJkl`</span> is replaced with the user&#39;s token.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Finally, all responses are wrapped in a response envelope of the following form:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sb">`&quot;`</span>`json linenums=&quot;1&quot;
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>{
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  &quot;response&quot;: {
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    &quot;id&quot;: &quot;12345&quot;,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    &quot;name&quot;: &quot;Family&quot;
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    ...
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  },
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  &quot;meta&quot;: {
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    &quot;code&quot;: 200,
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    &quot;errors&quot;: []
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  }
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>}
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="sb">`&quot;`</span>`
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>If the request succeeds, <span class="sb">`meta.errors`</span> will be null, and if the request fails, <span class="sb">`response`</span> will be null.
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>***
+</code></pre></div>
+<hr />
+<h2 id="content-formatting">Content Formatting<a class="headerlink" href="#content-formatting" title="Permanent link">&para;</a></h2>
+<h3 id="headings-and-sections">Headings and Sections<a class="headerlink" href="#headings-and-sections" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code># Heading 1</code></strong>: Only for the main page title.</li>
+<li><strong><code>## Heading 2</code></strong>: For major sections, typically a single API endpoint (e.g., "Create a poll", "Index Members").</li>
+<li><strong><code>***</code> (Horizontal Rule)</strong>: Use a horizontal rule to separate each major endpoint section (<code>##</code>).</li>
+</ul>
+<hr />
+<h3 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Permanent link">&para;</a></h3>
+<p>Code blocks are essential for showing examples. Use the following format for consistency:</p>
+<p><code>`markdown</code>json linenums="1" title="HTTP Request"
+GET /groups/:group_id/messages
+```</p>
+<p>```json linenums="1" title="HTTP Response"
+Status: 200 OK
+{
+  "count": 123,
+  "messages": []
+}
+```````</p>
+<ul>
+<li><strong>Language:</strong> Always specify the language (<code>json</code>, <code>js</code>, <code>bash</code>, etc.).</li>
+<li><strong>Line Numbers:</strong> Use <code>linenums="1"</code> to enable line numbering.</li>
+<li><strong>Title:</strong> Provide a <code>title</code> that describes the block (e.g., "HTTP Request", "HTTP Response", "Object Structure").</li>
+<li><strong>Status Codes:</strong> For <code>HTTP Response</code> blocks, include the status line (e.g., <code>Status: 200 OK</code>) as the first line.</li>
+<li><strong>Indentation</strong> We use 2 spaces for indentation in code blocks, not tabs. This ensures consistent formatting across different editors and viewers.</li>
+</ul>
+<hr />
+<h3 id="parameter-lists">Parameter Lists<a class="headerlink" href="#parameter-lists" title="Permanent link">&para;</a></h3>
+<p>When describing parameters for an endpoint, use a bulleted list.</p>
+<ul>
+<li><strong>Bold</strong> the <code>Parameters</code> heading.</li>
+<li>Italicize the parameter name (<code>*parameter_name*</code>).</li>
+<li>Follow with the parameter's type (<code>string</code>, <code>boolean</code>, <code>array</code>, etc.) and a brief description.</li>
+<li>Indicate if a parameter is <code>(required)</code> or <code>(optional)</code>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>```markdown
+<strong>Parameters</strong></p>
+<ul>
+<li>
+<p><em>group_id</em> (required)</p>
+<p>string - The ID of the group where the event is located.</p>
+</li>
+<li>
+<p><em>limit</em> (optional)</p>
+<p>integer - The number of results to pull. Defaults to 20.
+```</p>
+</li>
+</ul>
+<h3 id="text-formatting">Text Formatting<a class="headerlink" href="#text-formatting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <code>**bold**</code> for emphasis on headings within text, such as <strong>Parameters</strong>.</li>
+<li>Use <code>*italic*</code> for parameter names and for gentle emphasis on a word.</li>
+<li>Use <code>`inline code`</code> for:<ul>
+<li>Endpoint paths: <code>`/users/me`</code></li>
+<li>Variable names: <code>source_guid</code></li>
+<li>Literal values: <code>true</code>, <code>"image"</code>, <code>null</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="callouts-admonitions">Callouts (Admonitions)<a class="headerlink" href="#callouts-admonitions" title="Permanent link">&para;</a></h3>
+<p>Use callouts to highlight important information.</p>
+<ul>
+<li>
+<p><code>!!! note</code>: For helpful, non-critical information or tips.
+    <code>markdown
+    !!! note
+        This call is limited to admins and owners in the group.</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This call is limited to admins and owners in the group.</p>
+</div>
+</li>
+<li>
+<p><code>!!! warning</code>: For non-breaking but important warnings users must be aware of.
+    <code>markdown
+    !!! warning "Breaking Change: Device Verification"
+        This endpoint now requires platform-level device verification...</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Breaking Change: Device Verification</p>
+<p>This endpoint now requires platform-level device verification...</p>
+</div>
+</li>
+<li>
+<p><code>!!! important</code>: For critical information that might otherwise be missed, especially regarding API versions.
+    <code>markdown
+    !!! important
+        This request is relative to `https://api.groupme.com/v4/`, not `https://api.groupme.com/v3/`.</code></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This request is relative to <code>https://api.groupme.com/v4/</code>, not <code>https://api.groupme.com/v3/</code>.</p>
+</div>
+</li>
+</ul>
+<hr />
+<p>Thank you for helping us keep the documentation clean and consistent!</p>
+<hr />
 
 
 
@@ -2017,7 +2311,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 5, 2025 22:43:42 UTC">July 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2025 03:59:20 UTC">July 6, 2025</span>
   </span>
 
     
@@ -2027,7 +2321,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 3, 2025 07:42:37 UTC">July 3, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2025 02:40:24 UTC">July 6, 2025</span>
   </span>
 
     
@@ -2050,11 +2344,6 @@
           <img src="https://avatars.githubusercontent.com/u/82665946?v=4&size=72" alt="AlureonTheVirus">
         </a>
       
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
       
       
     </nav>
@@ -2064,8 +2353,6 @@
   </aside>
 
 
-
-  
 
 
 
@@ -2091,19 +2378,33 @@
   
     
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" hidden>
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing to the Docs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Contributing to the Docs
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="api/" class="md-footer__link md-footer__link--next" aria-label="Next: API Overview">
+          <a href="../licensing/" class="md-footer__link md-footer__link--next" aria-label="Next: Licensing">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                API Overview
+                Licensing
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2182,14 +2483,14 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.action.view", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "search.suggest", "search.share", "header.autohide", "announce.dismiss"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "search.suggest", "search.share", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   
-      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
-  <script src="assets/javascripts/docs-links.js"></script>
+  <script src="../../assets/javascripts/docs-links.js"></script>
 
   </body>
 </html>
