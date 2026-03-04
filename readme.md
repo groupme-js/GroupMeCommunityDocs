@@ -44,10 +44,10 @@ Here you will find:
 
 This project thrives on community contributions! Whether you're fixing a typo, documenting a newly discovered feature, or improving an example, your help is welcome.
 
-To get started, please read our **[Contributing Guide](https://groupme-js.github.io/GroupMeCommunityDocs/api/contributing)**, which covers:
+To get started, please read our **[Contributing Guide](https://groupme-js.github.io/GroupMeCommunityDocs/contributing/)**, which covers:
 
 -   How to submit changes and open a pull request.
--   The **[Style Guide](https://groupme-js.github.io/GroupMeCommunityDocs/api/contributing/styleguide)** for keeping the docs consistent.
+-   The **[Style Guide](https://groupme-js.github.io/GroupMeCommunityDocs/contributing/styleguide/)** for keeping the docs consistent.
 
 ## Community
 
