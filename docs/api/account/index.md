@@ -30,7 +30,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ***
 
 > [!note]
-> Calls related to account security, such as managing your password or updating MFA settings are located in the [Oauth / MFA Management](oauth.md) section.
+> Calls related to account security, such as managing your password or updating MFA settings are located in the [OAuth / MFA Management](oauth.md) section.
 
 ## About
 <!-- official-doc: https://dev.groupme.com/docs/v3#users_me -->
