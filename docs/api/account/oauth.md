@@ -289,7 +289,7 @@ You make this call once without an MFA verification object, receive an MFA ID fo
 After establishing the MFA channel you must enable it with a seperate call.
 
 > [!important]
-> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.
+> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This process will invalidate your current API token and return a new one that you should use to make subsequent API calls.
 
 ```json linenums="1" title="HTTP Request"
 POST /user/mfa
