@@ -27,6 +27,15 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
 
+---
+
+!!! important
+
+    Subgroups/subtopics are also groups and can be treated as their own group. If `:group_id` is mentioned in these docs for an endpoint, the endpoint can most likely also apply to a subgroup. For example, retreiving messages, events, etc.
+
+---
+
+
 ***
 
 ## Index
