@@ -5,7 +5,7 @@ description: "Learn how to interact with GroupMe's account profiles via the API.
 
 # Profile Information
 
-Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise stated, endpoints are relative to `https://api.groupme.com/v3/` and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -30,7 +30,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ***
 
 > [!note]
-> Calls related to account security, such as managing your password or updating MFA settings are located in the [Oauth / MFA Managment](oauth.md) section.
+> Calls related to account security, such as managing your password or updating MFA settings are located in the [OAuth / MFA Management](oauth.md) section.
 
 ## About
 <!-- official-doc: https://dev.groupme.com/docs/v3#users_me -->
@@ -45,7 +45,7 @@ GET /users/me
 Status: 200 OK
 {
   "created_at": 1622678742,
-  "email": "email@example.con",
+  "email": "email@example.com",
   "email_verified": false,
   "facebook_connected": false,
   "id": "93645911",
@@ -216,7 +216,7 @@ POST https://v2.groupme.com/users/:your_user_id
 
 * *dm_notification sound*
 
-	string — the name of the WAV file to play when you receive a DM notification on the Mobile App. These file names are internal to the app, so the options are not well documented. (However they appear to be the same options as the ones availibe for the `group_notification_sound` parameter).
+	string — the name of the WAV file to play when you receive a DM notification on the Mobile App. These file names are internal to the app, so the options are not well documented. (However they appear to be the same options as the ones available for the `group_notification_sound` parameter).
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
@@ -272,7 +272,7 @@ Status: 200 OK
 
 ## Update Major Tags
 
-This call is only allowed for accounts that are members of a school domain, which is not an easy proccess to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls availible for your account.
+This call is only allowed for accounts that are members of a school domain, which is not an easy process to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls available for your account.
 
 ```json linenums="1" title="HTTP Request"
 PUT /directories/user/majors
@@ -302,7 +302,7 @@ Status: 201 Accepted
 
 ## Set Graduation Year and Domain Visibility
 
-This call is only allowed for accounts that are members of a school domain, which is not an easy proccess to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls availible for your account.
+This call is only allowed for accounts that are members of a school domain, which is not an easy process to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls available for your account.
 
 This call specifies your graduation year tag inside of your profile as well as what level of visibility you want your profile to be at within the campus domain.
 

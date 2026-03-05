@@ -5,7 +5,7 @@ description: "Learn how to interact with GroupMe group channels via the API."
 
 # Groups
 
-Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise stated, endpoints are relative to `https://api.groupme.com/v3/` and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -26,6 +26,15 @@ Finally, all responses are wrapped in a response envelope of the following form:
 ```
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
+
+---
+
+!!! important
+
+    Subgroups/subtopics are also groups and can be treated as their own group. If `:group_id` is mentioned in these docs for an endpoint, the endpoint can most likely also apply to a subgroup. For example, retreiving messages, events, etc.
+
+---
+
 
 ***
 

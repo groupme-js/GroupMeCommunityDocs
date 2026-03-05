@@ -4,7 +4,7 @@
         <img src="./.github/assets/opengm_logo_colorized.svg" alt="OpenGM Logo" />
         </a>
     </h1>
-  <h2 align="center">GroupMe Community API Docs</h1>
+  <h2 align="center">GroupMe Community API Docs</h2>
   <p align="center">
     The complete, up-to-date, and community-driven documentation for the GroupMe API.
   </p>
@@ -44,10 +44,10 @@ Here you will find:
 
 This project thrives on community contributions! Whether you're fixing a typo, documenting a newly discovered feature, or improving an example, your help is welcome.
 
-To get started, please read our **[Contributing Guide](https://groupme-js.github.io/GroupMeCommunityDocs/api/contributing)**, which covers:
+To get started, please read our **[Contributing Guide](https://groupme-js.github.io/GroupMeCommunityDocs/contributing/)**, which covers:
 
 -   How to submit changes and open a pull request.
--   The **[Style Guide](https://groupme-js.github.io/GroupMeCommunityDocs/api/contributing/styleguide)** for keeping the docs consistent.
+-   The **[Style Guide](https://groupme-js.github.io/GroupMeCommunityDocs/contributing/styleguide/)** for keeping the docs consistent.
 
 ## Community
 
@@ -59,7 +59,7 @@ Have a question, an idea, or just want to chat with other GroupMe developers?
 
 This project is under a dual-license model:
 
--   All documentation content is licensed under **[CC-BY-4.0](./docs/LICENSE.md)**.
--   All source code, including examples and snippets, is licensed under the **[MIT License](./docs/LICENSE-CODE.md)**.
+-   All documentation content is licensed under **[CC-BY-4.0](./LICENSE.md)**.
+-   All source code, including examples and snippets, is licensed under the **[MIT License](./LICENSE-CODE.md)**.
 
 By contributing, you agree to license your contributions under these terms.

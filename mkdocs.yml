@@ -139,7 +139,7 @@ nav:
     - Account Management: 
       - api/account/index.md
       - Contacts: api/account/contacts.md
-      - Oauth/MFA: api/account/oauth.md
+      - OAuth/MFA: api/account/oauth.md
     - Groups:
       - api/groups/index.md
       - Subgroups: api/groups/subgroups.md

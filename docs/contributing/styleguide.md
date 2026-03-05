@@ -55,7 +55,7 @@ URLs which include a variable, such as `GET /groups/:id`, have their variables m
 
 Finally, all responses are wrapped in a response envelope of the following form:
 
-`"``json linenums="1"
+````json linenums="1"
 {
   "response": {
     "id": "12345",
@@ -67,7 +67,7 @@ Finally, all responses are wrapped in a response envelope of the following form:
     "errors": []
   }
 }
-`"``
+````
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
 

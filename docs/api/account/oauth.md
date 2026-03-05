@@ -1,11 +1,11 @@
 ---
-title: "Oauth / MFA Management"
+title: "OAuth / MFA Management"
 description: "Learn to manage GroupMe API tokens programmatically"
 ---
 
-# Oauth / MFA Management
+# OAuth / MFA Management
 
-Unless otherwise stated, endpoints are relative to https://api.groupme.com/v3/ and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
+Unless otherwise stated, endpoints are relative to `https://api.groupme.com/v3/` and must include the token of the user making the call - so, for example, if an endpoint is `GET /groups`, the request you make should be using the URL `https://api.groupme.com/v3/groups?token=aSDFghJkl`, where `aSDFghJkl` is replaced with the user's token.
 
 URLs which include a variable, such as `GET /groups/:id`, have their variables marked with a colon. So a request to that endpoint would look like `https://api.groupme.com/v3/groups/1234567?token=aSDFghJkl`, where `1234567` is replaced with the group's ID, and `aSDFghJkl` is replaced with the user's token.
 
@@ -289,7 +289,7 @@ You make this call once without an MFA verification object, receive an MFA ID fo
 After establishing the MFA channel you must enable it with a seperate call.
 
 > [!important]
-> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.
+> Activating MFA will log you out *everywhere*, including 3rd party OAuth apps. This process will invalidate your current API token and return a new one that you should use to make subsequent API calls.
 
 ```json linenums="1" title="HTTP Request"
 POST /user/mfa
@@ -427,7 +427,7 @@ Status: 200 OK
 
 ***
 
-## Revoking an API token / Oauth Application
+## Revoking an API token / OAuth Application
 
 This call invalidates a token with a particular token ID, which can be identified using the call above.
 
