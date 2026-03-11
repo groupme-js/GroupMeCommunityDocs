@@ -33,7 +33,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 
 Pins a message.
 
-Note that trying to pin a message which is already pinned will result in an unhelpful 400 error. It may be difficult to programatically determine whether a given call fails due to an actual bad request, or if it's just because the message has already been pinned. For now, you just have to enumerate the pinned mesages and see if there's a match, or get the messatge object and see if the "pinned_at" field is null
+Note that trying to pin a message which is already pinned will result in an unhelpful 400 error. It may be difficult to programmatically determine whether a given call fails due to an actual bad request, or if it's just because the message has already been pinned. For now, you just have to enumerate the pinned messages and see if there's a match, or get the messatge object and see if the "pinned_at" field is null
 
 ```json linenums="1" title="HTTP Request"
 POST /conversations/:conversation_id/messages/:message_id/pin

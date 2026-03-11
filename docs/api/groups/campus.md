@@ -109,7 +109,7 @@ Status: 200 OK
 
 ## Index Members
 
-Return a list containing all of the users who are visible to you within the campus directory. Note that the responses you get are also dependant on the privacy status of other users in the directory. Some people have their profiles set to be visible to only their major or graduation year, or hidden entirely.
+Return a list containing all of the users who are visible to you within the campus directory. Note that the responses you get are also dependent on the privacy status of other users in the directory. Some people have their profiles set to be visible to only their major or graduation year, or hidden entirely.
 
 > [!important]
 > This request is relative to `https://api.groupme.com/v1/`, not `https://api.groupme.com/v3/`.

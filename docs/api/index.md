@@ -35,7 +35,7 @@ If you have any questions or would like to get in touch, please join the [GroupM
   [Direct Messages]: dms/index.md
   [Conversation Management]: conversations/index.md
   [Common API Structures]: common/index.md
-  [CDN Management]: uploads/indexs.md
+  [CDN Management]: uploads/index.md
 
 
 ***

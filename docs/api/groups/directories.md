@@ -142,7 +142,7 @@ Status: 201 Created
 
 ## Search Public Groups
 
-Returns a list of public groups based on search terms or lattitude/longitude coordinates. If a location is supplied, groups will be orderd roughly by distance from that point.
+Returns a list of public groups based on search terms or latitude/longitude coordinates. If a location is supplied, groups will be ordered roughly by distance from that point.
 
 Returned groups will be split into 4 different lists, depending on where they were found. 
 * `directories` if you're a member of a university campus directory and matching results were found in your school domain
@@ -171,9 +171,9 @@ GET https://api.groupme.com/v1/search
 
     String - A set of search terms to filter groups in the response.
 
-* *lattitude*
+* *latitude*
 
-    Decimal - The lattitude coordinate for a point used to sort groups by their distance.
+    Decimal - The latitude coordinate for a point used to sort groups by their distance.
 
 * *longitude*
 

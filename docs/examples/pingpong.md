@@ -31,7 +31,7 @@ Replies have a unique identifier called `base_reply_id`, which is the ID of the 
 
 The `mention` attachment allows you to mention a user in your bot's response. This is useful for drawing attention to the user who sent the original message. The `user_ids` array should contain the ID of the user you want to mention, and the `loci` array specifies the range of text that will be highlighted as a mention, where the first number is the start index and the second number is the length of the mention text.
 
-For more information on how to use message attachements, see the [Attachments](../common/index.md#attachments) documentation.
+For more information on how to use message attachments, see the [Attachments](../common/index.md#attachments) documentation.
 
 ## PingPong Bot Script
 

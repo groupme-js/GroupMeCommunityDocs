@@ -82,7 +82,7 @@ You must to provide the **X-Access-Token** user API token as a header.
 **Response**
 
 Your response will be of the same format as above:
-```json linenums="1" titile="HTTP Response"
+```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
   "payload": {
