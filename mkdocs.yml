@@ -153,7 +153,7 @@ nav:
     - Conversation Features:
       - api/conversations/index.md
       - Emoji Reactions: api/conversations/reactions.md
-      - Calandar Events: api/conversations/calendar.md
+      - Calendar Events: api/conversations/calendar.md
       - Image Galleries: api/conversations/gallery.md
       - Pinning Messages: api/conversations/pins.md
     - Common Structures:

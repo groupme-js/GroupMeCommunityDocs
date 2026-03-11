@@ -1,0 +1,32 @@
+name: Typo Check
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  typo-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install codespell
+        run: pip install codespell
+
+      - name: Run codespell
+        run: |
+          codespell \
+            --skip=".git,*.svg,*.css,*.js" \
+            --ignore-words-list="crate,ect,requestor,stanger,intrest" \
+            docs/ src/ *.md *.yml

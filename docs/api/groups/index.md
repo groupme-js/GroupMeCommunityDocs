@@ -443,7 +443,7 @@ POST /groups/:id/update
 
 * *show_join_question*
 
-	boolean - If true, members must answer a question prompt in oder to request to join a group. The question defaults to "Why do you want to join this group". `"requires_approval"` must be true for this value to take effect.
+	boolean - If true, members must answer a question prompt in order to request to join a group. The question defaults to "Why do you want to join this group". `"requires_approval"` must be true for this value to take effect.
 * *join_question*
 
   	object - Has two properties, `"type"` must always be set to `"join_reason/questions/text"` , and `"text"` is the custom join question. Both `"requires_approval"` and `"show_join_question"` must be true for this value to take effect.

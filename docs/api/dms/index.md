@@ -97,7 +97,7 @@ GET /chats/:chat_id
 
 * *chat_id*
 
-    string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
+    string - this is the compound ID of the chat, consisting of two separate user IDs. It should look something like `93645911+118825642`.
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
@@ -151,7 +151,7 @@ DELETE /chats/:chat_id
 
 * *chat_id*
 
-    string - this is the compound ID of the chat, consisting of two seperate user IDs. It should look something like `93645911+118825642`.
+    string - this is the compound ID of the chat, consisting of two separate user IDs. It should look something like `93645911+118825642`.
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK

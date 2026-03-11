@@ -6,7 +6,7 @@ DinoBot is a simple webhook bot for GroupMe, originally written in C# by Microso
 
 Before you can run DinoBot, you need to set up a GroupMe bot and a callback URL that points to your server/host where the bot will receive and handle messages. The easisest way to create a bot is to use [GroupMe's Bot Creation form](https://dev.groupme.com/bots/new), where you can specify the bot's name, avatar, and callback URL. Alternatively, you can create a bot using the API and your user account's API token. Read more about creating and managing bots in the [Bots API Reference](../api/bots/index.md).
 
-After registering a new bot with GroupMe, create a new Node.js project and install express.js (An HTTP server framework for JavaScript we will use to catch GroupMe's POST messags to our callback URL).
+After registering a new bot with GroupMe, create a new Node.js project and install express.js (An HTTP server framework for JavaScript we will use to catch GroupMe's POST messages to our callback URL).
 
 You can do this by running the following commands in your terminal:
 
@@ -19,7 +19,7 @@ npm install express
 
 This is the main script for DinoBot, which listens for messages in a GroupMe group and responds with dinosaur emojis based on certain triggers. The bot can respond to requests for dinos, mentions of its name, or random questions.
 
-You can save this code in a file named `DinoBot.js`, and run it using Node.js with this commmand:
+You can save this code in a file named `DinoBot.js`, and run it using Node.js with this command:
 
 ```bash
 node DinoBot.js

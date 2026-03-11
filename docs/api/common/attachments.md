@@ -264,7 +264,7 @@ Read more about calendar events [here](../conversations/calendar.md)
 
 * *type*
 
-	string - must be "event" for a callendar event attachment
+	string - must be "event" for a calendar event attachment
 
 * *event_id*
 
@@ -309,7 +309,7 @@ This attachment type is read-only and used exclusively by Copilot in its message
 
 ## Partial Image
 
-This attachment type is read-only and used exclusively by Copilot in its messages to attach partial images as they are being generated. Copilot will edit its messages containing in-progress images as they finish. When an image is complete, its partial image attachement is swapped for a regular image attachment containing a CDN URL.
+This attachment type is read-only and used exclusively by Copilot in its messages to attach partial images as they are being generated. Copilot will edit its messages containing in-progress images as they finish. When an image is complete, its partial image attachment is swapped for a regular image attachment containing a CDN URL.
 
 ```json linenums="1" title="Object Structure"
 {

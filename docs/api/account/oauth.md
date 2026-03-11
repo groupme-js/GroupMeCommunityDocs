@@ -209,7 +209,7 @@ Your client follows one of a few methods to verify that MFA ID, and then passes 
 
     Because sending a text is asynchronous, you need to wait and validate that the server has received your SMS before attempting to use the MFA ID. You can do this via polling the ID to see if it's validated yet.
 
-    You can use this call to check if any MFA ID is valid, not just ones where you're sending the text. It's most relevant here, so thats why we include it.
+    You can use this call to check if any MFA ID is valid, not just ones where you're sending the text. It's most relevant here, so that's why we include it.
 
     ```json linenums="1" title="HTTP Request"
     GET /verifications/:mfa_id
@@ -286,10 +286,10 @@ This call activates an MFA channel for your account, it works just like logging 
 
 You make this call once without an MFA verification object, receive an MFA ID for the interaction, validate it using the steps detailed in the [Handling MFA Challenges](#handling-mfa-challenges) section, then make this call a second time including the now verified MFA ID.
 
-After establishing the MFA channel you must enable it with a seperate call.
+After establishing the MFA channel you must enable it with a separate call.
 
 > [!important]
-> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This proccess will invalidate your current API token and return a new one that you should use to make subsequent API calls.
+> Activating MFA will log you out *everywhere*, including 3rd party Oauth apps. This process will invalidate your current API token and return a new one that you should use to make subsequent API calls.
 
 ```json linenums="1" title="HTTP Request"
 POST /user/mfa
@@ -311,9 +311,9 @@ POST /user/mfa
 
 * *code*
 
-    string - A verified MFA ID obtained by completing the verification challenge. This only needs to be inlcuded on the second request you make to this endpoint.
+    string - A verified MFA ID obtained by completing the verification challenge. This only needs to be included on the second request you make to this endpoint.
 
-On the first call you make, whithout sending a verification code, the response should look like this:
+On the first call you make, without sending a verification code, the response should look like this:
 
 ```json linenums="1" title="HTTP Response"
 Status: 202 Accepted

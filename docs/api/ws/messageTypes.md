@@ -28,7 +28,7 @@ The following sections describe the different message types you may receive, alo
 
 ## `ping`
   
-A keep-alive heartbeat message. This message is sent down every 30 seconds in order to ensure your client is still listening. You can generally ignore these messages if you dont plan on sending them, as the server will keep the connection alive on its own. Sending a `ping` type message causes the server to echo one back and then supresses the server from sending pings for the next 30 seconds. By timing how long it takes to send this message and then receive an echoed ping from the server you can effectively calculate roundtrip ping latancy for the WebSocket gateway.
+A keep-alive heartbeat message. This message is sent down every 30 seconds in order to ensure your client is still listening. You can generally ignore these messages if you dont plan on sending them, as the server will keep the connection alive on its own. Sending a `ping` type message causes the server to echo one back and then suppresses the server from sending pings for the next 30 seconds. By timing how long it takes to send this message and then receive an echoed ping from the server you can effectively calculate roundtrip ping latancy for the WebSocket gateway.
 
 This and [`typing`](#typing) are the only two message types clients are permitted by the API to send.
 
@@ -94,7 +94,7 @@ Generally, incoming messages will look like this:
 
 *  *subject*
 
-  object - The message object this push is refering to.
+  object - The message object this push is referring to.
 
 *  *received_at*
 
@@ -155,7 +155,7 @@ However, in some cases you may observe a system message with an attached `subjec
 
 *  *subject*
 
-  object - The message object this push is refering to.
+  object - The message object this push is referring to.
 
 *  *received_at*
 
@@ -208,7 +208,7 @@ Generally, incoming messages will look like this:
 
 *  *subject*
 
-  object - The message object this push is refering to.
+  object - The message object this push is referring to.
 
 *  *received_at*
 
@@ -264,7 +264,7 @@ However, in some cases you may observe a system message with an attached `subjec
 
 *  *subject*
 
-  object - The message object this push is refering to.
+  object - The message object this push is referring to.
 
 *  *received_at*
 
