@@ -30,7 +30,7 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 ***
 
 > [!note]
-> Calls related to account security, such as managing your password or updating MFA settings are located in the [Oauth / MFA Managment](oauth.md) section.
+> Calls related to account security, such as managing your password or updating MFA settings are located in the [Oauth / MFA Management](oauth.md) section.
 
 ## About
 <!-- official-doc: https://dev.groupme.com/docs/v3#users_me -->
@@ -112,7 +112,7 @@ POST /users/update
 
 * *avatar_url*
 
-	string — A valid image URL proccesed by GroupMe's [image service](https://dev.groupme.com/docs/image_service)
+	string — A valid image URL processed by GroupMe's [image service](https://dev.groupme.com/docs/image_service)
 	
 * *name*
 
@@ -272,7 +272,7 @@ Status: 200 OK
 
 ## Update Major Tags
 
-This call is only allowed for accounts that are members of a school domain, which is not an easy proccess to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls availible for your account.
+This call is only allowed for accounts that are members of a school domain, which is not an easy process to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls available for your account.
 
 ```json linenums="1" title="HTTP Request"
 PUT /directories/user/majors
@@ -302,7 +302,7 @@ Status: 201 Accepted
 
 ## Set Graduation Year and Domain Visibility
 
-This call is only allowed for accounts that are members of a school domain, which is not an easy proccess to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls availible for your account.
+This call is only allowed for accounts that are members of a school domain, which is not an easy process to automate and thus will not be fully documented. HOWEVER, once you are in a domain, you have a few additional calls available for your account.
 
 This call specifies your graduation year tag inside of your profile as well as what level of visibility you want your profile to be at within the campus domain.
 
@@ -372,7 +372,7 @@ Status: 200 OK
 
 ## Enable SMS mode
 
-Enables SMS mode for N hours, where N is at most 48. After N hours have elapsed, user will receive push notfications.
+Enables SMS mode for N hours, where N is at most 48. After N hours have elapsed, user will receive push notifications.
 
 ```json linenums="1" title="HTTP Request"
 POST /users/sms_mode
