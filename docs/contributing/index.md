@@ -77,6 +77,49 @@ Make sure to follow the existing style and structure of the documentation. This 
     
     We use a special flavor of Markdown that supports additional features like admonitions and special UI elements. You can dind its reference in the [Material for MKDocs Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/)
 
+```
+
+
+#### Linting and Typo Checking
+
+This project uses [codespell](https://github.com/codespell-project/codespell) to catch common typos before they make it into the documentation. We recommend setting up [pre-commit](https://pre-commit.com/) to automatically check for typos before each commit.
+
+**Installing pre-commit:**
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+After running these commands, codespell will automatically check your changes for typos every time you commit. If typos are found, the commit will be blocked until you fix them.
+
+**Fixing typos:**
+
+If codespell finds a typo, it will show you the file, line number, and suggest corrections:
+
+```
+docs/api/groups/index.md:123: receive ==> receive
+```
+
+Simply open the file, navigate to the line, and fix the typo. Then stage your changes and commit again.
+
+**Running the check manually:**
+
+You can also run the typo check manually at any time:
+
+```bash
+pre-commit run --all-files
+```
+
+Or run codespell directly:
+
+```bash
+pip install codespell
+codespell docs/
+```
+
+If codespell flags a word that is intentionally spelled that way (like a technical term or API field name), you can add it to the ignore list in `.pre-commit-config.yaml`.
+
 ***
 
 ### Step 5: Commit Your Changes

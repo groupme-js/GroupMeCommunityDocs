@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        name: Check for typos
+        args:
+          - --skip=.git,*.svg,*.css,*.js
+          - --ignore-words-list=crate,ect,requestor,stanger,intrest
+        types_or: [markdown, yaml, python, html]
