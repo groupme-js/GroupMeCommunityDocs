@@ -220,67 +220,72 @@ Status: 200 OK
 ## Show
 <!-- official-doc: https://dev.groupme.com/docs/v3#groups_show -->
 
-Load a specific group.
+Load a specific group. Returns full detail for a single group.
 
 ```json linenums="1" title="HTTP Request"
-GET /groups/:group_id
+GET /groups/:id
 ```
 
 **Parameters**
 
-* *group_id* (required)
+* *id* (required)
 
 	string - the ID of the group to show details of
+
+**Response Schema**
+
+The detail view contains the complete group schema. Fields marked as **(detail only)** are either not present or less detailed in the [Index](#index) (list) endpoint:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Group ID |
+| `name` | string | Display name |
+| `type` | string | Group visibility: `"private"` or `"closed"` |
+| `description` | string \| null | Optional group description |
+| `image_url` | string \| null | Group avatar image URL |
+| `creator_user_id` | string | ID of the user who created the group |
+| `created_at` | integer | Unix timestamp of group creation |
+| `updated_at` | integer | Unix timestamp of last update |
+| `share_url` | string \| null | Join URL for shared groups |
+| `members` | array | **(detail only)** List of member objects with full details. Each member includes: `id`, `user_id`, `nickname`, `muted`, `image_url` |
+| `messages` | object | **(detail only)** Message metadata including: `count`, `last_message_id`, `last_message_created_at` |
+
+**List vs Detail Differences**
+
+| Aspect | `GET /groups` (List) | `GET /groups/:id` (Detail) |
+|--------|----------------------|---------------------------|
+| Response type | Array of groups | Single group object |
+| Pagination | Yes (`page`, `per_page`) | No |
+| `members` field | May be omitted via `omit=memberships`; when present, member objects exclude `id` | Always present; member objects include `id` field |
+| `messages.preview` | Present | **Not present** in detail view |
+| Complete member data | Limited | Full (includes membership `id`) |
+| Message metadata | Basic + preview | Full stats only (no preview) |
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
-  "id": "1234567890",
-  "name": "Family",
-  "type": "private",
-  "description": "Coolest Family Ever",
-  "image_url": "https://i.groupme.com/123456789",
-  "creator_user_id": "1234567890",
-  "created_at": 1302623328,
-  "updated_at": 1302623328,
+  "id": "100675764",
+  "name": "ISBA Prophets",
+  "type": "closed",
+  "description": "",
+  "image_url": "https://i.groupme.com/500x500.jpeg.3e6a51af2d104dba882cf36014fca0bb",
+  "creator_user_id": "125343076",
+  "created_at": 1714764021,
+  "updated_at": 1773923144,
+  "share_url": "https://groupme.com/join_group/100675764/6aYuFUwY",
   "members": [
     {
-      "user_id": "1234567890",
-      "nickname": "Jane",
+      "id": "971574566",
+      "user_id": "107044098",
+      "nickname": "Khristian Diaz NW",
       "muted": false,
-      "image_url": "https://i.groupme.com/123456789"
+      "image_url": "https://i.groupme.com/1024x1024.jpeg.deca0b2163f14b4f8691b194d4c68918"
     }
   ],
-  "share_url": "https://groupme.com/join_group/1234567890/SHARE_TOKEN",
   "messages": {
-    "count": 100,
-    "last_message_id": "1234567890",
-    "last_message_created_at": 1302623328,
-    "preview": {
-      "nickname": "Jane",
-      "text": "Hello world",
-      "image_url": "https://i.groupme.com/123456789",
-      "attachments": [
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
-          "type": "location",
-          "lat": "40.738206",
-          "lng": "-73.993285",
-          "name": "GroupMe HQ"
-        },
-        {
-          "type": "emoji",
-          "placeholder": "",
-          "charmap": [
-            [1, 42],
-            [2, 34]
-          ]
-        }
-      ]
-    }
+    "count": 6677,
+    "last_message_id": "177392314469396469",
+    "last_message_created_at": 1773923144
   }
 }
 ```
