@@ -264,27 +264,27 @@ The detail view contains the complete group schema. Fields marked as **(detail o
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
-  "id": "GROUP_ID",
-  "name": "GROUP_NAME",
+  "id": "1234567890",
+  "name": "Family",
   "type": "private",
-  "description": "GROUP_DESCRIPTION",
-  "image_url": "https://example.com/avatar.jpeg",
-  "creator_user_id": "USER_ID",
+  "description": "Coolest Family Ever",
+  "image_url": "https://i.groupme.com/123456789",
+  "creator_user_id": "1234567890",
   "created_at": 1714764021,
   "updated_at": 1773923144,
-  "share_url": "https://groupme.com/join_group/GROUP_ID/SHARE_TOKEN",
+  "share_url": "https://groupme.com/join_group/1234567890/SHARE_TOKEN",
   "members": [
     {
-      "id": "MEMBERSHIP_ID",
-      "user_id": "USER_ID",
-      "nickname": "USERNAME",
+      "id": "123456789",
+      "user_id": "123456789",
+      "nickname": "John",
       "muted": false,
-      "image_url": "https://example.com/avatar.jpeg"
+      "image_url": "https://i.groupme.com/123456789"
     }
   ],
   "messages": {
     "count": 100,
-    "last_message_id": "MESSAGE_ID",
+    "last_message_id": "1234567890",
     "last_message_created_at": 1773923144
   }
 }

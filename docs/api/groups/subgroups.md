@@ -27,8 +27,8 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
 
-> [!warning]
-> **Type Inconsistency:** Unlike most GroupMe endpoints which use string IDs, the subgroup endpoints return `id`, `parent_id`, and `creator_user_id` as **integers**, not strings. This is an inconsistency with the rest of the API where IDs are typically strings.
+!!! warning
+    **Type Inconsistency:** Unlike most GroupMe endpoints which use string IDs, the subgroup endpoints return `id`, `parent_id`, and `creator_user_id` as **integers**, not strings. This is an inconsistency with the rest of the API where IDs are typically strings.
 
 ***
 
@@ -63,24 +63,33 @@ Status: 200 OK
   {
     "messages": {
       "count": 4,
-      "last_message_id": "SUBGROUP_MESSAGE_ID",
-      "last_message_created_at": 1715574721,
-      "last_message_updated_at": 1715574721,
+      "last_message_id": "1234567890",
+      "last_message_created_at": 1302623328,
+      "last_message_updated_at": 1302623328,
       "preview": {
-        "nickname": "USERNAME",
+        "nickname": "John",
         "text": "Hello everyone!",
-        "image_url": "https://example.com/avatar.jpeg",
-        "attachments": []
+        "image_url": "https://i.groupme.com/123456789",
+        "attachments": [
+          {
+            "type": "image",
+             "url": "https://i.groupme.com/123456789"
+          },
+          {
+            "type": "image",
+            "url": "https://i.groupme.com/123456789"
+          }
+        ]
       }
     },
     "id": 123456789,
-    "parent_id": GROUP_ID,
+    "parent_id": 123456789,
     "topic": "Test Topic 1",
     "description": "This is a testing topic",
-    "avatar_url": "https://example.com/avatar.jpeg",
-    "creator_user_id": USER_ID,
-    "created_at": 1715574084,
-    "updated_at": 1715574721,
+    "avatar_url": "https://i.groupme.com/123456789",
+    "creator_user_id": 12345678,
+    "created_at": 1302623328,
+    "updated_at": 1302623328,
     "muted_until": null,
     "recap_enabled": null,
     "like_icon": null,
@@ -94,8 +103,8 @@ Status: 200 OK
 
 ***
 
-> [!note]
-> The `messages.preview` object in subgroups includes `last_message_updated_at`, which is **not present** in the standard group messages object. This field represents when the last message was edited/updated.
+!!! note
+    The `messages.preview` object in subgroups includes `last_message_updated_at`, which is **not present** in the standard group messages object. This field represents when the last message was edited/updated.
 
 ## Show
 
@@ -120,24 +129,33 @@ Status: 200 OK
 {
   "messages": {
     "count": 18,
-    "last_message_id": "SUBGROUP_MESSAGE_ID",
+    "last_message_id": "1234567890",
     "last_message_created_at": 1715574721,
     "last_message_updated_at": 1715574721,
     "preview": {
-      "nickname": "USERNAME",
+      "nickname": "Jane",
       "text": "Hey everyone!",
-      "image_url": "https://example.com/avatar.jpeg",
-      "attachments": []
+      "image_url": "https://i.groupme.com/123456789",
+      "attachments": [
+        {
+          "type": "image",
+          "url": "https://i.groupme.com/123456789"
+        },
+        {
+          "type": "image",
+          "url": "https://i.groupme.com/123456789"
+        }
+      ]
     }
   },
   "id": 123456789,
-  "parent_id": GROUP_ID,
+  "parent_id": 123456789,
   "topic": "Test Topic",
   "description": "This is a testing topic",
-  "avatar_url": "https://example.com/avatar.jpeg",
-  "creator_user_id": USER_ID,
-  "created_at": 1715574084,
-  "updated_at": 1715574721,
+  "avatar_url": "https://i.groupme.com/123456789",
+  "creator_user_id": 12345678,
+  "created_at": 1302623328,
+  "updated_at": 1302623328,
   "muted_until": null,
   "recap_enabled": null,
   "like_icon": null,
@@ -157,7 +175,7 @@ Create a topic. You must be an admin in the group to make this call.
 ```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/subgroups
 {
-  "avatar_url": "https://example.com/avatar.jpeg",
+  "avatar_url": "https://i.groupme.com/123456789",
   "description": "this is a description",
   "group_type": "announcement",
   "topic": "test topic"
@@ -189,14 +207,14 @@ POST /groups/:group_id/subgroups
 ```json linenums="1" title="HTTP Response"
 Status: 201 Accepted
 {
-  "id": 107877040,
+  "id": 123456789,
   "topic": "test topic",
   "type": "announcement",
   "description": "this is a description",
-  "avatar_url": "https://example.com/avatar.jpeg",
-  "created_at": 1748457450,
-  "updated_at": 1748457450,
-  "parent_id": GROUP_ID,
+  "avatar_url": "https://i.groupme.com/123456789",
+  "created_at": 1302623328,
+  "updated_at": 1302623328,
+  "parent_id": 123456789,
   "like_icon": null
 }
 ```
@@ -210,7 +228,7 @@ Update a topic's details
 ```json linenums="1" title="HTTP Request"
 PUT /groups/:group_id/subgroups/:subgroup_id
 {
-  "avatar_url": "https://example.com/avatar.jpeg",
+  "avatar_url": "https://i.groupme.com/123456789",
   "description": "this is a new description",
   "group_type": "private",
   "topic": "new name",
@@ -254,14 +272,14 @@ PUT /groups/:group_id/subgroups/:subgroup_id
 
 ```json linenums="1" title="HTTP Response"
 {
-  "id": 107877040,
+  "id": 123456789,
   "topic": "new name",
   "type": "private",
   "description": "this is a new description",
-  "avatar_url": "https://example.com/avatar.jpeg",
-  "created_at": 1748457450,
-  "updated_at": 1748457988,
-  "parent_id": GROUP_ID,
+  "avatar_url": "https://i.groupme.com/123456789",
+  "created_at": 1302623328,
+  "updated_at": 1302623328,
+  "parent_id": 123456789,
   "like_icon": {
     "pack_id": 1,
     "pack_index": 49,
@@ -321,13 +339,13 @@ POST /groups/:group_id/subgroups/:subgroup_id/unmute
 Status: 200 OK
 {
   "membership": {
-    "id": "1080225494",
-    "user_id": "USER_ID",
+    "id": "1234567890",
+    "user_id": "123456789",
     "country_code": "1",
-    "phone_number": "PHONE_NUMBER",
+    "phone_number": "1234567890",
     "email": "user@example.com",
-    "avatar_url": "https://example.com/avatar.jpeg",
-    "nickname": "USERNAME",
+    "avatar_url": "https://i.groupme.com/123456789",
+    "nickname": "John",
     "creator": true,
     "muted": false,
     "snoozed": false,
@@ -335,7 +353,7 @@ Status: 200 OK
     "pending": false,
     "muted_until": null,
     "muted_children": {
-      "SUBGROUP_ID": 253402300800
+      "123456789": 253402300800
     }
   }
 }
