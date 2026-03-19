@@ -264,27 +264,27 @@ The detail view contains the complete group schema. Fields marked as **(detail o
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
 {
-  "id": "100675764",
-  "name": "ISBA Prophets",
-  "type": "closed",
-  "description": "",
-  "image_url": "https://i.groupme.com/500x500.jpeg.3e6a51af2d104dba882cf36014fca0bb",
-  "creator_user_id": "125343076",
+  "id": "GROUP_ID",
+  "name": "GROUP_NAME",
+  "type": "private",
+  "description": "GROUP_DESCRIPTION",
+  "image_url": "https://example.com/avatar.jpeg",
+  "creator_user_id": "USER_ID",
   "created_at": 1714764021,
   "updated_at": 1773923144,
-  "share_url": "https://groupme.com/join_group/100675764/6aYuFUwY",
+  "share_url": "https://groupme.com/join_group/GROUP_ID/SHARE_TOKEN",
   "members": [
     {
-      "id": "971574566",
-      "user_id": "107044098",
-      "nickname": "Khristian Diaz NW",
+      "id": "MEMBERSHIP_ID",
+      "user_id": "USER_ID",
+      "nickname": "USERNAME",
       "muted": false,
-      "image_url": "https://i.groupme.com/1024x1024.jpeg.deca0b2163f14b4f8691b194d4c68918"
+      "image_url": "https://example.com/avatar.jpeg"
     }
   ],
   "messages": {
-    "count": 6677,
-    "last_message_id": "177392314469396469",
+    "count": 100,
+    "last_message_id": "MESSAGE_ID",
     "last_message_created_at": 1773923144
   }
 }

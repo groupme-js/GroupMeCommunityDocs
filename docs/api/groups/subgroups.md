@@ -27,6 +27,9 @@ Finally, all responses are wrapped in a response envelope of the following form:
 
 If the request succeeds, `meta.errors` will be null, and if the request fails, `response` will be null.
 
+> [!warning]
+> **Type Inconsistency:** Unlike most GroupMe endpoints which use string IDs, the subgroup endpoints return `id`, `parent_id`, and `creator_user_id` as **integers**, not strings. This is an inconsistency with the rest of the API where IDs are typically strings.
+
 ***
 
 ## Index
@@ -60,43 +63,39 @@ Status: 200 OK
   {
     "messages": {
       "count": 4,
-      "last_message_id": "1234567890987654321",
+      "last_message_id": "SUBGROUP_MESSAGE_ID",
       "last_message_created_at": 1715574721,
       "last_message_updated_at": 1715574721,
       "preview": {
-        "nickname": "Bob Doe",
+        "nickname": "USERNAME",
         "text": "Hello everyone!",
-        "image_url": "https://i.groupme.com/1024x1024.jpeg.123456789e9876543211234567e",
-        "attachments": [
-          {
-            "type": "image",
-             "url": "https://i.groupme.com/123456789"
-          },
-          {
-            "type": "image",
-            "url": "https://i.groupme.com/123456789"
-          }
-        ]
+        "image_url": "https://example.com/avatar.jpeg",
+        "attachments": []
       }
     },
     "id": 123456789,
-    "parent_id": 123123123,
+    "parent_id": GROUP_ID,
     "topic": "Test Topic 1",
     "description": "This is a testing topic",
-    "avatar_url": "https://i.groupme.com/1024x1024.jpeg.123456789a9876543211234567a",
-    "creator_user_id": 12345678,
+    "avatar_url": "https://example.com/avatar.jpeg",
+    "creator_user_id": USER_ID,
     "created_at": 1715574084,
     "updated_at": 1715574721,
     "muted_until": null,
+    "recap_enabled": null,
     "like_icon": null,
     "unread_count": null,
     "last_read_message_id": null,
-    "last_read_at": null
+    "last_read_at": null,
+    "message_edit_period": 15
   }
 ]
 ```
 
 ***
+
+> [!note]
+> The `messages.preview` object in subgroups includes `last_message_updated_at`, which is **not present** in the standard group messages object. This field represents when the last message was edited/updated.
 
 ## Show
 
@@ -121,38 +120,31 @@ Status: 200 OK
 {
   "messages": {
     "count": 18,
-    "last_message_id": "1234567890987654321",
+    "last_message_id": "SUBGROUP_MESSAGE_ID",
     "last_message_created_at": 1715574721,
     "last_message_updated_at": 1715574721,
     "preview": {
-      "nickname": "Jane Doe",
+      "nickname": "USERNAME",
       "text": "Hey everyone!",
-      "image_url": "https://i.groupme.com/1024x1024.jpeg.eabcdefg1234567654321eabcdefg",
-      "attachments": [
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        }
-      ]
+      "image_url": "https://example.com/avatar.jpeg",
+      "attachments": []
     }
   },
   "id": 123456789,
-  "parent_id": 987654321,
+  "parent_id": GROUP_ID,
   "topic": "Test Topic",
   "description": "This is a testing topic",
-  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.iabcdefg1234567654321iabcdefg",
-  "creator_user_id": 123123123,
+  "avatar_url": "https://example.com/avatar.jpeg",
+  "creator_user_id": USER_ID,
   "created_at": 1715574084,
   "updated_at": 1715574721,
   "muted_until": null,
+  "recap_enabled": null,
   "like_icon": null,
   "unread_count": null,
   "last_read_message_id": null,
-  "last_read_at": null
+  "last_read_at": null,
+  "message_edit_period": 15
 }
 ```
 
@@ -165,7 +157,7 @@ Create a topic. You must be an admin in the group to make this call.
 ```json linenums="1" title="HTTP Request"
 POST /groups/:group_id/subgroups
 {
-  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "avatar_url": "https://example.com/avatar.jpeg",
   "description": "this is a description",
   "group_type": "announcement",
   "topic": "test topic"
@@ -201,10 +193,10 @@ Status: 201 Accepted
   "topic": "test topic",
   "type": "announcement",
   "description": "this is a description",
-  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "avatar_url": "https://example.com/avatar.jpeg",
   "created_at": 1748457450,
   "updated_at": 1748457450,
-  "parent_id": 107876923,
+  "parent_id": GROUP_ID,
   "like_icon": null
 }
 ```
@@ -218,7 +210,7 @@ Update a topic's details
 ```json linenums="1" title="HTTP Request"
 PUT /groups/:group_id/subgroups/:subgroup_id
 {
-  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.679caf2a3dc04bd884137065e567047f",
+  "avatar_url": "https://example.com/avatar.jpeg",
   "description": "this is a new description",
   "group_type": "private",
   "topic": "new name",
@@ -266,10 +258,10 @@ PUT /groups/:group_id/subgroups/:subgroup_id
   "topic": "new name",
   "type": "private",
   "description": "this is a new description",
-  "avatar_url": "https://i.groupme.com/1024x1024.jpeg.742b941f7eea46998438cee6838268ec",
+  "avatar_url": "https://example.com/avatar.jpeg",
   "created_at": 1748457450,
   "updated_at": 1748457988,
-  "parent_id": 107876923,
+  "parent_id": GROUP_ID,
   "like_icon": {
     "pack_id": 1,
     "pack_index": 49,
@@ -330,12 +322,12 @@ Status: 200 OK
 {
   "membership": {
     "id": "1080225494",
-    "user_id": "93645911",
+    "user_id": "USER_ID",
     "country_code": "1",
-    "phone_number": "3192414622",
-    "email": "stanger.isaac@gmail.com",
-    "avatar_url": "https://i.groupme.com/200x200.jpeg.94e0ac5891aa4e6f8ad4bbf961defe4d",
-    "nickname": "Isaac",
+    "phone_number": "PHONE_NUMBER",
+    "email": "user@example.com",
+    "avatar_url": "https://example.com/avatar.jpeg",
+    "nickname": "USERNAME",
     "creator": true,
     "muted": false,
     "snoozed": false,
@@ -343,7 +335,7 @@ Status: 200 OK
     "pending": false,
     "muted_until": null,
     "muted_children": {
-      "107933452": 253402300800
+      "SUBGROUP_ID": 253402300800
     }
   }
 }
