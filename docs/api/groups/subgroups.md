@@ -30,6 +30,17 @@ If the request succeeds, `meta.errors` will be null, and if the request fails, `
 !!! warning
     **Type Inconsistency:** Unlike most GroupMe endpoints which use string IDs, the subgroup endpoints return `id`, `parent_id`, and `creator_user_id` as **integers**, not strings. This is an inconsistency with the rest of the API where IDs are typically strings.
 
+!!! note
+  Subgroup message retrieval uses the flat group-style endpoint:
+
+  GET /groups/{subgroup_id}/messages
+
+  even though subgroup metadata is accessed via:
+
+  GET /groups/{group_id}/subgroups/{subgroup_id}
+
+  This distinction was verified via live API testing.
+
 ***
 
 ## Index
@@ -73,10 +84,6 @@ Status: 200 OK
         "attachments": [
           {
             "type": "image",
-             "url": "https://i.groupme.com/123456789"
-          },
-          {
-            "type": "image",
             "url": "https://i.groupme.com/123456789"
           }
         ]
@@ -104,7 +111,7 @@ Status: 200 OK
 ***
 
 !!! note
-    The `messages.preview` object in subgroups includes `last_message_updated_at`, which is **not present** in the standard group messages object. This field represents when the last message was edited/updated.
+  The subgroup `messages` object includes `last_message_updated_at`, which is not present in standard group message metadata. This field represents when the last message was edited or otherwise updated.
 
 ## Show
 
@@ -137,10 +144,6 @@ Status: 200 OK
       "text": "Hey everyone!",
       "image_url": "https://i.groupme.com/123456789",
       "attachments": [
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
         {
           "type": "image",
           "url": "https://i.groupme.com/123456789"
@@ -212,9 +215,11 @@ Status: 201 Accepted
   "type": "announcement",
   "description": "this is a description",
   "avatar_url": "https://i.groupme.com/123456789",
+  "creator_user_id": 12345678,
   "created_at": 1302623328,
   "updated_at": 1302623328,
   "parent_id": 123456789,
+  "message_edit_period": 15,
   "like_icon": null
 }
 ```
@@ -277,9 +282,11 @@ PUT /groups/:group_id/subgroups/:subgroup_id
   "type": "private",
   "description": "this is a new description",
   "avatar_url": "https://i.groupme.com/123456789",
+  "creator_user_id": 12345678,
   "created_at": 1302623328,
   "updated_at": 1302623328,
   "parent_id": 123456789,
+  "message_edit_period": 15,
   "like_icon": {
     "pack_id": 1,
     "pack_index": 49,
