@@ -36,7 +36,7 @@ List the authenticated user's active groups.
 
 The response is paginated, with a default of 10 groups per page.
 
-Please consider using of omit=memberships parameter. Not including member lists might significantly improve user experience of your app for users who are participating in huge groups.
+Please consider using the `omit=memberships` parameter. Omitting member lists can significantly improve performance for users who participate in very large groups.
 
 ```json linenums="1" title="HTTP Request"
 GET /groups
@@ -154,7 +154,7 @@ Status: 200 OK
           {
             "type": "image",
             "url": "https://i.groupme.com/123456789"
-          },,
+          },
           {
             "type": "location",
             "lat": "40.738206",
@@ -220,17 +220,49 @@ Status: 200 OK
 ## Show
 <!-- official-doc: https://dev.groupme.com/docs/v3#groups_show -->
 
-Load a specific group.
+Load a specific group. Returns full detail for a single group.
 
 ```json linenums="1" title="HTTP Request"
-GET /groups/:group_id
+GET /groups/:id
 ```
+
+!!! note
+  The route uses /groups/{id}. Placeholder naming in documentation may vary (e.g., :group_id vs :id), but both refer to the same path parameter.
 
 **Parameters**
 
-* *group_id* (required)
+* *id* (required)
 
 	string - the ID of the group to show details of
+
+**Response Schema**
+
+The detail endpoint provides additional member-level and message metadata compared to the list endpoint, but omits the messages.preview field present in list responses.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Group ID |
+| `name` | string | Display name |
+| `type` | string | Group visibility: `"private"` or `"closed"` |
+| `description` | string \| null | Optional group description |
+| `image_url` | string \| null | Group avatar image URL |
+| `creator_user_id` | string | ID of the user who created the group |
+| `created_at` | integer | Unix timestamp of group creation |
+| `updated_at` | integer | Unix timestamp of last update |
+| `share_url` | string \| null | Join URL for shared groups |
+| `members` | array | **(detail only)** List of member objects with full details. Each member includes: `id`, `user_id`, `nickname`, `muted`, `image_url` |
+| `messages` | object | **(detail only)** Message metadata including: `count`, `last_message_id`, `last_message_created_at`, `last_message_updated_at` |
+
+**List vs Detail Differences**
+
+| Aspect | `GET /groups` (List) | `GET /groups/:id` (Detail) |
+|--------|----------------------|---------------------------|
+| Response type | Array of groups | Single group object |
+| Pagination | Yes (`page`, `per_page`) | No |
+| `members` field | May be omitted via `omit=memberships`; when present, member objects exclude `id` | Always present; member objects include `id` field |
+| `messages.preview` | Present | **Not present** in detail view |
+| Complete member data | Limited | Full (includes membership `id`) |
+| Message metadata | Basic + preview | Count and last-message timestamps only (no preview) |
 
 ```json linenums="1" title="HTTP Response"
 Status: 200 OK
@@ -241,46 +273,23 @@ Status: 200 OK
   "description": "Coolest Family Ever",
   "image_url": "https://i.groupme.com/123456789",
   "creator_user_id": "1234567890",
-  "created_at": 1302623328,
-  "updated_at": 1302623328,
+  "created_at": 1714764021,
+  "updated_at": 1773923144,
+  "share_url": "https://groupme.com/join_group/1234567890/SHARE_TOKEN",
   "members": [
     {
-      "user_id": "1234567890",
-      "nickname": "Jane",
+      "id": "123456789",
+      "user_id": "123456789",
+      "nickname": "John",
       "muted": false,
       "image_url": "https://i.groupme.com/123456789"
     }
   ],
-  "share_url": "https://groupme.com/join_group/1234567890/SHARE_TOKEN",
   "messages": {
     "count": 100,
     "last_message_id": "1234567890",
-    "last_message_created_at": 1302623328,
-    "preview": {
-      "nickname": "Jane",
-      "text": "Hello world",
-      "image_url": "https://i.groupme.com/123456789",
-      "attachments": [
-        {
-          "type": "image",
-          "url": "https://i.groupme.com/123456789"
-        },
-        {
-          "type": "location",
-          "lat": "40.738206",
-          "lng": "-73.993285",
-          "name": "GroupMe HQ"
-        },
-        {
-          "type": "emoji",
-          "placeholder": "",
-          "charmap": [
-            [1, 42],
-            [2, 34]
-          ]
-        }
-      ]
-    }
+    "last_message_created_at": 1773923144,
+    "last_message_updated_at": 1773923205
   }
 }
 ```
@@ -389,12 +398,12 @@ POST /groups/:id/update
   "name": "Family",
   "share": true,
   "image_url": "https://i.groupme.com/123456789",
-  "office_mode": true
-  "theme_name": "cogs"
+  "office_mode": true,
+  "theme_name": "cogs",
   "requires_approval": true,
   "show_join_question": true,
   "join_question": {
-    "text": "You're not a bot, are you?"
+    "text": "You're not a bot, are you?",
     "type": "join_reason/questions/text"
   },
   "like_icon": {
